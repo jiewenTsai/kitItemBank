@@ -1,0 +1,103 @@
+---
+title: "KIT 構面題項對應報告"
+lang: zh-TW
+params:
+  data_rds: ""
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-title: "目錄"
+    embed-resources: true
+    theme: lumen
+    css: |
+      body { font-family: "Noto Sans TC", "PingFang TC", sans-serif; font-size: 0.9rem; }
+      h2 { border-bottom: 2px solid #2d7535; padding-bottom: 0.3rem; color: #2d7535; }
+      .reliability-badge {
+        background: #e8f5e9; color: #2d7535; border: 1px solid #a5d6a7;
+        border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.8rem;
+        display: inline-block; margin-bottom: 0.5rem;
+      }
+      table { font-size: 0.85rem; }
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+library(dplyr)
+library(knitr)
+library(stringr)
+
+clean_meta_str <- function(x, default = "") {
+  if (length(x) == 0L || is.null(x)) return(default)
+  if (length(x) != 1L) x <- x[[1L]]
+  if (is.na(x)) return(default)
+  val <- trimws(as.character(x))
+  if (!nzchar(val)) default else val
+}
+
+stopifnot(nchar(params$data_rds) > 0 && file.exists(params$data_rds))
+report_data <- readRDS(params$data_rds)
+
+domain <- report_data$domain
+wave   <- report_data$wave
+dims   <- report_data$dims
+```
+
+## 報告資訊
+
+| 欄位 | 內容 |
+|---|---|
+| 資料群組（Domain） | `r domain` |
+| 波次 | `r wave` |
+| 包含構面數 | `r length(dims)` |
+| 產生時間 | `r format(Sys.time(), "%Y-%m-%d %H:%M:%S")` |
+
+---
+
+```{r, results='asis'}
+for (dim_info in dims) {
+  dim_title <- clean_meta_str(dim_info$dimName,
+                              default = clean_meta_str(dim_info$dimID))
+  dim_raw   <- clean_meta_str(dim_info$dimNameRaw, default = dim_title)
+  alias_txt <- clean_meta_str(dim_info$alias)
+  # 構面標題
+  cat(sprintf("\n## %s\n\n", dim_title))
+  if (nzchar(alias_txt) && dim_title != dim_raw) {
+    cat(sprintf("*（原名：%s · alias: %s）*\n\n", dim_raw, alias_txt))
+  }
+
+  # 信度
+  rel_val <- suppressWarnings(as.numeric(dim_info$reliability))
+  if (!is.null(dim_info$reliability) && !is.na(rel_val)) {
+    cat(sprintf(
+      '<span class="reliability-badge">Cronbach\'s &alpha; = %.3f</span>\n\n',
+      rel_val
+    ))
+  } else {
+    cat('<span class="reliability-badge" style="background:#f5f5f5;color:#888;">信度待填</span>\n\n')
+  }
+
+  # 備註
+  if (!is.null(dim_info$note) && nchar(trimws(as.character(dim_info$note))) > 0) {
+    cat(sprintf("**備註：** %s\n\n", dim_info$note))
+  }
+
+  # 題目表格
+  items_df <- dim_info$items
+  items_df$label <- str_replace_all(items_df$label, "\r?\n", " / ")
+  
+  print(knitr::kable(
+    items_df[, c("itemID", "itemVer", "block", "label")],
+    col.names = c("題項 ID", "版本", "問卷模組", "題目"),
+    format    = "html",
+    escape    = FALSE,
+    table.attr = 'class="table table-sm table-bordered table-hover"'
+  ))
+
+  cat("\n\n---\n\n")
+}
+```
