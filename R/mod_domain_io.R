@@ -16,7 +16,7 @@ domainBundleUI <- function(id) {
       tags$code("dimMeta"),
       " 四個工作表（itemBank / itemDim / itemWave / dimMeta）",
       "；匯入／匯出同進同出，dimMeta 編修後匯出即含最新內容。",
-      "（若有 dimReliability 工作表亦一併處理）"
+      "（構面信度見 dimMeta.reliability；波次專屬覆寫可選 dimReliability 工作表）"
     ),
     div(
       class = "d-flex flex-wrap align-items-end gap-2",

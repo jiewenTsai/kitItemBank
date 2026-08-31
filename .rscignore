@@ -1,0 +1,7 @@
+# rsconnect bundle exclusions (files/ must stay — sole data source)
+tests/
+.Rhistory
+.Rproj.user/
+reports/*.html
+*.plan.md
+.cursor/

@@ -26,10 +26,9 @@ domain_bundle_xlsx_path <- function(domain, files_root = "files") {
 load_domain <- function(domain = "parent", data_root = "data", files_root = "files") {
   xlsx_path <- domain_bundle_xlsx_path(domain, files_root)
   if (!is.null(xlsx_path)) {
-    result <- import_domain_xlsx(xlsx_path)
-    dr <- load_dim_reliability(domain, data_root)
-    if (nrow(dr) > 0L) result$dimReliability <- dr
-    return(result)
+    # 信度以 dimMeta 工作表的 reliability 欄為主；
+    # 若 xlsx 另有 dimReliability 工作表（波次專屬覆寫）由 import_domain_xlsx 讀入。
+    return(import_domain_xlsx(xlsx_path))
   }
 
   domain_path <- file.path(data_root, domain)

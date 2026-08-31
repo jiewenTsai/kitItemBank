@@ -118,8 +118,11 @@ shiny::runApp("app.R")
 ```
 
 ```bash
-Rscript tests/test_dim_meta_preview.R
-Rscript tests/import_domain_xlsx.R   # 從 Excel 更新 data/ CSV
+# 執行單元/整合測試（testthat，從專案根目錄執行）
+Rscript tests/testthat.R
+
+# 從 Excel 更新 data/ CSV（非測試，一次性工具腳本）
+Rscript tests/import_domain_xlsx.R
 ```
 
 詳細規格見 `KIT_itembank_shiny_spec.md`。
