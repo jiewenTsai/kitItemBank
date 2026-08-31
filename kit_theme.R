@@ -21,6 +21,16 @@ kit_theme <- function() {
   )
 }
 
+#' App 版本（每次功能更新請手動遞增，例如 0.1.0 → 0.1.1 或 0.2.0）
+KIT_APP_VERSION <- "0.1.0"
+
+#' 讀取 app.R 最後修改日期（yyyy-mm-dd）
+kit_app_last_modified <- function() {
+  app_path <- if (file.exists("app.R")) "app.R" else file.path(getwd(), "app.R")
+  if (!file.exists(app_path)) return("unknown")
+  format(file.info(app_path)$mtime, "%Y-%m-%d")
+}
+
 #' KIT 品牌色常數
 #' @export
 kit_colors <- function() {
@@ -123,8 +133,24 @@ kit_css <- function() {
     }
     .well { background: #f5f5f5; border: 1px solid #e3e3e3; border-radius: 4px;
             padding: 8px 12px; margin-bottom: 8px; }
+    .kit-navbar-meta {
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
     ", cols$primary, cols$primary_light, cols$accent,
      cols$subtitle, cols$text_muted, cols$border))
+}
+
+#' Navbar 版本與最後修改日期
+#' @export
+kit_navbar_meta <- function() {
+  shiny::div(
+    class = "kit-navbar-meta",
+    sprintf("v%s · %s", KIT_APP_VERSION, kit_app_last_modified())
+  )
 }
 
 #' KIT 頁首區塊

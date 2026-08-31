@@ -48,14 +48,18 @@ DOMAIN_CHOICES <- c(
 ui <- page_navbar(
   title = div(
     class = "kit-navbar-brand",
-    tags$span(
-      class = "kit-brand-kitid",
-      "kitItemBank"
+    div(
+      class = "kit-navbar-brand-titles",
+      tags$span(
+        class = "kit-brand-kitid",
+        "kitItemBank"
+      ),
+      tags$span(
+        class = "kit-brand-title",
+        "KIT 題庫管理工具"
+      )
     ),
-    tags$span(
-      class = "kit-brand-title",
-      "KIT 題庫管理工具"
-    )
+    kit_navbar_meta()
   ),
   theme  = kit_theme(),
   window_title = "kitItemBank KIT 題庫管理工具",
@@ -86,11 +90,17 @@ ui <- page_navbar(
         /* 橫列 navbar：title 與分頁選單拉開間距 */
         .navbar .kit-navbar-brand {
           display: flex;
-          align-items: baseline;
-          gap: 0.65rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.1rem;
           margin-right: 2.75rem !important;
           padding-right: 0.5rem;
           white-space: nowrap;
+        }
+        .navbar .kit-navbar-brand-titles {
+          display: flex;
+          align-items: baseline;
+          gap: 0.65rem;
         }
         .navbar .kit-brand-kitid {
           font-weight: 600;
