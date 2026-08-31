@@ -5,3 +5,6 @@ tests/
 reports/*.html
 *.plan.md
 .cursor/
+# Connect Cloud uses manifest.json, not renv
+renv/
+.Rprofile
