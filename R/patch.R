@@ -171,13 +171,17 @@ apply_patch <- function(kit, patch) {
 
 #' 修改包 Excel 的工作表：說明、改動（kit 改動列）、不能轉的改動、原始改動（0.2）
 #' @noRd
-patch_workbook <- function(res, changes, domain, base_version = kit_version()) {
+patch_workbook <- function(res, changes, domain, base_version = kit_version(), meta = list()) {
+  # meta：審核頁會讀的 reason、decided_by、submitted_by（有填才放進說明頁）
+  meta <- unlist(meta[intersect(c("reason", "decided_by", "submitted_by"), names(meta))])
+  meta <- meta[!is.na(meta) & nzchar(meta)]
   info <- data.frame(
     # 原文：項目 | 內容
-    "\u9805\u76ee" = c("kitItemBank", "domain", "base_version", "date", "n_patch", "n_unsupported"),
+    "\u9805\u76ee" = c("kitItemBank", "domain", "base_version", "date", "n_patch", "n_unsupported",
+                       names(meta)),
     # 原文：內容 | 0.3 修改包
     "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305", domain, base_version %||% "", format(Sys.Date()),
-                       nrow(res$patch), nrow(res$unsupported)),
+                       nrow(res$patch), nrow(res$unsupported), unname(meta)),
     check.names = FALSE, stringsAsFactors = FALSE)
   sheets <- list(info, res$patch)
   # 原文：說明 | 改動 | 不能轉的改動 | 原始改動
