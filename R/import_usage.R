@@ -7,8 +7,9 @@
 
 # 中文數字（第一波…第十三波）
 # 原文：一 二 三 四 五 六 七 八 九 十
-ZH_NUM <- c("一", "二", "三", "四", "五", "六", "七",
-            "八", "九", "十")
+ZH_NUM <- c("\u4e00", "\u4e8c", "\u4e09", "\u56db", "\u4e94", "\u516d", "\u4e03",
+            # 原文：八 | 九 | 十
+            "\u516b", "\u4e5d", "\u5341")
 
 #' 「七」→ 7、「十一」→ 11、「十」→ 10
 #' @noRd
@@ -57,20 +58,21 @@ import_usage_doc <- function(txt_file) {
 
   # 標題：…：3月齡組第七波48月齡
   # 原文：([0-9]+)月齡組第([一二…十]+)波([0-9]+)月齡
-  m <- regmatches(title, regexec(paste0("([0-9]+)月齡組第([",
+  m <- regmatches(title, regexec(paste0("([0-9]+)\u6708\u9f61\u7d44\u7b2c([",
                                         paste(ZH_NUM, collapse = ""),
-                                        "]+)波([0-9]+)月齡"), title, perl = TRUE))[[1]]
+                                        # 原文：]+)波([0-9]+)月齡
+                                        "]+)\u6ce2([0-9]+)\u6708\u9f61"), title, perl = TRUE))[[1]]
   cohort <- if (length(m)) sprintf("M%02d", as.integer(m[2])) else NA_character_
   wave_no <- if (length(m)) zh_num_to_int(m[3]) else NA_integer_
   age <- if (length(m)) as.integer(m[4]) else NA_integer_
 
   # 原文：調查執行期間
-  sv <- first("調查執行期間")
+  sv <- first("\u8abf\u67e5\u57f7\u884c\u671f\u9593")
   dates <- if (is.na(sv)) character(0) else
     regmatches(sv, gregexpr("[0-9]{4}-[0-9]{2}-[0-9]{2}", sv))[[1]]
   survey_raw <- if (is.na(sv)) NA_character_ else
     # 原文：調查執行期間
-    trimws(gsub("\\|", "", sub(".*調查執行期間", "", sv)))
+    trimws(gsub("\\|", "", sub(".*\u8abf\u67e5\u57f7\u884c\u671f\u9593", "", sv)))
 
   # 資料檔：表格裡的 data1.csv、IRT.csv 那幾列（同一檔的 .sav/.dta 不重複列）
   rows <- grep("^\\|\\s+(data[0-9]+|IRT)\\.csv\\s+\\|", x, perl = TRUE, value = TRUE)
@@ -79,29 +81,32 @@ import_usage_doc <- function(txt_file) {
     desc = trimws(sub("^\\|[^|]*\\|([^|]*)\\|.*$", "\\1", rows, perl = TRUE)),
     stringsAsFactors = FALSE)
   # 原文：CSV資料檔 → 資料檔
-  files$desc <- sub("CSV資料檔$", "資料檔", files$desc)
+  files$desc <- sub("CSV\u8cc7\u6599\u6a94$", "\u8cc7\u6599\u6a94", files$desc)
 
   # 原文：（D00250）
-  rel_line <- first("（D[0-9]{5}）")
+  rel_line <- first("\uff08D[0-9]{5}\uff09")
   release <- if (is.na(rel_line)) NA_character_ else
-    sub(".*（(D[0-9]{5})）.*", "\\1", rel_line, perl = TRUE)
+    # 原文：.*（(D[0-9]{5})）.*
+    sub(".*\uff08(D[0-9]{5})\uff09.*", "\\1", rel_line, perl = TRUE)
   doi_line <- first("https://doi\\.org/")
   doi <- if (is.na(doi_line)) NA_character_ else
     sub(".*(https://doi\\.org/\\S+).*", "\\1", doi_line, perl = TRUE)
   # 原文：張鑑如（
-  cit_zh <- trimws(first("^\\s*張鑑如（"))
+  cit_zh <- trimws(first("^\\s*\u5f35\u9451\u5982\uff08"))
   cit_en <- trimws(first("^\\s*Chien-Ju Chang\\."))
 
   # 原文：特殊編碼 ……7777（拒答）、8888（不知道）……
-  mc <- first("特殊編碼")
+  mc <- first("\u7279\u6b8a\u7de8\u78bc")
   codes <- data.frame(code = character(0), label = character(0), stringsAsFactors = FALSE)
   if (!is.na(mc)) {
     # 只看「請注意」之前的部分，免得把說明裡的舊代碼也抓進來
     # 原文：請注意
-    mc <- sub("請注意.*$", "", mc)
-    hit <- regmatches(mc, gregexpr("([0-9]{4})（([^）]+)）", mc, perl = TRUE))[[1]]
+    mc <- sub("\u8acb\u6ce8\u610f.*$", "", mc)
+    # 原文：([0-9]{4})（([^）]+)）
+    hit <- regmatches(mc, gregexpr("([0-9]{4})\uff08([^\uff09]+)\uff09", mc, perl = TRUE))[[1]]
     codes <- data.frame(code = substr(hit, 1L, 4L),
-                        label = sub("^[0-9]{4}（(.*)）$", "\\1", hit, perl = TRUE),
+                        # 原文：^[0-9]{4}（(.*)）$
+                        label = sub("^[0-9]{4}\uff08(.*)\uff09$", "\\1", hit, perl = TRUE),
                         stringsAsFactors = FALSE)
   }
 
@@ -142,12 +147,13 @@ form_for <- function(instrument, age, grade) {
 #' @noRd
 parse_v02_wave <- function(col) {
   # 原文：^M([0-9]{3})(大|小)?(保母|機構)?(b)?$
-  re_m <- "^M([0-9]{3})(大|小)?(保母|機構)?(b)?$"
+  re_m <- "^M([0-9]{3})(\u5927|\u5c0f)?(\u4fdd\u6bcd|\u6a5f\u69cb)?(b)?$"
   # 原文：^(小|國)([1-9])_(大|小)月齡$
-  re_g <- "^(小|國)([1-9])_(大|小)月齡$"
+  re_g <- "^(\u5c0f|\u570b)([1-9])_(\u5927|\u5c0f)\u6708\u9f61$"
   out <- data.frame(wave_col = col, cohort = NA_character_, ageMonth = NA_integer_,
                     grade = NA_integer_, setting = "", stringsAsFactors = FALSE)
-  coh <- function(s) ifelse(s == "大", "M36", ifelse(s == "小", "M03", NA_character_))
+  # 原文：大 | 小
+  coh <- function(s) ifelse(s == "\u5927", "M36", ifelse(s == "\u5c0f", "M03", NA_character_))
   for (i in seq_along(col)) {
     m <- regmatches(col[i], regexec(re_m, col[i], perl = TRUE))[[1]]
     if (length(m)) {
@@ -161,7 +167,7 @@ parse_v02_wave <- function(col) {
     g <- regmatches(col[i], regexec(re_g, col[i], perl = TRUE))[[1]]
     if (length(g)) {
       # 原文：國
-      grade <- as.integer(g[3]) + if (g[2] == "國") 6L else 0L
+      grade <- as.integer(g[3]) + if (g[2] == "\u570b") 6L else 0L
       out$grade[i] <- grade
       out$ageMonth[i] <- 84L + 12L * (grade - 1L)
       out$cohort[i] <- coh(g[4])
@@ -257,7 +263,7 @@ import_design <- function(manual_dir, bank = bank_dir()) {
       if (any(rel)) stop("released dataset(s) missing from datasets.csv: ",
                          paste(new_ds$datasetID[rel], collapse = ", "))
       # 原文：家長 | 教師 | 兒童
-      resp <- c(P = "家長", T = "教師", C = "兒童")
+      resp <- c(P = "\u5bb6\u9577", T = "\u6559\u5e2b", C = "\u5152\u7ae5")
       cols <- tapply(wm$wave_col, wm$datasetID, paste, collapse = ", ")
       adm <- out$admins[match(new_ds$adminID, out$admins$adminID), ]
       out$datasets <- rbind(out$datasets, conform_kit_table(data.frame(

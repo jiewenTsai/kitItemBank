@@ -4,10 +4,13 @@
 
 # 每張表裡給人填的欄（第一個是下拉選單）
 # 原文：判斷 | 決定 | 處理 | 意見 | 系統用 | 編號
-REVIEW_INPUT_COLS <- c("判斷", "決定", "處理")
-REVIEW_COMMENT_COL <- "意見"
-REVIEW_KEY_COL <- "系統用"
-REVIEW_ID_COL <- "編號"
+REVIEW_INPUT_COLS <- c("\u5224\u65b7", "\u6c7a\u5b9a", "\u8655\u7406")
+# 原文：意見
+REVIEW_COMMENT_COL <- "\u610f\u898b"
+# 原文：系統用
+REVIEW_KEY_COL <- "\u7cfb\u7d71\u7528"
+# 原文：編號
+REVIEW_ID_COL <- "\u7de8\u865f"
 
 #' Read back a filled-in candidate review workbook
 #'

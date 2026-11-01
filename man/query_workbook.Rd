@@ -9,7 +9,7 @@ query_workbook(
   items,
   args = NULL,
   domain = NULL,
-  version = bank_version()
+  version = kit_version()
 )
 }
 \arguments{

@@ -52,7 +52,7 @@ kit_patch <- function(kit, old, new, domain = "parent") {
   add <- function(x) out[[length(out) + 1L]] <<- x
   diff <- bank_diff(old, new)
   # 原文：表 | 欄
-  tb_col <- "表"
+  tb_col <- "\u8868"
   supported <- rep(FALSE, nrow(diff))
 
   # 題組名冊 ----
@@ -105,13 +105,17 @@ kit_patch <- function(kit, old, new, domain = "parent") {
               itemType = "item_versions.itemType", note = "item_versions.note",
               block = "items.block", deprecated = "items.deprecated")
   # 原文：題號或構面 | 版本 | 欄 | 原本 | 改成
-  is_ib <- diff[[tb_col]] == "itemBank" & diff[["欄"]] %in% names(ib_map)
+  is_ib <- diff[[tb_col]] == "itemBank" & diff[["\u6b04"]] %in% names(ib_map)
   for (i in which(is_ib)) {
-    id <- diff[["題號或構面"]][i]
-    target <- strsplit(ib_map[[diff[["欄"]][i]]], ".", fixed = TRUE)[[1L]]
-    key <- if (target[1L] == "items") uid(id) else paste(uid(id), diff[["版本"]][i], sep = "|")
+    # 原文：題號或構面
+    id <- diff[["\u984c\u865f\u6216\u69cb\u9762"]][i]
+    # 原文：欄
+    target <- strsplit(ib_map[[diff[["\u6b04"]][i]]], ".", fixed = TRUE)[[1L]]
+    # 原文：版本
+    key <- if (target[1L] == "items") uid(id) else paste(uid(id), diff[["\u7248\u672c"]][i], sep = "|")
     add(patch_rows("set", target[1L], key, target[2L],
-                   diff[["原本"]][i], diff[["改成"]][i]))
+                   # 原文：原本 | 改成
+                   diff[["\u539f\u672c"]][i], diff[["\u6539\u6210"]][i]))
   }
   supported <- supported | is_ib
 
@@ -170,15 +174,18 @@ apply_patch <- function(kit, patch) {
 patch_workbook <- function(res, changes, domain, base_version = kit_version()) {
   info <- data.frame(
     # 原文：項目 | 內容
-    "項目" = c("kitItemBank", "domain", "base_version", "date", "n_patch", "n_unsupported"),
-    "內容" = c("0.3 修改包", domain, base_version %||% "", format(Sys.Date()),
+    "\u9805\u76ee" = c("kitItemBank", "domain", "base_version", "date", "n_patch", "n_unsupported"),
+    # 原文：內容 | 0.3 修改包
+    "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305", domain, base_version %||% "", format(Sys.Date()),
                        nrow(res$patch), nrow(res$unsupported)),
     check.names = FALSE, stringsAsFactors = FALSE)
   sheets <- list(info, res$patch)
   # 原文：說明 | 改動 | 不能轉的改動 | 原始改動
-  names(sheets) <- c("說明", "改動")
-  if (nrow(res$unsupported)) sheets[["不能轉的改動"]] <- res$unsupported
-  if (nrow(changes)) sheets[["原始改動"]] <- changes
+  names(sheets) <- c("\u8aaa\u660e", "\u6539\u52d5")
+  # 原文：不能轉的改動
+  if (nrow(res$unsupported)) sheets[["\u4e0d\u80fd\u8f49\u7684\u6539\u52d5"]] <- res$unsupported
+  # 原文：原始改動
+  if (nrow(changes)) sheets[["\u539f\u59cb\u6539\u52d5"]] <- changes
   sheets
 }
 
@@ -189,8 +196,9 @@ patch_workbook <- function(res, changes, domain, base_version = kit_version()) {
 #' @export
 read_patch_xlsx <- function(path) {
   # 原文：說明 | 改動
-  info <- readxl::read_excel(path, sheet = "說明", col_types = "text")
-  patch <- as.data.frame(readxl::read_excel(path, sheet = "改動", col_types = "text"))
+  info <- readxl::read_excel(path, sheet = "\u8aaa\u660e", col_types = "text")
+  # 原文：改動
+  patch <- as.data.frame(readxl::read_excel(path, sheet = "\u6539\u52d5", col_types = "text"))
   patch[] <- lapply(patch, function(v) { v[is.na(v)] <- ""; v })
   list(patch = patch[PATCH_COLS], base_version = info[[2]][info[[1]] == "base_version"])
 }

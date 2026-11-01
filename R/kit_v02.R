@@ -157,7 +157,8 @@ admin_alias_text <- function(ids) {
   if (is.null(a) || !nrow(a)) return(out)
   a <- a[a$target_type == "admin" &
            a$kind %in% c("v02_wave", "release_package", "release_id", "spoken"), , drop = FALSE]
-  txt <- tapply(a$alias, a$target_id, function(x) paste(unique(x), collapse = "、"))
+  # 原文：、
+  txt <- tapply(a$alias, a$target_id, function(x) paste(unique(x), collapse = "\u3001"))
   hit <- ids %in% names(txt)
   out[hit] <- unname(txt[ids[hit]])
   out
