@@ -3184,7 +3184,7 @@
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "5d3d8476e5f4800d2d43a83a1ba2914c"
+      "checksum": "167180cceca1fd36888cbdf34a8e6a46"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3460,7 +3460,7 @@
       "checksum": "4f772aa358e43becd2bb9e3f95d3d9dc"
     },
     "NEWS.md": {
-      "checksum": "7605a09fc7ec265a115569d0b7dfeedc"
+      "checksum": "107e38da5244e9cca88bec4efb7daa11"
     },
     "R/app.R": {
       "checksum": "234d55b3d3edf853a579f0cf6c847d9e"
@@ -3502,7 +3502,7 @@
       "checksum": "4dcd0633fee0b5096cce9af6102f8111"
     },
     "R/kit_v02.R": {
-      "checksum": "6e3a43ef9256dad94993ae6c14c38a91"
+      "checksum": "86d648d304b79caa68aeb56c12b5847a"
     },
     "R/kitItemBank-package.R": {
       "checksum": "b4fe12876c37f8a22cde06e9701eecf0"

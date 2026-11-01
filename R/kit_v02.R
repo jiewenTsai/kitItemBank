@@ -117,8 +117,9 @@ bank_to_v02 <- function(kit, domain = "parent") {
   dim_meta <- data.frame(dimID = dims, dimName = grp$label, alias = grp$alias,
                          reliability = "", note = grp$scoring_note, stringsAsFactors = FALSE)
 
-  list(itemBank = item_bank, itemDim = item_dim, itemWave = item_wave, dimMeta = dim_meta,
-       dimReliability = empty_dim_reliability())
+  # 型別和 load_bank() 一樣（itemVer、deprecated 是整數），查詢頁的排序才不會出錯
+  normalize_bank(list(itemBank = item_bank, itemDim = item_dim, itemWave = item_wave,
+                      dimMeta = dim_meta, dimReliability = empty_dim_reliability()))
 }
 
 # 同一個 R 程序只讀一次 kit、每個題庫只轉一次

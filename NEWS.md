@@ -1,3 +1,8 @@
+# kitItemBank 0.3.1 (2026-11-02)
+
+* 修正：題項查詢點有同題幹題目的題（例如 `area1_1`）會斷線（Disconnected from the server）。
+  `bank_to_v02()` 轉出的 `itemVer`、`deprecated` 是字串；現在和 `load_bank()` 一樣整理成整數。
+
 # kitItemBank 0.3.0 (2026-11-02)
 
 改版：題庫換成長格式（kit），以「資料檔」為單位記錄每次施測問了哪些題。內建題庫版本 2026.1。
