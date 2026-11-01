@@ -394,7 +394,20 @@ page_search_server <- function(id, store, goto, request) {
       it <- d$item
       notes <- a$message[a$itemID %in% it$itemID &
                            (is.na(a$itemVer) | a$itemVer == as.integer(it$itemVer))]
-      item_detail_ui(d, ns, notes)
+      uid <- paste0(KIT_DOMAIN_INSTRUMENT[[store$domain()]], ".", it$itemID)
+      kit <- kit_builtin()
+      history <- if (uid %in% kit$items$item_uid) {
+        shiny::div(
+          class = "kit-buttons",
+          kitDesign::kit_download_button(
+            # 原文：下載沿革單（Word） | 沿革單_
+            session, "dl_history", "\u4e0b\u8f09\u6cbf\u9769\u55ae\uff08Word\uff09",
+            filename = paste0("\u6cbf\u9769\u55ae_", it$itemID, ".docx"),
+            content = function(file) item_history_docx(item_history(kit, uid), file)
+          )
+        )
+      }
+      shiny::tagList(item_detail_ui(d, ns, notes), history)
     })
 
     # ---- 細節列 ---------------------------------------------------------------

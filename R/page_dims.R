@@ -133,6 +133,17 @@ page_dims_server <- function(id, store, goto, request) {
           class = "kit-buttons",
           # 原文：回到構面清單
           kitDesign::kit_button(ns("back"), "\u56de\u5230\u69cb\u9762\u6e05\u55ae"),
+          # 原文：下載各波次題目表（Excel） | 題組各波次題目_
+          kitDesign::kit_download_button(
+            session, "dl_dim_xlsx", "\u4e0b\u8f09\u5404\u6ce2\u6b21\u984c\u76ee\u8868\uff08Excel\uff09",
+            filename = paste0("\u984c\u7d44\u5404\u6ce2\u6b21\u984c\u76ee_",
+                              gsub("[\\/:*?\"<>|[:space:]]+", "_", dims_label(bank(), d)), ".xlsx"),
+            content = function(file) {
+              b <- shiny::isolate(bank())
+              writexl::write_xlsx(dim_items_workbook(b, d, store$domain()), file)
+            },
+            class = kitDesign::kit_btn_class("secondary")
+          ),
           # 原文：改這個構面 →
           shiny::actionLink(ns("edit_dim"), "\u6539\u9019\u500b\u69cb\u9762 \u2192")
         ),

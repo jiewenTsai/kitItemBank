@@ -166,6 +166,27 @@ dim_items <- function(bank, dim_id) {
   out
 }
 
+#' 題組各波次題目表的 Excel 工作表：說明＋題目 × 波次（✓）
+#' @noRd
+dim_items_workbook <- function(bank, dim_id, domain = NULL) {
+  items <- dim_items(bank, dim_id)
+  waves <- intersect(get_wave_cols(bank$itemWave), names(items))
+  names(items)[match(waves, names(items))] <- col_display_labels(waves, plain = TRUE)
+  info <- data.frame(
+    # 原文：項目 | 內容
+    "\u9805\u76ee" = c(
+      # 原文：題組 | 題庫 | 題庫版本 | 產生日期 | 說明
+      "\u984c\u7d44", "\u984c\u5eab", "\u984c\u5eab\u7248\u672c", "\u7522\u751f\u65e5\u671f", "\u8aaa\u660e"),
+    "\u5167\u5bb9" = c(
+      dims_label(bank, dim_id), bank_domain_label(domain) %||% "", kit_version() %||% "",
+      format(Sys.Date()),
+      # 原文：一列是一個題目版本；✓ 表示這個版本在那次施測有問。deprecated = 1 是已停用的舊版本。
+      "\u4e00\u5217\u662f\u4e00\u500b\u984c\u76ee\u7248\u672c\uff1b\u2713 \u8868\u793a\u9019\u500b\u7248\u672c\u5728\u90a3\u6b21\u65bd\u6e2c\u6709\u554f\u3002deprecated = 1 \u662f\u5df2\u505c\u7528\u7684\u820a\u7248\u672c\u3002"),
+    check.names = FALSE, stringsAsFactors = FALSE)
+  # 原文：說明 | 題目
+  stats::setNames(list(info, items), c("\u8aaa\u660e", "\u984c\u76ee"))
+}
+
 #' Other dimensions that share items with one dimension
 #'
 #' An item counts as shared when the same `itemID` (any version) is assigned
