@@ -151,13 +151,20 @@ kit_version <- function() {
 #' 施測代碼的舊名稱（0.2 波次欄、釋出包代碼、釋出編號），給選單搜尋用
 #'
 #' 回傳和 ids 一樣長的字串，例如 "M036小、M03W36、D00229"；不是施測代碼或讀不到 kit 時是 ""。
+#' grade = TRUE 改回傳年級別名，例如 "G01、M084G01、國小一年級"。
 #' @noRd
-admin_alias_text <- function(ids) {
+admin_alias_text <- function(ids, grade = FALSE) {
   a <- tryCatch(kit_builtin()$aliases, error = function(e) NULL)
   out <- rep("", length(ids))
   if (is.null(a) || !nrow(a)) return(out)
-  a <- a[a$target_type == "admin" &
-           a$kind %in% c("v02_wave", "release_package", "release_id", "spoken"), , drop = FALSE]
+  # grade = TRUE：只要年級別名（G01、國小一年級）；否則是舊名稱
+  keep <- if (grade) {
+    # 原文：^G[0-9]{2}$|年級$
+    a$kind == "spoken_multi" & grepl("^G[0-9]{2}$|\u5e74\u7d1a$", a$alias, perl = TRUE)
+  } else {
+    a$kind %in% c("v02_wave", "release_package", "release_id", "spoken")
+  }
+  a <- a[a$target_type == "admin" & keep, , drop = FALSE]
   # 原文：、
   txt <- tapply(a$alias, a$target_id, function(x) paste(unique(x), collapse = "\u3001"))
   hit <- ids %in% names(txt)

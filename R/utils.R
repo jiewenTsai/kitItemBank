@@ -94,6 +94,10 @@ make_col_choices <- function(col_names) {
   al <- admin_alias_text(col_names)
   # 原文：（舊稱 | ）
   lab[nzchar(al)] <- paste0(lab[nzchar(al)], "\uff08\u820a\u7a31 ", al[nzchar(al)], "\uff09")
+  # 年級別名：打 G01、國小一年級也找得到
+  gr <- admin_alias_text(col_names, grade = TRUE)
+  # 原文：・
+  lab[nzchar(gr)] <- paste0(lab[nzchar(gr)], " \u30fb ", gr[nzchar(gr)])
   stats::setNames(col_names, lab)
 }
 

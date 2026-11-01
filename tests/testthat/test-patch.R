@@ -2,7 +2,9 @@ test_that("edits on the 0.2 view become a kit patch that applies cleanly", {
   kit <- read_kit()
   old <- bank_to_v02(kit, "parent")
   new <- old
-  i <- which(new$itemDim$itemID == "caregiverf02n")
+  # 挑一題還不在這個題組的題目（候選套用後 caregiverf02n 已經在裡面）
+  id <- setdiff(new$itemDim$itemID, new$itemDim$itemID[new$itemDim[["女方"]] == 1L])[1]
+  i <- which(new$itemDim$itemID == id)
   new$itemDim[i, "女方"] <- 1L
   d <- new$dimMeta$dimID == "父親親職參與"
   new$dimMeta$dimName[d] <- "x"
@@ -14,7 +16,7 @@ test_that("edits on the 0.2 view become a kit patch that applies cleanly", {
   expect_equal(nrow(res$unsupported), 1L)  # itemWave 不從這裡改
   k2 <- apply_patch(kit, res$patch)
   expect_equal(nrow(check_kit(k2)), 0L)
-  expect_true(any(k2$group_members$item_uid == "P.caregiverf02n" &
+  expect_true(any(k2$group_members$item_uid == paste0("P.", id) &
                     k2$group_members$groupID == "P.女方"))
   expect_equal(k2$groups$label[k2$groups$groupID == "P.父親親職參與"], "x")
 

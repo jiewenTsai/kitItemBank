@@ -3184,7 +3184,7 @@
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "167180cceca1fd36888cbdf34a8e6a46"
+      "checksum": "8e3eff766e663cf6d71c41abaa3e8ca3"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3229,13 +3229,13 @@
       "checksum": "e1e5fbc859cea986da1bc0352bb8aa09"
     },
     "inst/extdata/kit/aliases.csv": {
-      "checksum": "53ceb2b16d8f472f572685998e77c646"
+      "checksum": "d3520122d93970c9538fa1c0c8393649"
     },
     "inst/extdata/kit/BANK_VERSION": {
-      "checksum": "25595040843842344bf039bce67c4aa1"
+      "checksum": "e8217404e3b0a244fb166f1d224de90f"
     },
     "inst/extdata/kit/block_status.csv": {
-      "checksum": "c444a01b66e4f44c8f2fcad9638d7ff4"
+      "checksum": "12edeb05c09909bb47ff0075fbe62a46"
     },
     "inst/extdata/kit/cohorts.csv": {
       "checksum": "bd2715a6a5a66eb48bd0692fae7f467a"
@@ -3253,16 +3253,16 @@
       "checksum": "d5ffc5f1327101951d29d74209c71cf4"
     },
     "inst/extdata/kit/group_members.csv": {
-      "checksum": "8bf79b5dc9271bb71869dfdbd044cca6"
+      "checksum": "48e67fa55726411d64e57570670995f5"
     },
     "inst/extdata/kit/group_tree.csv": {
-      "checksum": "e13060f1aec0b528fc69575aaa86a3c9"
+      "checksum": "ca4f2ce7f22567977a804c8e0acd12a4"
     },
     "inst/extdata/kit/groups.csv": {
-      "checksum": "8a71fd80c8e09f73e90012bf97b5ea60"
+      "checksum": "875ef3c682854092599272f0cc36bbb5"
     },
     "inst/extdata/kit/item_relations.csv": {
-      "checksum": "88909e2907c7f1936d49194d049c689e"
+      "checksum": "2eb2acb84c3034d3e09d000d7a145617"
     },
     "inst/extdata/kit/item_versions.csv": {
       "checksum": "44e7acf067d68bceecc5b075b757e118"
@@ -3303,8 +3303,14 @@
     "man/app_ui.Rd": {
       "checksum": "b1a6cd5b0ab2c8a37be297f840507ff1"
     },
+    "man/apply_group_candidates.Rd": {
+      "checksum": "3ebb1fdfcb0ef6ac19605e9e20b0150d"
+    },
     "man/apply_patch.Rd": {
       "checksum": "34dff5a148e34aa57ebe864c6030eaf3"
+    },
+    "man/apply_relation_hints.Rd": {
+      "checksum": "fec4ba64a681fe6b4102c16f4e8092bd"
     },
     "man/audit_kit_summary.Rd": {
       "checksum": "223e7bf39d2567b9cbefab273984fb22"
@@ -3391,7 +3397,7 @@
       "checksum": "5171a7e428dc906bd738638f8e325b28"
     },
     "man/kitItemBank-package.Rd": {
-      "checksum": "8d6156156183eb93e52651a7d56db9dc"
+      "checksum": "d7fd8482c6487e29d18de634d3314812"
     },
     "man/label_diff.Rd": {
       "checksum": "dc3fa0a020683c18665a8f75ea5d07cb"
@@ -3457,13 +3463,16 @@
       "checksum": "9e6bc94fc7052bdd4758c686701befdd"
     },
     "NAMESPACE": {
-      "checksum": "4f772aa358e43becd2bb9e3f95d3d9dc"
+      "checksum": "21b77a1194fba285201487c7fd97c8a0"
     },
     "NEWS.md": {
-      "checksum": "107e38da5244e9cca88bec4efb7daa11"
+      "checksum": "c3ecffd23e12f42ccc409c17f35790d0"
     },
     "R/app.R": {
       "checksum": "234d55b3d3edf853a579f0cf6c847d9e"
+    },
+    "R/apply_candidates.R": {
+      "checksum": "be73fa167536d57dcc2baaeb76f63cff"
     },
     "R/audit_kit.R": {
       "checksum": "3fbef8da215f1f1c4ca83923da697752"
@@ -3493,7 +3502,7 @@
       "checksum": "a79002e8ffb65e24c38daa4fda10735a"
     },
     "R/import_usage.R": {
-      "checksum": "bb24db357ff98f742e0cb9837a17f311"
+      "checksum": "043ca1c27b54705952da31ac0633854e"
     },
     "R/import_v02.R": {
       "checksum": "75eb065bcd8ad483280d8146dfa02c4e"
@@ -3502,7 +3511,7 @@
       "checksum": "4dcd0633fee0b5096cce9af6102f8111"
     },
     "R/kit_v02.R": {
-      "checksum": "86d648d304b79caa68aeb56c12b5847a"
+      "checksum": "ba7109f981295182e0e98ddb1ff2c0f0"
     },
     "R/kitItemBank-package.R": {
       "checksum": "b4fe12876c37f8a22cde06e9701eecf0"
@@ -3550,7 +3559,7 @@
       "checksum": "a32752255d6295ddbf06ce8bb628d79f"
     },
     "R/utils.R": {
-      "checksum": "be10342a9a123a152891fc5a5ed6fa3c"
+      "checksum": "b4c25ec76caa180f1c7e5bfa5ce5d270"
     },
     "R/zzz.R": {
       "checksum": "4df8907e971455fb79957f35e9dcb065"

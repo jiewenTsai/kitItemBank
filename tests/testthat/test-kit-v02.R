@@ -12,7 +12,8 @@ test_that("bank_to_v02 turns the built-in kit into valid 0.2 banks", {
   expect_equal(x$deprecated, c(1L, 1L, 0L, 0L))
   w <- b$itemWave[b$itemWave$itemID == "fatherinvo01n", ]
   expect_equal(w[["M36M084G01"]], 1L)
-  expect_true(nrow(query_items(b, keyword = "父親")) > 0L)
+  # 原文：父親
+  expect_true(nrow(query_items(b, keyword = "\u7236\u89aa")) > 0L)
 })
 
 test_that("bank_to_v02 gives the same column types as load_bank", {
@@ -32,4 +33,20 @@ test_that("admin codes sort by age and read in plain words", {
   expect_equal(sort_wave_cols(c("M36M084G01", "M36M036", "M03M036", "M03M003")),
                c("M03M003", "M03M036", "M36M036", "M36M084G01"))
   expect_match(wave_label("M36M084G01"), "84")
+})
+
+test_that("grade aliases find the grade's administrations", {
+  kit <- read_kit()
+  both <- c("M03M084G01", "M36M084G01")
+  # 原文：國小一年級 | 小一
+  for (x in c("G01", "M084G01", "\u570b\u5c0f\u4e00\u5e74\u7d1a", "\u5c0f\u4e00")) {
+    expect_setequal(resolve_admin(kit, x), both)
+  }
+  # 原文：國中一年級
+  expect_equal(resolve_admin(kit, "\u570b\u4e2d\u4e00\u5e74\u7d1a"), "M36M156G07")
+  ch <- make_col_choices(c("M36M084G01", "M36M036"))
+  expect_match(names(ch)[1], "G01")
+  # 原文：國小一年級
+  expect_match(names(ch)[1], "\u570b\u5c0f\u4e00\u5e74\u7d1a")
+  expect_false(grepl("G01", names(ch)[2]))
 })

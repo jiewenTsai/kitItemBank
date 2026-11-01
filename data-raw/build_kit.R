@@ -144,15 +144,26 @@ gt <- gt[!duplicated(kit_key_str(gt, KIT_SCHEMA$group_tree$key)), ]
 has_parent <- paste(gt$formID, gt$groupID)[nzchar(gt$parentID)]
 kit$group_tree <- gt[nzchar(gt$parentID) | !paste(gt$formID, gt$groupID) %in% has_parent, ]
 
-# 1.5–1.7：候選。只有 confidence = high 的進 kit；全部寫到 data-raw/candidates/ 給人確認 ----
+# 1.5–1.7：候選。D5（主持人 2026-11-02）：高、中、低信心全部放進 kit；
+# 已決定事項（D1 合併、D4 拿掉段落題組）優先。全部候選仍寫到 data-raw/candidates/ 留底 ----
+accept <- c("high", "medium", "low")
+accepted_by <- "PI"
+accepted_on <- "2026-11-02"
+auto_to_pi <- function(df) {
+  a <- df$decided_by %in% c("", "auto")
+  df$decided_by[a] <- accepted_by
+  if ("decided_on" %in% names(df)) df$decided_on[a] <- accepted_on
+  df
+}
 cand_dir <- "data-raw/candidates"
 dir.create(cand_dir, showWarnings = FALSE)
 all_dir <- file.path(sav_dir, "all")
 
 # 1.5 題目關係（含 .sav 有、題庫沒有的新題號）
 rel <- propose_relations(kit, v02, sav, meta_dir = sav_dir)
-kit <- apply_relations(kit, rel, levels = "high")
 readr::write_csv(rel$relations, file.path(cand_dir, "item_relations.csv"), na = "")
+rel$relations <- auto_to_pi(rel$relations)
+kit <- apply_relations(kit, rel, levels = accept)
 
 # 1.4 對照表：題目位置直接寫入；題組樹、成員、關係提示只出候選
 cw <- import_crosswalk(file.path(all_dir, c("cw_M03W48.xlsx", "cw_M36W84.xlsx")), kit,
@@ -161,6 +172,16 @@ k <- match(paste(kit$dataset_vars$datasetID, kit$dataset_vars$varname),
            paste(cw$positions$datasetID, cw$positions$varname))
 kit$dataset_vars$position[!is.na(k)] <- cw$positions$position[k[!is.na(k)]]
 write_crosswalk_candidates(cw, cand_dir)
+# 對照表的題組樹、成員、關係提示（D5）；D1 合併掉的題組改指向新題組，D4 拿掉的不加回來
+for (x in c("group_paths", "member_hints")) {
+  for (i in seq_len(nrow(mg))) {
+    for (cc in intersect(c("groupID", "parentID"), names(cw[[x]]))) {
+      cw[[x]][[cc]][cw[[x]][[cc]] %in% mg$from[i]] <- mg$to[i]
+    }
+  }
+}
+kit <- apply_group_candidates(kit, cw$group_paths, cw$member_hints, drop = drop)
+kit <- apply_relation_hints(kit, cw$relation_hints, accepted_by, accepted_on)
 
 # D2 對照表為準：調查有問、公開釋出檔沒有的變項也記下來，public = 0
 cl <- cw$cw_long[cw$cw_long$present == "O" & nzchar(cw$cw_long$datasetID), ]
@@ -186,8 +207,8 @@ print(cl[, c("datasetID", "varname")], row.names = FALSE)
 blocks <- propose_blocks(kit, usage_dir = all_dir, meta_dir = sav_dir,
                          crosswalk = utils::read.csv(file.path(sav_dir, "item_admin_from_crosswalk.csv"),
                                                      encoding = "UTF-8", stringsAsFactors = FALSE))
-kit$block_status <- conform_kit_table(blocks$block_status[blocks$block_status$confidence == "high", ],
-                                      "block_status")
+kit$block_status <- conform_kit_table(
+  auto_to_pi(blocks$block_status[blocks$block_status$confidence %in% accept, ]), "block_status")
 readr::write_csv(blocks$block_status, file.path(cand_dir, "block_status.csv"), na = "")
 
 res <- check_kit(kit)

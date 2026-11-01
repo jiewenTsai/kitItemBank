@@ -294,6 +294,26 @@ import_design <- function(manual_dir, bank = bank_dir()) {
   rel <- nzchar(adm$datasetRelease)
   gen$rel <- data.frame(alias = adm$datasetRelease[rel], target_type = "admin",
                         target_id = adm$adminID[rel], kind = "release_id")
+  # 年級（主持人 2026-11-02）：G01 = M084G01 = 國小一年級 = 小一；G07 = 國中一年級 = 國一。
+  # 兩個世代都有同一個年級，所以這些別名對到多個施測（spoken_multi）
+  g <- suppressWarnings(as.integer(adm$grade))
+  ok <- !is.na(g) & g >= 1L & g <= 9L
+  if (any(ok)) {
+    # 原文：一 | 二 | 三 | 四 | 五 | 六
+    num_zh <- c("\u4e00", "\u4e8c", "\u4e09", "\u56db", "\u4e94", "\u516d")
+    gi <- g[ok]
+    # 原文：國小 | 國中
+    sch <- ifelse(gi <= 6L, "\u570b\u5c0f", "\u570b\u4e2d")
+    n <- num_zh[ifelse(gi <= 6L, gi, gi - 6L)]
+    # 原文：小 | 國
+    short <- paste0(ifelse(gi <= 6L, "\u5c0f", "\u570b"), n)
+    ids <- adm$adminID[ok]
+    gcode <- sprintf("G%02d", gi)
+    gen$grade <- data.frame(
+      # 原文：年級
+      alias = c(gcode, paste0(substr(ids, 4L, 7L), gcode), paste0(sch, n, "\u5e74\u7d1a"), short),
+      target_type = "admin", target_id = rep(ids, 4L), kind = "spoken_multi")
+  }
   gen <- conform_kit_table(do.call(rbind, gen), "aliases")
   al <- rbind(out$aliases, gen)
   al <- al[!duplicated(kit_key_str(al, KIT_SCHEMA$aliases$key)), , drop = FALSE]

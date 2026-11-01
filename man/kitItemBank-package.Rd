@@ -6,7 +6,7 @@
 \alias{kitItemBank-package}
 \title{kitItemBank: KIT Item Bank Query and Maintenance Tool}
 \description{
-A 'shiny' app for the KIT item bank (Taiwan Early Childhood Development Survey Database): search items by keyword, wave and dimension, compare an item across waves and versions, browse dimensions with a network graph and dimension reports, and edit dimension and wave assignments. The app never writes files; edited item banks are downloaded as Excel files with a change log.
+A 'shiny' app for the KIT item bank (Taiwan Early Childhood Development Survey Database): search items by keyword, wave and dimension, compare an item across waves and versions, browse dimensions with a network graph and dimension reports, list what each administration asked (codebook and SPSS label syntax), and edit dimension assignments. The item bank is stored in long format (one CSV per table). The app never writes files; edits are downloaded as a change package that maintainers apply with apply_patch().
 }
 \seealso{
 Useful links:

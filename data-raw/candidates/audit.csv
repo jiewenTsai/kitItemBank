@@ -1,16 +1,53 @@
 level,check,table,key,detail
-note,form_year_diff,datasets,M03M003-P|M03M006-P,同為 P-00-24、家長|2016，沒有區塊狀態可以解釋：M03M003-P 多 61 題（健康問卷資料 61）；M03M006-P 多 16 題（健康問卷資料 16）
 note,form_year_diff,datasets,M03M012-PK|M03M018-PK,同為 P-00-24、親友|2017，沒有區塊狀態可以解釋：M03M012-PK 沒有多的題；M03M018-PK 多 5 題（受訪者資料 5）
-note,form_year_diff,datasets,M03M012-P|M03M018-P,同為 P-00-24、家長|2017，沒有區塊狀態可以解釋：M03M012-P 多 1 題（其他主要照顧者基本資料 1）；M03M018-P 多 58 題（健康問卷資料 53、受訪者資料 5）
+note,form_year_diff,datasets,M03M012-P|M03M018-P,同為 P-00-24、家長|2017，沒有區塊狀態可以解釋：M03M012-P 沒有多的題；M03M018-P 多 5 題（受訪者資料 5）
 note,form_year_diff,datasets,M03M012-T|M03M018-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 沒有多的題；M03M018-T 多 5 題（受訪者資料 5）
-note,form_year_diff,datasets,M03M012-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 多 25 題（教保人員基本資料 25）；M36M048-T 沒有多的題
-note,form_year_diff,datasets,M03M018-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M018-T 多 30 題（教保人員基本資料 25、受訪者資料 5）；M36M048-T 沒有多的題
-note,form_year_diff,datasets,M03M036-P|M36M072-P,同為 P-36-72、家長|2019，沒有區塊狀態可以解釋：M03M036-P 多 1 題（托育狀況調查問卷資料 1）；M36M072-P 沒有多的題
-note,renamed_no_group,item_relations,P.caregiverf02|2|P.caregiverf02n|1,舊題 P.caregiverf02 在題組 P.女方、P.親友親職參與；新題 P.caregiverf02n 沒有任何題組
-note,renamed_no_group,item_relations,P.caregiverf04|2|P.caregiverf04n|1,舊題 P.caregiverf04 在題組 P.女方、P.親友親職參與；新題 P.caregiverf04n 沒有任何題組
-note,renamed_no_group,item_relations,P.caregiverm02|2|P.caregiverm02n|1,舊題 P.caregiverm02 在題組 P.親友親職參與、P.男方；新題 P.caregiverm02n 沒有任何題組
-note,renamed_no_group,item_relations,P.caregiverm04|2|P.caregiverm04n|1,舊題 P.caregiverm04 在題組 P.親友親職參與、P.男方；新題 P.caregiverm04n 沒有任何題組
+note,form_year_diff,datasets,M03M018-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M018-T 多 5 題（受訪者資料 5）；M36M048-T 沒有多的題
+note,renamed_no_group,item_relations,P.fameviD1101|1|P.fameviD1101n|1,舊題 P.fameviD1101 在題組 P.3C產品環境；新題 P.fameviD1101n 沒有任何題組
+note,renamed_no_group,item_relations,P.fameviD1102|1|P.fameviD1102n|1,舊題 P.fameviD1102 在題組 P.3C產品環境；新題 P.fameviD1102n 沒有任何題組
+note,renamed_no_group,item_relations,P.fameviD1103|1|P.fameviD1103n|1,舊題 P.fameviD1103 在題組 P.3C產品環境；新題 P.fameviD1103n 沒有任何題組
+note,renamed_no_group,item_relations,P.fameviD1104|1|P.fameviD1104n|1,舊題 P.fameviD1104 在題組 P.3C產品環境；新題 P.fameviD1104n 沒有任何題組
+note,renamed_no_group,item_relations,P.health05|1|P.health05n|1,舊題 P.health05 在題組 P.孩子現在的健康狀況；新題 P.health05n 沒有任何題組
+note,renamed_no_group,item_relations,P.med0601|1|P.med0601n|1,舊題 P.med0601 在題組 P.孩子現在的健康狀況；新題 P.med0601n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0101|1|P.pfA0101n|1,舊題 P.pfA0101 在題組 P.父母出生年；新題 P.pfA0101n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0102|1|P.pfA0102n|1,舊題 P.pfA0102 在題組 P.父母出生年；新題 P.pfA0102n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0201|1|P.pfA0201n|1,舊題 P.pfA0201 在題組 P.父母教育程度；新題 P.pfA0201n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0202|1|P.pfA0202n|1,舊題 P.pfA0202 在題組 P.父母教育程度；新題 P.pfA0202n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0301|1|P.pfA0301n|1,舊題 P.pfA0301 在題組 P.父母原國籍；新題 P.pfA0301n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0302|1|P.pfA0302n|1,舊題 P.pfA0302 在題組 P.父母原國籍；新題 P.pfA0302n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA03|1|P.pfA03n|1,舊題 P.pfA03 在題組 P.父母原國籍；新題 P.pfA03n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0401|1|P.pfA0401n|1,舊題 P.pfA0401 在題組 P.父母原國籍；新題 P.pfA0401n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA0402|1|P.pfA0402n|1,舊題 P.pfA0402 在題組 P.父母原國籍；新題 P.pfA0402n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfA04|1|P.pfA04n|1,舊題 P.pfA04 在題組 P.父母原國籍；新題 P.pfA04n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfD02|2|P.pfD02n|1,舊題 P.pfD02 在題組 P.孩子就學的狀況；新題 P.pfD02n 沒有任何題組
+note,renamed_no_group,item_relations,P.pfD04|1|P.pfD04n|1,舊題 P.pfD04 在題組 P.孩子就學的狀況；新題 P.pfD04n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12001|1|T.T12001n|1,舊題 T.T12001 在題組 T.口語理解；新題 T.T12001n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12002|1|T.T12002n|1,舊題 T.T12002 在題組 T.口語表達；新題 T.T12002n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12004|1|T.T12004n|1,舊題 T.T12004 在題組 T.口語表達；新題 T.T12004n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12005|1|T.T12005n|1,舊題 T.T12005 在題組 T.識字；新題 T.T12005n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12007|1|T.T12007n|1,舊題 T.T12007 在題組 T.閱讀；新題 T.T12007n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12009|1|T.T12009n|1,舊題 T.T12009 在題組 T.閱讀；新題 T.T12009n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12010|1|T.T12010n|1,舊題 T.T12010 在題組 T.閱讀；新題 T.T12010n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12016|1|T.T12016n|1,舊題 T.T12016 在題組 T.書寫；新題 T.T12016n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12018|1|T.T12018n|1,舊題 T.T12018 在題組 T.書寫；新題 T.T12018n 沒有任何題組
+note,renamed_no_group,item_relations,T.T12019|1|T.T12019n|1,舊題 T.T12019 在題組 T.書寫；新題 T.T12019n 沒有任何題組
+note,renamed_no_group,item_relations,T.T13011|1|T.T13011n|1,舊題 T.T13011 在題組 T.利社會行為；新題 T.T13011n 沒有任何題組
+note,renamed_no_group,item_relations,T.T13013|1|T.T13013n|2,舊題 T.T13013 在題組 T.同理；新題 T.T13013n 沒有任何題組
 note,renamed_no_group,item_relations,T.T13020|1|T.T13020n|1,舊題 T.T13020 在題組 T.自我控制；新題 T.T13020n 沒有任何題組
+note,renamed_no_group,item_relations,T.T13032|1|T.T13032n|2,舊題 T.T13032 在題組 T.情緒調節；新題 T.T13032n 沒有任何題組
+note,renamed_no_group,item_relations,T.T13034|1|T.T13034n|1,舊題 T.T13034 在題組 T.情緒調節；新題 T.T13034n 沒有任何題組
+note,renamed_no_group,item_relations,T.T2024|1|T.T2024n|1,舊題 T.T2024 在題組 T.學習扶助；新題 T.T2024n 沒有任何題組
+note,renamed_no_group,item_relations,T.T32004|1|T.T32004n|1,舊題 T.T32004 在題組 T.衝突；新題 T.T32004n 沒有任何題組
+note,renamed_no_group,item_relations,T.T51002|1|T.T51002n|1,舊題 T.T51002 在題組 T.物理環境與資源；新題 T.T51002n 沒有任何題組
+note,renamed_no_group,item_relations,T.T51003|1|T.T51003n|1,舊題 T.T51003 在題組 T.物理環境與資源；新題 T.T51003n 沒有任何題組
+note,renamed_no_group,item_relations,T.T51010|1|T.T51010n|1,舊題 T.T51010 在題組 T.友善環境；新題 T.T51010n 沒有任何題組
+note,renamed_no_group,item_relations,T.T51011|1|T.T51011n|1,舊題 T.T51011 在題組 T.友善環境；新題 T.T51011n 沒有任何題組
+note,renamed_no_group,item_relations,T.T53006|1|T.T53006n|1,舊題 T.T53006 在題組 T.適性教學；新題 T.T53006n 沒有任何題組
+note,renamed_no_group,item_relations,T.T53009|1|T.T53009n|1,舊題 T.T53009 在題組 T.適性教學；新題 T.T53009n 沒有任何題組
+note,renamed_no_group,item_relations,T.T53012|1|T.T53012n|1,舊題 T.T53012 在題組 T.適性教學；新題 T.T53012n 沒有任何題組
+note,renamed_no_group,item_relations,T.T53014|1|T.T53014n|1,舊題 T.T53014 在題組 T.國語文教學策略；新題 T.T53014n 沒有任何題組
+note,renamed_no_group,item_relations,T.T53016|1|T.T53016n|1,舊題 T.T53016 在題組 T.國語文教學策略；新題 T.T53016n 沒有任何題組
+note,renamed_no_group,item_relations,T.T53017|1|T.T53017n|1,舊題 T.T53017 在題組 T.國語文教學策略；新題 T.T53017n 沒有任何題組
 note,missing_code_scheme,item_versions,C.Cgrow01|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
 note,missing_code_scheme,item_versions,C.Cgrow02|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
 note,missing_code_scheme,item_versions,C.Cgrow03|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
@@ -574,16 +611,23 @@ note,group_single_item,group_members,C-G7-G9|C.身體意象,只有 1 題：C.Che
 note,group_single_item,group_members,P-00-24|P.一般教養,只有 1 題：P.famedu12
 note,group_single_item,group_members,P-00-24|P.偏心,只有 1 題：P.fammar04
 note,group_single_item,group_members,P-00-24|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-00-24|P.其他主要照顧者保母專業課程,只有 1 題：P.pfC10
+note,group_single_item,group_members,P-00-24|P.其他主要照顧者出生年,只有 1 題：P.pfC01
+note,group_single_item,group_members,P-00-24|P.其他主要照顧者照顧幼兒時數,只有 1 題：P.pfC08
+note,group_single_item,group_members,P-00-24|P.其他主要照顧者非本國籍者在台居住時間,只有 1 題：P.pfC0303
 note,group_single_item,group_members,P-00-24|P.利社會行為,只有 1 題：P.socC21
 note,group_single_item,group_members,P-00-24|P.婚姻滿意,只有 1 題：P.fammar02
 note,group_single_item,group_members,P-00-24|P.婚姻滿意度,只有 1 題：P.fammar02
 note,group_single_item,group_members,P-00-24|P.害羞,只有 1 題：P.socC07
+note,group_single_item,group_members,P-00-24|P.家庭型態,只有 1 題：P.pfA14
 note,group_single_item,group_members,P-00-24|P.家庭支持人力,只有 1 題：P.fameviC14
-note,group_single_item,group_members,P-00-24|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-00-24|P.家庭收入,只有 1 題：P.pfB12
 note,group_single_item,group_members,P-00-24|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-00-24|P.父母婚姻狀況,只有 1 題：P.pfA05
 note,group_single_item,group_members,P-00-24|P.物理環境,只有 1 題：P.famC20
 note,group_single_item,group_members,P-00-24|P.經濟條件,只有 1 題：P.fammar01
 note,group_single_item,group_members,P-00-24|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-00-24|P.親職參與_身分跳題,只有 1 題：P.fammar07
 note,group_single_item,group_members,P-00-24|P.親職效能感,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-00-24|P.親職自我效能,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-00-24|P.讀,只有 1 題：P.lanC09
@@ -592,20 +636,28 @@ note,group_single_item,group_members,P-00-24|P.遵守規範,只有 1 題：P.soc
 note,group_single_item,group_members,P-36-72|P.一般教養,只有 1 題：P.famedu12
 note,group_single_item,group_members,P-36-72|P.偏心,只有 1 題：P.fammar04
 note,group_single_item,group_members,P-36-72|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-36-72|P.其他主要照顧者保母專業課程,只有 1 題：P.pfC10
+note,group_single_item,group_members,P-36-72|P.其他主要照顧者出生年,只有 1 題：P.pfC01
+note,group_single_item,group_members,P-36-72|P.其他主要照顧者照顧幼兒時數,只有 1 題：P.pfC08
+note,group_single_item,group_members,P-36-72|P.其他主要照顧者非本國籍者在台居住時間,只有 1 題：P.pfC0303
 note,group_single_item,group_members,P-36-72|P.利社會行為,只有 1 題：P.socC21
 note,group_single_item,group_members,P-36-72|P.婚姻滿意,只有 1 題：P.fammar02
 note,group_single_item,group_members,P-36-72|P.婚姻滿意度,只有 1 題：P.fammar02
 note,group_single_item,group_members,P-36-72|P.害羞,只有 1 題：P.socC07
+note,group_single_item,group_members,P-36-72|P.家庭型態,只有 1 題：P.pfA14
 note,group_single_item,group_members,P-36-72|P.家庭支持人力,只有 1 題：P.fameviC14
-note,group_single_item,group_members,P-36-72|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-36-72|P.家庭收入,只有 1 題：P.pfB12
 note,group_single_item,group_members,P-36-72|P.家長共親職,只有 1 題：P.fammar03
 note,group_single_item,group_members,P-36-72|P.寫,只有 1 題：P.lanB09
 note,group_single_item,group_members,P-36-72|P.手部操作,只有 1 題：P.bodyBf12
+note,group_single_item,group_members,P-36-72|P.是否跳答主要照顧者問卷,只有 1 題：P.pfB13
+note,group_single_item,group_members,P-36-72|P.父母婚姻狀況,只有 1 題：P.pfA05
 note,group_single_item,group_members,P-36-72|P.物理環境,只有 1 題：P.famC20
 note,group_single_item,group_members,P-36-72|P.穩定度和肌力,只有 1 題：P.bodyBg05
 note,group_single_item,group_members,P-36-72|P.經濟條件,只有 1 題：P.fammar01
 note,group_single_item,group_members,P-36-72|P.縱容,只有 1 題：P.famedu12
 note,group_single_item,group_members,P-36-72|P.聽,只有 1 題：P.lanB01
+note,group_single_item,group_members,P-36-72|P.親職參與_身分跳題,只有 1 題：P.fammar07
 note,group_single_item,group_members,P-36-72|P.親職效能感,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-36-72|P.親職自我效能,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-36-72|P.說,只有 1 題：P.lanB06
@@ -614,19 +666,26 @@ note,group_single_item,group_members,P-36-72|P.遵守規範,只有 1 題：P.soc
 note,group_single_item,group_members,P-G1-G3|P.一般教養,只有 1 題：P.famedu12
 note,group_single_item,group_members,P-G1-G3|P.偏心,只有 1 題：P.fammar04
 note,group_single_item,group_members,P-G1-G3|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G1-G3|P.其他主要照顧者出生年,只有 1 題：P.pfC01
+note,group_single_item,group_members,P-G1-G3|P.其他主要照顧者照顧幼兒時數,只有 1 題：P.pfC08
+note,group_single_item,group_members,P-G1-G3|P.其他主要照顧者非本國籍者在台居住時間,只有 1 題：P.pfC0303
 note,group_single_item,group_members,P-G1-G3|P.合群性,只有 1 題：P.socC21
 note,group_single_item,group_members,P-G1-G3|P.圖書與共讀,只有 1 題：P.fameviC08
 note,group_single_item,group_members,P-G1-G3|P.外化性問題行為,只有 1 題：P.socD42
 note,group_single_item,group_members,P-G1-G3|P.婚姻滿意,只有 1 題：P.fammar02
 note,group_single_item,group_members,P-G1-G3|P.婚姻滿意度,只有 1 題：P.fammar02
-note,group_single_item,group_members,P-G1-G3|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G1-G3|P.家庭型態,只有 1 題：P.pfA14
+note,group_single_item,group_members,P-G1-G3|P.家庭收入,只有 1 題：P.pfB12
 note,group_single_item,group_members,P-G1-G3|P.家長共親職,只有 1 題：P.fammar03
 note,group_single_item,group_members,P-G1-G3|P.抓握和手部操作,只有 1 題：P.bodyBf12
+note,group_single_item,group_members,P-G1-G3|P.是否跳答主要照顧者問卷,只有 1 題：P.pfB13
+note,group_single_item,group_members,P-G1-G3|P.父母婚姻狀況,只有 1 題：P.pfA05
 note,group_single_item,group_members,P-G1-G3|P.物理環境,只有 1 題：P.famC20
 note,group_single_item,group_members,P-G1-G3|P.生活常規,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-G1-G3|P.穩定度和移位,只有 1 題：P.bodyBg06
 note,group_single_item,group_members,P-G1-G3|P.經濟條件,只有 1 題：P.fammar01
 note,group_single_item,group_members,P-G1-G3|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G1-G3|P.親職參與_身分跳題,只有 1 題：P.fammar07
 note,group_single_item,group_members,P-G1-G3|P.親職效能感,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-G1-G3|P.親職自我效能,只有 1 題：P.famedu13
 note,group_single_item,group_members,P-G1-G3|P.語文環境與口語互動品質,只有 1 題：P.fameviC01
@@ -674,37 +733,54 @@ note,group_single_item,group_members,P-G7-G9|P.語文環境與口語互動品質
 note,group_single_item,group_members,P-G7-G9|P.調節力,只有 1 題：P.cogD02
 note,group_single_item,group_members,P-G7-G9|P.過度反應,只有 1 題：P.famedu12
 note,group_single_item,group_members,P-G7-G9|P.違規行為,只有 1 題：P.socD42
+note,group_single_item,group_members,T-G1-G3|T.任教學校地區,只有 1 題：T.T4012
+note,group_single_item,group_members,T-G1-G3|T.任教班級學生人數,只有 1 題：T.T4013
 note,group_single_item,group_members,T-G1-G3|T.口語理解,只有 1 題：T.T12001
+note,group_single_item,group_members,T-G1-G3|T.學校類型,只有 1 題：T.T4002
+note,group_single_item,group_members,T-G1-G3|T.學業成績總評,只有 1 題：T.T2035
+note,group_single_item,group_members,T-G1-G3|T.學習扶助,只有 1 題：T.T2024
+note,group_single_item,group_members,T-G1-G3|T.教學年資,只有 1 題：T.T4009
+note,group_single_item,group_members,T-G1-G3|T.教師出生年,只有 1 題：T.T4008
+note,group_single_item,group_members,T-G1-G3|T.教師性別,只有 1 題：T.T4007
+note,group_single_item,group_members,T-G1-G3|T.最高學歷,只有 1 題：T.T4010
+note,group_single_item,group_members,T-G1-G3|T.系統提供,只有 1 題：T.baby_id
 note,group_single_item,group_members,T-G1-G3|T.識字,只有 1 題：T.T12005
 note,group_single_item,group_members,T-G4-G6|T.違規行為,只有 1 題：T.T13051
 note,group_single_item,group_members,T-G7-G9|T.情緒調節,只有 1 題：T.T13035
 note,group_single_item,group_members,T-G7-G9|T.調節力,只有 1 題：T.T11002
 note,group_single_item,group_members,T-G7-G9|T.退縮,只有 1 題：T.T13041
 note,group_single_item,group_members,T-G7-G9|T.違規行為,只有 1 題：T.T13051
+note,group_single_item,group_members,T-presch|T.填答問卷教保人員類別,只有 1 題：T.tsorting
+note,group_single_item,group_members,T-presch|T.孩子抵達時間,只有 1 題：T.am
+note,group_single_item,group_members,T-presch|T.孩子是否好照顧或好教,只有 1 題：T.teach
+note,group_single_item,group_members,T-presch|T.孩子每天看電視時間長短,只有 1 題：T.tv
+note,group_single_item,group_members,T-presch|T.孩子離開時間,只有 1 題：T.pm
 note,group_empty,groups,P.HOME量表,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.不等機率加權值,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.事後分層法加權值,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.動作能力總分,沒有任何題目，也沒有下層題組
-note,group_empty,groups,P.家庭互動,沒有任何題目，也沒有下層題組
-note,group_empty,groups,P.情緒能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.多變項反覆加權值,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.捉握和手部操作,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.整體,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.理解,沒有任何題目，也沒有下層題組
-note,group_empty,groups,P.社會能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.社會情緒相關題目,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.粗大動作總分,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.精細動作總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.系統提供,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.聽+說,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.華人教養,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.表達,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.覺察,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.語言發展能力,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.調節,沒有任何題目，也沒有下層題組
-note,group_empty,groups,T.內化性行為問題,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.動作能力總分,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.口語理解+口語表達,沒有任何題目，也沒有下層題組
-note,group_empty,groups,T.外化性行為問題,沒有任何題目，也沒有下層題組
-note,group_empty,groups,T.情緒能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.工作上獲得的幫助,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.工作上與同事的理念一致,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.攻擊,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.教保-重視孩子的特質,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.整體,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.理解,沒有任何題目，也沒有下層題組
-note,group_empty,groups,T.社會能力,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.粗大_穩定度和肌力,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.粗大_身體協調,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.粗大動作總分,沒有任何題目，也沒有下層題組
@@ -720,6 +796,19 @@ note,group_nonleaf_member,group_members,C-G4-G6|C.學校環境,中間層題組�
 note,group_nonleaf_member,group_members,C-G4-G6|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
 note,group_nonleaf_member,group_members,C-G7-G9|C.學校環境,中間層題組直接掛了 34 題：C.Crelation01、C.Crelation02、C.Crelation03、C.Crelation04、C.Crelation05…（共 34）
 note,group_nonleaf_member,group_members,C-G7-G9|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
+note,group_nonleaf_member,group_members,P-00-24|P.Home,中間層題組直接掛了 20 題：P.famC01、P.famC02、P.famC03、P.famC04、P.famC05…（共 20）
+note,group_nonleaf_member,group_members,P-00-24|P.家庭生活狀況,中間層題組直接掛了 1 題：P.fammar01
+note,group_nonleaf_member,group_members,P-00-24|P.華人特質教養,中間層題組直接掛了 9 題：P.famedu01、P.famedu02、P.famedu03、P.famedu04、P.famedu05…（共 9）
+note,group_nonleaf_member,group_members,P-36-72|P.Home,中間層題組直接掛了 39 題：P.famC01、P.famC01n、P.famC02、P.famC02n、P.famC03…（共 39）
+note,group_nonleaf_member,group_members,P-36-72|P.家庭生活狀況,中間層題組直接掛了 1 題：P.fammar01
+note,group_nonleaf_member,group_members,P-36-72|P.華人特質教養,中間層題組直接掛了 9 題：P.famedu01、P.famedu02、P.famedu03、P.famedu04、P.famedu05…（共 9）
+note,group_nonleaf_member,group_members,P-G1-G3|P.Home,中間層題組直接掛了 7 題：P.famC02、P.famC14、P.famC17、P.famC18、P.famC19…（共 7）
+note,group_nonleaf_member,group_members,P-G1-G3|P.家庭生活狀況,中間層題組直接掛了 1 題：P.fammar01
+note,group_nonleaf_member,group_members,P-G1-G3|P.華人特質教養,中間層題組直接掛了 9 題：P.famedu01、P.famedu02、P.famedu03、P.famedu04、P.famedu05…（共 9）
+note,group_nonleaf_member,group_members,T-G1-G3|T.數學學習,中間層題組直接掛了 18 題：T.T2006、T.T2007、T.T2008、T.T2009、T.T2010…（共 18）
+note,group_nonleaf_member,group_members,T-presch|T.家園關係,中間層題組直接掛了 13 題：T.parents01、T.parents02、T.parents03、T.parents04、T.parents05…（共 13）
+note,group_nonleaf_member,group_members,T-presch|T.教養(華人特質教養),中間層題組直接掛了 6 題：T.faith01、T.faith02、T.faith03、T.faith04、T.faith05…（共 6）
+note,group_nonleaf_member,group_members,T-presch|T.活動、課程與教學,中間層題組直接掛了 25 題：T.act01、T.act02、T.act03、T.act04、T.act05…（共 25）
 note,text_simplified,item_versions,P.med0303|1,題目文字（label）有簡體字「髋」（應為「髖」）
 note,text_simplified,item_versions,T.T51010n|1,題目文字（label）有簡體字「内」（應為「內」）
 note,text_newline,item_versions,P.med0801|1,題目文字（label）裡有換行
