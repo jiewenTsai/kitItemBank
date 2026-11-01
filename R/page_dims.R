@@ -171,6 +171,7 @@ page_dims_server <- function(id, store, goto, request) {
         # 原文：也畫這些題目的其他構面
         shiny::checkboxInput(ns("other_dims"), "\u4e5f\u756b\u9019\u4e9b\u984c\u76ee\u7684\u5176\u4ed6\u69cb\u9762",
                              value = isTRUE(shiny::isolate(input$other_dims))),
+        dims_cohort_radio(ns("net_cohort"), bank(), shiny::isolate(input$net_cohort)),
         visNetwork::visNetworkOutput(ns("network"), height = "520px"),
         shiny::uiOutput(ns("network_hint"))
       )
@@ -279,13 +280,18 @@ page_dims_server <- function(id, store, goto, request) {
 
     net <- shiny::reactive({
       shiny::req(current_dim() %in% dims_cols(bank()))
-      dim_network(bank(), current_dim(), other_dims = isTRUE(input$other_dims))
+      dim_network(bank_cohort(bank(), input$net_cohort %||% ""), current_dim(),
+                  other_dims = isTRUE(input$other_dims))
     })
     output$network <- visNetwork::renderVisNetwork({
       dim_network_widget(net(), click_input = ns("net_click"))
     })
     output$network_hint <- shiny::renderUI({
-      shiny::p(class = "kit-hint", dim_network_hint(net()))
+      co <- input$net_cohort %||% ""
+      # 原文：題庫： | ；世代： | 全部 | 。
+      shiny::p(class = "kit-hint", paste0("\u984c\u5eab\uff1a", dims_domain_label(store$domain()),
+                                          "\uff1b\u4e16\u4ee3\uff1a", if (nzchar(co)) co else "\u5168\u90e8", "\u3002"),
+               dim_network_hint(net()))
     })
     shiny::observeEvent(input$net_click, {
       hit <- net_parse_id(input$net_click)
@@ -427,6 +433,16 @@ dims_children_line <- function(bank, kids, input_id) {
     # 原文：。下載的各波次題目表會放全部子題組的題目。
     "\u3002\u4e0b\u8f09\u7684\u5404\u6ce2\u6b21\u984c\u76ee\u8868\u6703\u653e\u5168\u90e8\u5b50\u984c\u7d44\u7684\u984c\u76ee\u3002"
   )
+}
+
+#' 世代切換（全部／M03／M36）：題庫只有一個世代時不放
+#' @noRd
+dims_cohort_radio <- function(id, bank, selected = NULL) {
+  co <- bank_cohorts(bank)
+  if (!length(co)) return(NULL)
+  # 原文：世代 | 全部
+  shiny::radioButtons(id, "\u4e16\u4ee3", c(stats::setNames("", "\u5168\u90e8"), stats::setNames(co, co)),
+                      selected = selected %||% "", inline = TRUE)
 }
 
 dims_domain_label <- function(domain) {

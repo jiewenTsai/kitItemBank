@@ -2,7 +2,7 @@
 #
 # 用法（在套件根目錄）：
 #   LC_ALL=en_US.UTF-8 Rscript --no-init-file data-raw/build_kit.R <sav_meta 資料夾>
-# sav_meta 資料夾放各次施測 .sav 的表頭（<wave>/<data1|data2|data3|IRT>_meta.csv），
+# sav_meta 資料夾放各次施測 .sav 的表頭（<wave>/<data1|data2|data3>_meta.csv；IRT 檔不讀），
 # 只有變項名稱和標籤，沒有個人資料；不進 repo。
 #
 # 步驟：1.1 import_v02() → 1.2 import_design() → 1.3 import_sav_dir() → 組合 → 檢查 → 寫檔

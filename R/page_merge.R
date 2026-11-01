@@ -22,7 +22,7 @@ AM_CONF_LABEL <- c(high = "\u9ad8", medium = "\u4e2d", low = "\u4f4e")
 #' 上傳的檔名 → 新施測的 datasetID
 #'
 #' 檔名（去掉副檔名和 _meta）是 "M03M060-P" 這種代號就用它的後綴；不然對同世代以前用過的
-#' 檔名（data1 → -P、data2 → -PK、data3 → -T、IRT → -S），取最近一次。
+#' 檔名（data1 → -P、data2 → -PK、data3 → -T），取最近一次。IRT 檔不讀。
 #' @return 與 stems 等長；對不到為 NA
 #' @noRd
 merge_guess_dataset_ids <- function(kit, admin_row, stems) {
@@ -34,7 +34,7 @@ merge_guess_dataset_ids <- function(kit, admin_row, stems) {
   ds$coh <- kit$admins$cohortID[match(ds$adminID, kit$admins$adminID)]
   ds <- ds[order(ds$coh != admin_row$cohortID, -ds$ord), , drop = FALSE]
   vapply(stems, function(s) {
-    if (grepl("-(P|PK|T|S|C)$", s)) return(paste0(admin_row$adminID, "-", am_suffix(s)))
+    if (grepl("-(P|PK|T|C)$", s)) return(paste0(admin_row$adminID, "-", am_suffix(s)))
     hit <- which(tolower(ds$file) == tolower(s))
     if (!length(hit)) return(NA_character_)
     paste0(admin_row$adminID, "-", am_suffix(ds$datasetID[hit[1]]))
@@ -70,6 +70,14 @@ merge_match_prev <- function(plan, names) {
     if (!length(k)) k <- which(tolower(p$prev_file) == tolower(s))
     if (length(k)) p$prev[k[1]] else NA_character_
   }, character(1), USE.NAMES = FALSE)
+}
+
+#' 上傳的檔是不是 IRT 檔（IRT.sav、IRT_meta.csv、M03M060-S）：只讀 data1、data2、data3
+#' @noRd
+merge_is_irt <- function(names) {
+  stem <- sub("_meta$", "", sub("\\.(sav|csv)$", "", basename(names), ignore.case = TRUE),
+              ignore.case = TRUE)
+  grepl("^irt$", stem, ignore.case = TRUE) | grepl("-S$", stem)
 }
 
 #' 讀一個上傳的檔的表頭，讀完就刪掉暫存檔
@@ -130,10 +138,10 @@ page_merge_ui <- function(id) {
       steps = c(
         # 原文：在左邊寫新施測的代號（例如 M03M060、M36M096G02）。
         "\u5728\u5de6\u908a\u5beb\u65b0\u65bd\u6e2c\u7684\u4ee3\u865f\uff08\u4f8b\u5982 M03M060\u3001M36M096G02\uff09\u3002",
-        # 原文：上傳這次施測的資料檔（.sav，或先存好的 _meta.csv）。檔名用 data1、data2、data3、IRT，或直接用 M03M060-P 這種代號。
-        if (local) "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08.sav\uff0c\u6216\u5148\u5b58\u597d\u7684 _meta.csv\uff09\u3002\u6a94\u540d\u7528 data1\u3001data2\u3001data3\u3001IRT\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002"
-        # 原文：上傳這次施測的 _meta.csv（雲端版不收 .sav，先在自己電腦用 kitItemBank::sav_header_meta() 轉好）。檔名用 data1_meta、data3_meta、IRT_meta，或直接用 M03M060-P 這種代號。
-        else "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684 _meta.csv\uff08\u96f2\u7aef\u7248\u4e0d\u6536 .sav\uff0c\u5148\u5728\u81ea\u5df1\u96fb\u8166\u7528 kitItemBank::sav_header_meta() \u8f49\u597d\uff09\u3002\u6a94\u540d\u7528 data1_meta\u3001data3_meta\u3001IRT_meta\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002",
+        # 原文：上傳這次施測的資料檔（.sav，或先存好的 _meta.csv）。檔名用 data1、data2、data3（IRT 檔不用），或直接用 M03M060-P 這種代號。
+        if (local) "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08.sav\uff0c\u6216\u5148\u5b58\u597d\u7684 _meta.csv\uff09\u3002\u6a94\u540d\u7528 data1\u3001data2\u3001data3\uff08IRT \u6a94\u4e0d\u7528\uff09\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002"
+        # 原文：上傳這次施測的 _meta.csv（雲端版不收 .sav，先在自己電腦用 kitItemBank::sav_header_meta() 轉好）。檔名用 data1_meta、data2_meta、data3_meta（IRT 檔不用），或直接用 M03M060-P 這種代號。
+        else "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684 _meta.csv\uff08\u96f2\u7aef\u7248\u4e0d\u6536 .sav\uff0c\u5148\u5728\u81ea\u5df1\u96fb\u8166\u7528 kitItemBank::sav_header_meta() \u8f49\u597d\uff09\u3002\u6a94\u540d\u7528 data1_meta\u3001data2_meta\u3001data3_meta\uff08IRT \u6a94\u4e0d\u7528\uff09\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002",
         # 原文：再上傳上一次施測的同一些資料檔（左邊會列出要哪幾個）：版本用 .sav 和 .sav 比才準。
         "\u518d\u4e0a\u50b3\u4e0a\u4e00\u6b21\u65bd\u6e2c\u7684\u540c\u4e00\u4e9b\u8cc7\u6599\u6a94\uff08\u5de6\u908a\u6703\u5217\u51fa\u8981\u54ea\u5e7e\u500b\uff09\uff1a\u7248\u672c\u7528 .sav \u548c .sav \u6bd4\u624d\u6e96\u3002",
         # 原文：按「產生提案」：右邊列出每個變項的提案、信心和理由。
@@ -206,6 +214,14 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
     prev_headers <- shiny::reactiveVal(list())
     read_all <- function(f) {
       out <- list()
+      irt <- merge_is_irt(f$name)
+      if (any(irt)) {
+        for (p in f$datapath[irt]) unlink(p)
+        # 原文：IRT 檔不用上傳，沒有讀、已經刪掉： | 、
+        kitDesign::kit_notify(paste0("IRT \u6a94\u4e0d\u7528\u4e0a\u50b3\uff0c\u6c92\u6709\u8b80\u3001\u5df2\u7d93\u522a\u6389\uff1a",
+                                     paste(f$name[irt], collapse = "\u3001")), session)
+        f <- f[!irt, , drop = FALSE]
+      }
       for (i in seq_len(nrow(f))) {
         m <- tryCatch(merge_read_upload(f$datapath[i], f$name[i]), error = function(e) e)
         if (inherits(m, "error")) {
@@ -299,8 +315,8 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
         if (anyNA(ids)) {
           # 原文：認不出這些檔是哪一個資料檔： | 、
           stop(paste0("\u8a8d\u4e0d\u51fa\u9019\u4e9b\u6a94\u662f\u54ea\u4e00\u500b\u8cc7\u6599\u6a94\uff1a", paste(names(h)[is.na(ids)], collapse = "\u3001"),
-                      # 原文：。請把檔名改成 data1、data2、data3、IRT，或  | -P 這種代號。
-                      "\u3002\u8acb\u628a\u6a94\u540d\u6539\u6210 data1\u3001data2\u3001data3\u3001IRT\uff0c\u6216 ", a, "-P \u9019\u7a2e\u4ee3\u865f\u3002"),
+                      # 原文：。請把檔名改成 data1、data2、data3，或  | -P 這種代號。
+                      "\u3002\u8acb\u628a\u6a94\u540d\u6539\u6210 data1\u3001data2\u3001data3\uff0c\u6216 ", a, "-P \u9019\u7a2e\u4ee3\u865f\u3002"),
                call. = FALSE)
         }
         # 原文：兩個檔對到同一個資料檔： | 、

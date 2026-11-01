@@ -94,7 +94,7 @@ test_that("zero results show why and what to try instead of an empty table", {
     expect_null(output$heat_ui)  # 「各波次題數」收著：不放 plotly 圖
     session$setInputs(heat_open = TRUE)
     expect_match(html_of(output$heat_ui), "沒有符合的題目")
-    expect_match(html_of(output$xw_note), "沒有符合的題目")
+    expect_match(html_of(output$xw_dl), "下載跨波次對照總表")
   })
 })
 
@@ -222,7 +222,8 @@ test_that("a jump from another tab keeps the old query and offers to go back", {
 
     # 這一題：版本 × 波次、差異、同題幹、改這一題
     d <- html_of(output$detail)
-    expect_match(d, "各版本出現的波次")
+    expect_match(html_of(output$timeline), "各版本出現的波次")
+    expect_match(d, "看其他版本")
     expect_match(d, "各版本差在哪")
     expect_match(d, "同一個題幹的其他題")
     expect_match(d, "改這一題")

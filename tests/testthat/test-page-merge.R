@@ -43,6 +43,21 @@ test_that("merge_guess_dataset_ids maps file names to dataset IDs", {
 
 mg_html <- function(x) if (is.list(x)) x$html else as.character(x)
 
+test_that("IRT files are skipped unread and deleted", {
+  expect_equal(merge_is_irt(c("IRT.sav", "irt_meta.csv", "M03M060-S.csv", "data1.sav", "M03M060-P.sav")),
+               c(TRUE, TRUE, TRUE, FALSE, FALSE))
+  dir <- withr::local_tempdir()
+  f1 <- mg_header_csv(dir, "u1.csv")
+  f2 <- mg_header_csv(dir, "u2.csv")
+  suppressWarnings(shiny::testServer(page_merge_server, args = list(kit = mg_kit(), goto = function(...) NULL), {
+    session$setInputs(files = data.frame(name = c("data1_meta.csv", "IRT_meta.csv"), size = 1,
+                                         type = "text/csv", datapath = c(f1, f2),
+                                         stringsAsFactors = FALSE))
+    expect_false(file.exists(f2))
+    expect_equal(names(headers()), "data1_meta.csv")
+  }))
+})
+
 test_that("upload a header, get proposals, download the Excel; the upload is deleted", {
   dir <- withr::local_tempdir()
   f <- mg_header_csv(dir, "upload1.csv")

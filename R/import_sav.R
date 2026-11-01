@@ -362,14 +362,14 @@ sav_map_known <- function() {
   # 原文：M036小、M036保母|M036機構、M084大
   w03p <- "M036\u5c0f"; w03t <- "M036\u4fdd\u6bcd|M036\u6a5f\u69cb"; w36p <- "M084\u5927"
   data.frame(
-    wave_dir = c(rep("m03w36", 4), rep("m36w84", 3)),
-    file = c("data1", "data2", "data3", "IRT", "data1", "data2", "IRT"),
-    adminID = c(rep("M03M036", 4), rep("M36M084G01", 3)),
-    datasetID = c("M03M036-P", "M03M036-P2", "M03M036-T", "M03M036-S",
-                  "M36M084G01-P", "M36M084G01-T", "M36M084G01-S"),
-    instrument = c("P", "P", "T", "S", "P", "T", "S"),
-    respondent = c(par, rel, ece, "", par, tea, ""),
-    wave_col = c(w03p, "", w03t, "", w36p, "M084", ""),
+    wave_dir = c(rep("m03w36", 3), rep("m36w84", 2)),
+    file = c("data1", "data2", "data3", "data1", "data2"),
+    adminID = c(rep("M03M036", 3), rep("M36M084G01", 2)),
+    datasetID = c("M03M036-P", "M03M036-P2", "M03M036-T",
+                  "M36M084G01-P", "M36M084G01-T"),
+    instrument = c("P", "P", "T", "P", "T"),
+    respondent = c(par, rel, ece, par, tea),
+    wave_col = c(w03p, "", w03t, w36p, "M084"),
     stringsAsFactors = FALSE)
 }
 

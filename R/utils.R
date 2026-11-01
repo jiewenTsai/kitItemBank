@@ -286,3 +286,36 @@ get_dim_reliability <- function(dim_id, wave, dim_meta, dim_rel = NULL) {
   }
   NA_real_
 }
+
+#' 波次欄的世代代碼：M03M036 → "M03"；認不得（例如 0.2 的 M036大）是 ""
+#' @noRd
+wave_cohort <- function(cols) {
+  ifelse(grepl("^M[0-9]{2}M[0-9]{3}", cols), substr(cols, 1L, 3L), "")
+}
+
+#' 題庫裡有哪些世代（照字母排）；只有一個或認不得時回傳 character(0)
+#' @noRd
+bank_cohorts <- function(bank) {
+  co <- sort(unique(wave_cohort(get_wave_cols(bank$itemWave))))
+  co <- co[nzchar(co)]
+  if (length(co) < 2L) character(0) else co
+}
+
+#' 只留一個世代：波次欄只留那個世代的，題目只留在那個世代問過的
+#'
+#' cohort 是 "" 或 NULL 時原樣回傳。itemBank、itemDim、itemWave 一起篩，
+#' 所以後面的查詢、熱圖、網路圖照用。
+#' @noRd
+bank_cohort <- function(bank, cohort = NULL) {
+  if (is.null(cohort) || !nzchar(cohort)) return(bank)
+  iw <- bank$itemWave
+  wc <- get_wave_cols(iw)
+  keep_cols <- wc[wave_cohort(wc) == cohort]
+  if (!length(keep_cols)) return(bank)
+  asked <- rowSums(as.matrix(iw[keep_cols]) == 1L) > 0L
+  key <- item_key(iw$itemID, iw$itemVer)[asked]
+  bank$itemWave <- iw[asked, c(setdiff(names(iw), wc), keep_cols), drop = FALSE]
+  bank$itemBank <- bank$itemBank[item_key(bank$itemBank$itemID, bank$itemBank$itemVer) %in% key, , drop = FALSE]
+  bank$itemDim <- bank$itemDim[item_key(bank$itemDim$itemID, bank$itemDim$itemVer) %in% key, , drop = FALSE]
+  bank
+}

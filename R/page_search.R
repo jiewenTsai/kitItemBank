@@ -92,13 +92,11 @@ page_search_ui <- function(id) {
         shiny::uiOutput(ns("detail"))
       )
     ),
+    # 這一題的「各版本出現的波次」：整頁寬，M03、M36 分開
+    shiny::uiOutput(ns("timeline")),
+    # 跨波次對照總表：全部題目 × 全部波次，只給下載
+    shiny::uiOutput(ns("xw_dl")),
     kitDesign::kit_details_row(
-      kitDesign::kit_detail(
-        # 原文：跨波次對照表
-        "\u8de8\u6ce2\u6b21\u5c0d\u7167\u8868",
-        shiny::uiOutput(ns("xw_note")),
-        kitDesign::kit_table_scroll(DT::DTOutput(ns("xw")))
-      ),
       # 打開、收起時告訴伺服器（heat_open）：plotly 圖只在打開時放進頁面，見 output$heat_ui
       htmltools::tagAppendAttributes(
         kitDesign::kit_detail(
@@ -108,6 +106,9 @@ page_search_ui <- function(id) {
           shiny::radioButtons(ns("heat_by"), "\u6bcf\u4e00\u5217\u662f",
                               # 原文：區塊 | 構面
                               c("\u5340\u584a" = "block", "\u69cb\u9762" = "dim"), inline = TRUE),
+          # 原文：世代 | 全部
+          shiny::radioButtons(ns("heat_cohort"), "\u4e16\u4ee3", c("\u5168\u90e8" = "", M03 = "M03", M36 = "M36"),
+                              inline = TRUE),
           shiny::uiOutput(ns("heat_ui")),
           shiny::uiOutput(ns("heat_note"))
         ),
@@ -415,28 +416,39 @@ page_search_server <- function(id, store, goto, request) {
     # ---- 細節列 ---------------------------------------------------------------
     # 原文：沒有符合的題目，先放寬左邊的條件。
     no_items <- "\u6c92\u6709\u7b26\u5408\u7684\u984c\u76ee\uff0c\u5148\u653e\u5bec\u5de6\u908a\u7684\u689d\u4ef6\u3002"
-    output$xw_note <- shiny::renderUI({
-      r <- results()
-      if (nrow(r) == 0L) return(shiny::p(class = "kit-hint", no_items))
-      shiny::p(class = "kit-hint",
-               # 原文：共  |  題 × 
-               paste0("\u5171 ", kitDesign::kit_num(nrow(r)), " \u984c \u00d7 ",
-                      length(get_wave_cols(bank()$itemWave)),
-                      # 原文： 個波次；✓ 表示這一題在這個波次有問。下載的 Excel 裡也有這張表。
-                      " \u500b\u6ce2\u6b21\uff1b\u2713 \u8868\u793a\u9019\u4e00\u984c\u5728\u9019\u500b\u6ce2\u6b21\u6709\u554f\u3002\u4e0b\u8f09\u7684 Excel \u88e1\u4e5f\u6709\u9019\u5f35\u8868\u3002"))
+    output$timeline <- shiny::renderUI({
+      d <- detail()
+      shiny::req(d)
+      timeline_full_ui(d)
     })
-    output$xw <- DT::renderDT({
-      r <- results()
-      shiny::req(nrow(r) > 0L)
-      xw <- crosswalk(bank(), r)
-      xw$label <- collapse_newlines(xw$label)
-      names(xw) <- col_display_labels(names(xw))
-      kitDesign::kit_dt(xw, page_length = 25L, wrap_cols = "label",
-                        min_widths = c(label = "20rem"))
+    output$xw_dl <- shiny::renderUI({
+      shiny::div(
+        class = "kit-buttons",
+        kitDesign::kit_download_button(
+          # 原文：下載跨波次對照總表（CSV） | 跨波次對照總表_
+          session, "dl_xw", "\u4e0b\u8f09\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868\uff08CSV\uff09",
+          filename = paste0("\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868_", store$domain(), "_", format(Sys.Date(), "%Y%m%d"), ".csv"),
+          content = function(file) {
+            b <- bank()
+            xw <- crosswalk(b, b$itemBank[c("itemID", "itemVer")])
+            xw$label <- collapse_newlines(xw$label)
+            readr::write_excel_csv(xw, file, na = "")
+          },
+          class = kitDesign::kit_btn_class("secondary")
+        ),
+        # 原文：全部題目（含已停用）× 全部波次；✓ 表示那一波次有問。用 Excel 打開。
+        shiny::span(class = "kit-hint", "\u5168\u90e8\u984c\u76ee\uff08\u542b\u5df2\u505c\u7528\uff09\u00d7 \u5168\u90e8\u6ce2\u6b21\uff1b\u2713 \u8868\u793a\u90a3\u4e00\u6ce2\u6b21\u6709\u554f\u3002\u7528 Excel \u6253\u958b\u3002")
+      )
     })
 
     heat_by <- shiny::reactive(if (identical(input$heat_by, "dim")) "dim" else "block")
-    counts <- shiny::reactive(wave_counts(bank(), results(), by = heat_by()))
+    heat_cohort <- shiny::reactive(input$heat_cohort %||% "")
+    counts <- shiny::reactive({
+      b <- bank_cohort(bank(), heat_cohort())
+      r <- results()
+      r <- r[item_key(r$itemID, r$itemVer) %in% item_key(b$itemBank$itemID, b$itemBank$itemVer), , drop = FALSE]
+      wave_counts(b, r, by = heat_by())
+    })
     # plotly 圖只在「各波次題數」打開時才放進頁面。在收起來（或整個分頁藏起來）的
     # <details> 裡畫 plotly 會量到 0 寬、在瀏覽器丟出 "Something went wrong with axis
     # scaling"；Shiny 一批更新裡有一個輸出出錯，後面的輸出（結果的一句話、表、這一題）
@@ -455,7 +467,10 @@ page_search_server <- function(id, store, goto, request) {
     output$heat_note <- shiny::renderUI({
       # 原文：構面 | 區塊
       what <- if (heat_by() == "dim") "\u69cb\u9762" else "\u5340\u584a"
+      co <- heat_cohort()
       shiny::p(class = "kit-hint", paste0(
+        # 原文：題庫： | 世代： | 全部 | 。
+        "\u984c\u5eab\uff1a", bank_domain_label(store$domain()), "\uff1b\u4e16\u4ee3\uff1a", if (nzchar(co)) co else "\u5168\u90e8", "\u3002",
         # 原文：每一格是一個 | 在一個波次有幾題，顏色越深題數越多；空白表示那一波次沒有。
         "\u6bcf\u4e00\u683c\u662f\u4e00\u500b", what, "\u5728\u4e00\u500b\u6ce2\u6b21\u6709\u5e7e\u984c\uff0c\u984f\u8272\u8d8a\u6df1\u984c\u6578\u8d8a\u591a\uff1b\u7a7a\u767d\u8868\u793a\u90a3\u4e00\u6ce2\u6b21\u6c92\u6709\u3002",
         # 原文：列依第一次出現的波次排。
@@ -663,6 +678,44 @@ wave_span <- function(w) {
 }
 
 # 「這一題」：不加框；版本差異收合
+#' 一題的「各版本出現的波次」：整頁寬；有世代（M03、M36）就一個世代一張表
+#' @noRd
+timeline_full_ui <- function(d) {
+  it <- d$item
+  tl <- d$timeline
+  if (is.null(tl) || !nrow(tl)) return(NULL)
+  # 原文：第  |  版
+  vlab <- paste0("\u7b2c ", tl$itemVer, " \u7248",
+                 # 原文：（已停用）
+                 ifelse(!is.na(tl$deprecated) & tl$deprecated == 1L, "\uff08\u5df2\u505c\u7528\uff09", ""),
+                 # 原文：（這一版）
+                 ifelse(tl$itemVer == as.integer(it$itemVer), "\uff08\u9019\u4e00\u7248\uff09", ""))
+  waves <- setdiff(names(tl), c("itemVer", "deprecated"))
+  co <- wave_cohort(waves)
+  groups <- if (all(nzchar(co))) split(waves, factor(co, levels = unique(co))) else list(waves)
+  tables <- lapply(names(groups) %||% "", function(g) {
+    w <- groups[[if (nzchar(g)) g else 1L]]
+    m <- tl[w]
+    ticks <- as.data.frame(lapply(m, function(x) ifelse(x == 1L, "\u2713", "")),
+                           stringsAsFactors = FALSE, optional = TRUE)
+    # 原文：版本
+    tab <- cbind(stats::setNames(data.frame(vlab, stringsAsFactors = FALSE), "\u7248\u672c"), ticks)
+    names(tab) <- col_display_labels(names(tab))
+    shiny::tagList(
+      # 原文： 世代
+      if (nzchar(g)) shiny::h5(paste0(g, " \u4e16\u4ee3")),
+      kitDesign::kit_table_scroll(kitDesign::kit_static_table(tab))
+    )
+  })
+  shiny::tagList(
+    # 原文：「 | 」各版本出現的波次
+    shiny::h4(paste0("\u300c", it$itemID, "\u300d\u5404\u7248\u672c\u51fa\u73fe\u7684\u6ce2\u6b21")),
+    # 原文：✓ 表示這一版在那一波次有問。
+    shiny::p(class = "kit-hint", "\u2713 \u8868\u793a\u9019\u4e00\u7248\u5728\u90a3\u4e00\u6ce2\u6b21\u6709\u554f\u3002"),
+    tables
+  )
+}
+
 item_detail_ui <- function(d, ns, notes = character()) {
   it <- d$item
   field <- function(label, value) {
@@ -700,21 +753,7 @@ item_detail_ui <- function(d, ns, notes = character()) {
 
   # 版本 × 波次
   timeline_ui <- if (nrow(ov)) {
-    tl <- d$timeline
-    # 原文：第  |  版
-    vlab <- paste0("\u7b2c ", tl$itemVer, " \u7248",
-                   # 原文：（已停用）
-                   ifelse(!is.na(tl$deprecated) & tl$deprecated == 1L, "\uff08\u5df2\u505c\u7528\uff09", ""),
-                   # 原文：（這一版）
-                   ifelse(tl$itemVer == as.integer(it$itemVer), "\uff08\u9019\u4e00\u7248\uff09", ""))
-    # 原文：版本
-    tab <- cbind(stats::setNames(data.frame(vlab, stringsAsFactors = FALSE), "\u7248\u672c"),
-                 tl[, setdiff(names(tl), c("itemVer", "deprecated")), drop = FALSE])
-    names(tab) <- col_display_labels(names(tab))
     shiny::tagList(
-      # 原文：各版本出現的波次：
-      shiny::p(shiny::tags$strong("\u5404\u7248\u672c\u51fa\u73fe\u7684\u6ce2\u6b21\uff1a")),
-      kitDesign::kit_table_scroll(kitDesign::kit_static_table(tab)),
       shiny::p(
         # 原文：看其他版本：
         "\u770b\u5176\u4ed6\u7248\u672c\uff1a",

@@ -1,4 +1,4 @@
-# page_home.R：我的工作（testServer）
+# page_home.R：待辦事項（testServer）
 # 不寫死題庫內容：數量、標題、連結都從 home_audit() 算出來比對
 
 home_html <- function(x) if (is.list(x)) x$html else as.character(x)

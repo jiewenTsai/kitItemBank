@@ -50,3 +50,16 @@ test_that("grade aliases find the grade's administrations", {
   expect_match(names(ch)[1], "\u570b\u5c0f\u4e00\u5e74\u7d1a")
   expect_false(grepl("G01", names(ch)[2]))
 })
+
+test_that("bank_cohort keeps one cohort's waves and items; the timeline splits M03 / M36", {
+  b <- kit_bank("parent")
+  expect_equal(bank_cohorts(b), c("M03", "M36"))
+  m03 <- bank_cohort(b, "M03")
+  expect_true(all(startsWith(get_wave_cols(m03$itemWave), "M03")))
+  expect_true(nrow(m03$itemBank) < nrow(b$itemBank))
+  expect_identical(bank_cohort(b, ""), b)
+  d <- item_detail(b, "fatherinvo01", 2L)
+  h <- htmltools::renderTags(timeline_full_ui(d))$html
+  expect_match(h, "M03 世代")
+  expect_match(h, "M36 世代")
+})

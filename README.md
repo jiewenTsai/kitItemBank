@@ -28,7 +28,7 @@ codebook or SPSS label syntax, or maintain the bank. See [NEWS.md](NEWS.md) for 
 
 - **Query:** item search (題項查詢), dimensions (構面查詢), administrations (施測: codebook Excel and
   SPSS `.sps`), compare two data files (比較).
-- **Maintenance:** my work (我的工作: the audit list grouped by who can resolve it), editing
+- **Maintenance:** to-do list (待辦事項: the audit list grouped by who can resolve it), editing
   (題庫編修: change packages), revision round-trip with teachers (改版), merging a new administration
   from .sav headers (併入新施測), review (審核), statistics (統計, local runs only; raw data is never
   stored).

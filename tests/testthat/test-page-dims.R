@@ -204,3 +204,19 @@ test_that("a parent group with no items of its own links to its child groups", {
   # 有自己題目的構面不變
   expect_false("子題組" %in% names(dim_items_workbook(b, "注意力", "parent")[[2]]))
 })
+
+test_that("the network can be drawn for one cohort (kit bank)", {
+  store <- dims_fake_store()
+  store$bank(kit_bank("parent"))
+  shiny::testServer(page_dims_server, args = list(
+    store = store, goto = function(...) NULL, request = shiny::reactiveVal(NULL)
+  ), {
+    d <- names(which(colSums(store$bank()$itemDim[dims_cols(store$bank())] == 1L) > 3))[1]
+    session$setInputs(dim = d)
+    expect_match(dims_html(output$browse), "世代")
+    n_all <- nrow(net()$nodes)
+    session$setInputs(net_cohort = "M36")
+    expect_match(dims_html(output$network_hint), "題庫：.*；世代：M36")
+    expect_lte(nrow(net()$nodes), n_all)
+  })
+})

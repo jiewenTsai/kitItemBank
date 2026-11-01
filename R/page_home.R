@@ -1,4 +1,4 @@
-# R/page_home.R — 我的工作（首頁）：題庫裡有哪些地方要注意、該找誰
+# R/page_home.R — 待辦事項（首頁）：題庫裡有哪些地方要注意、該找誰
 #
 # 由上往下：這一頁做什麼 → 要注意（自己能改｜要問老師｜要問統計人員｜要請技術人員改，
 # 每一筆連到對的分頁）。看的是三個題庫合在一起（這一頁只拿到 kit，不跟著題庫列）。
@@ -7,7 +7,7 @@
 # 每種要注意在首頁最多列幾筆（其他的下載完整清單看）
 HOME_SHOW <- 20L
 
-#' The home page (我的工作): UI
+#' The home page (待辦事項): UI
 #'
 #' @param id Module id.
 #' @return UI.
@@ -43,7 +43,7 @@ page_home_ui <- function(id) {
   )
 }
 
-#' The home page (我的工作): server
+#' The home page (待辦事項): server
 #'
 #' @param id Module id.
 #' @param kit The kit (17 tables): a reactive or a plain list.

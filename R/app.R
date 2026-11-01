@@ -1,7 +1,7 @@
 # R/app.R — KIT 題庫管理工具：頁面、伺服器、啟動
 #
 # 頁首（kit_page）→ 分組分頁（查詢：題項查詢、構面查詢、施測、比較｜
-# 維護：我的工作、題庫編修、改版、併入新施測、審核、統計）
+# 維護：待辦事項、題庫編修、改版、併入新施測、審核、統計）
 # → 題庫選擇列（全 app 共用）→ 分頁內容。
 # 查詢的兩頁只看；改題庫只在「題庫編修」，改好的題庫用下載的，app 不寫檔。
 
@@ -25,6 +25,7 @@ app_ui <- function(request) {
     # kit_step_tabs_ui("nav", groups = ) 的兩半拆開，中間放題庫選擇列：
     # 分頁列 → 題庫選擇列 → 分頁內容（tabset id 照模組的 "nav-tabs"）
     kitDesign::kit_navgroups(APP_TAB_GROUPS, "nav-tabs", selected = tab),
+    shiny::div(class = "kit-hint", style = "text-align:right;margin:-4px 0 6px;", manual_link()),
     bank_bar_ui("bank"),
     shiny::tabsetPanel(
       id = "nav-tabs", type = "hidden", selected = tab,
@@ -36,8 +37,8 @@ app_ui <- function(request) {
       shiny::tabPanel("\u65bd\u6e2c", value = "admin", page_admin_ui("admin")),
       # 原文：比較
       shiny::tabPanel("\u6bd4\u8f03", value = "compare", page_compare_ui("compare")),
-      # 原文：我的工作
-      shiny::tabPanel("\u6211\u7684\u5de5\u4f5c", value = "home", page_home_ui("home")),
+      # 原文：待辦事項
+      shiny::tabPanel("\u5f85\u8fa6\u4e8b\u9805", value = "home", page_home_ui("home")),
       # 原文：題庫編修
       shiny::tabPanel("\u984c\u5eab\u7de8\u4fee", value = "edit", page_edit_ui("edit")),
       # 原文：改版
@@ -52,12 +53,21 @@ app_ui <- function(request) {
   )
 }
 
+#' 頁首的「操作手冊」連結（inst/manual/manual.html，由 data-raw/build_manual.R 產生）
+#' @noRd
+manual_link <- function() {
+  shiny::addResourcePath("kit-manual", system.file("manual", package = "kitItemBank"))
+  # 原文：操作手冊（含術語表）
+  shiny::tags$a(href = "kit-manual/manual.html", target = "_blank", rel = "noopener",
+                "\u64cd\u4f5c\u624b\u518a\uff08\u542b\u8853\u8a9e\u8868\uff09")
+}
+
 APP_TAB_GROUPS <- list(
   # 原文：查詢 | 題項查詢 | 構面查詢 | 施測 | 比較
   kitDesign::kit_navgroup("\u67e5\u8a62", c(search = "\u984c\u9805\u67e5\u8a62", dims = "\u69cb\u9762\u67e5\u8a62",
                                      admin = "\u65bd\u6e2c", compare = "\u6bd4\u8f03")),
-  # 原文：維護 | 我的工作 | 題庫編修 | 改版 | 併入新施測 | 審核 | 統計
-  kitDesign::kit_navgroup("\u7dad\u8b77", c(home = "\u6211\u7684\u5de5\u4f5c", edit = "\u984c\u5eab\u7de8\u4fee",
+  # 原文：維護 | 待辦事項 | 題庫編修 | 改版 | 併入新施測 | 審核 | 統計
+  kitDesign::kit_navgroup("\u7dad\u8b77", c(home = "\u5f85\u8fa6\u4e8b\u9805", edit = "\u984c\u5eab\u7de8\u4fee",
                                      revision = "\u6539\u7248", merge = "\u4f75\u5165\u65b0\u65bd\u6e2c",
                                      review = "\u5be9\u6838", stats = "\u7d71\u8a08"))
 )
