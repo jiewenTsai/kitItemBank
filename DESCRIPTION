@@ -34,7 +34,8 @@ Suggests:
     dplyr,
     pkgload,
     quarto,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 Remotes:
     jiewenTsai/kitDesign@v0.7.0
 Config/testthat/edition: 3
