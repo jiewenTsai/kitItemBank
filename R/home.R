@@ -1,4 +1,4 @@
-# R/home.R — 「我的工作」首頁的計算：要注意的事分給誰處理、連到哪一頁、交辦事項
+# R/home.R — 「我的工作」首頁的計算：要注意的事分給誰處理、連到哪一頁
 #
 # 畫面在 R/page_home.R。這裡只有純函式，方便測試。
 # 要注意的清單來自 audit_kit()；首頁只用題庫本身（不給 .sav 和 0.2 遺漏代碼），
@@ -116,80 +116,4 @@ home_audit_summary <- function(ha) {
                    match(out$check, AUDIT_KIT_CHECKS$check)), , drop = FALSE]
   rownames(out) <- NULL
   out
-}
-
-# ---- 交辦事項 -------------------------------------------------------------------
-# 一列一件事：id、task（要做什麼）、who（誰做）、due（期限，文字）、done（"1" = 完成）、created
-
-TODO_COLS <- c("id", "task", "who", "due", "done", "created")
-
-#' An empty to-do list
-#'
-#' @return A data frame with the columns `id`, `task`, `who`, `due`, `done` (`"1"` when
-#'   done) and `created`, all text.
-#' @export
-empty_todo <- function() {
-  as.data.frame(stats::setNames(rep(list(character(0)), length(TODO_COLS)), TODO_COLS),
-                stringsAsFactors = FALSE)
-}
-
-#' Add a to-do
-#'
-#' @param todo A to-do list (see [empty_todo()]).
-#' @param task What to do (blank is refused).
-#' @param who,due Who does it and by when (free text).
-#' @param created Date added.
-#' @return The list with the new row at the end.
-#' @export
-todo_add <- function(todo, task, who = "", due = "", created = Sys.Date()) {
-  task <- trimws(paste(task, collapse = " "))
-  if (!nzchar(task)) return(todo)
-  ids <- suppressWarnings(as.integer(todo$id))
-  id <- max(c(0L, ids), na.rm = TRUE) + 1L
-  rbind(todo, data.frame(id = as.character(id), task = task, who = trimws(who %||% ""),
-                         due = trimws(due %||% ""), done = "", created = format(created),
-                         stringsAsFactors = FALSE))
-}
-
-#' Mark a to-do done (or not done)
-#'
-#' @param todo A to-do list.
-#' @param id The `id` of the row.
-#' @param done `TRUE` to mark done, `FALSE` to reopen.
-#' @return The list.
-#' @export
-todo_done <- function(todo, id, done = TRUE) {
-  todo$done[todo$id == as.character(id)] <- if (isTRUE(done)) "1" else ""
-  todo
-}
-
-#' Read and write a to-do list as CSV
-#'
-#' The app keeps to-dos only in the browser session; download them with [write_todo_csv()]
-#' and load them back with [read_todo_csv()].
-#' @param path A `.csv` file (UTF-8 with BOM, so Excel opens it).
-#' @param todo A to-do list.
-#' @return `read_todo_csv()`: a to-do list (missing columns are added; unknown columns are
-#'   dropped). `write_todo_csv()`: `path`, invisibly.
-#' @export
-read_todo_csv <- function(path) {
-  d <- as.data.frame(readr::read_csv(path, col_types = readr::cols(.default = "c"),
-                                     na = character(), progress = FALSE,
-                                     show_col_types = FALSE), stringsAsFactors = FALSE)
-  for (cc in setdiff(TODO_COLS, names(d))) d[[cc]] <- rep("", nrow(d))
-  d <- d[TODO_COLS]
-  d[] <- lapply(d, function(v) { v[is.na(v)] <- ""; trimws(v) })
-  d <- d[nzchar(d$task), , drop = FALSE]
-  bad <- !grepl("^[0-9]+$", d$id) | duplicated(d$id)
-  if (any(bad)) d$id[bad] <- as.character(max(c(0L, as.integer(d$id[!bad]))) + seq_len(sum(bad)))
-  d$done <- ifelse(d$done %in% c("1", "TRUE", "true", "yes"), "1", "")
-  rownames(d) <- NULL
-  d
-}
-
-#' @rdname read_todo_csv
-#' @export
-write_todo_csv <- function(todo, path) {
-  readr::write_excel_csv(todo[TODO_COLS], path, na = "")
-  invisible(path)
 }
