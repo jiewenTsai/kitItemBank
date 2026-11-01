@@ -249,3 +249,73 @@ test_that("sav_header_meta reads names and labels from a synthetic .sav", {
   expect_equal(m$vlabs[2], "1=Yes; 9999=Missing")
   expect_equal(names(m), c("var", "class", "label", "n_vlab", "vlabs", "na"))
 })
+
+# 迴歸：題庫的文字（0.2 題庫的寫法）和 .sav 標籤寫法不同，不能因此全部變成新版本
+am_fmt_fixture <- function() {
+  kit <- am_remove_admin(am_fixture(), "M03M048")
+  # 題庫文字：全形標點、句號、沒有題號
+  kit$item_versions$label[kit$item_versions$item_uid == "P.a01"] <- "孩子會自己穿衣服（包括外套）。"
+  kit$item_versions$label[kit$item_versions$item_uid == "P.e01"] <- "請問孩子會游泳嗎？"
+  kit
+}
+am_fmt_header <- function(e_label = "二.1.孩子會游泳嗎?", e_vlabs = "0=不會; 1=會; 9999=遺漏值",
+                          miss = "7777=拒答; 9996=不適用/跳答; 9999=遺漏值") {
+  data.frame(var = c("a01", "b01", "c01", "e01"), class = "numeric",
+             label = c("一.1.孩子會自己穿衣服(包括外套)", "一.2.孩子每天看書的時間",
+                       "一.3.家裡有幾本童書", e_label),
+             n_vlab = "",
+             vlabs = c(rep(paste0("0=不會; 1=會; ", miss), 3), e_vlabs),
+             na = "", stringsAsFactors = FALSE)
+}
+
+test_that("with the previous admin's headers, label-format differences are not new versions", {
+  kit <- am_fmt_fixture()
+  prev <- am_fmt_header()
+  # 新的一次：遺漏代碼換成 2020 方案（加 9995），題號寫法變了，其餘一樣；e01 的題目真的改了
+  new <- am_fmt_header(e_label = "二.1.孩子會不會自己去游泳池游泳?",
+                       e_vlabs = "0=不會; 1=會; 9995=不適用; 9996=跳答; 9999=遺漏值")
+  new$label[1] <- "一.1 孩子會自己穿衣服（包括外套）"
+  new$vlabs[1:3] <- sub("9996=不適用/跳答", "9995=不適用; 9996=跳答", new$vlabs[1:3])
+  p <- propose_admin_merge(kit, list("M03M048-P" = new), "M03M048",
+                           prev_meta = list("M03M036-P" = prev))
+  v <- p[p$varname %in% c("a01", "b01", "c01", "e01"), ]
+  expect_equal(v$class, c("same", "same", "same", "new_version"))
+  expect_equal(v$itemVer[1:3], c("1", "1", "1"))
+  expect_true(all(v$confidence[1:3] == "high"))
+  expect_match(v$reason[1], "M03M036-P")
+  expect_match(v$reason[4], "題目文字改了")
+  # 遺漏代碼只在換方案那一列出現
+  expect_equal(p$scheme[p$class == "missing_scheme_change"], "2020")
+  out <- apply_admin_merge(kit, p)
+  expect_equal(nrow(check_kit(out)), 0L)
+})
+
+test_that("without previous headers, kit text is compared leniently and with lower confidence", {
+  kit <- am_fmt_fixture()
+  p <- propose_admin_merge(kit, list("M03M048-P" = am_fmt_header()), "M03M048")
+  v <- p[p$varname %in% c("a01", "b01", "c01", "e01"), ]
+  expect_equal(v$class, c("same", "same", "same", "same"))
+  expect_true(all(v$confidence %in% c("medium", "low")))
+  expect_match(v$reason[1], "比較不準")
+  expect_equal(am_label_sim("四.33.會自己用筷子吃東西（不包括學習筷）",
+                            "會自己用筷子吃東西(不包括學習筷)。"), "identical")
+  # .sav 標籤被截斷：短的整段在長的裡面算 high
+  expect_equal(am_label_sim("一.1.這孩子平常時的睡覺狀況如何",
+                            "這孩子平常時的睡覺狀況如何？不固定，每天睡眠"), "high")
+  expect_equal(am_halfwidth("（Ａ１）"), "(A1)")
+})
+
+test_that("the same new version is shared by -P and -PK even when prefixes differ", {
+  kit <- am_fmt_fixture()
+  kit$datasets <- rbind(kit$datasets, conform_kit_table(data.frame(
+    datasetID = "M03M036-PK", adminID = "M03M036", file = "data2", instrument = "P",
+    formID = "P-36-72", missingScheme = "2016", stringsAsFactors = FALSE), "datasets"))
+  prev <- am_fmt_header()
+  new_p <- am_fmt_header(e_label = "二.1.孩子會不會自己去游泳池游泳?")
+  new_k <- am_fmt_header(e_label = "二.1孩子會不會自己去游泳池游泳?")
+  p <- propose_admin_merge(kit, list("M03M048-P" = new_p, "M03M048-PK" = new_k), "M03M048",
+                           prev_meta = list("M03M036-P" = prev, "M03M048-PK" = prev))
+  e <- p[p$varname == "e01", ]
+  expect_equal(e$class, c("new_version", "new_version"))
+  expect_equal(e$itemVer[1], e$itemVer[2])
+})

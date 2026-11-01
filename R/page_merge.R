@@ -38,6 +38,37 @@ merge_guess_dataset_ids <- function(kit, admin_row, stems) {
   }, character(1), USE.NAMES = FALSE)
 }
 
+#' 新施測每個資料檔要和哪一個資料檔比（上一次）
+#' @return data.frame(datasetID, prev, prev_file)；認不出施測或檔名時回傳 NULL
+#' @noRd
+merge_prev_plan <- function(kit, admin_id, new_names) {
+  if (!nzchar(admin_id) || !length(new_names)) return(NULL)
+  row <- tryCatch(am_admin_row(kit, admin_id), error = function(e) NULL)
+  if (is.null(row)) return(NULL)
+  ids <- merge_guess_dataset_ids(kit, row, new_names)
+  ids <- unique(ids[!is.na(ids)])
+  if (!length(ids)) return(NULL)
+  ds <- am_dataset_rows(kit, ids, row)
+  data.frame(datasetID = ds$datasetID, prev = ds$prev,
+             prev_file = kit$datasets$file[match(ds$prev, kit$datasets$datasetID)],
+             stringsAsFactors = FALSE)
+}
+
+#' 上一次的檔名 → 上一次的 datasetID（檔名是代號，或是上一次的檔名 data1、data3…）
+#' @return 與 names 等長；對不到為 NA
+#' @noRd
+merge_match_prev <- function(plan, names) {
+  if (!length(names)) return(character(0))
+  stems <- sub("_meta$", "", sub("\\.(sav|csv)$", "", basename(names), ignore.case = TRUE),
+               ignore.case = TRUE)
+  p <- plan[nzchar(plan$prev), , drop = FALSE]
+  vapply(stems, function(s) {
+    k <- which(tolower(p$prev) == tolower(s))
+    if (!length(k)) k <- which(tolower(p$prev_file) == tolower(s))
+    if (length(k)) p$prev[k[1]] else NA_character_
+  }, character(1), USE.NAMES = FALSE)
+}
+
 #' 讀一個上傳的檔的表頭，讀完就刪掉暫存檔
 #' @noRd
 merge_read_upload <- function(path, name) {
@@ -61,6 +92,8 @@ page_merge_ui <- function(id) {
         "\u5728\u5de6\u908a\u5beb\u65b0\u65bd\u6e2c\u7684\u4ee3\u865f\uff08\u4f8b\u5982 M03M060\u3001M36M096G02\uff09\u3002",
         # 原文：上傳這次施測的資料檔（.sav，或先存好的 _meta.csv）。檔名用 data1、data2、data3、IRT，或直接用 M03M060-P 這種代號。
         "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08.sav\uff0c\u6216\u5148\u5b58\u597d\u7684 _meta.csv\uff09\u3002\u6a94\u540d\u7528 data1\u3001data2\u3001data3\u3001IRT\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002",
+        # 原文：再上傳上一次施測的同一些資料檔（左邊會列出要哪幾個）：版本用 .sav 和 .sav 比才準。
+        "\u518d\u4e0a\u50b3\u4e0a\u4e00\u6b21\u65bd\u6e2c\u7684\u540c\u4e00\u4e9b\u8cc7\u6599\u6a94\uff08\u5de6\u908a\u6703\u5217\u51fa\u8981\u54ea\u5e7e\u500b\uff09\uff1a\u7248\u672c\u7528 .sav \u548c .sav \u6bd4\u624d\u6e96\u3002",
         # 原文：按「產生提案」：右邊列出每個變項的提案、信心和理由。
         "\u6309\u300c\u7522\u751f\u63d0\u6848\u300d\uff1a\u53f3\u908a\u5217\u51fa\u6bcf\u500b\u8b8a\u9805\u7684\u63d0\u6848\u3001\u4fe1\u5fc3\u548c\u7406\u7531\u3002",
         # 原文：按「下載併入提案」存成 Excel，看過以後交給題庫維護者。
@@ -82,6 +115,12 @@ page_merge_ui <- function(id) {
                          # 原文：選檔案… | 還沒選
                          buttonLabel = "\u9078\u6a94\u6848\u2026", placeholder = "\u9084\u6c92\u9078"),
         shiny::uiOutput(ns("files_ui")),
+        # 原文：上一次施測的資料檔（建議）
+        shiny::fileInput(ns("prev_files"), "\u4e0a\u4e00\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08\u5efa\u8b70\uff09", multiple = TRUE,
+                         accept = c(".sav", ".csv"), width = "100%",
+                         # 原文：選檔案… | 還沒選
+                         buttonLabel = "\u9078\u6a94\u6848\u2026", placeholder = "\u9084\u6c92\u9078"),
+        shiny::uiOutput(ns("prev_ui")),
         # 原文：產生提案
         shiny::div(class = "kit-buttons", kitDesign::kit_button(ns("run"), "\u7522\u751f\u63d0\u6848", kind = "primary"))
       ),
@@ -106,8 +145,8 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
     headers <- shiny::reactiveVal(list())    # 檔名 → 表頭（只有表頭）
     proposals <- shiny::reactiveVal(NULL)
 
-    shiny::observeEvent(input$files, {
-      f <- input$files
+    prev_headers <- shiny::reactiveVal(list())
+    read_all <- function(f) {
       out <- list()
       for (i in seq_len(nrow(f))) {
         m <- tryCatch(merge_read_upload(f$datapath[i], f$name[i]), error = function(e) e)
@@ -118,8 +157,37 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
         }
         out[[f$name[i]]] <- m
       }
-      headers(out)
+      out
+    }
+    shiny::observeEvent(input$files, {
+      headers(read_all(input$files))
       proposals(NULL)
+    })
+    shiny::observeEvent(input$prev_files, {
+      prev_headers(read_all(input$prev_files))
+      proposals(NULL)
+    })
+    plan <- shiny::reactive(merge_prev_plan(kit_now(), trimws(input$admin %||% ""), names(headers())))
+
+    output$prev_ui <- shiny::renderUI({
+      pl <- plan()
+      if (is.null(pl)) {
+        # 原文：寫好代號、上傳這次的資料檔後，這裡會列出要上傳上一次的哪幾個檔。
+        return(shiny::p(class = "kit-hint", "\u5beb\u597d\u4ee3\u865f\u3001\u4e0a\u50b3\u9019\u6b21\u7684\u8cc7\u6599\u6a94\u5f8c\uff0c\u9019\u88e1\u6703\u5217\u51fa\u8981\u4e0a\u50b3\u4e0a\u4e00\u6b21\u7684\u54ea\u5e7e\u500b\u6a94\u3002"))
+      }
+      got <- merge_match_prev(pl, names(prev_headers()))
+      pl <- pl[nzchar(pl$prev), , drop = FALSE]
+      # 原文：題庫裡沒有上一次的同一種資料檔，只能和題庫的文字比。
+      if (!nrow(pl)) return(shiny::p(class = "kit-hint", "\u984c\u5eab\u88e1\u6c92\u6709\u4e0a\u4e00\u6b21\u7684\u540c\u4e00\u7a2e\u8cc7\u6599\u6a94\uff0c\u53ea\u80fd\u548c\u984c\u5eab\u7684\u6587\u5b57\u6bd4\u3002"))
+      shiny::tagList(
+        # 原文：要和上一次的這些資料檔比：
+        shiny::p(class = "kit-hint", "\u8981\u548c\u4e0a\u4e00\u6b21\u7684\u9019\u4e9b\u8cc7\u6599\u6a94\u6bd4\uff1a"),
+        shiny::tags$ul(lapply(seq_len(nrow(pl)), function(i) shiny::tags$li(paste0(
+          # 原文：（ | ）：
+          pl$prev[i], "\uff08", pl$prev_file[i], "\uff09\uff1a",
+          # 原文：已上傳 | 還沒上傳，會改和題庫的文字比（比較不準）
+          if (pl$prev[i] %in% got) "\u5df2\u4e0a\u50b3" else "\u9084\u6c92\u4e0a\u50b3\uff0c\u6703\u6539\u548c\u984c\u5eab\u7684\u6587\u5b57\u6bd4\uff08\u6bd4\u8f03\u4e0d\u6e96\uff09"))))
+      )
     })
 
     output$files_ui <- shiny::renderUI({
@@ -158,7 +226,21 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
         # 原文：兩個檔對到同一個資料檔： | 、
         if (anyDuplicated(ids)) stop("\u5169\u500b\u6a94\u5c0d\u5230\u540c\u4e00\u500b\u8cc7\u6599\u6a94\uff1a", paste(unique(ids[duplicated(ids)]), collapse = "\u3001"),
                                      call. = FALSE)
-        propose_admin_merge(k, stats::setNames(h, ids), row)
+        ph <- prev_headers()
+        pm <- NULL
+        if (length(ph)) {
+          pl <- merge_prev_plan(k, a, names(h))
+          pid <- if (is.null(pl)) rep(NA_character_, length(ph)) else merge_match_prev(pl, names(ph))
+          if (anyNA(pid)) {
+            # 原文：上一次的這些檔用不到（認不出是哪一個資料檔）：
+            kitDesign::kit_notify(paste0("\u4e0a\u4e00\u6b21\u7684\u9019\u4e9b\u6a94\u7528\u4e0d\u5230\uff08\u8a8d\u4e0d\u51fa\u662f\u54ea\u4e00\u500b\u8cc7\u6599\u6a94\uff09\uff1a",
+                                         # 原文：、
+                                         paste(names(ph)[is.na(pid)], collapse = "\u3001")), session)
+          }
+          pm <- stats::setNames(ph[!is.na(pid)], pid[!is.na(pid)])
+          pm <- pm[!duplicated(names(pm))]
+        }
+        propose_admin_merge(k, stats::setNames(h, ids), row, prev_meta = pm)
       }, error = function(e) e)
       if (inherits(res, "error")) {
         kitDesign::kit_notify(conditionMessage(res), session)
@@ -187,7 +269,9 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
         shiny::h4(paste0(ad$adminID, " \u7684\u4f75\u5165\u63d0\u6848\uff08", kitDesign::kit_num(nrow(p)), " \u5217\uff09")),
         shiny::tags$ul(lapply(seq_len(nrow(ds)), function(i) shiny::tags$li(paste0(
           # 原文：：和上一次的  | （沒有） |  比
-          ds$datasetID[i], "\uff1a\u548c\u4e0a\u4e00\u6b21\u7684 ", if (nzchar(ds$prev[i])) ds$prev[i] else "\uff08\u6c92\u6709\uff09", " \u6bd4")))),
+          ds$datasetID[i], "\uff1a\u548c\u4e0a\u4e00\u6b21\u7684 ", if (nzchar(ds$prev[i])) ds$prev[i] else "\uff08\u6c92\u6709\uff09", " \u6bd4",
+          # 原文：（用 .sav 表頭） | （沒有表頭，和題庫文字比，比較不準）
+          if (identical(ds$compared_with[i], "header")) "\uff08\u7528 .sav \u8868\u982d\uff09" else "\uff08\u6c92\u6709\u8868\u982d\uff0c\u548c\u984c\u5eab\u6587\u5b57\u6bd4\uff0c\u6bd4\u8f03\u4e0d\u6e96\uff09")))),
         shiny::tags$ul(lapply(seq_len(nrow(s)), function(i) shiny::tags$li(paste0(
           # 原文：： |  列
           AM_CLASS_LABEL[[s$class[i]]], "\uff1a", kitDesign::kit_num(s$total[i]), " \u5217",
@@ -251,7 +335,11 @@ merge_code <- function(admin_id) {
     paste0("  ", q(paste0(admin_id, "-P")), " = kitItemBank::sav_header_meta(\"data1.sav\"),"),
     paste0("  ", q(paste0(admin_id, "-T")), " = kitItemBank::sav_header_meta(\"data3.sav\")"),
     ")",
-    paste0("p <- kitItemBank::propose_admin_merge(kit, meta, ", q(admin_id), ")"),
+    # 原文：# 上一次施測的同一些資料檔（名稱用上一次的 datasetID）：版本用 .sav 和 .sav 比才準
+    "# \u4e0a\u4e00\u6b21\u65bd\u6e2c\u7684\u540c\u4e00\u4e9b\u8cc7\u6599\u6a94\uff08\u540d\u7a31\u7528\u4e0a\u4e00\u6b21\u7684 datasetID\uff09\uff1a\u7248\u672c\u7528 .sav \u548c .sav \u6bd4\u624d\u6e96",
+    # 原文：prev <- list(\"<上一次>-P\" = kitItemBank::sav_header_meta(\"prev/data1.sav\"))
+    "prev <- list(\"<\u4e0a\u4e00\u6b21>-P\" = kitItemBank::sav_header_meta(\"prev/data1.sav\"))",
+    paste0("p <- kitItemBank::propose_admin_merge(kit, meta, ", q(admin_id), ", prev_meta = prev)"),
     "kitItemBank::admin_merge_summary(p)",
     "",
     # 原文：# 看過以後：接受全部（或只給要接受的 proposal_id），產生新的題庫，再檢查

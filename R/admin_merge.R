@@ -60,6 +60,68 @@ am_clean_label <- function(x) {
   trimws(x)
 }
 
+#' 全形英數、標點轉半形（Ａ→A、（→(），全形空白轉半形空白
+#' @noRd
+am_halfwidth <- function(x) {
+  x <- as.character(x)
+  x[is.na(x)] <- ""
+  vapply(x, function(s) {
+    if (!nzchar(s)) return(s)
+    cp <- utf8ToInt(s)
+    fw <- cp >= 0xFF01 & cp <= 0xFF5E
+    cp[fw] <- cp[fw] - 0xFEE0L
+    cp[cp == 0x3000] <- 0x20L
+    intToUtf8(cp)
+  }, character(1), USE.NAMES = FALSE)
+}
+
+#' 比較用的標籤：半形、去題號和跳題指示、去空白標點符號
+#' @noRd
+am_norm_label <- function(x) rel_norm_label(am_clean_label(am_halfwidth(gsub("[\r\n]+", " ", x))))
+
+#' 兩個標籤的相似度（identical／high／medium／low；有一邊空白為 ""）
+#'
+#' 先用 am_norm_label() 整理；一邊被截斷或只多了共用題幹（短的那個整段在長的裡面，
+#' 而且至少 6 個字）算 high。其餘交給 rel_similarity()。
+#' @noRd
+am_label_sim <- function(a, b, stem = "") {
+  na <- am_norm_label(a)
+  nb <- am_norm_label(b)
+  if (!nzchar(na) || !nzchar(nb)) return("")
+  if (na == nb) return("identical")
+  short <- if (nchar(na) <= nchar(nb)) na else nb
+  long <- if (nchar(na) <= nchar(nb)) nb else na
+  if (nchar(short) >= 6L && grepl(short, long, fixed = TRUE)) return("high")
+  # 有題幹時，拿掉和不拿掉都比，取比較像的
+  lv <- c("low", "medium", "high", "identical")
+  s <- c(rel_similarity(na, nb), if (nzchar(stem)) rel_similarity(na, nb, am_norm_label(stem), ""))
+  lv[max(match(s, lv), na.rm = TRUE)]
+}
+
+#' 比較兩組選項（遺漏代碼不算）：回傳 NA（缺一邊）、TRUE、FALSE；attr "codes_same"
+#'
+#' 和 rel_values_match() 一樣先去掉遺漏代碼；但選項文字用 am_label_sim() 比，
+#' 「午夜12:00」和「午夜12點」這種小差別算一樣（identical／high／medium）。
+#' @noRd
+am_values_cmp <- function(a, b, miss_codes) {
+  if (is.null(a) || is.null(b) || !nrow(a) || !nrow(b)) return(NA)
+  a <- a[!rel_is_missing_code(a$code, miss_codes), , drop = FALSE]
+  b <- b[!rel_is_missing_code(b$code, miss_codes), , drop = FALSE]
+  if (!nrow(a) && !nrow(b)) return(NA)
+  if (!setequal(a$code, b$code)) return(structure(FALSE, codes_same = FALSE))
+  la <- a$label[match(b$code, a$code)]
+  sims <- vapply(seq_along(la), function(k) am_label_sim(la[k], b$label[k]), character(1))
+  structure(all(sims %in% c("identical", "high", "medium", "")), codes_same = TRUE)
+}
+
+#' .sav 有、題庫的選項組沒有的非遺漏代碼（題庫選項組空白時不算）
+#' @noRd
+am_codes_added <- function(kit_vals, hv, miss_codes) {
+  if (is.null(kit_vals) || !nrow(kit_vals) || is.null(hv) || !nrow(hv)) return(FALSE)
+  h <- hv$code[!rel_is_missing_code(hv$code, miss_codes)]
+  length(setdiff(h, kit_vals$code)) > 0L
+}
+
 #' 一個變項的非遺漏選項（code, label），標籤去掉跳題指示
 #'
 #' 只有宣告為遺漏（na）或公版遺漏代碼（7777、9999…）的才拿掉；只靠標籤判斷的
@@ -177,6 +239,20 @@ am_dataset_rows <- function(kit, ids, admin_row, datasets = NULL) {
                stringsAsFactors = FALSE)
   })
   out <- do.call(rbind, rows)
+  # 題本：上一次的題本不適用這個月齡（例如 72 月齡 → 小一）就換成月齡範圍包含它的題本
+  fm <- kit$forms
+  age <- suppressWarnings(as.integer(admin_row$ageMonth))
+  if (!is.null(fm) && nrow(fm) && !is.na(age)) {
+    lo <- suppressWarnings(as.integer(fm$ageFrom))
+    hi <- suppressWarnings(as.integer(fm$ageTo))
+    fits <- !is.na(lo) & !is.na(hi) & lo <= age & age <= hi
+    for (i in seq_len(nrow(out))) {
+      k <- match(out$formID[i], fm$formID)
+      if (!is.na(k) && (is.na(lo[k]) || is.na(hi[k]) || fits[k])) next
+      cand <- fm$formID[fits & fm$instrument == out$instrument[i]]
+      if (length(cand) == 1L) out$formID[i] <- cand
+    }
+  }
   if (!is.null(datasets) && nrow(datasets)) {
     datasets <- as.data.frame(datasets, stringsAsFactors = FALSE)
     for (cc in intersect(c(names(KIT_SCHEMA$datasets$cols), "prev"), names(datasets))) {
@@ -258,6 +334,12 @@ am_row <- function(class, datasetID = "", varname = "", order = "", position = "
 #'   `position`, `item_uid`. `position` fills `dataset_vars$position` (else it is read
 #'   from the label prefix, e.g. "四.33."); `item_uid` says which existing item the
 #'   variable is.
+#' @param prev_meta Optional headers of the previous administration's data files, same
+#'   shape as `sav_meta`, named by the previous `datasetID` (e.g. `"M03M036-P"`) or by
+#'   the new one. Strongly recommended: versions are then decided by comparing .sav
+#'   header with .sav header (same wording style). Without it the header is compared
+#'   with the kit's item text (written differently, e.g. from the 0.2 bank), so only
+#'   clear changes become `new_version` and confidence is lower.
 #' @return A data frame of proposals: `proposal_id`, `class`, `action`, `datasetID`,
 #'   `varname`, `order`, `position`, `kind`, `item_uid`, `itemVer`, `from_uid`,
 #'   `from_ver`, `block`, `similarity`, `values_match`, `scheme`, `prev_dataset`, `label`
@@ -265,8 +347,10 @@ am_row <- function(class, datasetID = "", varname = "", order = "", position = "
 #'   `reason`. Attributes `admin` and `datasets` hold the new rows for those tables.
 #' @seealso [apply_admin_merge()]
 #' @export
-propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk = NULL) {
+propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk = NULL,
+                                prev_meta = NULL) {
   metas <- am_meta_list(sav_meta)
+  prevs <- if (length(prev_meta)) am_meta_list(prev_meta) else list()
   admin_row <- am_admin_row(kit, admin)
   ds_new <- am_dataset_rows(kit, names(metas), admin_row, datasets)
   it <- kit$items
@@ -294,21 +378,55 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
     if (is.na(x)) "" else x
   }
   versions_of <- function(uid) sort(as.integer(iv$itemVer[iv$item_uid == uid]))
-  # 上一次用的版本：上一次的資料檔；沒有就時間最近的；再沒有就最新的
-  ref_ver <- function(uid, prev) {
-    d <- dv[dv$item_uid == uid & nzchar(dv$itemVer), , drop = FALSE]
-    o <- dv_ord[dv$item_uid == uid & nzchar(dv$itemVer)]
-    hit <- d$itemVer[d$datasetID == prev]
-    if (length(hit)) return(as.integer(hit[1]))
-    keep <- !is.na(o) & o < me
-    if (any(keep)) return(as.integer(d$itemVer[keep][which.max(o[keep])]))
-    v <- versions_of(uid)
-    if (length(v)) max(v) else NA_integer_
+  # 參考版本，依序找：
+  #   1. 上一次的資料檔用的版本（題本沒換時）
+  #   2. 同世代、同題本、時間最近（前後都算）的資料檔
+  #   3. 別的世代、同題本、同月齡的資料檔
+  #   4. 同題本、時間最近的資料檔
+  #   5. 時間在這次之前最近的資料檔；6. 最新的版本
+  dv_ds <- match(dv$datasetID, kit$datasets$datasetID)
+  dv_form <- kit$datasets$formID[dv_ds]
+  dv_adm <- match(kit$datasets$adminID[dv_ds], kit$admins$adminID)
+  dv_coh <- kit$admins$cohortID[dv_adm]
+  dv_age <- kit$admins$ageMonth[dv_adm]
+  ref_ver <- function(uid, prev, form = "") {
+    w <- which(dv$item_uid == uid & nzchar(dv$itemVer))
+    if (!length(w)) {
+      v <- versions_of(uid)
+      return(if (length(v)) max(v) else NA_integer_)
+    }
+    ver <- as.integer(dv$itemVer[w])
+    o <- dv_ord[w]
+    near <- function(k) ver[k][which.min(abs(o[k] - me))]
+    # 題本換了（例如 P-36-72 → P-G1-G3）就不直接沿用上一次的版本
+    prev_form <- kit$datasets$formID[match(prev, kit$datasets$datasetID)]
+    same_form <- !nzchar(form) || is.na(prev_form) || identical(prev_form, form)
+    hit <- dv$datasetID[w] == prev
+    if (same_form && any(hit)) return(ver[hit][1])
+    if (nzchar(form)) {
+      f <- dv_form[w] %in% form & !is.na(o)
+      k <- f & dv_coh[w] %in% admin_row$cohortID
+      if (any(k)) return(near(k))
+      k <- f & dv_age[w] %in% admin_row$ageMonth
+      if (any(k)) return(ver[k][1])
+      if (any(f)) return(near(f))
+    }
+    k <- !is.na(o) & o < me
+    if (any(k)) return(ver[k][which.max(o[k])])
+    max(versions_of(uid))
   }
-  # 和一個版本比：回傳 list(sim, vm, ok)
+  # 和題庫的一個版本比（題庫文字和 .sav 寫法不同：放寬，只看清楚的改變）
   compare_ver <- function(uid, ver, lab, hv) {
-    sim <- rel_similarity(label_of(uid, ver), lab, stem_of(uid, ver), "")
+    sim <- am_label_sim(label_of(uid, ver), lab, stem_of(uid, ver))
     vm <- rel_values_match(vs_of(uid, ver), hv, miss_codes)
+    ok <- (sim %in% c("identical", "high", "medium", "")) &&
+      !am_codes_added(vs_of(uid, ver), hv, miss_codes)
+    list(sim = sim, vm = vm, ok = ok)
+  }
+  # 和上一次的 .sav 表頭比（同樣的寫法：照嚴格的規則）
+  compare_head <- function(plab, pvals, lab, hv) {
+    sim <- am_label_sim(plab, lab)
+    vm <- am_values_cmp(pvals, hv, miss_codes)
     ok <- (sim %in% c("identical", "high", "")) && !isFALSE(as.logical(vm))
     list(sim = sim, vm = vm, ok = ok)
   }
@@ -340,6 +458,8 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
     d <- ds_new[ds_new$datasetID == id, , drop = FALSE]
     ins <- d$instrument
     prev <- d$prev
+    pf <- kit$datasets$formID[match(prev, kit$datasets$datasetID)]
+    form_changed <- nzchar(d$formID) && !is.na(pf) && nzchar(pf) && pf != d$formID
     vs <- sav_value_sets(meta)
     uid <- match_item_uid(meta$var, ins, it)
     # 對照表指定的題目
@@ -372,6 +492,28 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
       b <- it$block[match(u, it$item_uid)]
       if (is.na(b)) "" else b
     }
+    # 上一次的 .sav 表頭（有給才有）
+    ph <- prevs[[prev]] %||% prevs[[id]]
+    pvs <- if (!is.null(ph)) sav_value_sets(ph) else NULL
+    # 上一次這個變項的標籤和選項：有表頭用表頭（src = "header"），沒有用題庫第 ver 版
+    prev_of <- function(varname, u, ver) {
+      k <- if (is.null(ph)) NA else match(tolower(varname), tolower(ph$var))
+      if (!is.na(k)) {
+        return(list(src = "header", label = ph$label[k], values = am_header_values(pvs, ph$var[k])))
+      }
+      list(src = "kit", label = label_of(u, ver), values = vs_of(u, ver), stem = stem_of(u, ver))
+    }
+    cmp_prev <- function(pi, lab_i, hv_i) {
+      if (pi$src == "header") compare_head(pi$label, pi$values, lab_i, hv_i) else {
+        sim <- am_label_sim(pi$label, lab_i, pi$stem)
+        vm <- rel_values_match(pi$values, hv_i, miss_codes)
+        # 題庫的選項組常比 .sav 多幾個代碼（0.2 題庫的寫法）：只有 .sav 多出題庫沒有的
+        # 選項代碼（加了選項）才算選項改了
+        added <- am_codes_added(pi$values, hv_i, miss_codes)
+        list(sim = sim, vm = if (added) structure(FALSE, codes_same = FALSE) else vm,
+             ok = (sim %in% c("identical", "high", "medium", "")) && !added)
+      }
+    }
     base <- function(i, ...) am_row(datasetID = id, varname = meta$var[i], order = i,
                                     position = pos[i], kind = kind[i], prev_dataset = prev,
                                     label = lab_raw[i], values = vtxt[i], ...)
@@ -391,7 +533,7 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
         next
       }
       matched <- c(matched, u)
-      r <- ref_ver(u, prev)
+      r <- ref_ver(u, prev, d$formID)
       if (is.na(r)) {
         add(base(i, class = "new_version", item_uid = u, itemVer = "1", block = blk_of(u),
                  confidence = "low",
@@ -399,64 +541,102 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
                  reason = "\u984c\u5eab\u6709\u9019\u4e00\u984c\uff0c\u4f46\u9084\u6c92\u6709\u4efb\u4f55\u7248\u672c\uff1b\u5efa\u4e00\u500b\u7b2c 1 \u7248\u3002"))
         next
       }
-      cr <- compare_ver(u, r, lab[i], hv[[i]])
-      if (cr$ok) {
-        conf <- if (cr$sim == "identical" && isTRUE(cr$vm)) "high" else
-          if (cr$sim == "" && is.na(cr$vm)) "low" else "medium"
-        # 原文：標籤和選項都一樣
-        why <- if (cr$sim == "identical" && isTRUE(cr$vm)) "\u6a19\u7c64\u548c\u9078\u9805\u90fd\u4e00\u6a23" else
-          # 原文：沒有標籤可比，選項沒有不同
-          if (cr$sim == "") "\u6c92\u6709\u6a19\u7c64\u53ef\u6bd4\uff0c\u9078\u9805\u6c92\u6709\u4e0d\u540c" else
-            # 原文：標籤一樣或幾乎一樣，沒有選項可比 | 標籤幾乎一樣，選項一樣
-            if (is.na(cr$vm)) "\u6a19\u7c64\u4e00\u6a23\u6216\u5e7e\u4e4e\u4e00\u6a23\uff0c\u6c92\u6709\u9078\u9805\u53ef\u6bd4" else "\u6a19\u7c64\u5e7e\u4e4e\u4e00\u6a23\uff0c\u9078\u9805\u4e00\u6a23"
+      pi <- prev_of(meta$var[i], u, r)
+      by_head <- pi$src == "header"
+      # 原文：和上一次（ | ）的 .sav 表頭比
+      basis <- if (by_head) paste0("\u548c\u4e0a\u4e00\u6b21\uff08", prev, "\uff09\u7684 .sav \u8868\u982d\u6bd4") else
+        # 原文：和題庫第  |  版的文字比（沒有上一次的表頭，比較不準）
+        paste0("\u548c\u984c\u5eab\u7b2c ", r, " \u7248\u7684\u6587\u5b57\u6bd4\uff08\u6c92\u6709\u4e0a\u4e00\u6b21\u7684\u8868\u982d\uff0c\u6bd4\u8f03\u4e0d\u6e96\uff09")
+      # 原文：（題本換成  | ，版本參考同題本的其他施測）
+      if (form_changed) basis <- paste0(basis, "\uff08\u984c\u672c\u63db\u6210 ", d$formID, "\uff0c\u7248\u672c\u53c3\u8003\u540c\u984c\u672c\u7684\u5176\u4ed6\u65bd\u6e2c\uff09")
+      cr <- cmp_prev(pi, lab_raw[i], hv[[i]])
+      # 系統、加權、衍生變項：標籤寫法常換，不另建版本
+      if (!cr$ok && kind[i] != "item") {
         add(base(i, class = "same", item_uid = u, itemVer = r, block = blk_of(u),
-                 similarity = cr$sim, values_match = am_values_word(cr$vm), confidence = conf,
-                 # 原文：和上一次用的第  |  版 | 。
-                 reason = paste0("\u548c\u4e0a\u4e00\u6b21\u7528\u7684\u7b2c ", r, " \u7248", why, "\u3002")))
+                 similarity = cr$sim, values_match = am_values_word(cr$vm), confidence = "medium",
+                 # 原文：「 | 」是
+                 reason = paste0("\u300c", meta$var[i], "\u300d\u662f", CB_KIND_LABEL[[kind[i]]],
+                                 # 原文：變項，標籤寫法不同也用第  |  版。
+                                 "\u8b8a\u9805\uff0c\u6a19\u7c64\u5beb\u6cd5\u4e0d\u540c\u4e5f\u7528\u7b2c ", r, " \u7248\u3002")))
         next
       }
+      if (cr$ok) {
+        strong <- cr$sim == "identical" && !isFALSE(as.logical(cr$vm))
+        conf <- if (by_head) {
+          if (strong || (cr$sim == "high" && isTRUE(cr$vm))) "high" else "medium"
+        } else {
+          if (strong) "medium" else "low"
+        }
+        why <- if (identical(attr(cr$vm, "codes_same"), FALSE)) {
+          # 原文：標籤幾乎一樣，但選項代碼和題庫不同（題庫的選項組可能寫法不同，請看一下）
+          "\u6a19\u7c64\u5e7e\u4e4e\u4e00\u6a23\uff0c\u4f46\u9078\u9805\u4ee3\u78bc\u548c\u984c\u5eab\u4e0d\u540c\uff08\u984c\u5eab\u7684\u9078\u9805\u7d44\u53ef\u80fd\u5beb\u6cd5\u4e0d\u540c\uff0c\u8acb\u770b\u4e00\u4e0b\uff09"
+        # 原文：標籤和選項都一樣
+        } else if (strong) "\u6a19\u7c64\u548c\u9078\u9805\u90fd\u4e00\u6a23" else
+          # 原文：沒有標籤可比，選項沒有不同
+          if (cr$sim == "") "\u6c92\u6709\u6a19\u7c64\u53ef\u6bd4\uff0c\u9078\u9805\u6c92\u6709\u4e0d\u540c" else
+            # 原文：標籤幾乎一樣，沒有選項可比 | 標籤幾乎一樣，選項代碼一樣
+            if (is.na(cr$vm)) "\u6a19\u7c64\u5e7e\u4e4e\u4e00\u6a23\uff0c\u6c92\u6709\u9078\u9805\u53ef\u6bd4" else "\u6a19\u7c64\u5e7e\u4e4e\u4e00\u6a23\uff0c\u9078\u9805\u4ee3\u78bc\u4e00\u6a23"
+        add(base(i, class = "same", item_uid = u, itemVer = r, block = blk_of(u),
+                 similarity = cr$sim, values_match = am_values_word(cr$vm), confidence = conf,
+                 # 原文：： | ；用第  |  版（遺漏代碼不算）。
+                 reason = paste0(basis, "\uff1a", why, "\uff1b\u7528\u7b2c ", r, " \u7248\uff08\u907a\u6f0f\u4ee3\u78bc\u4e0d\u7b97\uff09\u3002")))
+        next
+      }
+      # 題庫裡已經有的別的版本（例如之後的施測先建好的）：題目文字幾乎一樣、選項代碼一樣就用它
       others <- setdiff(rev(versions_of(u)), r)
       hit <- NULL
       for (v in others) {
-        c2 <- compare_ver(u, v, lab[i], hv[[i]])
-        if (c2$ok) { hit <- c(v = v, c2); break }
+        c2 <- compare_ver(u, v, lab_raw[i], hv[[i]])
+        if (c2$ok && (!by_head || c2$sim %in% c("identical", "high"))) { hit <- c(v = v, c2); break }
       }
       if (!is.null(hit)) {
         add(base(i, class = "same", item_uid = u, itemVer = hit$v, block = blk_of(u),
                  similarity = hit$sim, values_match = am_values_word(hit$vm),
                  confidence = "medium",
-                 # 原文：和第  |  版一樣（不是上一次用的第 
-                 reason = paste0("\u548c\u7b2c ", hit$v, " \u7248\u4e00\u6a23\uff08\u4e0d\u662f\u4e0a\u4e00\u6b21\u7528\u7684\u7b2c ", r,
-                                 # 原文： 版）；請確認是不是改回舊的問法。
-                                 " \u7248\uff09\uff1b\u8acb\u78ba\u8a8d\u662f\u4e0d\u662f\u6539\u56de\u820a\u7684\u554f\u6cd5\u3002")))
+                 # 原文：有改；題庫已經有的第 
+                 reason = paste0(basis, "\u6709\u6539\uff1b\u984c\u5eab\u5df2\u7d93\u6709\u7684\u7b2c ", hit$v,
+                                 # 原文： 版文字幾乎一樣、選項代碼一樣，建議用第 
+                                 " \u7248\u6587\u5b57\u5e7e\u4e4e\u4e00\u6a23\u3001\u9078\u9805\u4ee3\u78bc\u4e00\u6a23\uff0c\u5efa\u8b70\u7528\u7b2c ", hit$v,
+                                 # 原文： 版（上一次用第  |  版）。
+                                 " \u7248\uff08\u4e0a\u4e00\u6b21\u7528\u7b2c ", r, " \u7248\uff09\u3002")))
         next
       }
-      # 新版本：這次別的資料檔已經建了一樣的新版本就用同一個
+      # 新版本：這次別的資料檔（例如 -P 和 -PK）已經建了一樣的新版本就用同一個
       nv <- new_vers[[u]]
-      same_new <- if (!is.null(nv)) which(nv$label == lab[i] & nv$values == vtxt[i]) else integer(0)
+      same_new <- integer(0)
+      if (!is.null(nv)) {
+        same_new <- which(vapply(seq_len(nrow(nv)), function(k) {
+          am_label_sim(nv$label[k], lab_raw[i]) %in% c("identical", "high") &&
+            !isFALSE(as.logical(am_values_cmp(parse_vlabs(nv$values[k]), hv[[i]], miss_codes)))
+        }, logical(1)))
+      }
       if (length(same_new)) {
         ver <- nv$ver[same_new[1]]
       } else {
         ver <- max(c(versions_of(u), nv$ver)) + 1L
-        new_vers[[u]] <- rbind(nv, data.frame(ver = ver, label = lab[i], values = vtxt[i],
+        new_vers[[u]] <- rbind(nv, data.frame(ver = ver, label = lab_raw[i], values = vtxt[i],
                                               stringsAsFactors = FALSE))
       }
       vw <- am_values_word(cr$vm)
-      conf <- if (vw == "codes_differ" || cr$sim == "low") "high" else
-        if (cr$sim == "medium") "medium" else "low"
+      conf <- if (by_head) {
+        if (vw == "codes_differ" || cr$sim == "low") "high" else
+          if (cr$sim == "medium") "medium" else "low"
+      } else {
+        if (vw == "codes_differ" && cr$sim %in% c("medium", "low")) "medium" else "low"
+      }
       # 原文：題目文字改了
       what <- c(if (cr$sim %in% c("medium", "low")) "\u984c\u76ee\u6587\u5b57\u6539\u4e86",
-                # 原文：選項代碼改了
-                if (vw == "codes_differ") "\u9078\u9805\u4ee3\u78bc\u6539\u4e86",
+                # 原文：選項代碼改了（遺漏代碼不算）
+                if (vw == "codes_differ") "\u9078\u9805\u4ee3\u78bc\u6539\u4e86\uff08\u907a\u6f0f\u4ee3\u78bc\u4e0d\u7b97\uff09",
                 # 原文：選項文字改了
                 if (vw == "labels_differ") "\u9078\u9805\u6587\u5b57\u6539\u4e86")
       add(base(i, class = "new_version", item_uid = u, itemVer = ver, from_uid = u,
                from_ver = r, block = blk_of(u), similarity = cr$sim, values_match = vw,
                confidence = conf,
-               # 原文：和上一次用的第  |  版比： | 、
-               reason = paste0("\u548c\u4e0a\u4e00\u6b21\u7528\u7684\u7b2c ", r, " \u7248\u6bd4\uff1a", paste(what, collapse = "\u3001"),
-                               # 原文：；建第  |  版，記一筆改版關係。
-                               "\uff1b\u5efa\u7b2c ", ver, " \u7248\uff0c\u8a18\u4e00\u7b46\u6539\u7248\u95dc\u4fc2\u3002")))
+               # 原文：： | 、
+               reason = paste0(basis, "\uff1a", paste(what, collapse = "\u3001"),
+                               # 原文：；上一次用第  |  版，建第  |  版，記一筆改版關係。
+                               "\uff1b\u4e0a\u4e00\u6b21\u7528\u7b2c ", r, " \u7248\uff0c\u5efa\u7b2c ", ver, " \u7248\uff0c\u8a18\u4e00\u7b46\u6539\u7248\u95dc\u4fc2\u3002")))
     }
 
     # 2. 上一次有、這次不見的題目 ----
@@ -483,13 +663,12 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
       if (is.null(cand) && nrow(gone)) {
         left <- gone[!gone$item_uid %in% claimed, , drop = FALSE]
         if (nrow(left)) {
-          sims <- vapply(seq_len(nrow(left)), function(j) {
-            rel_similarity(label_of(left$item_uid[j], left$itemVer[j]), lab[i],
-                           stem_of(left$item_uid[j], left$itemVer[j]), "")
-          }, character(1))
-          vms <- lapply(seq_len(nrow(left)), function(j) {
-            rel_values_match(vs_of(left$item_uid[j], left$itemVer[j]), hv[[i]], miss_codes)
+          pis <- lapply(seq_len(nrow(left)), function(j) {
+            prev_of(left$varname[j], left$item_uid[j], left$itemVer[j])
           })
+          sims <- vapply(pis, function(pi) am_label_sim(pi$label, lab_raw[i], pi$stem %||% ""),
+                         character(1))
+          vms <- lapply(pis, function(pi) rel_values_match(pi$values, hv[[i]], miss_codes))
           okv <- !vapply(vms, function(x) isFALSE(as.logical(x)), logical(1))
           for (lvl in c("identical", "high")) {
             j <- which(sims == lvl & okv)
@@ -503,10 +682,11 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
       new_uid <- paste0(ins, ".", v)
       if (!is.null(cand)) {
         fu <- cand$uid
-        fv <- ref_ver(fu, prev)
-        sim <- rel_similarity(label_of(fu, fv), lab[i], stem_of(fu, fv), "")
-        vm <- rel_values_match(vs_of(fu, fv), hv[[i]], miss_codes)
-        good <- sim %in% c("identical", "high") && isTRUE(vm)
+        fv <- ref_ver(fu, prev, d$formID)
+        pi <- prev_of(it$varname[match(fu, it$item_uid)], fu, fv)
+        sim <- am_label_sim(pi$label, lab_raw[i], pi$stem %||% "")
+        vm <- rel_values_match(pi$values, hv[[i]], miss_codes)
+        good <- sim %in% c("identical", "high") && !isFALSE(as.logical(vm))
         conf <- switch(cand$how,
                        crosswalk = "high",
                        xn = if (good) "high" else if (sim %in% c("low", "")) "low" else "medium",
@@ -632,6 +812,9 @@ propose_admin_merge <- function(kit, sav_meta, admin, datasets = NULL, crosswalk
   res <- cbind(proposal_id = sprintf("p%04d", seq_len(nrow(res))), res, stringsAsFactors = FALSE)
   rownames(res) <- NULL
   attr(res, "admin") <- admin_row
+  # 每個資料檔是和上一次的 .sav 表頭比（header），還是和題庫文字比（kit）
+  ds_new$compared_with <- ifelse(ds_new$prev %in% names(prevs) | ds_new$datasetID %in% names(prevs),
+                                 "header", "kit")
   attr(res, "datasets") <- ds_new
   res
 }

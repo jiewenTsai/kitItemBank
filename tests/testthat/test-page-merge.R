@@ -82,4 +82,26 @@ test_that("unknown file names give a plain message instead of proposals", {
   }))
   ui <- as.character(page_merge_ui("merge"))
   expect_match(ui, "新施測的代號")
+  expect_match(ui, "上一次施測的資料檔")
+})
+
+test_that("the page lists the previous data files needed and uses their headers", {
+  dir <- withr::local_tempdir()
+  f_new <- mg_header_csv(dir, "new.csv")
+  f_old <- mg_header_csv(dir, "old.csv")
+  suppressWarnings(shiny::testServer(page_merge_server, args = list(kit = mg_kit(), goto = function(...) NULL), {
+    session$setInputs(admin = "M03M048",
+                      files = data.frame(name = "data1.csv", size = 1, type = "text/csv",
+                                         datapath = f_new, stringsAsFactors = FALSE))
+    expect_match(mg_html(output$prev_ui), "M03M036-P（data1）：還沒上傳")
+    session$setInputs(prev_files = data.frame(name = "data1_meta.csv", size = 1, type = "text/csv",
+                                              datapath = f_old, stringsAsFactors = FALSE))
+    expect_false(file.exists(f_old))
+    expect_match(mg_html(output$prev_ui), "M03M036-P（data1）：已上傳")
+    session$setInputs(run = 1)
+    p <- proposals()
+    expect_equal(attr(p, "datasets")$compared_with, "header")
+    expect_match(p$reason[p$varname == "a01"], "M03M036-P")
+    expect_match(mg_html(output$result), "用 .sav 表頭")
+  }))
 })
