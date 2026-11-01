@@ -249,7 +249,7 @@ page_review_server <- function(id, kit, goto, version = kit_version()) {
               kitDesign::kit_download_button(
                 # 原文：下載套用後的題庫（zip）
                 session, "dl_zip", "\u4e0b\u8f09\u5957\u7528\u5f8c\u7684\u984c\u5eab\uff08zip\uff09",
-                paste0("kit_", nv, "_", format(Sys.Date(), "%Y%m%d"), ".zip"),
+                paste0("kit_", nv, ".zip"),
                 function(file) {
                   r <- review()
                   rec <- change_record(r, meta(), new_version(), row_meta = pkg()$row_meta)

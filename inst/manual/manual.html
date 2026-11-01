@@ -32,7 +32,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <main>
 <h1 id="kit-題庫管理工具-操作手冊">KIT 題庫管理工具 操作手冊</h1>
 <p>給行政同仁用。不需要懂程式。</p>
-<p>這本手冊對應 kitItemBank <strong>0.3</strong>（長格式版），內建題庫版本 <strong>2026.3</strong>（2026-11-02）。
+<p>這本手冊對應 kitItemBank <strong>0.3</strong>（長格式版），內建題庫版本 <strong>2026-11-02-v1</strong>（2026-11-02）。
 畫面上的字，手冊裡用「」括起來，照抄畫面上的寫法，方便你對照。</p>
 <hr />
 <h2 id="目錄">目錄</h2>
@@ -132,7 +132,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 </tr>
 </tbody>
 </table>
-<p>怎麼確認版本：看畫面最上面的版本行（例如「kitItemBank v0.3.4 · …」）和題庫列的「內建題庫 2026.3」。
+<p>怎麼確認版本：看畫面最上面的版本行（例如「kitItemBank v0.3.4 · …」）和題庫列的「內建題庫 2026-11-02-v1」。
 本機版要跟著雲端版更新（見第 4.3 節）；兩邊的「內建題庫」版本應該一樣。</p>
 <p><strong>一個重要原則</strong>：這個 app 不會改任何檔案。你在 app 裡做的改動，只存在你這個瀏覽器分頁裡。
 要真正改題庫，一律走這條路：</p>
@@ -143,16 +143,17 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <p>由上往下：</p>
 <ol>
 <li><strong>頁首</strong>：「KIT 題庫管理工具」，下面一行是版本，例如「kitItemBank v0.3.4 · … · kitDesign 0.7.0」。</li>
-<li><strong>分頁列</strong>，分兩組：
+<li><strong>分頁列</strong>，分三組：
 <ul>
 <li>「查詢」：「題項查詢」「構面查詢」「施測」「比較」——只看不改。</li>
 <li>「維護」：「待辦事項」「題庫編修」「改版」「併入新施測」「審核」「統計」。</li>
+<li>「說明」：「操作手冊」——就是這本手冊，左邊是目錄；上面的「在新分頁開」可以單獨開一頁，方便列印。</li>
 </ul>
 </li>
 <li><strong>題庫列</strong>（每一頁都有）：
 <ul>
 <li>「題庫」：選「家長」「兒童青少年」「教保人員」。</li>
-<li>後面寫現在用的題庫，例如「內建題庫 2026.3 · 2,061 題 · 24 個波次 · 225 個構面」。</li>
+<li>後面寫現在用的題庫，例如「內建題庫 2026-11-02-v1 · 2,061 題 · 24 個波次 · 225 個構面」。</li>
 <li>如果你在「題庫編修」改了東西還沒下載，會多一句「有 1 處改動還沒下載（在「題庫編修」下載）」。</li>
 <li>「打開題庫 Excel…」：打開 0.2 格式的題庫檔。一般用不到。</li>
 </ul>
@@ -175,7 +176,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 「社會能力」本身是<strong>上層題組</strong>，題目都掛在它下面的<strong>子題組</strong>，它自己是 <strong>0 題</strong>。
 在「構面查詢」選「社會能力」，會看到一行「這個題組本身沒有題目，題目都在它的子題組裡。點一個子題組看它的題目：主動性、合群性……」，
 點子題組的名字就換到那個子題組。</p>
-<p>家長題庫（2026.3）裡，「社會能力」底下的子題組：</p>
+<p>家長題庫（2026-11-02-v1）裡，「社會能力」底下的子題組：</p>
 <table>
 <thead>
 <tr>
@@ -368,7 +369,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <li>按「下載修改包」。
 <ul>
 <li>檔名像「KIT_parent_2026-11-02_修改包.xlsx」（parent = 家長，child_adolescent = 兒童青少年，childcare_teacher = 教保人員）。</li>
-<li>裡面有「說明」「改動」「原始改動」三張表。「說明」記著這是從哪一版題庫做的（base_version 2026.3）。</li>
+<li>裡面有「說明」「改動」「原始改動」三張表。「說明」記著這是從哪一版題庫做的（base_version 2026-11-02-v1）。</li>
 </ul>
 </li>
 <li>把修改包寄給審核的人，並寫一句為什麼要改、誰決定的。</li>
@@ -384,8 +385,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <li>看右邊，由上往下：
 <ul>
 <li>標題是加了引號的檔名：「「KIT_parent_2026-11-02_修改包.xlsx」」，下面一行「共 1 列改動，改到題庫裡 1 列。」</li>
-<li>版本：「這個修改包是從現在的題庫（2026.3 版）做的。」
-如果寫「這個修改包是從 2026.2 版題庫做的，現在的題庫是 2026.3 版」，見第 8 節。</li>
+<li>版本：「這個修改包是從現在的題庫（2026-11-02-v1 版）做的。」
+如果寫「這個修改包是從 2026-10-30-v1 版題庫做的，現在的題庫是 2026-11-02-v1 版」，見第 8 節。</li>
 <li>「檢查套用後的題庫」：要看到綠色的「檢查通過：套用後的題庫沒有新的結構問題。」
 （如果另外寫「題庫原本就有 N 個問題，和這個修改包無關」，不用管。）</li>
 <li>「影響範圍」：「影響到：題目 1 個、題組 1 個、題本 0 個、資料檔 1 個、施測 1 個。」
@@ -407,12 +408,12 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <li>往下到「下載套用後的題庫」。
 <ul>
 <li>還沒填好時，按鈕是灰的，旁邊寫「還差：填修改原因、審核人。」</li>
-<li>填好以後會寫「套用後題庫會從 2026.3 版變成 2026.4 版。zip 裡有改到的表、新的 BANK_VERSION 和這次的改動紀錄（changes/2026.4.csv）。」</li>
+<li>填好以後會寫「套用後題庫會從 2026-11-02-v1 版變成 2026-11-02-v2 版。zip 裡有改到的表、新的 BANK_VERSION 和這次的改動紀錄（changes/2026-11-02-v2.csv）。」</li>
 </ul>
 </li>
-<li>按「下載套用後的題庫（zip）」。檔名像「kit_2026.4_20261102.zip」。
+<li>按「下載套用後的題庫（zip）」。檔名像「kit_2026-11-02-v2.zip」。
 <ul>
-<li>zip 裡是一個 <code>kit</code> 資料夾：<code>BANK_VERSION</code>、<code>item_versions.csv</code>（改到的表）、<code>changes/2026.4.csv</code>（這次的改動紀錄）。</li>
+<li>zip 裡是一個 <code>kit</code> 資料夾：<code>BANK_VERSION</code>、<code>item_versions.csv</code>（改到的表）、<code>changes/2026-11-02-v2.csv</code>（這次的改動紀錄）。</li>
 </ul>
 </li>
 </ol>
@@ -421,7 +422,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <p>技術人員：＿＿＿＿＿＿（聯絡方式：＿＿＿＿＿＿）</p>
 <p>寄給技術人員：</p>
 <ul>
-<li>套用後的題庫 zip（例如 <code>kit_2026.4_20261102.zip</code>）。</li>
+<li>套用後的題庫 zip（例如 <code>kit_2026-11-02-v2.zip</code>）。</li>
 <li>原本的修改包（留底）。</li>
 <li>一句話：改了什麼、誰核准的。</li>
 </ul>
@@ -430,12 +431,12 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
 <li>解壓縮，把 <code>kit</code> 資料夾裡的檔案放進程式碼的 <code>inst/extdata/kit/</code>，蓋掉同名檔案。</li>
 <li>跑檢查和測試，看改了什麼。</li>
 <li>commit、push 到 GitHub。</li>
-<li>雲端版重新部署。部署完，雲端版題庫列的「內建題庫」會變成 2026.4。</li>
-<li><strong>本機版也要更新</strong>：有在用本機版的人，請技術人員幫你重新安裝，題庫列也要顯示 2026.4。</li>
+<li>雲端版重新部署。部署完，雲端版題庫列的「內建題庫」會變成 2026-11-02-v2。</li>
+<li><strong>本機版也要更新</strong>：有在用本機版的人，請技術人員幫你重新安裝，題庫列也要顯示 2026-11-02-v2。</li>
 </ol>
 <blockquote>
-<p><strong>在新版題庫上線之前，不要審核下一個修改包。</strong> app 還是舊版題庫（2026.3），
-審出來的 zip 會從 2026.3 算起，兩個 zip 會互相蓋掉。
+<p><strong>在新版題庫上線之前，不要審核下一個修改包。</strong> app 還是舊版題庫（2026-11-02-v1），
+審出來的 zip 會從 2026-11-02-v1 算起，兩個 zip 會互相蓋掉。
 本機版沒更新也一樣：在舊版題庫上做的修改包、審出來的 zip 都是從舊版算起，「審核」頁會提醒「匯出以後題庫改過了」。
 有好幾個修改包時，一次審一個，等上一個上線再審下一個；或請送件的人把改動放在同一個修改包裡。</p>
 </blockquote>
@@ -712,7 +713,7 @@ Excel 裡<strong>先用「信心」欄篩選 low</strong>（就是畫面上的�
 </li>
 </ol>
 <h3 id="56-練習的參考答案m03m048和-m03m036-的表頭比">5.6 練習的參考答案（M03M048，和 M03M036 的表頭比）</h3>
-<p>勾「練習」、上傳兩次施測的表頭以後，2026.3 題庫實際跑出來是：</p>
+<p>勾「練習」、上傳兩次施測的表頭以後，2026-11-02-v1 題庫實際跑出來是：</p>
 <table>
 <thead>
 <tr>
@@ -856,7 +857,7 @@ Excel 裡<strong>先用「信心」欄篩選 low</strong>（就是畫面上的�
 </ol>
 <h3 id="65-待辦事項">6.5 待辦事項</h3>
 <p>題庫裡要注意的地方，依「誰能處理」分成四堆：自己能改、要問老師、要問統計人員、要請技術人員改。點一筆，會打開能看它的分頁。每種最多列 20 筆，全部的請按「下載要注意的完整清單（Excel）」（一個處理人一張表）。</p>
-<p>這一頁看的是<strong>三個題庫合在一起</strong>（家長、兒童青少年、教保人員），不管題庫列選哪一個（畫面上也有寫）。2026.3 共 349 筆：</p>
+<p>這一頁看的是<strong>三個題庫合在一起</strong>（家長、兒童青少年、教保人員），不管題庫列選哪一個（畫面上也有寫）。2026-11-02-v1 共 349 筆：</p>
 <p><strong>自己能改（64）</strong>——看題庫就能改，到「題庫編修」改，走修改包 → 審核。</p>
 <ul>
 <li>「題組沒有任何題目」（37）：例如 P.HOME量表。請確認要不要刪，或請老師放題目。</li>
@@ -1044,14 +1045,14 @@ Excel 裡<strong>先用「信心」欄篩選 low</strong>（就是畫面上的�
 <p>例如 M03M036 用 2016 方案，M03M048 用 2020 方案。「施測」頁的概要會寫這次用哪一套；SPSS 標籤會自動設好。</p>
 <p><strong>修改包</strong>：記著「改了什麼」的 Excel（不是整份題庫）。從「題庫編修」或「改版」下載，拿到「審核」檢查。
 檔名像「KIT_parent_2026-11-02_修改包.xlsx」或「修改包_改版_M03M132G05_20261102.xlsx」。</p>
-<p><strong>題庫版本</strong>：例如 <code>2026.3</code>，寫在題庫列「內建題庫 2026.3」。前面是年份，後面是當年第幾版。
-每審核下載一次，就往上加一（2026.3 → 2026.4）；跨年從 <code>.1</code> 開始（2027.1）。</p>
+<p><strong>題庫版本</strong>：例如 <code>2026-11-02-v1</code>，寫在題庫列「內建題庫 2026-11-02-v1」。前面是做出這版題庫的日期，後面是當天第幾版。
+同一天再審核下載一次就是 <code>2026-11-02-v2</code>；換一天從 <code>v1</code> 開始（例如 <code>2026-11-05-v1</code>）。套用後題庫的 zip 也用這個名字，例如 <code>kit_2026-11-02-v1.zip</code>。</p>
 <p><strong>結構問題</strong>：題庫的表之間對不起來的地方，例如某一列指到一個不存在的題目、同一個題號出現兩次、必填的欄是空的。
 「審核」頁會在套用修改包以後檢查；修改包造成<strong>新的</strong>結構問題就不能下載，要請送件人改好。題庫原本就有的問題不擋。</p>
 <p><strong>題組 Excel 裡的英文欄名</strong>（「下載各波次題目表（Excel）」的「題目」表）：
 <code>itemID</code> = 題號（變項名）、<code>itemVer</code> = 版本、<code>deprecated</code> = 停用（1 是已經不用的舊版本）、
 <code>respondent</code> = 填答者、<code>label</code> = 題目文字。</p>
-<p><strong>改動紀錄</strong>：每一版一個檔 <code>changes/2026.3.csv</code>，記每一格改前、改後、原因、誰決定、誰送、誰審核。</p>
+<p><strong>改動紀錄</strong>：每一版一個檔 <code>changes/2026-11-02-v1.csv</code>，記每一格改前、改後、原因、誰決定、誰送、誰審核。</p>
 <p><strong>併入提案</strong>：「併入新施測」產生的清單，每個變項一列，說它該怎麼進題庫。</p>
 <h3 id="71-術語表中英對照">7.1 術語表（中英對照）</h3>
 <p>照「用到的順序」排：先是題目本身，再是施測，最後是維護流程。英文是程式、下載的 Excel 欄名或國外文獻常用的說法。</p>
@@ -1254,14 +1255,14 @@ Excel 裡<strong>先用「信心」欄篩選 low</strong>（就是畫面上的�
 <tr>
 <td>題庫版本</td>
 <td>release</td>
-<td>題庫的版本號：年份＋當年第幾版</td>
-<td><code>2026.2</code> → <code>2026.3</code></td>
+<td>題庫的版本號：日期＋當天第幾版</td>
+<td><code>2026-11-02-v1</code> → 同一天 <code>2026-11-02-v2</code></td>
 </tr>
 <tr>
 <td>改動紀錄</td>
 <td>change log</td>
 <td>每一格改前、改後、原因、誰決定、誰送、誰審核</td>
-<td><code>changes/2026.3.csv</code></td>
+<td><code>changes/2026-11-02-v1.csv</code></td>
 </tr>
 <tr>
 <td>結構問題</td>
@@ -1325,7 +1326,7 @@ Excel 裡<strong>先用「信心」欄篩選 low</strong>（就是畫面上的�
 雲端版為了保護個資，不收完整的 .sav（檔案已經刪掉、沒有讀）。請技術人員轉成 <code>_meta.csv</code>（第 9.3 節）再上傳，或改用本機版（桌面的 <code>run.bat</code>，或請技術人員開）。</p>
 <p><strong>Q：本機版上傳 .sav 時失敗，或寫「Maximum upload size exceeded」。</strong>
 本機版上限 500 MB。還是太大時，把 .sav 轉成 <code>_meta.csv</code>（第 9.3 節）再上傳。</p>
-<p><strong>Q：「審核」頁說「這個修改包是從 2026.1 版題庫做的，現在的題庫是 2026.2 版：匯出以後題庫改過了。」</strong>
+<p><strong>Q：「審核」頁說「這個修改包是從 2026-10-30-v1 版題庫做的，現在的題庫是 2026-11-02-v1 版：匯出以後題庫改過了。」</strong>
 修改包是在舊版題庫上做的（例如送件人用的本機版還沒更新，或在新版上線前做的）。</p>
 <ol>
 <li>仔細看「改前改後」的「改前」是不是送件人當時看到的樣子。</li>
@@ -1352,9 +1353,9 @@ Excel 裡<strong>先用「信心」欄篩選 low</strong>（就是畫面上的�
 <p><strong>Q：「審核」的下載按鈕是灰的。</strong>
 看按鈕上方「還差：」寫什麼。通常是還沒填「修改原因」或「審核人」；或修改包有套不上的改動、新的結構問題。</p>
 <p><strong>Q：審核完了，app 上還是舊的內容。</strong>
-正常。要等技術人員放進程式碼、雲端重新部署，題庫列才會變成新版本（例如 2026.3）。部署前不要審下一個修改包。</p>
-<p><strong>Q：雲端版已經是 2026.3，本機版還是 2026.2。</strong>
-本機版不會自己更新。請技術人員幫你重新安裝，題庫列顯示 2026.3 以後再用本機版做修改包或審核；
+正常。要等技術人員放進程式碼、雲端重新部署，題庫列才會變成新版本（例如 2026-11-02-v2）。部署前不要審下一個修改包。</p>
+<p><strong>Q：雲端版已經是 2026-11-02-v2，本機版還是 2026-11-02-v1。</strong>
+本機版不會自己更新。請技術人員幫你重新安裝，題庫列顯示 2026-11-02-v2 以後再用本機版做修改包或審核；
 不然修改包是在舊題庫上做的，「審核」頁會提醒「匯出以後題庫改過了」。</p>
 <p><strong>Q：下載了修改包，想接著改。</strong>
 「打開題庫 Excel…」只能打開 0.2 格式的整份題庫，不能打開修改包。要接著改，請在同一個瀏覽器分頁繼續改，再下載一個新的修改包（它會包含全部改動）。改好的修改包交給審核的人，在「審核」頁上傳。</p>
@@ -1377,7 +1378,7 @@ kitItemBank::run_kititembank()   # 本機版：有「統計」頁，上傳上限
 </code></pre>
 <h3 id="92-收到套用後的題庫zip">9.2 收到「套用後的題庫」zip</h3>
 <p>zip 裡是 <code>kit/</code> 資料夾（<code>BANK_VERSION</code>、改到的表、<code>changes/&lt;新版本&gt;.csv</code>）。</p>
-<pre><code class="language-r">utils::unzip(&quot;kit_2026.3_20261102.zip&quot;, exdir = &quot;inst/extdata&quot;)   # 蓋掉 inst/extdata/kit/ 的同名檔
+<pre><code class="language-r">utils::unzip(&quot;kit_2026-11-02-v1.zip&quot;, exdir = &quot;inst/extdata&quot;)   # 蓋掉 inst/extdata/kit/ 的同名檔
 pkgload::load_all()
 kitItemBank::check_kit(kitItemBank::read_kit())                    # 0 列 = 沒問題
 devtools::test()
@@ -1385,7 +1386,7 @@ devtools::test()
 <pre><code class="language-bash">git diff --stat inst/extdata/kit
 git diff inst/extdata/kit
 git add inst/extdata/kit
-git commit -m &quot;題庫 2026.3：fatherinvo01n 題目補句號&quot;
+git commit -m &quot;題庫 2026-11-02-v2：fatherinvo01n 題目補句號&quot;
 git push
 </code></pre>
 <p>然後在 Posit Connect Cloud 重新部署（用根目錄的 <code>app.R</code> 和 <code>manifest.json</code>；有新套件時先更新 <code>manifest.json</code>）。

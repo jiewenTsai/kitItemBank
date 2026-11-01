@@ -3616,7 +3616,7 @@
       "checksum": "d3520122d93970c9538fa1c0c8393649"
     },
     "inst/extdata/kit/BANK_VERSION": {
-      "checksum": "606fe2e9477505b9cb33fdd63133e5a2"
+      "checksum": "9bbd976a550f93cc41b36a8d38dbe87c"
     },
     "inst/extdata/kit/block_status.csv": {
       "checksum": "12edeb05c09909bb47ff0075fbe62a46"
@@ -3672,8 +3672,11 @@
     "inst/extdata/kit/value_codes.csv": {
       "checksum": "53ac3c517ea39896cb4601c5e3307e4c"
     },
+    "inst/manual/manual_fragment.html": {
+      "checksum": "33d1077218fb49963a06aa0a22703242"
+    },
     "inst/manual/manual.html": {
-      "checksum": "06313c49f5aa67e08f9ad88e1ff79621"
+      "checksum": "f2946692492ba94a5f47970e2f694dd2"
     },
     "inst/reports/dim_summary_report.qmd": {
       "checksum": "511e5c1d026016298cc9e6b60181da0c"
@@ -4033,13 +4036,13 @@
       "checksum": "11fd0bda850fa158de7ceb4b6923ebed"
     },
     "NEWS.md": {
-      "checksum": "74fc00cdb6084e4364f98274d03f5e7a"
+      "checksum": "5f9cf45bf7ac56f7816466e249e1bb1a"
     },
     "R/admin_merge.R": {
       "checksum": "ac7c44f327dc7cf08b3f86e823d888b6"
     },
     "R/app.R": {
-      "checksum": "d91ab24eda822fd461becdbdb44e6781"
+      "checksum": "fe854b88b65d62d721d8dc142d768a7d"
     },
     "R/apply_candidates.R": {
       "checksum": "be73fa167536d57dcc2baaeb76f63cff"
@@ -4072,7 +4075,7 @@
       "checksum": "a1d3a817afaba2aeb769f02ef5c119b7"
     },
     "R/export_datapackage.R": {
-      "checksum": "8a28f74c4c7a077dea9998565c64ba7c"
+      "checksum": "3906d0e67b192c4bab96085ee219f031"
     },
     "R/export_ddi.R": {
       "checksum": "e2cdf064f6cbda15675a3eeb2413663c"
@@ -4126,7 +4129,7 @@
       "checksum": "6fc5f525e62b322f728ff8411474e28d"
     },
     "R/page_review.R": {
-      "checksum": "3f85ce112c97440cb637ec909dd028d9"
+      "checksum": "b2f4f5121c03b64c15a6e7cc80ecaac2"
     },
     "R/page_revision.R": {
       "checksum": "407ea1bfb9efcac5178e738800425769"
@@ -4162,7 +4165,7 @@
       "checksum": "2ca4c2837226ffcd6a0bc414b7d3cbc2"
     },
     "R/review_patch.R": {
-      "checksum": "5378ddcfd6d5904a4ca3e4f68fb66414"
+      "checksum": "e73a0a5119e68fbd395c45579e6efcc5"
     },
     "R/review.R": {
       "checksum": "b609c4894c29b857eb17f5148fb5b977"
@@ -4201,7 +4204,7 @@
       "checksum": "9426dd66c295531186fed6fb15d5bc1f"
     },
     "README.zh-TW.md": {
-      "checksum": "b919e6aec819b4b8e7606eeb05462b3c"
+      "checksum": "a180b094f038a70e9a70ec224f6ece03"
     }
   },
   "users": null

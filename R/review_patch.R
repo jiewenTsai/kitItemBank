@@ -4,7 +4,7 @@
 #   read_review_package()  讀修改包：改動列、base_version，和說明頁裡的原因／決定者／送出者（有的話）
 #   review_patch()         一列一列套到目前的題庫：哪些列套不上、改前改後、check_kit() 的結果、
 #                          影響到哪些題目／題組／資料檔／施測、版本對不對得上
-#   bump_bank_version()    套用後的新題庫版本：2026.1 → 2026.2；換年 → 2027.1
+#   bump_bank_version()    套用後的新題庫版本：2026-11-02-v1 → 同一天 2026-11-02-v2、隔天 2026-11-03-v1
 #   change_record()        改動紀錄（一個修改包一個 CSV，放在 inst/extdata/kit/changes/）
 #   review_files()         套用後要放進 repo 的檔案：改到的表、BANK_VERSION、改動紀錄
 #   review_zip()           把這些檔案包成 zip（審核頁下載用）
@@ -84,26 +84,27 @@ kit_column_label <- function(x, table = NULL) {
 
 #' Next bank version
 #'
-#' Bank versions are `<year>.<n>`: the next one in the same year adds one to `n`; the first
-#' one in a new year is `<year>.1`.
+#' Bank versions are `<date>-v<n>`, e.g. `"2026-11-02-v1"`: the day the new bank was made,
+#' and which version of that day. A second version on the same day adds one to `n`.
 #'
-#' @param version The current version, e.g. `"2026.1"`. Empty or unreadable → the first
-#'   version of `date`'s year.
-#' @param date The day of the new version (its year is used).
-#' @return One string, e.g. `"2026.2"` or `"2027.1"`.
+#' @param version The current version, e.g. `"2026-11-02-v1"`. Empty, unreadable or an
+#'   older `<year>.<n>` version → `<date>-v1`.
+#' @param date The day of the new version.
+#' @return One string, e.g. `"2026-11-02-v2"` or `"2026-11-03-v1"`.
 #' @examples
-#' bump_bank_version("2026.1", as.Date("2026-11-02"))
-#' bump_bank_version("2026.3", as.Date("2027-01-05"))
+#' bump_bank_version("2026-11-02-v1", as.Date("2026-11-02"))
+#' bump_bank_version("2026-11-02-v1", as.Date("2026-11-05"))
 #' @export
 bump_bank_version <- function(version, date = Sys.Date()) {
-  year <- as.integer(format(as.Date(date), "%Y"))
+  day <- format(as.Date(date), "%Y-%m-%d")
   v <- trimws(as.character(version %||% ""))
-  if (length(v) != 1L || is.na(v) || !grepl("^[0-9]{4}\\.[0-9]+$", v)) {
-    return(paste0(year, ".1"))
+  if (length(v) != 1L || is.na(v) || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}-v[0-9]+$", v)) {
+    return(paste0(day, "-v1"))
   }
-  parts <- as.integer(strsplit(v, ".", fixed = TRUE)[[1L]])
-  # 題庫版本的年份比今天還晚（時鐘不對）時，照原本的年份往上加，不讓版本倒退
-  if (year > parts[1L]) paste0(year, ".1") else paste0(parts[1L], ".", parts[2L] + 1L)
+  v_day <- substr(v, 1L, 10L)
+  n <- as.integer(sub("^.*-v", "", v))
+  # 題庫版本的日期比今天還晚（時鐘不對）時，照原本的日期往上加，不讓版本倒退
+  if (day > v_day) paste0(day, "-v1") else paste0(v_day, "-v", n + 1L)
 }
 
 #' Read a change package for review

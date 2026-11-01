@@ -19,18 +19,20 @@ review_test_package <- function(meta = list()) {
   f
 }
 
-test_that("bump_bank_version adds one in the same year, restarts in a new year", {
-  expect_identical(bump_bank_version("2026.1", as.Date("2026-11-02")), "2026.2")
-  expect_identical(bump_bank_version("2026.9", as.Date("2026-12-31")), "2026.10")
-  expect_identical(bump_bank_version("2026.10", as.Date("2026-12-31")), "2026.11")
-  expect_identical(bump_bank_version("2026.3", as.Date("2027-01-01")), "2027.1")
-  expect_identical(bump_bank_version(" 2026.1 ", as.Date("2026-05-01")), "2026.2")
-  # 時鐘比題庫版本還早：不倒退
-  expect_identical(bump_bank_version("2027.2", as.Date("2026-05-01")), "2027.3")
-  expect_identical(bump_bank_version("", as.Date("2026-05-01")), "2026.1")
-  expect_identical(bump_bank_version(NA, as.Date("2026-05-01")), "2026.1")
-  expect_identical(bump_bank_version(NULL, as.Date("2026-05-01")), "2026.1")
-  expect_identical(bump_bank_version("v2", as.Date("2026-05-01")), "2026.1")
+test_that("bump_bank_version adds one on the same day, restarts at v1 on a new day", {
+  expect_identical(bump_bank_version("2026-11-02-v1", as.Date("2026-11-02")), "2026-11-02-v2")
+  expect_identical(bump_bank_version("2026-11-02-v9", as.Date("2026-11-02")), "2026-11-02-v10")
+  expect_identical(bump_bank_version("2026-11-02-v3", as.Date("2026-11-05")), "2026-11-05-v1")
+  expect_identical(bump_bank_version("2026-12-31-v2", as.Date("2027-01-01")), "2027-01-01-v1")
+  expect_identical(bump_bank_version(" 2026-11-02-v1 ", as.Date("2026-11-02")), "2026-11-02-v2")
+  # 時鐘比題庫版本早：不倒退
+  expect_identical(bump_bank_version("2026-11-09-v1", as.Date("2026-11-02")), "2026-11-09-v2")
+  # 舊的 2026.3 寫法、空的、讀不懂的 → 當天 v1
+  expect_identical(bump_bank_version("2026.3", as.Date("2026-11-02")), "2026-11-02-v1")
+  expect_identical(bump_bank_version("", as.Date("2026-05-01")), "2026-05-01-v1")
+  expect_identical(bump_bank_version(NA, as.Date("2026-05-01")), "2026-05-01-v1")
+  expect_identical(bump_bank_version(NULL, as.Date("2026-05-01")), "2026-05-01-v1")
+  expect_identical(bump_bank_version("v2", as.Date("2026-05-01")), "2026-05-01-v1")
 })
 
 test_that("read_review_package reads old packages and the optional fields", {

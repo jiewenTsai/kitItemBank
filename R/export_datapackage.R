@@ -42,7 +42,7 @@ dp_table_schema <- function(tb) {
 #' from the schema: one resource per table (`<table>.csv`) with field types, required
 #' fields, allowed values, primary keys and foreign keys.
 #'
-#' @param version Bank version, e.g. `"2026.1"`.
+#' @param version Bank version, e.g. `"2026-11-02-v1"`.
 #' @return A list ready for `jsonlite::toJSON(auto_unbox = TRUE)`.
 #' @export
 datapackage_descriptor <- function(version = codebook_bank_version()) {

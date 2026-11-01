@@ -58,7 +58,7 @@ Windows 也可以雙擊 `run.bat`。需要 R 4.2 以上。
 
 ## 題庫資料（0.3）
 
-內建題庫在 `inst/extdata/kit/`，一張表一個 CSV，版本寫在 `BANK_VERSION`（例如 `2026.2`）。
+內建題庫在 `inst/extdata/kit/`，一張表一個 CSV，版本寫在 `BANK_VERSION`（例如 `2026-11-02-v1`：做出這版題庫的日期，加上當天第幾版）。
 
 | 層 | 表 |
 |---|---|

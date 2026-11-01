@@ -1,7 +1,7 @@
 # R/app.R — KIT 題庫管理工具：頁面、伺服器、啟動
 #
 # 頁首（kit_page）→ 分組分頁（查詢：題項查詢、構面查詢、施測、比較｜
-# 維護：待辦事項、題庫編修、改版、併入新施測、審核、統計）
+# 維護：待辦事項、題庫編修、改版、併入新施測、審核、統計｜說明：操作手冊）
 # → 題庫選擇列（全 app 共用）→ 分頁內容。
 # 查詢的兩頁只看；改題庫只在「題庫編修」，改好的題庫用下載的，app 不寫檔。
 
@@ -25,7 +25,6 @@ app_ui <- function(request) {
     # kit_step_tabs_ui("nav", groups = ) 的兩半拆開，中間放題庫選擇列：
     # 分頁列 → 題庫選擇列 → 分頁內容（tabset id 照模組的 "nav-tabs"）
     kitDesign::kit_navgroups(APP_TAB_GROUPS, "nav-tabs", selected = tab),
-    shiny::div(class = "kit-hint", style = "text-align:right;margin:-4px 0 6px;", manual_link()),
     bank_bar_ui("bank"),
     shiny::tabsetPanel(
       id = "nav-tabs", type = "hidden", selected = tab,
@@ -48,18 +47,22 @@ app_ui <- function(request) {
       # 原文：審核
       shiny::tabPanel("\u5be9\u6838", value = "review", page_review_ui("review")),
       # 原文：統計
-      shiny::tabPanel("\u7d71\u8a08", value = "stats", page_stats_ui("stats"))
+      shiny::tabPanel("\u7d71\u8a08", value = "stats", page_stats_ui("stats")),
+      # 原文：操作手冊
+      shiny::tabPanel("\u64cd\u4f5c\u624b\u518a", value = "manual", page_manual_ui())
     )
   )
 }
 
-#' 頁首的「操作手冊」連結（inst/manual/manual.html，由 data-raw/build_manual.R 產生）
+#' 「說明 → 操作手冊」分頁：左邊目錄、右邊內文
+#'
+#' 內容是 inst/manual/manual_fragment.html，由 data-raw/build_manual.R 從 docs/操作手冊.md 產生；
+#' 同一份手冊的單獨網頁（manual.html）掛在 kit-manual/ 底下，給「在新分頁開」用。
 #' @noRd
-manual_link <- function() {
-  shiny::addResourcePath("kit-manual", system.file("manual", package = "kitItemBank"))
-  # 原文：操作手冊（含術語表）
-  shiny::tags$a(href = "kit-manual/manual.html", target = "_blank", rel = "noopener",
-                "\u64cd\u4f5c\u624b\u518a\uff08\u542b\u8853\u8a9e\u8868\uff09")
+page_manual_ui <- function() {
+  dir <- system.file("manual", package = "kitItemBank")
+  shiny::addResourcePath("kit-manual", dir)
+  shiny::includeHTML(file.path(dir, "manual_fragment.html"))
 }
 
 APP_TAB_GROUPS <- list(
@@ -69,12 +72,14 @@ APP_TAB_GROUPS <- list(
   # 原文：維護 | 待辦事項 | 題庫編修 | 改版 | 併入新施測 | 審核 | 統計
   kitDesign::kit_navgroup("\u7dad\u8b77", c(home = "\u5f85\u8fa6\u4e8b\u9805", edit = "\u984c\u5eab\u7de8\u4fee",
                                      revision = "\u6539\u7248", merge = "\u4f75\u5165\u65b0\u65bd\u6e2c",
-                                     review = "\u5be9\u6838", stats = "\u7d71\u8a08"))
+                                     review = "\u5be9\u6838", stats = "\u7d71\u8a08")),
+  # 原文：說明 | 操作手冊
+  kitDesign::kit_navgroup("\u8aaa\u660e", c(manual = "\u64cd\u4f5c\u624b\u518a"))
 )
 
 # 所有分頁的 value（從網址打開時要認得）
 APP_TABS <- c("search", "dims", "admin", "compare", "home", "edit", "revision", "merge",
-              "review", "stats")
+              "review", "stats", "manual")
 
 #' The app's server
 #'

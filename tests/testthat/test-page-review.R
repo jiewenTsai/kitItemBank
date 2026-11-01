@@ -18,16 +18,16 @@ review_page_file <- function(meta = list(), base_version = kit_version(), env = 
 test_that("the page reviews a package and downloads the applied bank as a zip", {
   went <- NULL
   shiny::testServer(page_review_server, args = list(
-    kit = kit_builtin(), version = "2026.1",
+    kit = kit_builtin(), version = "2026-11-01-v1",
     goto = function(tab, ...) went <<- c(list(tab = tab), list(...))
   ), {
     expect_match(review_html(output$result), "先在左邊選一個修改包")
     session$setInputs(file = review_page_file(list(reason = "會議決議", submitted_by = "小明"),
-                                              base_version = "2026.1"))
+                                              base_version = "2026-11-01-v1"))
     html <- review_html(output$result)
     expect_match(html, "修改包_test.xlsx")
     expect_match(html, "共 1 列改動")
-    expect_match(html, "從現在的題庫（2026.1 版）做的")
+    expect_match(html, "從現在的題庫（2026-11-01-v1 版）做的")
     expect_match(html, "檢查通過")
     expect_match(html, "影響到：題目 1 個")
     expect_match(html, "改前改後（1 列）")
@@ -46,14 +46,14 @@ test_that("the page reviews a package and downloads the applied bank as a zip", 
     session$setInputs(reason = "會議決議", submitted_by = "小明", approved_by = "乙")
     dl <- review_html(output$download_ui)
     expect_match(dl, "kit-download")
-    expect_match(dl, "從 2026.1 版變成 2026.2 版")
+    expect_match(dl, paste0("從 2026-11-01-v1 版變成 ", format(Sys.Date()), "-v1 版"))
     res <- kitDesign::kit_test_download(session, "dl_zip")
-    expect_match(res$filename, "^kit_2026\\.2_[0-9]{8}\\.zip$")
+    expect_identical(res$filename, paste0("kit_", format(Sys.Date()), "-v1.zip"))
     ls <- zip::zip_list(res$content$file)$filename
-    expect_true(all(c("kit/BANK_VERSION", "kit/item_versions.csv", "kit/changes/2026.2.csv") %in% ls))
+    expect_true(all(c("kit/BANK_VERSION", "kit/item_versions.csv", paste0("kit/changes/", format(Sys.Date()), "-v1.csv")) %in% ls))
     d <- withr::local_tempdir()
     zip::unzip(res$content$file, exdir = d)
-    rec <- readr::read_csv(file.path(d, "kit", "changes", "2026.2.csv"),
+    rec <- readr::read_csv(file.path(d, "kit", "changes", paste0(format(Sys.Date()), "-v1.csv")),
                            col_types = readr::cols(.default = "c"), na = character(0))
     expect_identical(unique(rec$approved_by), "乙")
     expect_identical(unique(rec$reason), "會議決議")
