@@ -299,7 +299,8 @@ page_admin_server <- function(id, kit, goto, request) {
             paste0("SPSS\u6a19\u7c64_", d, "_", day, ".sps"),
             function(file) codebook_write_sps(codebook_sps(k, d), file),
             class = cls
-          )
+          ),
+          admin_export_buttons(session, k, a, d)
         ),
         shiny::p(class = "kit-hint",
                  # 原文：Excel 裡每個資料檔一張表，第一張是說明。SPSS 標籤只做目前選的資料檔，只放公開檔有的變項。

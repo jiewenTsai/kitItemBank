@@ -13,7 +13,8 @@ run_kititembank(...)
 Called for its side effect (runs the app).
 }
 \description{
-Open the KIT item bank tool
+The local app enables the statistics page (統計), which reads uploaded data files;
+the cloud app (\code{app.R}, \code{\link[=kit_app]{kit_app()}}) does not.
 }
 \examples{
 if (interactive()) run_kititembank()

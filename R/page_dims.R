@@ -158,6 +158,8 @@ page_dims_server <- function(id, store, goto, request) {
         ),
         kitDesign::kit_table_scroll(DT::DTOutput(ns("items_dt"))),
         kitDesign::kit_details_row(shiny::uiOutput(ns("overlap_ui"))),
+        # 題組沿革（kit 的 group_lineage；這一頁其他部分讀 0.2 形狀的題庫）
+        group_lineage_ui(kit_builtin(), dims_label(bank(), d)),
         # 原文：各波次信度
         shiny::h4("\u5404\u6ce2\u6b21\u4fe1\u5ea6"),
         shiny::uiOutput(ns("rel_ui")),
