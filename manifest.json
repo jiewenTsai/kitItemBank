@@ -3698,7 +3698,7 @@
       "checksum": "4996f1f4ce447b52096e3466f861a158"
     },
     "man/propose_admin_merge.Rd": {
-      "checksum": "507ef02b62c57edb09b1716366bede2b"
+      "checksum": "409fe209c5e3aae21362eab515c5bb25"
     },
     "man/propose_blocks.Rd": {
       "checksum": "b4f4e343b4fa0549c691c551c00e41d5"
@@ -3812,10 +3812,10 @@
       "checksum": "fb361edfc252998aa1f1a40b1b2c212e"
     },
     "NEWS.md": {
-      "checksum": "c3ecffd23e12f42ccc409c17f35790d0"
+      "checksum": "0975aa2f7ac0e1af55f439fbe4ff702f"
     },
     "R/admin_merge.R": {
-      "checksum": "8677bb2ac1ce1f709fafd693cf7138dc"
+      "checksum": "532aa8f02b403ab2e832a19dc1ed2970"
     },
     "R/app.R": {
       "checksum": "3531f8ab6b209c0a50b1853007958c3b"
@@ -3902,7 +3902,7 @@
       "checksum": "20364d674517c93731a83acfd8960070"
     },
     "R/page_merge.R": {
-      "checksum": "312937cb711bb280fa9bd7e1d4bb271a"
+      "checksum": "e4b22128225ea618d654fc4980a085fa"
     },
     "R/page_review.R": {
       "checksum": "73318a1895d6912301b37cade8c9a4bf"
