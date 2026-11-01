@@ -16,5 +16,6 @@ A list of character vectors: \code{items}, \code{groups}, \code{forms}, \code{da
 }
 \description{
 Items, groups, data files and administrations affected by the applied rows: those changed
-directly, plus data files that hold a changed item and the administrations of those files.
+directly, plus groups that contain a changed item (via \code{group_members}, before or after),
+data files that hold a changed item and the administrations of those files.
 }

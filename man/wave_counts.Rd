@@ -13,7 +13,7 @@ wave_counts(bank, items, by = c("block", "dim"))
 \code{\link[=query_items]{query_items()}}).}
 
 \item{by}{\code{"block"}: one row per block (items without a block are counted
-under \code{"（未分題組）"}); \code{"dim"}: one row per dimension that has at least
+under \code{"（未分區塊）"}); \code{"dim"}: one row per dimension that has at least
 one of \code{items} (named by \code{dimName}; an item in several dimensions counts
 in each).}
 }

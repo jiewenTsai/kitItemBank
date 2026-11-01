@@ -1,6 +1,6 @@
-# kitItemBank（開發中，尚未發布）：階段 3、4
+# kitItemBank 0.3.3 (2026-11-02)
 
-版本號發布時再定（原規劃 0.3.3–0.3.10；0.3.8 操作手冊、0.3.11 kitsUI 參數與報告附表還沒做）。
+階段 3（維護流程）與階段 4（證據層）一次發布（原規劃的 0.3.3–0.3.11 合成這一版）。操作手冊：`docs/操作手冊.md`。
 
 ## 新頁面
 
@@ -19,12 +19,27 @@
   和題組統計（只用 psych：α、題目總分相關、刪題後 α、ω、負荷量、特徵值比；4 題以上列適配指標，只供參考）。
   原始資料只在記憶體，不存檔、不上雲端；結果可下載 Excel 和 kit 表。
 
+* **併入新施測**的隱私：雲端版只收 `_meta.csv`（只有表頭）；完整的 .sav 只在本機版收，而且只讀表頭。
+  勾「練習」可以拿已經在題庫裡的施測（例如 M03M048）試算，不會改題庫（`kit_without_admin()`）。
+  提案 Excel 改成中文欄名，多一欄「決定」。
+
+## kitsUI 參數、報告附表
+
+* 新表 `item_steps`（kitsUI 步驟參數，只存 beta）：`import_item_steps()` 匯入成修改包；
+  題項查詢的題目細節用 kits 的 `algo_thresholds()` 現算 Thurstonian 門檻（沒裝 kits 時只列 beta）。
+* 施測頁「期中、期末報告附表」：選年度或施測，下載 Word／Excel——今年題本改了什麼、各波次信效度、施測一覽。
+
 ## 其他
 
 * 施測頁多了 DDI-Codebook 2.5（XML）和 `datapackage.json` 下載。
 * 構面查詢顯示題組沿革（新表 `group_lineage`，先放對照表的 2 筆）。
 * 新表：`group_lineage` 題組沿革、`contacts` 聯絡人（空白）、`analyses`／`item_stats`／`group_stats` 統計結果。
-* 套件：Imports 加 jsonlite、openxlsx、psych、xml2、zip；Suggests 加 haven。
+* 題庫編修拿掉「題目的波次」（0.3 的施測內容以 .sav 和對照表為準）；修改包的提示改成交給「審核」。
+* 問卷段落一律叫「區塊」，題組（構面）才叫題組。構面查詢選到只有下層題組的題組（例如家長「社會能力」）時列出下層題組，
+  題組各波次題目 Excel 也把下層題組的題目一起列。
+* 改版底稿的「放在哪一列之後」可以寫列號或變項名稱。
+* 我的工作多一堆「要請技術人員改」（題目的角色或模組空白）。審核的影響範圍算進題目所屬的題組。
+* 套件：Imports 加 jsonlite、openxlsx、psych、xml2、zip；Suggests 加 haven、kits。
 
 # kitItemBank 0.3.2 (2026-11-02)
 
