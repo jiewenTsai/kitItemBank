@@ -19,20 +19,16 @@ RV_SHEET_Q <- "\u984c\u76ee"
 RV_SHEET_NEW <- "\u65b0\u589e\u984c\u76ee"
 
 # 原文：不變 | 改文字 | 改選項 | 刪除
-RV_ACTIONS <- c(keep = "\u4e0d\u8b8a", text = "\u6539\u6587\u5b57", options = "\u6539\u9078\u9805", delete = "\u522a\u9664",
-                # 原文：移位置
-                move = "\u79fb\u4f4d\u7f6e")
+RV_ACTIONS <- c(keep = "\u4e0d\u8b8a", text = "\u6539\u6587\u5b57", options = "\u6539\u9078\u9805", delete = "\u522a\u9664")
 
 # 題目表的欄：前五欄是現況（鎖住），中間是給老師填的，最右邊是系統用（鎖住）
 # 原文：列號 | 位置 | 變項 | 目前題目
 RV_Q_COLS <- c(rowid = "\u5217\u865f", position = "\u4f4d\u7f6e", varname = "\u8b8a\u9805", label = "\u76ee\u524d\u984c\u76ee",
                # 原文：目前選項 | 動作 | 新題目文字
                values = "\u76ee\u524d\u9078\u9805", action = "\u52d5\u4f5c", new_text = "\u65b0\u984c\u76ee\u6587\u5b57",
-               # 原文：新選項 | 移到哪一列之後 | 備註
-               new_values = "\u65b0\u9078\u9805", move_after = "\u79fb\u5230\u54ea\u4e00\u5217\u4e4b\u5f8c", note = "\u5099\u8a3b",
-               # 原文：系統用
-               sys = "\u7cfb\u7d71\u7528")
-RV_Q_INPUT <- c("action", "new_text", "new_values", "move_after", "note")
+               # 原文：新選項 | 備註 | 系統用
+               new_values = "\u65b0\u9078\u9805", note = "\u5099\u8a3b", sys = "\u7cfb\u7d71\u7528")
+RV_Q_INPUT <- c("action", "new_text", "new_values", "note")
 
 # 原文：變項名稱 | 題目文字 | 選項
 RV_NEW_COLS <- c(varname = "\u8b8a\u9805\u540d\u7a31", label = "\u984c\u76ee\u6587\u5b57", values = "\u9078\u9805",
@@ -54,7 +50,7 @@ RV_INFO_KEYS <- c(version = "\u984c\u5eab\u7248\u672c", form = "\u984c\u672c", a
                   # 原文：資料檔 | 產生日期
                   dataset = "\u8cc7\u6599\u6a94", date = "\u7522\u751f\u65e5\u671f")
 
-# 底稿用到的底色：其他顏色 = 老師自己塗的
+# 底稿用到的底色：表頭、給老師填的欄（黃）、新增題目（綠）
 RV_FILL_HEAD <- "#DDE3EA"
 RV_FILL_INPUT <- "#FFF4C2"
 RV_FILL_NEW <- "#E8F3E8"
@@ -143,7 +139,7 @@ revision_template_sheets <- function(kit, formID, adminID = NULL, datasetID = NU
   info <- data.frame(
     # 原文：這個檔案 | 怎麼填
     k = c("\u9019\u500b\u6a94\u6848", info_keys, "", "\u600e\u9ebc\u586b",
-          "1.", "2.", "3.", "4.", "5.", "6.", "7.", "8."),
+          "1.", "2.", "3.", "4.", "5.", "6.", "7."),
     # 原文：KIT 題本改版底稿： | （ | ）。每一題一列，照問卷順序。
     x = c(paste0("KIT \u984c\u672c\u6539\u7248\u5e95\u7a3f\uff1a", b$form$label, "\uff08", formID, "\uff09\u3002\u6bcf\u4e00\u984c\u4e00\u5217\uff0c\u7167\u554f\u5377\u9806\u5e8f\u3002"),
           version, formID,
@@ -159,16 +155,14 @@ revision_template_sheets <- function(kit, formID, adminID = NULL, datasetID = NU
                  "\u3002\u6c92\u9078\u5c31\u7576\u4f5c\u4e0d\u8b8a\u3002"),
           # 原文：改文字：在「新題目文字」寫改好的整句。改選項：在「新選項」照「1=有; 2=沒有」的寫法寫全部選項。
           "\u6539\u6587\u5b57\uff1a\u5728\u300c\u65b0\u984c\u76ee\u6587\u5b57\u300d\u5beb\u6539\u597d\u7684\u6574\u53e5\u3002\u6539\u9078\u9805\uff1a\u5728\u300c\u65b0\u9078\u9805\u300d\u7167\u300c1=\u6709; 2=\u6c92\u6709\u300d\u7684\u5beb\u6cd5\u5beb\u5168\u90e8\u9078\u9805\u3002",
-          # 原文：移位置：在「移到哪一列之後」寫那一列的列號（例如 Q012）；要放到最前面寫「
-          paste0("\u79fb\u4f4d\u7f6e\uff1a\u5728\u300c\u79fb\u5230\u54ea\u4e00\u5217\u4e4b\u5f8c\u300d\u5beb\u90a3\u4e00\u5217\u7684\u5217\u865f\uff08\u4f8b\u5982 Q012\uff09\uff1b\u8981\u653e\u5230\u6700\u524d\u9762\u5beb\u300c",
-                 # 原文：」。
-                 RV_TOP, "\u300d\u3002"),
           # 原文：刪除：這一題不再問。題庫會留著舊題目，只是新的問卷不放它。
           "\u522a\u9664\uff1a\u9019\u4e00\u984c\u4e0d\u518d\u554f\u3002\u984c\u5eab\u6703\u7559\u8457\u820a\u984c\u76ee\uff0c\u53ea\u662f\u65b0\u7684\u554f\u5377\u4e0d\u653e\u5b83\u3002",
-          # 原文：要加新題目，寫在「新增題目」表：變項名稱、題目文字、放在哪一列之後一定要填。
-          "\u8981\u52a0\u65b0\u984c\u76ee\uff0c\u5beb\u5728\u300c\u65b0\u589e\u984c\u76ee\u300d\u8868\uff1a\u8b8a\u9805\u540d\u7a31\u3001\u984c\u76ee\u6587\u5b57\u3001\u653e\u5728\u54ea\u4e00\u5217\u4e4b\u5f8c\u4e00\u5b9a\u8981\u586b\u3002",
-          # 原文：請不要刪列、加列、合併儲存格或改列號；只塗顏色不會被讀到，要改請選動作。
-          "\u8acb\u4e0d\u8981\u522a\u5217\u3001\u52a0\u5217\u3001\u5408\u4f75\u5132\u5b58\u683c\u6216\u6539\u5217\u865f\uff1b\u53ea\u5857\u984f\u8272\u4e0d\u6703\u88ab\u8b80\u5230\uff0c\u8981\u6539\u8acb\u9078\u52d5\u4f5c\u3002",
+          # 原文：要加新題目，寫在「新增題目」表：變項名稱、題目文字、放在哪一列之後一定要填
+          paste0("\u8981\u52a0\u65b0\u984c\u76ee\uff0c\u5beb\u5728\u300c\u65b0\u589e\u984c\u76ee\u300d\u8868\uff1a\u8b8a\u9805\u540d\u7a31\u3001\u984c\u76ee\u6587\u5b57\u3001\u653e\u5728\u54ea\u4e00\u5217\u4e4b\u5f8c\u4e00\u5b9a\u8981\u586b",
+                 # 原文：（寫「題目」表的列號，例如 Q012；放最前面寫「 | 」）。
+                 "\uff08\u5beb\u300c\u984c\u76ee\u300d\u8868\u7684\u5217\u865f\uff0c\u4f8b\u5982 Q012\uff1b\u653e\u6700\u524d\u9762\u5beb\u300c", RV_TOP, "\u300d\uff09\u3002"),
+          # 原文：請不要刪列、加列或改列號；要改哪一題，請選動作。
+          "\u8acb\u4e0d\u8981\u522a\u5217\u3001\u52a0\u5217\u6216\u6539\u5217\u865f\uff1b\u8981\u6539\u54ea\u4e00\u984c\uff0c\u8acb\u9078\u52d5\u4f5c\u3002",
           # 原文：改完存檔，交回給題庫管理員。
           "\u6539\u5b8c\u5b58\u6a94\uff0c\u4ea4\u56de\u7d66\u984c\u5eab\u7ba1\u7406\u54e1\u3002"),
     stringsAsFactors = FALSE)
@@ -178,7 +172,7 @@ revision_template_sheets <- function(kit, formID, adminID = NULL, datasetID = NU
   qs <- data.frame(
     rowid = q$rowid, position = cb_blank(q$position), varname = q$varname,
     label = cb_blank(q$label), values = cb_blank(q$values),
-    action = "", new_text = "", new_values = "", move_after = "", note = "",
+    action = "", new_text = "", new_values = "", note = "",
     sys = paste(q$item_uid, q$itemVer, sep = "|"),
     stringsAsFactors = FALSE)
   names(qs) <- unname(RV_Q_COLS[names(qs)])
@@ -196,9 +190,9 @@ revision_template_sheets <- function(kit, formID, adminID = NULL, datasetID = NU
 #' An Excel file for the questionnaire's authors: sheet 說明 (bank version, form, the
 #' administration it is based on, date, how to fill it in), sheet 題目 (one row per
 #' question in questionnaire order, with a locked row id, the current text and options,
-#' and editable columns: action from a drop-down, new text, new options, where to move,
-#' note) and sheet 新增題目 (new questions). The sheets are protected so that only the
-#' editable cells can be changed. Needs the 'openxlsx' package.
+#' and editable yellow columns: action from a drop-down, new text, new options, note) and
+#' sheet 新增題目 (new questions). The sheets are protected (no password) so that only
+#' the yellow and green cells can be typed in. Needs the 'openxlsx' package.
 #'
 #' @inheritParams revision_base
 #' @param file Path of the `.xlsx` to write.
@@ -226,11 +220,10 @@ revision_template <- function(kit, formID, file, adminID = NULL, datasetID = NUL
                                  border = "TopBottomLeftRight", borderColour = "#9CC49C",
                                  locked = FALSE)
   sys <- openxlsx::createStyle(fontColour = "#AAAAAA", fontSize = 8)
+  # 保護工作表（沒有密碼）：只有黃色、綠色格子能打字；欄寬列高可以調
   protect <- function(name) {
-    openxlsx::protectWorksheet(wb, name, protect = TRUE, lockFormattingCells = FALSE,
-                               lockFormattingColumns = FALSE, lockFormattingRows = FALSE,
-                               lockAutoFilter = FALSE, lockSorting = TRUE,
-                               lockInsertingRows = TRUE, lockDeletingRows = TRUE)
+    openxlsx::protectWorksheet(wb, name, protect = TRUE, lockFormattingColumns = FALSE,
+                               lockFormattingRows = FALSE)
   }
 
   # 說明
@@ -258,7 +251,7 @@ revision_template <- function(kit, formID, file, adminID = NULL, datasetID = NUL
                              value = paste0('"', paste(RV_ACTIONS, collapse = ","), '"'))
   }
   openxlsx::freezePane(wb, RV_SHEET_Q, firstActiveRow = 2L, firstActiveCol = 2L)
-  openxlsx::setColWidths(wb, RV_SHEET_Q, seq_along(qs), c(7, 8, 14, 40, 30, 10, 40, 30, 12, 24, 10))
+  openxlsx::setColWidths(wb, RV_SHEET_Q, seq_along(qs), c(7, 8, 14, 40, 30, 10, 40, 30, 24, 10))
   protect(RV_SHEET_Q)
 
   # 新增題目
@@ -302,16 +295,12 @@ rv_read_sheet <- function(path, sheet, col_names = TRUE) {
 #'
 #' @param path A `.xlsx` made with [revision_template()] and filled in.
 #' @return A list: `info` (named character: version, form, admin, dataset, date),
-#'   `questions` and `new` (data frames with English column names, plus `excel_row`),
-#'   `merged` (data frame `sheet`, `ref` of merged cell ranges) and `coloured` (data frame
-#'   `sheet`, `row`, `col` of cells with a fill the template did not use). Sheets that are
-#'   missing come back as `NULL`.
+#'   `questions` and `new` (data frames with English column names, plus `excel_row`).
+#'   Sheets that are missing come back as `NULL`. Uses 'readxl' only.
 #' @export
 read_revision_xlsx <- function(path) {
   sheets <- readxl::excel_sheets(path)
-  out <- list(sheets = sheets, info = NULL, questions = NULL, new = NULL,
-              merged = data.frame(sheet = character(0), ref = character(0)),
-              coloured = data.frame(sheet = character(0), row = integer(0), col = integer(0)))
+  out <- list(sheets = sheets, info = NULL, questions = NULL, new = NULL)
   if (RV_SHEET_INFO %in% sheets) {
     info <- rv_read_sheet(path, RV_SHEET_INFO, col_names = FALSE)
     if (ncol(info) >= 2L) {
@@ -328,31 +317,6 @@ read_revision_xlsx <- function(path) {
   }
   if (RV_SHEET_Q %in% sheets) out$questions <- rename(rv_read_sheet(path, RV_SHEET_Q), RV_Q_COLS)
   if (RV_SHEET_NEW %in% sheets) out$new <- rename(rv_read_sheet(path, RV_SHEET_NEW), RV_NEW_COLS)
-
-  if (requireNamespace("openxlsx", quietly = TRUE)) {
-    wb <- tryCatch(openxlsx::loadWorkbook(path), error = function(e) NULL)
-    if (!is.null(wb)) {
-      nm <- names(wb)
-      mg <- lapply(seq_along(nm), function(i) {
-        m <- wb$worksheets[[i]]$mergeCells
-        if (!length(m)) return(NULL)
-        data.frame(sheet = nm[i], ref = sub('^.*ref="([^"]+)".*$', "\\1", m),
-                   stringsAsFactors = FALSE)
-      })
-      mg <- do.call(rbind, mg)
-      if (!is.null(mg)) out$merged <- mg
-      ok <- toupper(sub("^#", "FF", c(RV_FILL_HEAD, RV_FILL_INPUT, RV_FILL_NEW)))
-      cl <- lapply(wb$styleObjects, function(s) {
-        fg <- s$style$fill$fillFg
-        if (is.null(fg) || !length(fg)) return(NULL)
-        if (identical(trimws(names(fg)[1]), "rgb") && toupper(fg[[1]]) %in% ok) return(NULL)
-        data.frame(sheet = s$sheet, row = as.integer(s$rows), col = as.integer(s$cols),
-                   stringsAsFactors = FALSE)
-      })
-      cl <- do.call(rbind, cl)
-      if (!is.null(cl)) out$coloured <- unique(cl)
-    }
-  }
   out
 }
 
@@ -402,21 +366,6 @@ rv_problem <- function(severity, sheet, row, column, message) {
 rv_empty_problems <- function() rv_problem(character(0), character(0), integer(0),
                                            character(0), character(0))
 
-rv_col_letter <- function(i) {
-  out <- character(length(i))
-  for (k in seq_along(i)) {
-    n <- i[k]
-    s <- ""
-    while (n > 0) {
-      r <- (n - 1) %% 26
-      s <- paste0(LETTERS[r + 1], s)
-      n <- (n - 1) %/% 26
-    }
-    out[k] <- s
-  }
-  out
-}
-
 # 一列題目表：要做什麼（沒選 = 不變）
 rv_action_key <- function(a) {
   a <- cb_blank(a)
@@ -427,10 +376,11 @@ rv_action_key <- function(a) {
 
 #' Health check of a filled revision template
 #'
-#' Finds what would make the import wrong or surprising: merged cells, cells coloured
-#' without an action, row ids that were changed, deleted, duplicated or are not in the
-#' template, a template made from another bank version, new questions missing required
-#' fields, and actions that do not match what was written.
+#' Finds what would make the import wrong or surprising: row ids that were changed,
+#' deleted, duplicated or are not in the template, a template made from another bank
+#' version, new questions missing required fields, options that cannot be read, variable
+#' names or item IDs already used, actions that do not match what was written, and a
+#' template with no changes at all.
 #'
 #' @param path A filled `.xlsx` made with [revision_template()].
 #' @param kit The kit the template was made from, e.g. [read_kit()].
@@ -486,14 +436,6 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
   }
   base <- revision_base(kit, info[["form"]], datasetID = info[["dataset"]])
 
-  # 合併儲存格、塗顏色 ----
-  mg <- x$merged
-  for (i in seq_len(nrow(mg))) {
-    add(RV_BLOCK, mg$sheet[i], NA, mg$ref[i],
-        # 原文：「 | 」表有合併儲存格（ | ），請取消合併。
-        paste0("\u300c", mg$sheet[i], "\u300d\u8868\u6709\u5408\u4f75\u5132\u5b58\u683c\uff08", mg$ref[i], "\uff09\uff0c\u8acb\u53d6\u6d88\u5408\u4f75\u3002"))
-  }
-
   # 題目表 ----
   q <- x$questions
   need <- names(RV_Q_COLS)
@@ -526,10 +468,10 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
       # 原文：：列號  |  不是底稿原有的，可能被改過。
       paste0(r_lab(which(unknown)), "\uff1a\u5217\u865f ", rid[unknown], " \u4e0d\u662f\u5e95\u7a3f\u539f\u6709\u7684\uff0c\u53ef\u80fd\u88ab\u6539\u904e\u3002"))
   known <- nzchar(rid) & rid %in% bq$rowid & !dup
-  moved_id <- known & q$sys != expect_sys[match(rid, bq$rowid)]
-  add(RV_BLOCK, RV_SHEET_Q, q$excel_row[moved_id], RV_Q_COLS[["rowid"]],
+  changed_id <- known & q$sys != expect_sys[match(rid, bq$rowid)]
+  add(RV_BLOCK, RV_SHEET_Q, q$excel_row[changed_id], RV_Q_COLS[["rowid"]],
       # 原文：：列號 
-      paste0(r_lab(which(moved_id)), "\uff1a\u5217\u865f ", rid[moved_id],
+      paste0(r_lab(which(changed_id)), "\uff1a\u5217\u865f ", rid[changed_id],
              # 原文： 和題目對不起來（列號或系統用欄被改過，或底稿太舊）。
              " \u548c\u984c\u76ee\u5c0d\u4e0d\u8d77\u4f86\uff08\u5217\u865f\u6216\u7cfb\u7d71\u7528\u6b04\u88ab\u6539\u904e\uff0c\u6216\u5e95\u7a3f\u592a\u820a\uff09\u3002"))
   gone <- setdiff(bq$rowid, rid)
@@ -549,7 +491,6 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
   act[bad_act] <- "keep"
   has_text <- nzchar(q$new_text)
   has_val <- nzchar(q$new_values)
-  has_move <- nzchar(q$move_after)
 
   i <- which(act == "text" & !has_text)
   add(RV_BLOCK, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["new_text"]],
@@ -563,7 +504,7 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
   add(RV_BLOCK, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["action"]],
       # 原文：：寫了新的文字或選項，但「動作」是不變。請選「改文字」或「改選項」。
       paste0(r_lab(i), "\uff1a\u5beb\u4e86\u65b0\u7684\u6587\u5b57\u6216\u9078\u9805\uff0c\u4f46\u300c\u52d5\u4f5c\u300d\u662f\u4e0d\u8b8a\u3002\u8acb\u9078\u300c\u6539\u6587\u5b57\u300d\u6216\u300c\u6539\u9078\u9805\u300d\u3002"))
-  i <- which(act %in% c("delete", "move") & (has_text | has_val))
+  i <- which(act == "delete" & (has_text | has_val))
   add(RV_NOTE, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["action"]],
       # 原文：：動作是「 | 」，寫的新文字或新選項不會用到。
       paste0(r_lab(i), "\uff1a\u52d5\u4f5c\u662f\u300c", RV_ACTIONS[act[i]], "\u300d\uff0c\u5beb\u7684\u65b0\u6587\u5b57\u6216\u65b0\u9078\u9805\u4e0d\u6703\u7528\u5230\u3002"))
@@ -579,10 +520,6 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
   add(RV_NOTE, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["new_text"]],
       # 原文：：新題目文字和原本一樣，不會產生新版本。
       paste0(r_lab(i), "\uff1a\u65b0\u984c\u76ee\u6587\u5b57\u548c\u539f\u672c\u4e00\u6a23\uff0c\u4e0d\u6703\u7522\u751f\u65b0\u7248\u672c\u3002"))
-  i <- which(act != "move" & has_move)
-  add(RV_NOTE, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["move_after"]],
-      # 原文：：寫了「移到哪一列之後」，但動作不是「移位置」，不會移。
-      paste0(r_lab(i), "\uff1a\u5beb\u4e86\u300c\u79fb\u5230\u54ea\u4e00\u5217\u4e4b\u5f8c\u300d\uff0c\u4f46\u52d5\u4f5c\u4e0d\u662f\u300c\u79fb\u4f4d\u7f6e\u300d\uff0c\u4e0d\u6703\u79fb\u3002"))
 
   # 選項寫法
   q$values_parsed <- vector("list", nrow(q))
@@ -605,49 +542,8 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
       # 原文：：新選項和原本一樣，不會產生新版本。
       paste0(r_lab(i), "\uff1a\u65b0\u9078\u9805\u548c\u539f\u672c\u4e00\u6a23\uff0c\u4e0d\u6703\u7522\u751f\u65b0\u7248\u672c\u3002"))
 
-  # 移位置
-  anchor_ok <- function(a) a == RV_TOP | a %in% bq$rowid
-  i <- which(act == "move" & !has_move)
-  add(RV_BLOCK, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["move_after"]],
-      # 原文：：選了「移位置」，但沒寫「移到哪一列之後」。
-      paste0(r_lab(i), "\uff1a\u9078\u4e86\u300c\u79fb\u4f4d\u7f6e\u300d\uff0c\u4f46\u6c92\u5beb\u300c\u79fb\u5230\u54ea\u4e00\u5217\u4e4b\u5f8c\u300d\u3002"))
-  i <- which(act == "move" & has_move & !anchor_ok(q$move_after))
-  add(RV_BLOCK, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["move_after"]],
-      # 原文：：「 | 」不是列號；請寫像 Q012 的列號，或「 | 」。
-      paste0(r_lab(i), "\uff1a\u300c", q$move_after[i], "\u300d\u4e0d\u662f\u5217\u865f\uff1b\u8acb\u5beb\u50cf Q012 \u7684\u5217\u865f\uff0c\u6216\u300c", RV_TOP, "\u300d\u3002"))
-  i <- which(act == "move" & q$move_after == rid)
-  add(RV_BLOCK, RV_SHEET_Q, q$excel_row[i], RV_Q_COLS[["move_after"]],
-      # 原文：：不能移到自己後面。
-      paste0(r_lab(i), "\uff1a\u4e0d\u80fd\u79fb\u5230\u81ea\u5df1\u5f8c\u9762\u3002"))
-  mv <- act == "move" & has_move & anchor_ok(q$move_after) & q$move_after != rid & known
-  target <- stats::setNames(q$move_after[mv], rid[mv])
-  for (r in names(target)) {
-    seen <- r
-    a <- target[[r]]
-    while (a %in% names(target) && !a %in% seen) {
-      seen <- c(seen, a)
-      a <- target[[a]]
-    }
-    if (a %in% seen) {
-      k <- which(rid == r)
-      add(RV_BLOCK, RV_SHEET_Q, q$excel_row[k], RV_Q_COLS[["move_after"]],
-          # 原文：：移位置繞成一圈（ |  →  | ），排不出順序。
-          paste0(r_lab(k), "\uff1a\u79fb\u4f4d\u7f6e\u7e5e\u6210\u4e00\u5708\uff08", paste(seen, collapse = " \u2192 "), "\uff09\uff0c\u6392\u4e0d\u51fa\u9806\u5e8f\u3002"))
-    }
-  }
-
-  # 塗了顏色、沒寫動作
-  cl <- x$coloured
-  cl <- cl[cl$sheet == RV_SHEET_Q, , drop = FALSE]
-  if (nrow(cl)) {
-    rows_col <- unique(cl$row)
-    k <- which(q$excel_row %in% rows_col & act == "keep" & !has_text & !has_val)
-    add(RV_NOTE, RV_SHEET_Q, q$excel_row[k], "",
-        # 原文：（ | ）有塗顏色，但沒有選動作；塗顏色不會被讀到。要改請選動作。
-        paste0(r_lab(k), "\uff08", rid[k], "\uff09\u6709\u5857\u984f\u8272\uff0c\u4f46\u6c92\u6709\u9078\u52d5\u4f5c\uff1b\u5857\u984f\u8272\u4e0d\u6703\u88ab\u8b80\u5230\u3002\u8981\u6539\u8acb\u9078\u52d5\u4f5c\u3002"))
-  }
-
   # 新增題目 ----
+  anchor_ok <- function(a) a == RV_TOP | a %in% bq$rowid
   nw <- x$new
   if (is.null(nw)) {
     nw <- as.data.frame(stats::setNames(rep(list(character(0)), length(RV_NEW_COLS) + 1L),
@@ -711,7 +607,7 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
   # 什麼都沒改 ----
   q$act <- act
   changed <- (act == "text" & !(q$new_text == q$label & !has_val)) |
-    (act == "options" & !same_val) | act %in% c("delete", "move")
+    (act == "options" & !same_val) | act == "delete"
   if (!any(changed) && nrow(nw) == 0L) {
     # 原文：底稿裡沒有任何改動。
     add(RV_NOTE, RV_SHEET_Q, NA, "", "\u5e95\u7a3f\u88e1\u6c92\u6709\u4efb\u4f55\u6539\u52d5\u3002")
@@ -798,7 +694,7 @@ rv_parse_admin <- function(kit, adminID) {
 #' @param date Date written as `decided_on` of the new relations.
 #' @return A list: `patch` (data frame `op`, `table`, `key`, `column`, `from`, `to`),
 #'   `problems` (the health check; only "要注意" rows are left), `summary` (named integer
-#'   counts: kept, text, options, deleted, moved, new), `adminID` and `datasetID` of the
+#'   counts: kept, text, options, deleted, new), `adminID` and `datasetID` of the
 #'   planned data file, and `base` (the template's data file).
 #' @export
 revision_patch <- function(kit, path, adminID, version = codebook_bank_version(),
@@ -888,7 +784,6 @@ rv_build_patch <- function(kit, chk, ad, date = Sys.Date()) {
 
   # 改了文字或選項的題目：新版本 + revised ----
   iv <- kit$item_versions
-  ver_of <- stats::setNames(paste(bq$item_uid, bq$itemVer, sep = "|"), bq$rowid)
   new_ver <- list()   # rowid → 新版本號
   tgt <- q[q$act %in% c("text", "options"), , drop = FALSE]
   n_text <- 0L
@@ -960,46 +855,26 @@ rv_build_patch <- function(kit, chk, ad, date = Sys.Date()) {
   act_of <- stats::setNames(q$act, q$rowid)
   act_v <- unname(act_of[vars$rowid])
   act_v[is.na(act_v)] <- "keep"
-  move_to <- stats::setNames(q$move_after, q$rowid)[q$act == "move"]
 
-  seq_ids <- seq_len(nrow(vars))
-  tok <- paste0("v", seq_ids)                       # 變項的代號
+  tok <- paste0("v", seq_len(nrow(vars)))          # 原有變項的代號；新題目是 n1、n2…
   rid_tok <- stats::setNames(tok, vars$rowid)
   rid_tok <- rid_tok[nzchar(names(rid_tok))]
-  ord <- tok[!vars$rowid %in% names(move_to)]
-  # 「開頭」= 第一題的前面（系統變項之前的位置不動）
-  top_anchor <- function() {
-    first_item <- which(ord %in% rid_tok)
-    if (length(first_item)) first_item[1] - 1L else length(ord)
-  }
+  ord <- tok
+  # 新題目放在指定那一列之後；同一列之後有好幾題就照新增題目表的順序。
+  # 「開頭」= 第一題的前面（系統變項的位置不動）
   last_after <- list()
-  insert_after <- function(anchor_key, new_tok) {
-    k <- last_after[[anchor_key]]
-    pos <- if (!is.null(k) && k %in% ord) match(k, ord) else if (anchor_key == RV_TOP) top_anchor() else
-      match(rid_tok[[anchor_key]], ord)
-    ord <<- append(ord, new_tok, after = pos)
-    last_after[[anchor_key]] <<- new_tok
+  for (i in seq_len(nrow(nw))) {
+    a <- nw$after[i]
+    k <- last_after[[a]]
+    pos <- if (!is.null(k)) match(k, ord) else if (a == RV_TOP) {
+      first_item <- which(ord %in% rid_tok)
+      if (length(first_item)) first_item[1] - 1L else length(ord)
+    } else match(rid_tok[[a]], ord)
+    ord <- append(ord, paste0("n", i), after = pos)
+    last_after[[a]] <- paste0("n", i)
   }
-  pending <- names(move_to)
-  while (length(pending)) {
-    progress <- FALSE
-    for (r in pending) {
-      a <- move_to[[r]]
-      if (a == RV_TOP || rid_tok[[a]] %in% ord) {
-        insert_after(a, rid_tok[[r]])
-        pending <- setdiff(pending, r)
-        progress <- TRUE
-      }
-    }
-    # 原文：移位置繞成一圈，排不出順序。
-    if (!progress) kitDesign::kit_abort("\u79fb\u4f4d\u7f6e\u7e5e\u6210\u4e00\u5708\uff0c\u6392\u4e0d\u51fa\u9806\u5e8f\u3002")
-  }
-  new_tok <- paste0("n", seq_len(nrow(nw)))
-  for (i in seq_len(nrow(nw))) insert_after(nw$after[i], new_tok[i])
-  deleted <- tok[act_v == "delete"]
-  ord <- ord[!ord %in% deleted]
+  ord <- ord[!ord %in% tok[act_v == "delete"]]
 
-  moved_tok <- rid_tok[names(move_to)]
   dv <- lapply(seq_along(ord), function(k) {
     t <- ord[k]
     if (startsWith(t, "n")) {
@@ -1012,7 +887,7 @@ rv_build_patch <- function(kit, chk, ad, date = Sys.Date()) {
     nv <- if (nzchar(v$rowid)) new_ver[[v$rowid]] else NULL
     list(datasetID = dsid, varname = v$varname, item_uid = v$item_uid,
          itemVer = nv %||% v$itemVer, kind = v$kind,
-         position = if (t %in% moved_tok) "" else cb_blank(v$position),
+         position = cb_blank(v$position),
          order = as.character(k),
          public = if (isTRUE(v$public)) "" else "0")
   })
@@ -1024,7 +899,7 @@ rv_build_patch <- function(kit, chk, ad, date = Sys.Date()) {
     patch = patch,
     problems = chk$problems,
     summary = c(kept = sum(q$act == "keep"), text = n_text, options = n_opt,
-                deleted = sum(q$act == "delete"), moved = length(move_to), new = nrow(nw)),
+                deleted = sum(q$act == "delete"), new = nrow(nw)),
     adminID = ad$adminID, datasetID = dsid, base = bds$datasetID
   )
 }
@@ -1043,11 +918,11 @@ revision_patch_workbook <- function(res, base_version = codebook_bank_version())
   info <- data.frame(
     # 原文：項目
     "\u9805\u76ee" = c("kitItemBank", "kind", "base_version", "date", "adminID", "datasetID",
-             "based_on", "n_patch", "kept", "text", "options", "deleted", "moved", "new"),
+             "based_on", "n_patch", "kept", "text", "options", "deleted", "new"),
     # 原文：內容 | 0.3 修改包（改版底稿）
     "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305\uff08\u6539\u7248\u5e95\u7a3f\uff09", "revision", base_version %||% "", format(Sys.Date()),
              res$adminID, res$datasetID, res$base, nrow(res$patch),
-             s[["kept"]], s[["text"]], s[["options"]], s[["deleted"]], s[["moved"]], s[["new"]]),
+             s[["kept"]], s[["text"]], s[["options"]], s[["deleted"]], s[["new"]]),
     check.names = FALSE, stringsAsFactors = FALSE)
   pr <- res$problems
   # 原文：嚴重度 | 工作表 | 列 | 欄 | 說明

@@ -33,8 +33,8 @@ page_revision_ui <- function(id) {
       steps = c(
         # 原文：選一個題本，按「下載改版底稿」交給老師。底稿是這個題本最近一次施測的題目，照問卷順序。
         "\u9078\u4e00\u500b\u984c\u672c\uff0c\u6309\u300c\u4e0b\u8f09\u6539\u7248\u5e95\u7a3f\u300d\u4ea4\u7d66\u8001\u5e2b\u3002\u5e95\u7a3f\u662f\u9019\u500b\u984c\u672c\u6700\u8fd1\u4e00\u6b21\u65bd\u6e2c\u7684\u984c\u76ee\uff0c\u7167\u554f\u5377\u9806\u5e8f\u3002",
-        # 原文：老師在黃色欄選動作（不變、改文字、改選項、刪除、移位置）、寫新文字或新選項；新題目寫在「新增題目」表。
-        "\u8001\u5e2b\u5728\u9ec3\u8272\u6b04\u9078\u52d5\u4f5c\uff08\u4e0d\u8b8a\u3001\u6539\u6587\u5b57\u3001\u6539\u9078\u9805\u3001\u522a\u9664\u3001\u79fb\u4f4d\u7f6e\uff09\u3001\u5beb\u65b0\u6587\u5b57\u6216\u65b0\u9078\u9805\uff1b\u65b0\u984c\u76ee\u5beb\u5728\u300c\u65b0\u589e\u984c\u76ee\u300d\u8868\u3002",
+        # 原文：老師在黃色欄選動作（不變、改文字、改選項、刪除）、寫新文字或新選項；新題目寫在「新增題目」表。
+        "\u8001\u5e2b\u5728\u9ec3\u8272\u6b04\u9078\u52d5\u4f5c\uff08\u4e0d\u8b8a\u3001\u6539\u6587\u5b57\u3001\u6539\u9078\u9805\u3001\u522a\u9664\uff09\u3001\u5beb\u65b0\u6587\u5b57\u6216\u65b0\u9078\u9805\uff1b\u65b0\u984c\u76ee\u5beb\u5728\u300c\u65b0\u589e\u984c\u76ee\u300d\u8868\u3002",
         # 原文：把填好的底稿傳上來，右邊會列出要先改好的（擋下來）和要看一下的（要注意）。
         "\u628a\u586b\u597d\u7684\u5e95\u7a3f\u50b3\u4e0a\u4f86\uff0c\u53f3\u908a\u6703\u5217\u51fa\u8981\u5148\u6539\u597d\u7684\uff08\u64cb\u4e0b\u4f86\uff09\u548c\u8981\u770b\u4e00\u4e0b\u7684\uff08\u8981\u6ce8\u610f\uff09\u3002",
         # 原文：寫新施測的代號（例如 M03M132G05），沒有擋下來的問題就能下載修改包。
@@ -235,8 +235,8 @@ rv_patch_ui <- function(session, res, admin_id, version) {
       shiny::tags$li(paste0("\u6539\u6587\u5b57 ", s[["text"]], " \u984c\u3001\u6539\u9078\u9805 ", s[["options"]],
                             # 原文： 題（各成為新的題目版本）
                             " \u984c\uff08\u5404\u6210\u70ba\u65b0\u7684\u984c\u76ee\u7248\u672c\uff09")),
-      # 原文：刪除  |  題、移位置  |  題
-      shiny::tags$li(paste0("\u522a\u9664 ", s[["deleted"]], " \u984c\u3001\u79fb\u4f4d\u7f6e ", s[["moved"]], " \u984c")),
+      # 原文：刪除  |  題
+      shiny::tags$li(paste0("\u522a\u9664 ", s[["deleted"]], " \u984c")),
       # 原文：新增  |  題
       shiny::tags$li(paste0("\u65b0\u589e ", s[["new"]], " \u984c"))
     ),

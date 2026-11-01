@@ -18,9 +18,16 @@ test_that("the template has a locked row id, drop-downs and the three sheets", {
   expect_true(all(lengths(lapply(wb$worksheets, function(w) w$sheetProtection)) > 0L))
   xml <- paste(readLines(unz(f, "xl/worksheets/sheet2.xml"), warn = FALSE, encoding = "UTF-8"),
                collapse = "")
-  expect_match(xml, "不變,改文字,改選項,刪除,移位置", fixed = TRUE)
+  expect_match(xml, "\"不變,改文字,改選項,刪除\"", fixed = TRUE)
+  # 黃色欄沒鎖：老師可以打字
+  yellow <- Filter(function(s) identical(s$sheet, "題目") && 2L %in% s$rows && 6L %in% s$cols,
+                   wb$styleObjects)
+  expect_length(yellow, 1L)
+  expect_false(yellow[[1]]$style$locked)
+  expect_setequal(unique(yellow[[1]]$cols), 6:9)
   q <- readxl::read_excel(f, "題目", col_types = "text")
-  expect_identical(names(q)[1:6], c("列號", "位置", "變項", "目前題目", "目前選項", "動作"))
+  expect_identical(names(q), c("列號", "位置", "變項", "目前題目", "目前選項", "動作",
+                               "新題目文字", "新選項", "備註", "系統用"))
   expect_identical(q[["目前選項"]][1], "1=有; 2=沒有")
   x <- read_revision_xlsx(f)
   expect_identical(x$info[["version"]], "2026.1")
@@ -40,18 +47,17 @@ test_that("a filled template becomes a change package that passes check_kit", {
                     values = c("0=否; 1=是", ""), after = c("Q002", "開頭"), block = "",
                     note = "", stringsAsFactors = FALSE)
   rv_fill(f, g, list(
-    cell(1, 6, "改文字"), cell(1, 7, "第1題改好的文字"), cell(1, 10, "老師說太長"),
+    cell(1, 6, "改文字"), cell(1, 7, "第1題改好的文字"), cell(1, 9, "老師說太長"),
     cell(2, 6, "改選項"), cell(2, 8, "1=有；2=沒有；3=不知道"),
-    cell(3, 6, "刪除"),
-    cell(5, 6, "移位置"), cell(5, 9, "開頭")
+    cell(3, 6, "刪除")
   ), new = new)
   expect_false(any(check_revision_xlsx(g, k, "2026.1")$severity == "擋下來"))
 
   expect_error(revision_patch(k, g, "M03M096G02", version = "2026.1"), "已經有了")
   res <- revision_patch(k, g, "M03M108G03", version = "2026.1", date = as.Date("2026-11-02"))
   expect_identical(res$datasetID, "M03M108G03-P")
-  expect_equal(unname(res$summary[c("text", "options", "deleted", "moved", "new")]),
-               c(1, 1, 1, 1, 2))
+  expect_equal(unname(res$summary[c("kept", "text", "options", "deleted", "new")]),
+               c(2, 1, 1, 1, 2))
   k2 <- apply_patch(k, res$patch)
   expect_equal(nrow(check_kit(k2)), 0L)
 
@@ -59,10 +65,10 @@ test_that("a filled template becomes a change package that passes check_kit", {
   expect_identical(c(ad$status, ad$ageMonth, ad$grade, ad$waveNo), c("planned", "108", "3", "12"))
   dv <- k2$dataset_vars[k2$dataset_vars$datasetID == "M03M108G03-P", ]
   dv <- dv[order(as.integer(dv$order)), ]
-  # 開頭：系統變項後面、第一題前面（先放移過去的 q5，再放新題 q10）；q9 在 Q002 後面；q3 刪掉
-  expect_identical(dv$varname, c("id", "q5", "q10", "q1", "q2", "q9", "q4"))
+  # 開頭：系統變項後面、第一題前面；q9 在 Q002 後面；q3 刪掉
+  expect_identical(dv$varname, c("id", "q10", "q1", "q2", "q9", "q4", "q5"))
   expect_identical(dv$itemVer[dv$varname %in% c("q1", "q2", "q4")], c("2", "2", "1"))
-  expect_identical(dv$position[dv$varname %in% c("q4", "q5")], c("", "一.4"))
+  expect_identical(dv$position[dv$varname %in% c("q4", "q9")], c("", "一.4"))
   # 舊版留著；revised 關係
   expect_true(all(c("P.q1|1", "P.q1|2", "P.q3|1") %in%
                     paste(k2$item_versions$item_uid, k2$item_versions$itemVer, sep = "|")))
@@ -104,22 +110,20 @@ test_that("the health check finds what teachers tend to do", {
     cell(2, 6, "改文字"),                        # 沒寫新文字
     cell(3, 1, "Q002"),                          # 列號重複
     cell(4, 1, "Q404"),                          # 列號被改
-    cell(5, 6, "移位置")                         # 沒寫移到哪
-  ), new = new, f = function(wb) {
-    openxlsx::addStyle(wb, "題目", openxlsx::createStyle(fgFill = "#FFFF00"), rows = 7, cols = 4)
-    openxlsx::mergeCells(wb, "題目", cols = 7:8, rows = 10)
-    openxlsx::writeData(wb, "題目", "Q006", startCol = 1, startRow = 7)  # 第 6 題（不存在）
-  })
+    cell(5, 6, "改選項"), cell(5, 8, "1=是;1=否"), # 選項代碼重複
+    cell(6, 1, "Q006"), cell(6, 6, "移位置")      # 加了一列；動作不在選單裡
+  ), new = new)
   p <- check_revision_xlsx(g, k, version = "2026.1")
   blk <- p$message[p$severity == "擋下來"]
   note <- p$message[p$severity == "要注意"]
-  expect_true(any(grepl("合併儲存格", blk)))
   expect_true(any(grepl("動作」是不變", blk)))
+  expect_true(any(grepl("Q006 不是底稿原有的", blk)))
+  expect_true(any(grepl("動作「移位置」不是選項之一", blk)))
+  expect_true(any(grepl("選項代碼「1」重複了", blk)))
   expect_true(any(grepl("新題目文字」是空的", blk)))
   expect_true(any(grepl("Q002 重複了", blk)))
   expect_true(any(grepl("Q404 不是底稿原有的", blk)))
   expect_true(any(grepl("少了 2 列", blk)))
-  expect_true(any(grepl("沒寫「移到哪一列之後」", blk)))
   expect_true(any(grepl("已經用過，不能重用", blk)))
   expect_true(any(grepl("「題目文字」一定要填", blk)))
   expect_true(any(grepl("Q099」不是", blk)))
@@ -128,14 +132,12 @@ test_that("the health check finds what teachers tend to do", {
   expect_true(all(c("severity", "sheet", "row", "column", "message") %in% names(p)))
   expect_error(revision_patch(k, g, "M03M108G03", version = "2026.1"), "要先改好")
 
-  # 塗顏色沒選動作：要注意；說明表被改：擋下來
+  # 刪除又寫了新文字：要注意；說明表不見：擋下來
   revision_template(k, "P-G1-G3", f, version = "2026.1")
-  rv_fill(f, g, list(cell(3, 6, "刪除")), f = function(wb) {
-    openxlsx::addStyle(wb, "題目", openxlsx::createStyle(fgFill = "#FF0000"), rows = 3, cols = 4)
-  })
+  rv_fill(f, g, list(cell(3, 6, "刪除"), cell(3, 7, "x")))
   p <- check_revision_xlsx(g, k, version = "2026.1")
   expect_identical(p$severity, "要注意")
-  expect_match(p$message, "有塗顏色，但沒有選動作")
+  expect_match(p$message, "不會用到")
   rv_fill(f, g, f = function(wb) openxlsx::removeWorksheet(wb, "說明"))
   expect_match(check_revision_xlsx(g, k)$message, "找不到「說明」表")
 })

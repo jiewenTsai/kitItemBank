@@ -40,5 +40,5 @@ rv_fill <- function(path, out, cells = list(), new = NULL, f = NULL) {
   openxlsx::saveWorkbook(wb, out, overwrite = TRUE)
   out
 }
-# 題目表的欄：列號 1、動作 6、新題目文字 7、新選項 8、移到 9、備註 10；row 是第幾題
+# 題目表的欄：列號 1、動作 6、新題目文字 7、新選項 8、備註 9；row 是第幾題
 cell <- function(row, col, value) list(row = row + 1L, col = col, value = value)
