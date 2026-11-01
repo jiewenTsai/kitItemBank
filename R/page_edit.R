@@ -51,8 +51,8 @@ page_edit_ui <- function(id) {
     shiny::uiOutput(ns("download_ui")),
     shiny::tags$p(
       class = "kit-hint",
-      # 原文：下載後，把檔案交給題庫維護者；之後要接著改，在上面的題庫列按「打開題庫 Excel…」打開這個檔案。
-      "\u4e0b\u8f09\u5f8c\uff0c\u628a\u6a94\u6848\u4ea4\u7d66\u984c\u5eab\u7dad\u8b77\u8005\uff1b\u4e4b\u5f8c\u8981\u63a5\u8457\u6539\uff0c\u5728\u4e0a\u9762\u7684\u984c\u5eab\u5217\u6309\u300c\u6253\u958b\u984c\u5eab Excel\u2026\u300d\u6253\u958b\u9019\u500b\u6a94\u6848\u3002"
+      # 原文：下載後，把修改包交給審核的人，在「審核」頁上傳：看改前改後、檢查結果，沒問題就下載套用後的題庫。
+      "\u4e0b\u8f09\u5f8c\uff0c\u628a\u4fee\u6539\u5305\u4ea4\u7d66\u5be9\u6838\u7684\u4eba\uff0c\u5728\u300c\u5be9\u6838\u300d\u9801\u4e0a\u50b3\uff1a\u770b\u6539\u524d\u6539\u5f8c\u3001\u6aa2\u67e5\u7d50\u679c\uff0c\u6c92\u554f\u984c\u5c31\u4e0b\u8f09\u5957\u7528\u5f8c\u7684\u984c\u5eab\u3002"
     ),
     kitDesign::kit_details_row(
       # 原文：改了哪些
@@ -233,8 +233,8 @@ edit_assign_ui <- function(id, table) {
       shiny::uiOutput(ns("headline")),
       # 原文：關鍵字
       shiny::textInput(ns("keyword"), "\u95dc\u9375\u5b57",
-                       # 原文：itemID、題組或題目裡的字
-                       placeholder = "itemID\u3001\u984c\u7d44\u6216\u984c\u76ee\u88e1\u7684\u5b57"),
+                       # 原文：itemID、區塊或題目裡的字
+                       placeholder = "itemID\u3001\u5340\u584a\u6216\u984c\u76ee\u88e1\u7684\u5b57"),
       # 原文：只看已勾的
       shiny::checkboxInput(ns("only"), "\u53ea\u770b\u5df2\u52fe\u7684", value = FALSE),
       shiny::div(
@@ -276,7 +276,7 @@ edit_assign_server <- function(id, store, table) {
     })
     shiny::observeEvent(input$column, if (identical(want(), input$column)) want(NULL))
 
-    # 右邊：題目表。表本身（itemID、itemVer、題組、題目）只在欄、篩選或題目變了才重畫；
+    # 右邊：題目表。表本身（itemID、itemVer、區塊、題目）只在欄、篩選或題目變了才重畫；
     # 勾了哪些用 DT 的選取表示，點一下就改 store，再把選取對回去。
     rows <- shiny::reactive({
       edit_item_rows(store$bank(), table, column(), input$keyword, input$only)
@@ -654,10 +654,10 @@ edit_item_ui <- function(id) {
         # 原文：備註（note）
         shiny::textAreaInput(ns("note"), "\u5099\u8a3b\uff08note\uff09", rows = 2, width = "100%"),
         kitDesign::kit_advanced(
-          # 原文：題組、題幹
-          title = "\u984c\u7d44\u3001\u984c\u5e79",
-          # 原文：題組（block）
-          shiny::textInput(ns("block"), "\u984c\u7d44\uff08block\uff09", width = "100%"),
+          # 原文：區塊、題幹
+          title = "\u5340\u584a\u3001\u984c\u5e79",
+          # 原文：區塊（block）
+          shiny::textInput(ns("block"), "\u5340\u584a\uff08block\uff09", width = "100%"),
           # 原文：題幹（stemID）
           shiny::textInput(ns("stemID"), "\u984c\u5e79\uff08stemID\uff09", width = "100%")
         ),

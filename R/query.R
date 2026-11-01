@@ -1,11 +1,11 @@
 # R/query.R — 題項查詢的計算（純函式，沒有 Shiny）
 #
 # 題項查詢頁與「用 R 怎麼做」都呼叫這裡的函式：
-#   query_items()  依關鍵字、波次、構面、題組、題型、填答者找題目
+#   query_items()  依關鍵字、波次、構面、區塊、題型、填答者找題目
 #   item_detail()  一題的細節：出現的波次、構面、其他版本
 #   label_diff()   兩個版本的文字差在哪
 #   crosswalk()    題目 × 波次的 ✓ 表
-#   wave_counts()  題組 × 波次的題數（熱圖）
+#   wave_counts()  區塊 × 波次的題數（熱圖）
 #   query_code()   把目前的條件寫成 R 程式碼
 
 # 題目的鍵（itemID + itemVer）
@@ -482,7 +482,7 @@ crosswalk <- function(bank, items) {
 #' @param items A data.frame with `itemID` and `itemVer` (for example from
 #'   [query_items()]).
 #' @param by `"block"`: one row per block (items without a block are counted
-#'   under `"（未分題組）"`); `"dim"`: one row per dimension that has at least
+#'   under `"（未分區塊）"`); `"dim"`: one row per dimension that has at least
 #'   one of `items` (named by `dimName`; an item in several dimensions counts
 #'   in each).
 #' @return An integer matrix, one column per wave in age order. Rows are
@@ -503,8 +503,8 @@ wave_counts <- function(bank, items, by = c("block", "dim")) {
     ib <- bank$itemBank
     idx <- match(item_key(items$itemID, items$itemVer), item_key(ib$itemID, ib$itemVer))
     block <- as.character(ib$block)[idx]
-    # 原文：（未分題組）
-    block[is.na(block) | !nzchar(trimws(block))] <- "\uff08\u672a\u5206\u984c\u7d44\uff09"
+    # 原文：（未分區塊）
+    block[is.na(block) | !nzchar(trimws(block))] <- "\uff08\u672a\u5206\u5340\u584a\uff09"
     out <- rowsum(m, factor(block, levels = unique(block)), reorder = TRUE)
   } else {
     dim_cols <- get_matrix_cols(bank$itemDim)
@@ -596,8 +596,8 @@ query_code <- function(domain = "parent", keyword = "", fields = "text",
     # 原文：# 跨波次對照表（題目 × 波次）
     "# \u8de8\u6ce2\u6b21\u5c0d\u7167\u8868\uff08\u984c\u76ee \u00d7 \u6ce2\u6b21\uff09",
     "xw <- crosswalk(bank, items)",
-    # 原文：# 各題組在各波次的題數
-    "# \u5404\u984c\u7d44\u5728\u5404\u6ce2\u6b21\u7684\u984c\u6578",
+    # 原文：# 各區塊在各波次的題數
+    "# \u5404\u5340\u584a\u5728\u5404\u6ce2\u6b21\u7684\u984c\u6578",
     "wave_counts(bank, items)",
     # 原文：# 各構面在各波次的題數
     "# \u5404\u69cb\u9762\u5728\u5404\u6ce2\u6b21\u7684\u984c\u6578",
@@ -668,8 +668,8 @@ zero_result_hint <- function(bank, args) {
       # 原文：拿掉波次條件
       list("\u62ff\u6389\u6ce2\u6b21\u689d\u4ef6", utils::modifyList(args, list(waves = character()))),
     if (length(args$blocks) || length(args$item_types) || length(args$respondents))
-      # 原文：拿掉進階設定裡的題組、題型、填答者
-      list("\u62ff\u6389\u9032\u968e\u8a2d\u5b9a\u88e1\u7684\u984c\u7d44\u3001\u984c\u578b\u3001\u586b\u7b54\u8005",
+      # 原文：拿掉進階設定裡的區塊、題型、填答者
+      list("\u62ff\u6389\u9032\u968e\u8a2d\u5b9a\u88e1\u7684\u5340\u584a\u3001\u984c\u578b\u3001\u586b\u7b54\u8005",
            utils::modifyList(args, list(blocks = NULL, item_types = NULL, respondents = NULL),
                              keep.null = TRUE)),
     if (!isTRUE(args$include_deprecated))
@@ -746,8 +746,8 @@ search_settings_parts <- function(a, bank) {
                                })
     # 原文：構面 不限
     else "\u69cb\u9762 \u4e0d\u9650",
-    # 原文：題組 
-    if (length(a$blocks)) paste0("\u984c\u7d44 ", some(a$blocks)),
+    # 原文：區塊 
+    if (length(a$blocks)) paste0("\u5340\u584a ", some(a$blocks)),
     # 原文：題型 
     if (length(a$item_types)) paste0("\u984c\u578b ", some(a$item_types)),
     # 原文：填答者 
@@ -767,8 +767,8 @@ QUERY_COLUMN_NOTES <- c(
   deprecated = "\u5df2\u505c\u7528\uff1a1 = \u505c\u7528\uff0c0 = \u9084\u5728\u7528",
   # 原文：題幹：幾個小題共用的問句；題幹相同的題目是同一組問題
   stemID = "\u984c\u5e79\uff1a\u5e7e\u500b\u5c0f\u984c\u5171\u7528\u7684\u554f\u53e5\uff1b\u984c\u5e79\u76f8\u540c\u7684\u984c\u76ee\u662f\u540c\u4e00\u7d44\u554f\u984c",
-  # 原文：題組
-  block = "\u984c\u7d44",
+  # 原文：區塊
+  block = "\u5340\u584a",
   # 原文：題型：MC 單選、DC 複選的一個選項、NR 填數字、CR 填文字、AD 行政資料
   itemType = "\u984c\u578b\uff1aMC \u55ae\u9078\u3001DC \u8907\u9078\u7684\u4e00\u500b\u9078\u9805\u3001NR \u586b\u6578\u5b57\u3001CR \u586b\u6587\u5b57\u3001AD \u884c\u653f\u8cc7\u6599",
   # 原文：填答者

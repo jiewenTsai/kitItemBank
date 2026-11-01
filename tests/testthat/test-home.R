@@ -5,10 +5,12 @@ test_that("every audit check has exactly one owner from HOME_OWNERS", {
   expect_setequal(HOME_AUDIT_OWNER$check, AUDIT_KIT_CHECKS$check)
   expect_false(any(duplicated(HOME_AUDIT_OWNER$check)))
   expect_true(all(HOME_AUDIT_OWNER$owner %in% names(HOME_OWNERS)))
-  expect_identical(unname(HOME_OWNERS), c("自己能改", "要問老師", "要問統計人員"))
+  expect_identical(unname(HOME_OWNERS), c("自己能改", "要問老師", "要問統計人員", "要請技術人員改"))
   own <- function(x) HOME_AUDIT_OWNER$owner[match(x, HOME_AUDIT_OWNER$check)]
   expect_true(all(own(c("text_simplified", "text_brackets", "text_space", "text_newline",
-                        "role_module_blank", "group_empty")) == "self"))
+                        "group_empty")) == "self"))
+  # 題目的 role、module 沒有頁面能改：要請技術人員
+  expect_identical(own("role_module_blank"), "tech")
   expect_true(all(own(c("renamed_no_group", "group_single_item", "group_only_deprecated",
                         "group_nonleaf_member")) == "teacher"))
   expect_true(all(own(c("coverage_uid_blank", "coverage_sav", "form_year_diff",

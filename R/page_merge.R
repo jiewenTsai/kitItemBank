@@ -5,6 +5,9 @@
 #   產生了：「M03M060 的併入提案（n 列）」→ 各類幾列 → 下載 Excel → 提案表
 # → ▸ 用 R 怎麼做
 # 只讀 .sav 表頭（sav_header_meta()），讀完就刪掉上傳的暫存檔；app 不存任何檔案。
+# 雲端版（stats_upload_allowed() 是 FALSE）只收 _meta.csv：完整的 .sav 有個人層級的資料，
+# 不能傳上雲端；收到 .sav 馬上刪掉暫存檔、不讀。本機版（run_kititembank()）才收 .sav。
+# 練習：勾「練習」時，代號已經在題庫的施測先從題庫的複本拿掉（kit_without_admin()）再試算。
 # 真正寫進題庫由維護者用 apply_admin_merge()。計算都在 R/admin_merge.R。
 
 # 原文：已有 | 新版本 | 換題號 | 新題 | 不是題目 | 少問或停用 | 遺漏代碼方案
@@ -70,10 +73,43 @@ merge_match_prev <- function(plan, names) {
 }
 
 #' 讀一個上傳的檔的表頭，讀完就刪掉暫存檔
+#'
+#' 雲端版（stats_upload_allowed() 是 FALSE）不收 .sav：不讀、直接刪掉暫存檔、回傳錯誤。
 #' @noRd
 merge_read_upload <- function(path, name) {
   on.exit(unlink(path), add = TRUE)
-  if (grepl("\\.sav$", name, ignore.case = TRUE)) sav_header_meta(path) else read_sav_meta(path)
+  if (grepl("\\.sav$", name, ignore.case = TRUE)) {
+    if (!stats_upload_allowed()) stop(merge_sav_refused_text(), call. = FALSE)
+    sav_header_meta(path)
+  } else {
+    read_sav_meta(path)
+  }
+}
+
+#' 雲端版收到 .sav 時的說明
+#' @noRd
+merge_sav_refused_text <- function() {
+  # 原文：雲端版不收 .sav：完整的 .sav 有每個人的回答，不能傳上雲端，這個檔已經刪掉、沒有讀。請先在自己電腦用 kitItemBank::sav_header_meta() 存成 _meta.csv 再上傳，或改用本機版（kitItemBank::run_kititembank()）。
+  "\u96f2\u7aef\u7248\u4e0d\u6536 .sav\uff1a\u5b8c\u6574\u7684 .sav \u6709\u6bcf\u500b\u4eba\u7684\u56de\u7b54\uff0c\u4e0d\u80fd\u50b3\u4e0a\u96f2\u7aef\uff0c\u9019\u500b\u6a94\u5df2\u7d93\u522a\u6389\u3001\u6c92\u6709\u8b80\u3002\u8acb\u5148\u5728\u81ea\u5df1\u96fb\u8166\u7528 kitItemBank::sav_header_meta() \u5b58\u6210 _meta.csv \u518d\u4e0a\u50b3\uff0c\u6216\u6539\u7528\u672c\u6a5f\u7248\uff08kitItemBank::run_kititembank()\uff09\u3002"
+}
+
+#' 雲端版的上傳說明（放在上傳欄下面）
+#' @noRd
+merge_cloud_note <- function() {
+  shiny::div(
+    class = "kit-hint",
+    # 原文：這是雲端版，只收 _meta.csv（只有變項名、標籤、值標籤的表頭檔）。完整的 .sav 有每個人的回答，不能傳上雲端。
+    shiny::p("\u9019\u662f\u96f2\u7aef\u7248\uff0c\u53ea\u6536 _meta.csv\uff08\u53ea\u6709\u8b8a\u9805\u540d\u3001\u6a19\u7c64\u3001\u503c\u6a19\u7c64\u7684\u8868\u982d\u6a94\uff09\u3002\u5b8c\u6574\u7684 .sav \u6709\u6bcf\u500b\u4eba\u7684\u56de\u7b54\uff0c\u4e0d\u80fd\u50b3\u4e0a\u96f2\u7aef\u3002"),
+    # 原文：先在自己電腦的 R 把 .sav 轉成 _meta.csv：
+    shiny::p("\u5148\u5728\u81ea\u5df1\u96fb\u8166\u7684 R \u628a .sav \u8f49\u6210 _meta.csv\uff1a",
+             # 原文：，
+             shiny::tags$code("m <- kitItemBank::sav_header_meta(\"data1.sav\")"), "\uff0c",
+             shiny::tags$code("write.csv(m, \"data1_meta.csv\", row.names = FALSE, fileEncoding = \"UTF-8\")"),
+             # 原文：；或改用本機版：
+             "\uff1b\u6216\u6539\u7528\u672c\u6a5f\u7248\uff1a",
+             # 原文：，本機版可以直接上傳 .sav。
+             shiny::tags$code("kitItemBank::run_kititembank()"), "\uff0c\u672c\u6a5f\u7248\u53ef\u4ee5\u76f4\u63a5\u4e0a\u50b3 .sav\u3002")
+  )
 }
 
 #' Merge page UI (new administration)
@@ -83,6 +119,10 @@ merge_read_upload <- function(path, name) {
 #' @export
 page_merge_ui <- function(id) {
   ns <- shiny::NS(id)
+  local <- stats_upload_allowed()
+  accept <- if (local) c(".sav", ".csv") else ".csv"
+  # 原文：資料檔（.sav 或 _meta.csv，可以多個） | 資料檔（_meta.csv，可以多個）
+  files_label <- if (local) "\u8cc7\u6599\u6a94\uff08.sav \u6216 _meta.csv\uff0c\u53ef\u4ee5\u591a\u500b\uff09" else "\u8cc7\u6599\u6a94\uff08_meta.csv\uff0c\u53ef\u4ee5\u591a\u500b\uff09"
   shiny::tagList(
     kitDesign::kit_tab_guide(
       # 原文：把新一次施測併進題庫之前，先看每個變項該怎麼進：已有的題、新版本、換題號、新題，和這次沒問的題。
@@ -91,7 +131,9 @@ page_merge_ui <- function(id) {
         # 原文：在左邊寫新施測的代號（例如 M03M060、M36M096G02）。
         "\u5728\u5de6\u908a\u5beb\u65b0\u65bd\u6e2c\u7684\u4ee3\u865f\uff08\u4f8b\u5982 M03M060\u3001M36M096G02\uff09\u3002",
         # 原文：上傳這次施測的資料檔（.sav，或先存好的 _meta.csv）。檔名用 data1、data2、data3、IRT，或直接用 M03M060-P 這種代號。
-        "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08.sav\uff0c\u6216\u5148\u5b58\u597d\u7684 _meta.csv\uff09\u3002\u6a94\u540d\u7528 data1\u3001data2\u3001data3\u3001IRT\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002",
+        if (local) "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08.sav\uff0c\u6216\u5148\u5b58\u597d\u7684 _meta.csv\uff09\u3002\u6a94\u540d\u7528 data1\u3001data2\u3001data3\u3001IRT\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002"
+        # 原文：上傳這次施測的 _meta.csv（雲端版不收 .sav，先在自己電腦用 kitItemBank::sav_header_meta() 轉好）。檔名用 data1_meta、data3_meta、IRT_meta，或直接用 M03M060-P 這種代號。
+        else "\u4e0a\u50b3\u9019\u6b21\u65bd\u6e2c\u7684 _meta.csv\uff08\u96f2\u7aef\u7248\u4e0d\u6536 .sav\uff0c\u5148\u5728\u81ea\u5df1\u96fb\u8166\u7528 kitItemBank::sav_header_meta() \u8f49\u597d\uff09\u3002\u6a94\u540d\u7528 data1_meta\u3001data3_meta\u3001IRT_meta\uff0c\u6216\u76f4\u63a5\u7528 M03M060-P \u9019\u7a2e\u4ee3\u865f\u3002",
         # 原文：再上傳上一次施測的同一些資料檔（左邊會列出要哪幾個）：版本用 .sav 和 .sav 比才準。
         "\u518d\u4e0a\u50b3\u4e0a\u4e00\u6b21\u65bd\u6e2c\u7684\u540c\u4e00\u4e9b\u8cc7\u6599\u6a94\uff08\u5de6\u908a\u6703\u5217\u51fa\u8981\u54ea\u5e7e\u500b\uff09\uff1a\u7248\u672c\u7528 .sav \u548c .sav \u6bd4\u624d\u6e96\u3002",
         # 原文：按「產生提案」：右邊列出每個變項的提案、信心和理由。
@@ -109,15 +151,19 @@ page_merge_ui <- function(id) {
         4,
         # 原文：新施測的代號 | 例如 M03M060
         shiny::textInput(ns("admin"), "\u65b0\u65bd\u6e2c\u7684\u4ee3\u865f", placeholder = "\u4f8b\u5982 M03M060", width = "100%"),
-        # 原文：資料檔（.sav 或 _meta.csv，可以多個）
-        shiny::fileInput(ns("files"), "\u8cc7\u6599\u6a94\uff08.sav \u6216 _meta.csv\uff0c\u53ef\u4ee5\u591a\u500b\uff09", multiple = TRUE,
-                         accept = c(".sav", ".csv"), width = "100%",
+        # 原文：練習：把這次施測當成還沒進題庫（只在這個頁面試算，不會改題庫）
+        shiny::checkboxInput(ns("practice"), "\u7df4\u7fd2\uff1a\u628a\u9019\u6b21\u65bd\u6e2c\u7576\u6210\u9084\u6c92\u9032\u984c\u5eab\uff08\u53ea\u5728\u9019\u500b\u9801\u9762\u8a66\u7b97\uff0c\u4e0d\u6703\u6539\u984c\u5eab\uff09", FALSE),
+        if (!local) merge_cloud_note(),
+        shiny::fileInput(ns("files"), files_label, multiple = TRUE,
+                         accept = accept, width = "100%",
                          # 原文：選檔案… | 還沒選
                          buttonLabel = "\u9078\u6a94\u6848\u2026", placeholder = "\u9084\u6c92\u9078"),
+        # 原文：一次選好全部的檔（按住 Ctrl 或 ⌘ 多選）；再選一次會換掉前一批，不會加上去。
+        shiny::p(class = "kit-hint", "\u4e00\u6b21\u9078\u597d\u5168\u90e8\u7684\u6a94\uff08\u6309\u4f4f Ctrl \u6216 \u2318 \u591a\u9078\uff09\uff1b\u518d\u9078\u4e00\u6b21\u6703\u63db\u6389\u524d\u4e00\u6279\uff0c\u4e0d\u6703\u52a0\u4e0a\u53bb\u3002"),
         shiny::uiOutput(ns("files_ui")),
         # 原文：上一次施測的資料檔（建議）
         shiny::fileInput(ns("prev_files"), "\u4e0a\u4e00\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\uff08\u5efa\u8b70\uff09", multiple = TRUE,
-                         accept = c(".sav", ".csv"), width = "100%",
+                         accept = accept, width = "100%",
                          # 原文：選檔案… | 還沒選
                          buttonLabel = "\u9078\u6a94\u6848\u2026", placeholder = "\u9084\u6c92\u9078"),
         shiny::uiOutput(ns("prev_ui")),
@@ -141,7 +187,19 @@ page_merge_ui <- function(id) {
 page_merge_server <- function(id, kit, goto, request = NULL) {
   shiny::moduleServer(id, function(input, output, session) {
     ns <- session$ns
-    kit_now <- if (shiny::is.reactive(kit)) kit else function() kit
+    kit_in <- if (shiny::is.reactive(kit)) kit else function() kit
+    # 題庫裡已經有的代號（不分大小寫）；沒有時是 ""
+    existing_admin <- shiny::reactive({
+      a <- trimws(input$admin %||% "")
+      ad <- kit_in()$admins$adminID
+      hit <- ad[nzchar(a) & toupper(ad) == toupper(a)]
+      if (length(hit)) hit[1] else ""
+    })
+    # 練習：把那次施測從題庫的複本拿掉再試算（不改題庫）
+    kit_now <- shiny::reactive({
+      ex <- existing_admin()
+      if (isTRUE(input$practice) && nzchar(ex)) kit_without_admin(kit_in(), ex) else kit_in()
+    })
     headers <- shiny::reactiveVal(list())    # 檔名 → 表頭（只有表頭）
     proposals <- shiny::reactiveVal(NULL)
 
@@ -151,8 +209,10 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
       for (i in seq_len(nrow(f))) {
         m <- tryCatch(merge_read_upload(f$datapath[i], f$name[i]), error = function(e) e)
         if (inherits(m, "error")) {
-          # 原文：「 | 」讀不到表頭：
-          kitDesign::kit_notify(paste0("\u300c", f$name[i], "\u300d\u8b80\u4e0d\u5230\u8868\u982d\uff1a", conditionMessage(m)), session)
+          refused <- grepl("\\.sav$", f$name[i], ignore.case = TRUE) && !stats_upload_allowed()
+          # 原文：「 | 」： | 」讀不到表頭：
+          kitDesign::kit_notify(paste0("\u300c", f$name[i], if (refused) "\u300d\uff1a" else "\u300d\u8b80\u4e0d\u5230\u8868\u982d\uff1a",
+                                       conditionMessage(m)), session)
           next
         }
         out[[f$name[i]]] <- m
@@ -167,25 +227,38 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
       prev_headers(read_all(input$prev_files))
       proposals(NULL)
     })
-    plan <- shiny::reactive(merge_prev_plan(kit_now(), trimws(input$admin %||% ""), names(headers())))
+    admin_code <- shiny::reactive({
+      ex <- existing_admin()
+      if (nzchar(ex)) ex else trimws(input$admin %||% "")
+    })
+    plan <- shiny::reactive(merge_prev_plan(kit_now(), admin_code(), names(headers())))
 
     output$prev_ui <- shiny::renderUI({
       a <- trimws(input$admin %||% "")
-      if (nzchar(a) && toupper(a) %in% toupper(kit_now()$admins$adminID)) {
+      ex <- existing_admin()
+      practice <- isTRUE(input$practice) && nzchar(ex)
+      if (nzchar(ex) && !practice) {
         # 原文：題庫裡已經有 | 了。新施測要用題庫裡還沒有的代號（例如下一個月齡或年級）。
         return(kitDesign::kit_status("warn", paste0("\u984c\u5eab\u88e1\u5df2\u7d93\u6709 ", a,
-          " \u4e86\u3002\u65b0\u65bd\u6e2c\u8981\u7528\u984c\u5eab\u88e1\u9084\u6c92\u6709\u7684\u4ee3\u865f\uff08\u4f8b\u5982\u4e0b\u4e00\u500b\u6708\u9f61\u6216\u5e74\u7d1a\uff09\u3002")))
+          " \u4e86\u3002\u65b0\u65bd\u6e2c\u8981\u7528\u984c\u5eab\u88e1\u9084\u6c92\u6709\u7684\u4ee3\u865f\uff08\u4f8b\u5982\u4e0b\u4e00\u500b\u6708\u9f61\u6216\u5e74\u7d1a\uff09\u3002",
+          # 原文：要拿這次施測練習，勾上面的「練習」。
+          "\u8981\u62ff\u9019\u6b21\u65bd\u6e2c\u7df4\u7fd2\uff0c\u52fe\u4e0a\u9762\u7684\u300c\u7df4\u7fd2\u300d\u3002")))
+      }
+      practice_note <- if (practice) {
+        # 原文：練習：先把  |  從題庫的複本拿掉，當成還沒進題庫來試算。題庫本身沒有改。
+        shiny::div(class = "alert alert-info", role = "status", paste0("\u7df4\u7fd2\uff1a\u5148\u628a ", ex, " \u5f9e\u984c\u5eab\u7684\u8907\u672c\u62ff\u6389\uff0c\u7576\u6210\u9084\u6c92\u9032\u984c\u5eab\u4f86\u8a66\u7b97\u3002\u984c\u5eab\u672c\u8eab\u6c92\u6709\u6539\u3002"))
       }
       pl <- plan()
       if (is.null(pl)) {
         # 原文：寫好代號、上傳這次的資料檔後，這裡會列出要上傳上一次的哪幾個檔。
-        return(shiny::p(class = "kit-hint", "\u5beb\u597d\u4ee3\u865f\u3001\u4e0a\u50b3\u9019\u6b21\u7684\u8cc7\u6599\u6a94\u5f8c\uff0c\u9019\u88e1\u6703\u5217\u51fa\u8981\u4e0a\u50b3\u4e0a\u4e00\u6b21\u7684\u54ea\u5e7e\u500b\u6a94\u3002"))
+        return(shiny::tagList(practice_note, shiny::p(class = "kit-hint", "\u5beb\u597d\u4ee3\u865f\u3001\u4e0a\u50b3\u9019\u6b21\u7684\u8cc7\u6599\u6a94\u5f8c\uff0c\u9019\u88e1\u6703\u5217\u51fa\u8981\u4e0a\u50b3\u4e0a\u4e00\u6b21\u7684\u54ea\u5e7e\u500b\u6a94\u3002")))
       }
       got <- merge_match_prev(pl, names(prev_headers()))
       pl <- pl[nzchar(pl$prev), , drop = FALSE]
       # 原文：題庫裡沒有上一次的同一種資料檔，只能和題庫的文字比。
-      if (!nrow(pl)) return(shiny::p(class = "kit-hint", "\u984c\u5eab\u88e1\u6c92\u6709\u4e0a\u4e00\u6b21\u7684\u540c\u4e00\u7a2e\u8cc7\u6599\u6a94\uff0c\u53ea\u80fd\u548c\u984c\u5eab\u7684\u6587\u5b57\u6bd4\u3002"))
+      if (!nrow(pl)) return(shiny::tagList(practice_note, shiny::p(class = "kit-hint", "\u984c\u5eab\u88e1\u6c92\u6709\u4e0a\u4e00\u6b21\u7684\u540c\u4e00\u7a2e\u8cc7\u6599\u6a94\uff0c\u53ea\u80fd\u548c\u984c\u5eab\u7684\u6587\u5b57\u6bd4\u3002")))
       shiny::tagList(
+        practice_note,
         # 原文：要和上一次的這些資料檔比：
         shiny::p(class = "kit-hint", "\u8981\u548c\u4e0a\u4e00\u6b21\u7684\u9019\u4e9b\u8cc7\u6599\u6a94\u6bd4\uff1a"),
         shiny::tags$ul(lapply(seq_len(nrow(pl)), function(i) shiny::tags$li(paste0(
@@ -198,6 +271,7 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
 
     output$files_ui <- shiny::renderUI({
       h <- headers()
+      if (!length(h) && !stats_upload_allowed()) return(NULL)
       # 原文：檔案太大傳不上去時，先在自己電腦用 kitItemBank::sav_header_meta() 存成 _meta.csv 再上傳。
       if (!length(h)) return(shiny::p(class = "kit-hint", "\u6a94\u6848\u592a\u5927\u50b3\u4e0d\u4e0a\u53bb\u6642\uff0c\u5148\u5728\u81ea\u5df1\u96fb\u8166\u7528 kitItemBank::sav_header_meta() \u5b58\u6210 _meta.csv \u518d\u4e0a\u50b3\u3002"))
       shiny::tags$ul(lapply(names(h), function(n) shiny::tags$li(paste0(
@@ -207,7 +281,7 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
 
     shiny::observeEvent(input$run, {
       h <- headers()
-      a <- trimws(input$admin %||% "")
+      a <- admin_code()
       if (!nzchar(a)) {
         # 原文：先寫新施測的代號（例如 M03M060）。
         kitDesign::kit_notify("\u5148\u5beb\u65b0\u65bd\u6e2c\u7684\u4ee3\u865f\uff08\u4f8b\u5982 M03M060\uff09\u3002", session)
@@ -253,6 +327,7 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
         proposals(NULL)
         return()
       }
+      attr(res, "practice") <- isTRUE(input$practice) && nzchar(existing_admin())
       proposals(res)
     })
 
@@ -271,6 +346,10 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
       s <- admin_merge_summary(p)
       s <- s[s$total > 0L, , drop = FALSE]
       shiny::tagList(
+        if (isTRUE(attr(p, "practice"))) {
+          # 原文：練習： |  已經在題庫，這裡把它當成還沒進題庫來試算；題庫沒有改。
+          shiny::div(class = "alert alert-info", role = "status", paste0("\u7df4\u7fd2\uff1a", ad$adminID, " \u5df2\u7d93\u5728\u984c\u5eab\uff0c\u9019\u88e1\u628a\u5b83\u7576\u6210\u9084\u6c92\u9032\u984c\u5eab\u4f86\u8a66\u7b97\uff1b\u984c\u5eab\u6c92\u6709\u6539\u3002"))
+        },
         # 原文： 的併入提案（ |  列）
         shiny::h4(paste0(ad$adminID, " \u7684\u4f75\u5165\u63d0\u6848\uff08", kitDesign::kit_num(nrow(p)), " \u5217\uff09")),
         shiny::tags$ul(lapply(seq_len(nrow(ds)), function(i) shiny::tags$li(paste0(
@@ -321,8 +400,8 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
     })
 
     kitDesign::kit_code_panel_server("code", shiny::reactive({
-      a <- trimws(input$admin %||% "")
-      merge_code(if (nzchar(a)) a else "M03M060")
+      a <- admin_code()
+      merge_code(if (nzchar(a)) a else "M03M060", practice = isTRUE(input$practice) && nzchar(existing_admin()))
     }))
 
     invisible(list(headers = headers, proposals = proposals))
@@ -330,10 +409,13 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
 }
 
 # 用 R 怎麼做
-merge_code <- function(admin_id) {
+merge_code <- function(admin_id, practice = FALSE) {
   q <- function(x) paste0("\"", gsub("\"", "\\\\\"", as.character(x), fixed = TRUE), "\"")
   paste(c(
     "kit <- kitItemBank::read_kit()",
+    # 原文：# 練習：這次施測已經在題庫，先從複本拿掉（不改題庫）
+    if (practice) "# \u7df4\u7fd2\uff1a\u9019\u6b21\u65bd\u6e2c\u5df2\u7d93\u5728\u984c\u5eab\uff0c\u5148\u5f9e\u8907\u672c\u62ff\u6389\uff08\u4e0d\u6539\u984c\u5eab\uff09",
+    if (practice) paste0("kit <- kitItemBank::kit_without_admin(kit, ", q(admin_id), ")"),
     "",
     # 原文：# 只讀 .sav 的表頭（變項名、標籤、值標籤）
     "# \u53ea\u8b80 .sav \u7684\u8868\u982d\uff08\u8b8a\u9805\u540d\u3001\u6a19\u7c64\u3001\u503c\u6a19\u7c64\uff09",

@@ -4,14 +4,18 @@
 # 要注意的清單來自 audit_kit()；首頁只用題庫本身（不給 .sav 和 0.2 遺漏代碼），
 # 所以 HOME_NEEDS_MAINTAINER 列的兩種檢查要維護者在自己電腦上跑。
 
-# 誰能處理：self = 自己能改；teacher = 要問老師；stats = 要問統計人員
+# 誰能處理：self = 自己能改；teacher = 要問老師；stats = 要問統計人員；
+# tech = 要請技術人員改（app 裡沒有頁面能改的欄位）
 # 原文：自己能改 | 要問老師 | 要問統計人員
-HOME_OWNERS <- c(self = "\u81ea\u5df1\u80fd\u6539", teacher = "\u8981\u554f\u8001\u5e2b", stats = "\u8981\u554f\u7d71\u8a08\u4eba\u54e1")
+HOME_OWNERS <- c(self = "\u81ea\u5df1\u80fd\u6539", teacher = "\u8981\u554f\u8001\u5e2b", stats = "\u8981\u554f\u7d71\u8a08\u4eba\u54e1",
+                 # 原文：要請技術人員改
+                 tech = "\u8981\u8acb\u6280\u8853\u4eba\u54e1\u6539")
 
 # 每一種「要注意」由誰處理（AUDIT_KIT_CHECKS 的每一種都要有，測試會檢查）
 #   self：文字、分類欄位、空題組，看題庫就能改
 #   teacher：要懂題目內容才能判斷（題目是不是同一題、題組該怎麼分）
 #   stats：要看資料檔（.sav、遺漏代碼、哪些資料檔問了哪些題）
+#   tech：app 沒有頁面能改（題目的 role、module），要技術人員直接改 kit 的表
 HOME_AUDIT_OWNER <- data.frame(
   check = c("coverage_uid_blank", "coverage_sav", "form_year_diff", "renamed_no_group",
             "missing_code_scheme", "group_only_deprecated", "group_single_item", "group_empty",
@@ -20,7 +24,7 @@ HOME_AUDIT_OWNER <- data.frame(
   owner = c("stats", "stats", "stats", "teacher",
             "stats", "teacher", "teacher", "self",
             "teacher", "self", "self", "self",
-            "self", "stats", "self"),
+            "self", "stats", "tech"),
   stringsAsFactors = FALSE
 )
 

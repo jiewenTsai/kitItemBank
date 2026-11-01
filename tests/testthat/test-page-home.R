@@ -24,7 +24,9 @@ test_that("audit findings are grouped by owner and link to the right page", {
     expect_match(head, paste0("共有 ", kitDesign::kit_num(nrow(a)), " 筆"))
     expect_match(head, "資料檔和 .sav 表頭對不上")
     expect_match(head, "下載要注意的完整清單")
-    outs <- list(self = output$audit_self, teacher = output$audit_teacher, stats = output$audit_stats)
+    expect_match(head, "三個題庫（家長、兒童青少年、教保人員）合在一起看")
+    outs <- list(self = output$audit_self, teacher = output$audit_teacher, stats = output$audit_stats,
+                 tech = output$audit_tech)
     for (o in names(outs)) {
       html <- home_html(outs[[o]])
       n <- sum(a$owner == o)

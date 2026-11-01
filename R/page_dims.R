@@ -127,6 +127,7 @@ page_dims_server <- function(id, store, goto, request) {
         ))
       }
       row <- ov[ov$dimID == d, , drop = FALSE]
+      kids <- if (row$n_items == 0L) dim_children(bank(), d, store$domain()) else character(0)
       shiny::tagList(
         # 先放按鈕列再放標題：提示小字的負上邊距只會貼近標題，不會壓到按鈕
         shiny::div(
@@ -149,14 +150,16 @@ page_dims_server <- function(id, store, goto, request) {
         ),
         # 原文：「 | 」：
         shiny::h4(paste0("\u300c", dims_label(bank(), d), "\u300d\uff1a", dims_count_text(row))),
-        shiny::p(
-          class = "kit-hint",
-          # 原文：點一題，到「題項查詢」看細節。這裡只列已歸到這個構面的題，
-          "\u9ede\u4e00\u984c\uff0c\u5230\u300c\u984c\u9805\u67e5\u8a62\u300d\u770b\u7d30\u7bc0\u3002\u9019\u88e1\u53ea\u5217\u5df2\u6b78\u5230\u9019\u500b\u69cb\u9762\u7684\u984c\uff0c",
-          # 原文：用關鍵字可能找到更多 →
-          shiny::actionLink(ns("to_search"), "\u7528\u95dc\u9375\u5b57\u53ef\u80fd\u627e\u5230\u66f4\u591a \u2192")
+        if (length(kids)) dims_children_line(bank(), kids, ns("child_dim")) else shiny::tagList(
+          shiny::p(
+            class = "kit-hint",
+            # 原文：點一題，到「題項查詢」看細節。這裡只列已歸到這個構面的題，
+            "\u9ede\u4e00\u984c\uff0c\u5230\u300c\u984c\u9805\u67e5\u8a62\u300d\u770b\u7d30\u7bc0\u3002\u9019\u88e1\u53ea\u5217\u5df2\u6b78\u5230\u9019\u500b\u69cb\u9762\u7684\u984c\uff0c",
+            # 原文：用關鍵字可能找到更多 →
+            shiny::actionLink(ns("to_search"), "\u7528\u95dc\u9375\u5b57\u53ef\u80fd\u627e\u5230\u66f4\u591a \u2192")
+          ),
+          kitDesign::kit_table_scroll(DT::DTOutput(ns("items_dt")))
         ),
-        kitDesign::kit_table_scroll(DT::DTOutput(ns("items_dt"))),
         kitDesign::kit_details_row(shiny::uiOutput(ns("overlap_ui"))),
         # 題組沿革（kit 的 group_lineage；這一頁其他部分讀 0.2 形狀的題庫）
         group_lineage_ui(kit_builtin(), dims_label(bank(), d)),
@@ -193,6 +196,11 @@ page_dims_server <- function(id, store, goto, request) {
       if (length(i) == 1L && i <= nrow(ov)) select_dim(ov$dimID[i])
     })
     shiny::observeEvent(input$back, select_dim(NULL))
+    # 點子題組的連結 = 選那個構面
+    shiny::observeEvent(input$child_dim, {
+      d <- input$child_dim
+      if (length(d) == 1L && d %in% dims_cols(bank())) select_dim(d)
+    })
     shiny::observeEvent(input$edit_dim, {
       shiny::req(current_dim())
       goto("edit", dim = current_dim())
@@ -397,6 +405,27 @@ dims_count_text <- function(row) {
     " \u00b7 \u51fa\u73fe\u5728 ", kitDesign::kit_num(row$n_waves), " \u500b\u6ce2\u6b21",
     # 原文： · 最近一波 
     if (!is.na(row$last_wave)) paste0(" \u00b7 \u6700\u8fd1\u4e00\u6ce2 ", row$last_wave) else ""
+  )
+}
+
+# 題組本身沒有題目、但有子題組時的一行：「這個題組本身沒有題目，題目在它的子題組：主動性、合群性…」
+# 每個子題組是一個連結，點了送 input_id = 子題組的 dimID
+dims_children_line <- function(bank, kids, input_id) {
+  links <- lapply(seq_along(kids), function(i) {
+    a <- shiny::tags$a(
+      href = "#", class = "kit-child-dim",
+      onclick = sprintf("Shiny.setInputValue('%s', %s, {priority: 'event'}); return false;",
+                        input_id, jsonlite::toJSON(kids[i], auto_unbox = TRUE)),
+      dims_label(bank, kids[i]))
+    # 原文：、
+    if (i > 1L) shiny::tagList("\u3001", a) else a
+  })
+  shiny::p(
+    # 原文：這個題組本身沒有題目，題目都在它的子題組裡。點一個子題組看它的題目：
+    "\u9019\u500b\u984c\u7d44\u672c\u8eab\u6c92\u6709\u984c\u76ee\uff0c\u984c\u76ee\u90fd\u5728\u5b83\u7684\u5b50\u984c\u7d44\u88e1\u3002\u9ede\u4e00\u500b\u5b50\u984c\u7d44\u770b\u5b83\u7684\u984c\u76ee\uff1a",
+    links,
+    # 原文：。下載的各波次題目表會放全部子題組的題目。
+    "\u3002\u4e0b\u8f09\u7684\u5404\u6ce2\u6b21\u984c\u76ee\u8868\u6703\u653e\u5168\u90e8\u5b50\u984c\u7d44\u7684\u984c\u76ee\u3002"
   )
 }
 

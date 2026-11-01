@@ -5,7 +5,7 @@
 #   上傳了：對到幾個變項 → 下載（Excel、題庫列 CSV）→ 題項統計表 → 題組統計表
 #
 # 隱私（一定要做）：
-#   - 只有 options(kititembank.allow_data_upload = TRUE) 時才能用（只在本機開）；
+#   - 只有 options(kititembank.allow_data_upload = TRUE) 時才能用（run_kititembank() 開本機版時會設好）；
 #     沒開時整頁只有一段說明，沒有上傳的地方，伺服器也什麼都不做
 #   - 上傳的檔案讀進記憶體後馬上刪掉（stats_read_upload()），不寫到任何地方、不印出值
 #   - 只留下彙總；「清除資料」把記憶體裡的資料丟掉
@@ -44,11 +44,11 @@ page_stats_ui <- function(id) {
         shiny::h4("\u9019\u4e00\u9801\u5728\u9019\u88e1\u4e0d\u80fd\u7528"),
         # 原文：統計要用到每個孩子的原始資料。為了保護資料，原始資料不能上傳到雲端，所以統計只能在本機版本（自己電腦上執行的 kitItemBank）做。
         shiny::p("\u7d71\u8a08\u8981\u7528\u5230\u6bcf\u500b\u5b69\u5b50\u7684\u539f\u59cb\u8cc7\u6599\u3002\u70ba\u4e86\u4fdd\u8b77\u8cc7\u6599\uff0c\u539f\u59cb\u8cc7\u6599\u4e0d\u80fd\u4e0a\u50b3\u5230\u96f2\u7aef\uff0c\u6240\u4ee5\u7d71\u8a08\u53ea\u80fd\u5728\u672c\u6a5f\u7248\u672c\uff08\u81ea\u5df1\u96fb\u8166\u4e0a\u57f7\u884c\u7684 kitItemBank\uff09\u505a\u3002"),
-        # 原文：要做統計，請在自己的電腦上打開 kitItemBank，並先在 R 裡執行：
-        shiny::p("\u8981\u505a\u7d71\u8a08\uff0c\u8acb\u5728\u81ea\u5df1\u7684\u96fb\u8166\u4e0a\u6253\u958b kitItemBank\uff0c\u4e26\u5148\u5728 R \u88e1\u57f7\u884c\uff1a",
-                 shiny::tags$code("options(kititembank.allow_data_upload = TRUE)"),
-                 # 原文：再執行  | 。
-                 "\u518d\u57f7\u884c ", shiny::tags$code("kitItemBank::run_kititembank()"), "\u3002"),
+        # 原文：要做統計，請在自己的電腦上打開本機版：在 R 裡執行 
+        shiny::p("\u8981\u505a\u7d71\u8a08\uff0c\u8acb\u5728\u81ea\u5df1\u7684\u96fb\u8166\u4e0a\u6253\u958b\u672c\u6a5f\u7248\uff1a\u5728 R \u88e1\u57f7\u884c ",
+                 shiny::tags$code("kitItemBank::run_kititembank()"),
+                 # 原文：。本機版會打開統計頁，資料只留在你的電腦。
+                 "\u3002\u672c\u6a5f\u7248\u6703\u6253\u958b\u7d71\u8a08\u9801\uff0c\u8cc7\u6599\u53ea\u7559\u5728\u4f60\u7684\u96fb\u8166\u3002"),
         # 原文：已經算好的統計，維護者加進題庫以後，大家都看得到。
         shiny::p(class = "kit-hint", "\u5df2\u7d93\u7b97\u597d\u7684\u7d71\u8a08\uff0c\u7dad\u8b77\u8005\u52a0\u9032\u984c\u5eab\u4ee5\u5f8c\uff0c\u5927\u5bb6\u90fd\u770b\u5f97\u5230\u3002")
       )

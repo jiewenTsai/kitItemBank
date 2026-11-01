@@ -166,12 +166,59 @@ dim_items <- function(bank, dim_id) {
   out
 }
 
-#' 題組各波次題目表的 Excel 工作表：說明＋題目 × 波次（✓）
+#' 一個題組在 kit 的 group_tree 裡的子題組（只回傳這個題庫有的構面）
+#'
+#' 例如家長問卷的「社會能力」本身沒有題目，題目在「主動性」「合群性」…這些子題組。
+#' @param kit kit（有 group_tree）；NULL 時回傳 character(0)
+#' @return 子題組的 dimID（去掉問卷前綴），依 group_tree 出現的順序
 #' @noRd
-dim_items_workbook <- function(bank, dim_id, domain = NULL) {
+dim_children <- function(bank, dim_id, domain = NULL, kit = kit_builtin()) {
+  if (is.null(kit) || is.null(kit$group_tree) || length(dim_id) != 1L) return(character(0))
+  ins <- if (!is.null(domain) && domain %in% names(KIT_DOMAIN_INSTRUMENT)) {
+    KIT_DOMAIN_INSTRUMENT[[domain]]
+  } else {
+    unique(sub("\\..*$", "", kit$group_tree$groupID))
+  }
+  gt <- kit$group_tree
+  kids <- gt$groupID[gt$parentID %in% paste0(ins, ".", dim_id)]
+  kids <- unique(kit_strip_prefix(kids))
+  kids[kids %in% setdiff(dims_cols(bank), dim_id)]
+}
+
+#' 題組各波次題目表的 Excel 工作表：說明＋題目 × 波次（✓）
+#'
+#' 題組本身沒有題目、但有子題組時（例如「社會能力」），放子題組的題目，第一欄寫是哪個子題組。
+#' @noRd
+dim_items_workbook <- function(bank, dim_id, domain = NULL, kit = kit_builtin()) {
   items <- dim_items(bank, dim_id)
+  kids <- if (nrow(items) == 0L) dim_children(bank, dim_id, domain, kit) else character(0)
+  if (length(kids)) {
+    parts <- lapply(kids, function(k) {
+      it <- dim_items(bank, k)
+      cbind(data.frame(x = rep(dims_label(bank, k), nrow(it)), stringsAsFactors = FALSE), it)
+    })
+    all_waves <- get_wave_cols(bank$itemWave)
+    cols <- unique(unlist(lapply(parts, names)))
+    cols <- c(setdiff(cols, all_waves), intersect(all_waves, cols))
+    parts <- lapply(parts, function(p) {
+      for (cc in setdiff(cols, names(p))) p[[cc]] <- rep("", nrow(p))
+      p[, cols, drop = FALSE]
+    })
+    items <- do.call(rbind, parts)
+    # 原文：子題組
+    names(items)[1] <- "\u5b50\u984c\u7d44"
+    rownames(items) <- NULL
+  }
   waves <- intersect(get_wave_cols(bank$itemWave), names(items))
   names(items)[match(waves, names(items))] <- col_display_labels(waves, plain = TRUE)
+  # 原文：一列是一個題目版本；✓ 表示這個版本在那次施測有問。deprecated = 1 是已停用的舊版本。
+  note <- "\u4e00\u5217\u662f\u4e00\u500b\u984c\u76ee\u7248\u672c\uff1b\u2713 \u8868\u793a\u9019\u500b\u7248\u672c\u5728\u90a3\u6b21\u65bd\u6e2c\u6709\u554f\u3002deprecated = 1 \u662f\u5df2\u505c\u7528\u7684\u820a\u7248\u672c\u3002"
+  if (length(kids)) {
+    # 原文：這個題組本身沒有題目，表裡是它的子題組（
+    note <- paste0(note, "\u9019\u500b\u984c\u7d44\u672c\u8eab\u6c92\u6709\u984c\u76ee\uff0c\u8868\u88e1\u662f\u5b83\u7684\u5b50\u984c\u7d44\uff08",
+                   # 原文：、 | ）的題目，第一欄寫是哪個子題組。
+                   paste(dims_label(bank, kids), collapse = "\u3001"), "\uff09\u7684\u984c\u76ee\uff0c\u7b2c\u4e00\u6b04\u5beb\u662f\u54ea\u500b\u5b50\u984c\u7d44\u3002")
+  }
   info <- data.frame(
     # 原文：項目 | 內容
     "\u9805\u76ee" = c(
@@ -179,9 +226,7 @@ dim_items_workbook <- function(bank, dim_id, domain = NULL) {
       "\u984c\u7d44", "\u984c\u5eab", "\u984c\u5eab\u7248\u672c", "\u7522\u751f\u65e5\u671f", "\u8aaa\u660e"),
     "\u5167\u5bb9" = c(
       dims_label(bank, dim_id), bank_domain_label(domain) %||% "", kit_version() %||% "",
-      format(Sys.Date()),
-      # 原文：一列是一個題目版本；✓ 表示這個版本在那次施測有問。deprecated = 1 是已停用的舊版本。
-      "\u4e00\u5217\u662f\u4e00\u500b\u984c\u76ee\u7248\u672c\uff1b\u2713 \u8868\u793a\u9019\u500b\u7248\u672c\u5728\u90a3\u6b21\u65bd\u6e2c\u6709\u554f\u3002deprecated = 1 \u662f\u5df2\u505c\u7528\u7684\u820a\u7248\u672c\u3002"),
+      format(Sys.Date()), note),
     check.names = FALSE, stringsAsFactors = FALSE)
   # 原文：說明 | 題目
   stats::setNames(list(info, items), c("\u8aaa\u660e", "\u984c\u76ee"))

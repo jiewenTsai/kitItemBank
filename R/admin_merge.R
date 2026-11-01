@@ -32,6 +32,24 @@
 AM_CLASSES <- c("same", "new_version", "renamed", "new_item", "not_item",
                 "dropped_or_block", "missing_scheme_change")
 
+# 提案寫成 Excel 時的中文欄名（admin_merge_workbook()）
+# 原文：提案編號 | 類別代碼 | 類別
+AM_COLUMN_ZH <- c(proposal_id = "\u63d0\u6848\u7de8\u865f", class = "\u985e\u5225\u4ee3\u78bc", class_label = "\u985e\u5225",
+                  # 原文：動作 | 資料檔 | 變項 | 順序
+                  action = "\u52d5\u4f5c", datasetID = "\u8cc7\u6599\u6a94", varname = "\u8b8a\u9805", order = "\u9806\u5e8f",
+                  # 原文：題號位置 | 種類 | 題目代碼 | 版本
+                  position = "\u984c\u865f\u4f4d\u7f6e", kind = "\u7a2e\u985e", item_uid = "\u984c\u76ee\u4ee3\u78bc", itemVer = "\u7248\u672c",
+                  # 原文：原題目代碼 | 原版本 | 區塊
+                  from_uid = "\u539f\u984c\u76ee\u4ee3\u78bc", from_ver = "\u539f\u7248\u672c", block = "\u5340\u584a",
+                  # 原文：標籤相似度 | 選項相同
+                  similarity = "\u6a19\u7c64\u76f8\u4f3c\u5ea6", values_match = "\u9078\u9805\u76f8\u540c",
+                  # 原文：遺漏代碼方案 | 上一次的資料檔 | 標籤
+                  scheme = "\u907a\u6f0f\u4ee3\u78bc\u65b9\u6848", prev_dataset = "\u4e0a\u4e00\u6b21\u7684\u8cc7\u6599\u6a94", label = "\u6a19\u7c64",
+                  # 原文：選項 | 信心 | 理由
+                  values = "\u9078\u9805", confidence = "\u4fe1\u5fc3", reason = "\u7406\u7531",
+                  # 原文：決定（接受／不接受／再討論）
+                  decision = "\u6c7a\u5b9a\uff08\u63a5\u53d7\uff0f\u4e0d\u63a5\u53d7\uff0f\u518d\u8a0e\u8ad6\uff09")
+
 # 小工具 ----
 
 #' 資料檔代號的後綴：M03M048-PK → "PK"
@@ -1042,6 +1060,79 @@ admin_merge_summary <- function(proposals) {
   out
 }
 
+# 練習：把一次已經在題庫的施測拿掉 ----
+
+#' A copy of the kit without one administration (for practice)
+#'
+#' Removes the administration as if it had never been merged: its `admins` row, its
+#' `datasets`, their `dataset_vars` and `block_status` rows (and rows of any other table
+#' with a `datasetID` or `adminID` column), its aliases, and the `item_relations` that
+#' take effect with it. Item versions used only by this administration are removed too,
+#' with items left without any version (and their group memberships, relations and
+#' unused value sets), so [propose_admin_merge()] sees them as new again. Nothing is
+#' written to disk: use the result only to try [propose_admin_merge()] on an
+#' administration that is already in the kit.
+#'
+#' @param kit A kit, from [read_kit()].
+#' @param adminID The administration to remove, e.g. `"M03M048"`.
+#' @return The kit without that administration.
+#' @examples
+#' \dontrun{
+#' kit <- read_kit()
+#' practice <- kit_without_admin(kit, "M03M048")
+#' p <- propose_admin_merge(practice, list("M03M048-P" = sav_header_meta("data1.sav")), "M03M048")
+#' }
+#' @export
+kit_without_admin <- function(kit, adminID) {
+  if (length(adminID) != 1L || !adminID %in% kit$admins$adminID) {
+    stop("no administration '", adminID, "' in the kit", call. = FALSE)
+  }
+  ids <- kit$datasets$datasetID[kit$datasets$adminID == adminID]
+  here <- kit$dataset_vars[kit$dataset_vars$datasetID %in% ids &
+                             nzchar(kit$dataset_vars$item_uid), , drop = FALSE]
+  kit$admins <- kit$admins[kit$admins$adminID != adminID, , drop = FALSE]
+  kit$datasets <- kit$datasets[!kit$datasets$datasetID %in% ids, , drop = FALSE]
+  for (tb in setdiff(names(kit), c("admins", "datasets"))) {
+    x <- kit[[tb]]
+    if (!is.data.frame(x)) next
+    if ("datasetID" %in% names(x)) x <- x[!x$datasetID %in% ids, , drop = FALSE]
+    if ("adminID" %in% names(x)) x <- x[!x$adminID %in% adminID, , drop = FALSE]
+    kit[[tb]] <- x
+  }
+  al <- kit$aliases
+  kit$aliases <- al[!(al$target_type == "admin" & al$target_id == adminID), , drop = FALSE]
+  rel <- kit$item_relations
+  kit$item_relations <- rel[rel$effective_admin != adminID, , drop = FALSE]
+  # 只在這次施測用到的版本、題目
+  used <- paste(kit$dataset_vars$item_uid, kit$dataset_vars$itemVer)
+  only <- setdiff(paste(here$item_uid, here$itemVer), used)
+  vkey <- paste(kit$item_versions$item_uid, kit$item_versions$itemVer)
+  kit$item_versions <- kit$item_versions[!vkey %in% only, , drop = FALSE]
+  gone <- setdiff(kit$items$item_uid, kit$item_versions$item_uid)
+  gone <- intersect(gone, here$item_uid)
+  if (length(only)) {
+    vkey <- paste(kit$item_versions$item_uid, kit$item_versions$itemVer)
+    rel <- kit$item_relations
+    kit$item_relations <- rel[paste(rel$from_uid, rel$from_ver) %in% vkey &
+                                paste(rel$to_uid, rel$to_ver) %in% vkey, , drop = FALSE]
+  }
+  if (length(gone)) {
+    kit$items <- kit$items[!kit$items$item_uid %in% gone, , drop = FALSE]
+    for (tb in setdiff(names(kit), "items")) {
+      x <- kit[[tb]]
+      if (is.data.frame(x) && "item_uid" %in% names(x)) {
+        kit[[tb]] <- x[!x$item_uid %in% gone, , drop = FALSE]
+      }
+    }
+    al <- kit$aliases
+    kit$aliases <- al[!(al$target_type == "item" & al$target_id %in% gone), , drop = FALSE]
+  }
+  vs <- unique(kit$item_versions$valueSetID)
+  kit$value_codes <- kit$value_codes[kit$value_codes$valueSetID %in% vs, , drop = FALSE]
+  for (tb in names(kit)) if (is.data.frame(kit[[tb]])) rownames(kit[[tb]]) <- NULL
+  kit
+}
+
 # 讀 .sav 表頭 ----
 
 #' Read only the header of a .sav file (names, labels, value labels)
@@ -1127,11 +1218,38 @@ admin_merge_workbook <- function(proposals) {
       # 原文：只讀了 .sav 的表頭（變項名、標籤、值標籤），沒有讀任何個人資料。
       "\u53ea\u8b80\u4e86 .sav \u7684\u8868\u982d\uff08\u8b8a\u9805\u540d\u3001\u6a19\u7c64\u3001\u503c\u6a19\u7c64\uff09\uff0c\u6c92\u6709\u8b80\u4efb\u4f55\u500b\u4eba\u8cc7\u6599\u3002"),
     stringsAsFactors = FALSE)
+  is_cls <- info$a %in% AM_CLASSES
+  # 原文：（ | ）
+  info$a[is_cls] <- paste0(info$a[is_cls], "\uff08", AM_CLASS_LABEL[info$a[is_cls]], "\uff09")
+  info <- rbind(info, data.frame(
+    # 原文：決定
+    a = "\u6c7a\u5b9a",
+    # 原文：「提案」表最後一欄。每列填「接受」「不接受」或「再討論」，填好交給維護者；維護者把填「接受」的提案編號（proposal_id）交給 apply_admin_merge()。
+    b = "\u300c\u63d0\u6848\u300d\u8868\u6700\u5f8c\u4e00\u6b04\u3002\u6bcf\u5217\u586b\u300c\u63a5\u53d7\u300d\u300c\u4e0d\u63a5\u53d7\u300d\u6216\u300c\u518d\u8a0e\u8ad6\u300d\uff0c\u586b\u597d\u4ea4\u7d66\u7dad\u8b77\u8005\uff1b\u7dad\u8b77\u8005\u628a\u586b\u300c\u63a5\u53d7\u300d\u7684\u63d0\u6848\u7de8\u865f\uff08proposal_id\uff09\u4ea4\u7d66 apply_admin_merge()\u3002",
+    stringsAsFactors = FALSE), data.frame(
+    # 原文：欄名
+    a = "\u6b04\u540d",
+    # 原文：「提案」表的欄名是中文；類別代碼、提案編號和 R 裡一樣（class、proposal_id），旁邊的「類別」是中文名稱。
+    b = "\u300c\u63d0\u6848\u300d\u8868\u7684\u6b04\u540d\u662f\u4e2d\u6587\uff1b\u985e\u5225\u4ee3\u78bc\u3001\u63d0\u6848\u7de8\u865f\u548c R \u88e1\u4e00\u6a23\uff08class\u3001proposal_id\uff09\uff0c\u65c1\u908a\u7684\u300c\u985e\u5225\u300d\u662f\u4e2d\u6587\u540d\u7a31\u3002",
+    stringsAsFactors = FALSE))
   # 原文：項目 | 說明
   names(info) <- c("\u9805\u76ee", "\u8aaa\u660e")
   prop <- as.data.frame(proposals, stringsAsFactors = FALSE)
   attr(prop, "admin") <- NULL
   attr(prop, "datasets") <- NULL
+  cls_lab <- unname(AM_CLASS_LABEL[prop$class])
+  cls_lab[is.na(cls_lab)] <- ""
+  k <- match("class", names(prop))
+  prop <- cbind(prop[, seq_len(k), drop = FALSE], class_label = cls_lab,
+                prop[, -seq_len(k), drop = FALSE], stringsAsFactors = FALSE)
+  prop$decision <- rep("", nrow(prop))
+  zh <- AM_COLUMN_ZH[names(prop)]
+  names(prop) <- ifelse(is.na(zh), names(prop), zh)
+  s_lab <- unname(AM_CLASS_LABEL[s$class])
+  s <- data.frame(s$class, ifelse(is.na(s_lab), "", s_lab), s$high, s$medium, s$low, s$total,
+                  stringsAsFactors = FALSE)
+  # 原文：類別代碼 | 類別 | 信心高 | 信心中 | 信心低 | 合計
+  names(s) <- c("\u985e\u5225\u4ee3\u78bc", "\u985e\u5225", "\u4fe1\u5fc3\u9ad8", "\u4fe1\u5fc3\u4e2d", "\u4fe1\u5fc3\u4f4e", "\u5408\u8a08")
   # 原文：說明 | 統計 | 提案
   stats::setNames(list(info, s, prop), c("\u8aaa\u660e", "\u7d71\u8a08", "\u63d0\u6848"))
 }

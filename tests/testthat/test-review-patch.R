@@ -63,11 +63,15 @@ test_that("review_patch shows before/after, checks, impact; nothing blocks a cle
   ch <- rv$changes
   expect_setequal(ch$kind, c("新增", "修改"))
   m <- ch[ch$kind == "修改", ]
-  expect_match(m$before, "^名稱：孩子父親")
-  expect_identical(m$after, "名稱：y")
+  expect_match(m$before, "^題目：孩子父親")
+  expect_identical(m$after, "題目：y")
   expect_match(ch$after[ch$kind == "新增"][1], "題組：P.女方")
   expect_true(all(c(paste0("P.", review_test_item()), "P.fatherinvo01n") %in% rv$impact$items))
-  expect_identical(rv$impact$groups, "P.女方")
+  # 直接改到的題組，加上改到的題目所屬的題組
+  gm <- kit_builtin()$group_members
+  in_groups <- unique(gm$groupID[gm$item_uid %in% rv$impact$items])
+  expect_gt(length(in_groups), 0L)
+  expect_setequal(rv$impact$groups, c("P.女方", in_groups))
   expect_gt(length(rv$impact$datasets), 0L)
   expect_gt(length(rv$impact$admins), 0L)
   expect_true(all(rv$impact$admins %in% kit_builtin()$admins$adminID))
@@ -75,6 +79,8 @@ test_that("review_patch shows before/after, checks, impact; nothing blocks a cle
   expect_identical(names(tb), c("動作", "表", "哪一列", "改前", "改後"))
   expect_true("題目的版本" %in% tb$表)
   expect_identical(review_impact_table(rv$impact)$影響到, c("題目", "題組", "題本", "資料檔", "施測"))
+  expect_match(as.character(review_impact_ui(rv$impact)), "題組（含這些題目所屬的題組）")
+  expect_identical(kit_column_label(c("label", "label"), c("item_versions", "groups")), c("題目", "名稱"))
 })
 
 test_that("review_patch warns about version and conflicts, blocks rows that do not apply", {

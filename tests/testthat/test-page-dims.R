@@ -179,3 +179,28 @@ test_that("用 R 怎麼做 uses the exported functions", {
   expect_match(code2, "dim_report_data(bank, \"M036小\", domain = \"parent\")", fixed = TRUE)
   expect_true(all(vapply(parse(text = code), function(e) TRUE, logical(1))))
 })
+
+test_that("a parent group with no items of its own links to its child groups", {
+  b <- bank_to_v02(kit_builtin(), "parent")
+  store <- dims_fake_store()
+  store$bank <- shiny::reactiveVal(b)
+  shiny::testServer(page_dims_server, args = list(
+    store = store, goto = function(...) NULL, request = shiny::reactiveVal(NULL)
+  ), {
+    session$setInputs(dim = "社會能力")
+    html <- dims_html(output$browse)
+    expect_match(html, "這個題組本身沒有題目")
+    expect_match(html, "主動性")
+    expect_match(html, "child_dim")
+    session$setInputs(child_dim = "主動性")
+    expect_identical(current_dim(), "主動性")
+  })
+  kids <- dim_children(b, "社會能力", "parent")
+  expect_true(all(c("主動性", "合群性") %in% kids))
+  wb <- dim_items_workbook(b, "社會能力", "parent")
+  expect_identical(names(wb[[2]])[1], "子題組")
+  expect_true(all(c("主動性", "合群性") %in% wb[[2]][[1]]))
+  expect_equal(nrow(wb[[2]]), sum(vapply(kids, function(k) nrow(dim_items(b, k)), integer(1))))
+  # 有自己題目的構面不變
+  expect_false("子題組" %in% names(dim_items_workbook(b, "注意力", "parent")[[2]]))
+})
