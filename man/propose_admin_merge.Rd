@@ -4,7 +4,14 @@
 \alias{propose_admin_merge}
 \title{Propose how a new administration's data files enter the kit}
 \usage{
-propose_admin_merge(kit, sav_meta, admin, datasets = NULL, crosswalk = NULL)
+propose_admin_merge(
+  kit,
+  sav_meta,
+  admin,
+  datasets = NULL,
+  crosswalk = NULL,
+  prev_meta = NULL
+)
 }
 \arguments{
 \item{kit}{A kit (17 tables), e.g. from \code{\link[=read_kit]{read_kit()}}.}
@@ -26,6 +33,13 @@ administration's same data file (\code{-P}, \code{-PK}, \code{-T}, \code{-S}, \c
 \code{position}, \code{item_uid}. \code{position} fills \code{dataset_vars$position} (else it is read
 from the label prefix, e.g. "四.33."); \code{item_uid} says which existing item the
 variable is.}
+
+\item{prev_meta}{Optional headers of the previous administration's data files, same
+shape as \code{sav_meta}, named by the previous \code{datasetID} (e.g. \code{"M03M036-P"}) or by
+the new one. Strongly recommended: versions are then decided by comparing .sav
+header with .sav header (same wording style). Without it the header is compared
+with the kit's item text (written differently, e.g. from the 0.2 bank), so only
+clear changes become \code{new_version} and confidence is lower.}
 }
 \value{
 A data frame of proposals: \code{proposal_id}, \code{class}, \code{action}, \code{datasetID},
