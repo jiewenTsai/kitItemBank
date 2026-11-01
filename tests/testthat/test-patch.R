@@ -34,3 +34,11 @@ test_that("apply_patch refuses rows it cannot apply", {
   expect_equal(k2$groups$groupID, "P.x")
   expect_error(apply_patch(k2, p))
 })
+
+test_that("apply_patch adds a row whose last key column is empty", {
+  kit <- empty_kit()
+  p <- data.frame(op = "add", table = "group_tree", key = "P-G1-G3|P.x|", column = "", from = "", to = "")
+  k2 <- apply_patch(kit, p)
+  expect_identical(k2$group_tree$parentID, "")
+  expect_identical(k2$group_tree$groupID, "P.x")
+})

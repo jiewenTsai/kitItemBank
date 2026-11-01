@@ -24,7 +24,8 @@ test_that("the overview shows until a dimension is selected", {
     session$setInputs(dim = "注意力")
     expect_identical(current_dim(), "注意力")
     html <- dims_html(output$browse)
-    expect_match(html, "「注意力（注意力/執行功能）」：9 題 · 出現在 23 個波次 · 最近一波 M144大")
+    expect_match(html, "「注意力」：9 題 · 出現在 23 個波次 · 最近一波 M144大")
+    expect_match(html, "別名（搜尋也找得到）：注意力/執行功能")
     # 按鈕列在標題前面，提示小字接在標題後面（不會壓到按鈕）
     expect_lt(regexpr("kit-buttons", html), regexpr("<h4>", html))
     expect_lt(regexpr("<h4>", html), regexpr("kit-hint", html))

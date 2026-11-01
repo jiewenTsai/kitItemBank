@@ -150,6 +150,7 @@ page_dims_server <- function(id, store, goto, request) {
         ),
         # 原文：「 | 」：
         shiny::h4(paste0("\u300c", dims_label(bank(), d), "\u300d\uff1a", dims_count_text(row))),
+        dims_alias_line(bank(), d),
         if (length(kids)) dims_children_line(bank(), kids, ns("child_dim")) else shiny::tagList(
           shiny::p(
             class = "kit-hint",

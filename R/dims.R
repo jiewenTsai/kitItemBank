@@ -53,10 +53,18 @@ dims_meta <- function(bank, dim_ids) {
 
 # 畫面上的構面名稱：「dimName（alias）」，沒有別名時只有 dimName
 dims_label <- function(bank, dim_ids) {
+  # 只用主要名稱；別名放在構面資訊裡（dims_alias_line()）
   m <- dims_meta(bank, dim_ids)
-  vapply(seq_len(nrow(m)), function(i) {
-    format_dim_report_heading(m$dimName[i], m$alias[i])
-  }, character(1L))
+  vapply(seq_len(nrow(m)), function(i) clean_meta_str(m$dimName[i]), character(1L))
+}
+
+#' 構面資訊的「別名：…」一行；沒有別名時不放
+#' @noRd
+dims_alias_line <- function(bank, dim_id) {
+  a <- clean_meta_str(dims_meta(bank, dim_id)$alias[1])
+  if (!nzchar(a) || identical(a, dims_label(bank, dim_id))) return(NULL)
+  # 原文：別名（搜尋也找得到）：
+  shiny::p(class = "kit-hint", paste0("\u5225\u540d\uff08\u641c\u5c0b\u4e5f\u627e\u5f97\u5230\uff09\uff1a", a))
 }
 
 # 找不到構面時停下來（白話）

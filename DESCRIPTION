@@ -1,6 +1,6 @@
 Package: kitItemBank
 Title: KIT Item Bank Query and Maintenance Tool
-Version: 0.3.5
+Version: 0.3.6
 Date: 2026-11-02
 Authors@R: person("Jie-Wen", "Tsai", email = "tsai.jiewen@gmail.com", role = c("aut", "cre"))
 Description: A 'shiny' app for the KIT item bank (Taiwan Early Childhood

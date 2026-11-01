@@ -166,7 +166,8 @@ review_row_problem <- function(kit, p) {
   if (p$op == "add") {
     # 原文：要新增的列已經在題庫裡
     if (hit) return("\u8981\u65b0\u589e\u7684\u5217\u5df2\u7d93\u5728\u984c\u5eab\u88e1")
-    if (length(strsplit(p$key, "|", fixed = TRUE)[[1L]]) != length(sch$key)) {
+    # 多加一個 "|"：鍵的最後一欄空白（題組樹的最上層）也算對
+    if (length(strsplit(paste0(p$key, "|"), "|", fixed = TRUE)[[1L]]) != length(sch$key)) {
       # 原文：這一列的代號格式不對
       return("\u9019\u4e00\u5217\u7684\u4ee3\u865f\u683c\u5f0f\u4e0d\u5c0d")
     }

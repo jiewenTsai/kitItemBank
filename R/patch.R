@@ -144,7 +144,8 @@ apply_patch <- function(kit, patch) {
     hit <- which(keys == p$key)
     if (p$op == "add") {
       if (length(hit)) kitDesign::kit_abort("patch adds an existing row: ", p$table, " ", p$key)
-      vals <- strsplit(p$key, "|", fixed = TRUE)[[1L]]
+      # 多加一個 "|"：鍵的最後一欄是空的（例如題組樹的最上層，parentID 空白）時才切得出來
+      vals <- strsplit(paste0(p$key, "|"), "|", fixed = TRUE)[[1L]]
       if (length(vals) != length(sch$key)) kitDesign::kit_abort("bad key: ", p$key)
       new <- empty_kit_table(p$table)[NA_integer_, , drop = FALSE]
       new[] <- ""

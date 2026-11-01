@@ -175,3 +175,11 @@ test_that("review_files and review_zip hold the changed tables, BANK_VERSION and
   expect_identical(k2$item_versions$label[k2$item_versions$item_uid == "P.fatherinvo01n" &
                                             k2$item_versions$itemVer == "1"], "y")
 })
+
+test_that("review_patch accepts adding a top-level group tree row (empty parentID)", {
+  kit <- empty_kit()
+  p <- data.frame(op = "add", table = "group_tree", key = "P-G1-G3|P.x|", column = "", from = "", to = "")
+  rv <- review_patch(kit, p, "v", "v")
+  expect_true(all(rv$patch$ok))
+  expect_identical(rv$kit$group_tree$parentID, "")
+})
