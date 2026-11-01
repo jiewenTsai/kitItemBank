@@ -76,7 +76,7 @@ item_history_docx <- function(hist, path) {
   }
   table <- function(df) doc <<- officer::body_add_table(doc, df, style = "table_template")
   # 原文：題目沿革單：
-  add(paste0("\u984c\u76ee\u6c9b\u9769\u55ae\uff1a", hist$item_uid), KIT_DOCX_TITLE)
+  add(paste0("\u984c\u76ee\u6cbf\u9769\u55ae\uff1a", hist$item_uid), KIT_DOCX_TITLE)
   # 原文：題庫版本： |   ·  產生時間：
   add(paste0("\u984c\u5eab\u7248\u672c\uff1a", kit_version() %||% "", "  \u00b7  \u7522\u751f\u6642\u9593\uff1a",
              format(Sys.time(), "%Y-%m-%d %H:%M")))
