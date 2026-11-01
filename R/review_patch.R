@@ -4,11 +4,11 @@
 #   read_review_package()  讀修改包：改動列、base_version，和說明頁裡的原因／決定者／送出者（有的話）
 #   review_patch()         一列一列套到目前的題庫：哪些列套不上、改前改後、check_kit() 的結果、
 #                          影響到哪些題目／題組／資料檔／施測、版本對不對得上
-#   bump_bank_version()    核准後的新題庫版本：2026.1 → 2026.2；換年 → 2027.1
+#   bump_bank_version()    套用後的新題庫版本：2026.1 → 2026.2；換年 → 2027.1
 #   change_record()        改動紀錄（一個修改包一個 CSV，放在 inst/extdata/kit/changes/）
-#   review_files()         核准後要寫進 GitHub 的檔案：改到的表、BANK_VERSION、改動紀錄
-#   review_zip()           沒有設定 GitHub 時，下載套用後的整份題庫（zip）
-# 這裡都不碰 Shiny、不連網路；寫 GitHub 在 R/github_write.R。
+#   review_files()         套用後要放進 repo 的檔案：改到的表、BANK_VERSION、改動紀錄
+#   review_zip()           把這些檔案包成 zip（審核頁下載用）
+# 這裡都不碰 Shiny、不連網路；app 也不寫檔：zip 交給懂技術的人放進 repo、push。
 
 # 改動紀錄的欄位（CSV，一列一個改動）
 CHANGE_RECORD_COLS <- c("bank_version", "base_version", "applied_to", "date", "op", "table",
@@ -401,7 +401,7 @@ review_change_table <- function(changes) {
   )
 }
 
-#' A change record for an approved package
+#' A change record for a reviewed package
 #'
 #' One row per applied patch row. Saved as
 #' `inst/extdata/kit/changes/<bank_version>.csv` (see [review_files()]).
@@ -458,7 +458,7 @@ change_record_path <- function(new_version) {
   file.path("changes", paste0(new_version, ".csv"))
 }
 
-#' Files to write after approval
+#' Files to put in the repository after review
 #'
 #' @param review The result of [review_patch()].
 #' @param record The result of [change_record()].
@@ -486,8 +486,9 @@ review_files <- function(review, record, new_version, prefix = "inst/extdata/kit
 
 #' Download the patched bank as a zip
 #'
-#' The whole kit folder after the change: all 17 tables, `BANK_VERSION`, and the change record
-#' under `changes/`. Unzip it over `inst/extdata/kit/` and commit.
+#' The files from [review_files()] under a `kit/` folder: the changed tables, `BANK_VERSION`,
+#' and the change record under `kit/changes/`. Unzip it into `inst/extdata/` (overwriting),
+#' commit and push.
 #'
 #' @param review,record,new_version As in [review_files()].
 #' @param file The `.zip` to write.
@@ -496,12 +497,12 @@ review_files <- function(review, record, new_version, prefix = "inst/extdata/kit
 review_zip <- function(review, record, new_version, file) {
   root <- tempfile("kit_zip_")
   on.exit(unlink(root, recursive = TRUE), add = TRUE)
-  kd <- file.path(root, "kit")
-  write_kit(review$kit, kd)
-  writeLines(new_version, file.path(kd, "BANK_VERSION"), useBytes = TRUE)
-  dir.create(file.path(kd, "changes"), showWarnings = FALSE)
-  readr::write_csv(record, file.path(kd, change_record_path(new_version)), na = "")
+  files <- review_files(review, record, new_version, prefix = "kit")
+  for (path in names(files)) {
+    dir.create(dirname(file.path(root, path)), recursive = TRUE, showWarnings = FALSE)
+    writeBin(files[[path]], file.path(root, path))
+  }
   if (file.exists(file)) unlink(file)
-  zip::zipr(file, kd)
+  zip::zipr(file, file.path(root, "kit"))
   invisible(file)
 }
