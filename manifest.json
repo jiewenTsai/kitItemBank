@@ -65,6 +65,68 @@
         "Built": "R 4.5.0; ; 2025-04-12 21:47:54 UTC; unix"
       }
     },
+    "MASS": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "MASS",
+        "Priority": "recommended",
+        "Version": "7.3-65",
+        "Date": "2025-02-19",
+        "Revision": "$Rev: 3681 $",
+        "Depends": "R (>= 4.4.0), grDevices, graphics, stats, utils",
+        "Imports": "methods",
+        "Suggests": "lattice, nlme, nnet, survival",
+        "Authors@R": "c(person(\"Brian\", \"Ripley\", role = c(\"aut\", \"cre\", \"cph\"),\n                    email = \"Brian.Ripley@R-project.org\"),\n\t     person(\"Bill\", \"Venables\", role = c(\"aut\", \"cph\")),\n\t     person(c(\"Douglas\", \"M.\"), \"Bates\", role = \"ctb\"),\n\t     person(\"Kurt\", \"Hornik\", role = \"trl\",\n                     comment = \"partial port ca 1998\"),\n\t     person(\"Albrecht\", \"Gebhardt\", role = \"trl\",\n                     comment = \"partial port ca 1998\"),\n\t     person(\"David\", \"Firth\", role = \"ctb\",\n\t            comment = \"support functions for polr\"))",
+        "Description": "Functions and datasets to support Venables and Ripley,\n  \"Modern Applied Statistics with S\" (4th edition, 2002).",
+        "Title": "Support Functions and Datasets for Venables and Ripley's MASS",
+        "LazyData": "yes",
+        "ByteCompile": "yes",
+        "License": "GPL-2 | GPL-3",
+        "URL": "http://www.stats.ox.ac.uk/pub/MASS4/",
+        "Contact": "<MASS@stats.ox.ac.uk>",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-02-19 08:49:43 UTC; ripley",
+        "Author": "Brian Ripley [aut, cre, cph],\n  Bill Venables [aut, cph],\n  Douglas M. Bates [ctb],\n  Kurt Hornik [trl] (partial port ca 1998),\n  Albrecht Gebhardt [trl] (partial port ca 1998),\n  David Firth [ctb] (support functions for polr)",
+        "Maintainer": "Brian Ripley <Brian.Ripley@R-project.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-02-28 17:44:52 UTC",
+        "Built": "R 4.5.3; aarch64-apple-darwin20; 2026-03-12 02:04:47 UTC; unix"
+      }
+    },
+    "Matrix": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "Matrix",
+        "Version": "1.7-4",
+        "VersionNote": "do also bump src/version.h, inst/include/Matrix/version.h",
+        "Date": "2025-08-27",
+        "Priority": "recommended",
+        "Title": "Sparse and Dense Matrix Classes and Methods",
+        "Description": "A rich hierarchy of sparse and dense matrix classes,\n\tincluding general, symmetric, triangular, and diagonal matrices\n\twith numeric, logical, or pattern entries.  Efficient methods for\n\toperating on such matrices, often wrapping the 'BLAS', 'LAPACK',\n\tand 'SuiteSparse' libraries.",
+        "License": "GPL (>= 2) | file LICENCE",
+        "URL": "https://Matrix.R-forge.R-project.org",
+        "BugReports": "https://R-forge.R-project.org/tracker/?atid=294&group_id=61",
+        "Contact": "Matrix-authors@R-project.org",
+        "Authors@R": "\n\tc(person(\"Douglas\", \"Bates\", role = \"aut\",\n\t         comment = c(ORCID = \"0000-0001-8316-9503\")),\n\t  person(\"Martin\", \"Maechler\", role = c(\"aut\", \"cre\"),\n\t         email = \"mmaechler+Matrix@gmail.com\",\n\t         comment = c(ORCID = \"0000-0002-8685-9910\")),\n\t  person(\"Mikael\", \"Jagan\", role = \"aut\",\n\t         comment = c(ORCID = \"0000-0002-3542-2938\")),\n\t  person(\"Timothy A.\", \"Davis\", role = \"ctb\",\n\t         comment = c(ORCID = \"0000-0001-7614-6899\",\n\t                     \"SuiteSparse libraries\",\n\t                     \"collaborators listed in dir(system.file(\\\"doc\\\", \\\"SuiteSparse\\\", package=\\\"Matrix\\\"), pattern=\\\"License\\\", full.names=TRUE, recursive=TRUE)\")),\n\t  person(\"George\", \"Karypis\", role = \"ctb\",\n\t         comment = c(ORCID = \"0000-0003-2753-1437\",\n\t                     \"METIS library\",\n\t                     \"Copyright: Regents of the University of Minnesota\")),\n\t  person(\"Jason\", \"Riedy\", role = \"ctb\",\n\t         comment = c(ORCID = \"0000-0002-4345-4200\",\n\t                     \"GNU Octave's condest() and onenormest()\",\n\t                     \"Copyright: Regents of the University of California\")),\n\t  person(\"Jens\", \"Oehlschlägel\", role = \"ctb\",\n\t         comment = \"initial nearPD()\"),\n\t  person(\"R Core Team\", role = \"ctb\",\n\t         comment = c(ROR = \"02zz1nj61\", \"base R's matrix implementation\")))",
+        "Depends": "R (>= 4.4), methods",
+        "Imports": "grDevices, graphics, grid, lattice, stats, utils",
+        "Suggests": "MASS, datasets, sfsmisc, tools",
+        "Enhances": "SparseM, graph",
+        "LazyData": "no",
+        "LazyDataNote": "not possible, since we use data/*.R and our S4 classes",
+        "BuildResaveData": "no",
+        "Encoding": "UTF-8",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-08-27 10:17:11 UTC; maechler",
+        "Author": "Douglas Bates [aut] (ORCID: <https://orcid.org/0000-0001-8316-9503>),\n  Martin Maechler [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-8685-9910>),\n  Mikael Jagan [aut] (ORCID: <https://orcid.org/0000-0002-3542-2938>),\n  Timothy A. Davis [ctb] (ORCID: <https://orcid.org/0000-0001-7614-6899>,\n    SuiteSparse libraries, collaborators listed in\n    dir(system.file(\"doc\", \"SuiteSparse\", package=\"Matrix\"),\n    pattern=\"License\", full.names=TRUE, recursive=TRUE)),\n  George Karypis [ctb] (ORCID: <https://orcid.org/0000-0003-2753-1437>,\n    METIS library, Copyright: Regents of the University of Minnesota),\n  Jason Riedy [ctb] (ORCID: <https://orcid.org/0000-0002-4345-4200>, GNU\n    Octave's condest() and onenormest(), Copyright: Regents of the\n    University of California),\n  Jens Oehlschlägel [ctb] (initial nearPD()),\n  R Core Team [ctb] (ROR: <https://ror.org/02zz1nj61>, base R's matrix\n    implementation)",
+        "Maintainer": "Martin Maechler <mmaechler+Matrix@gmail.com>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-08-28 11:50:02 UTC",
+        "Built": "R 4.5.3; aarch64-apple-darwin20; 2026-03-12 02:04:52 UTC; unix"
+      }
+    },
     "R6": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -113,6 +175,35 @@
         "Built": "R 4.5.0; ; 2025-03-31 21:42:41 UTC; unix"
       }
     },
+    "RTMB": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "RTMB",
+        "Type": "Package",
+        "Title": "'R' Bindings for 'TMB'",
+        "Version": "2.0",
+        "Date": "2026-09-17",
+        "Authors@R": "person(\"Kasper\", \"Kristensen\", role = c(\"aut\",\"cre\"),\n                  email = \"kaskr@dtu.dk\",\n                  comment = c(ORCID=\"0000-0003-3425-3762\"))",
+        "Author": "Kasper Kristensen [aut, cre] (ORCID:\n    <https://orcid.org/0000-0003-3425-3762>)",
+        "Maintainer": "Kasper Kristensen <kaskr@dtu.dk>",
+        "Description": "Native 'R' interface to 'TMB' (Template Model Builder) so models can be written entirely in 'R' rather than 'C++'. Automatic differentiation, to any order, is available for a rich subset of 'R' features, including linear algebra for dense and sparse matrices, complex arithmetic, Fast Fourier Transform, probability distributions and special functions. 'RTMB' provides easy access to model fitting and validation following the principles of Kristensen, K., Nielsen, A., Berg, C. W., Skaug, H., & Bell, B. M. (2016) <DOI:10.18637/jss.v070.i05> and Thygesen, U.H., Albertsen, C.M., Berg, C.W. et al. (2017) <DOI:10.1007/s10651-017-0372-4>.",
+        "License": "GPL (>= 2)",
+        "Imports": "Rcpp (>= 1.0.9), Matrix, methods, TMB (>= 1.9.7), MASS",
+        "LinkingTo": "Rcpp, TMB, RcppEigen",
+        "VignetteBuilder": "knitr, rmarkdown",
+        "Suggests": "knitr, rmarkdown, igraph, tinytest, numDeriv, tinyplot,\nmicrobenchmark",
+        "URL": "https://github.com/kaskr/RTMB",
+        "BugReports": "https://github.com/kaskr/RTMB/issues",
+        "NeedsCompilation": "yes",
+        "Encoding": "UTF-8",
+        "Packaged": "2026-09-17 15:29:26 UTC; kaskr",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-09-17 21:10:02 UTC",
+        "Built": "R 4.5.2; aarch64-apple-darwin20; 2026-09-17 22:25:25 UTC; unix",
+        "Archs": "RTMB.so.dSYM"
+      }
+    },
     "Rcpp": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -141,6 +232,36 @@
         "Date/Publication": "2026-01-10 09:50:02 UTC",
         "Built": "R 4.5.2; aarch64-apple-darwin20; 2026-01-10 11:50:00 UTC; unix",
         "Archs": "Rcpp.so.dSYM"
+      }
+    },
+    "RcppEigen": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "RcppEigen",
+        "Type": "Package",
+        "Title": "'Rcpp' Integration for the 'Eigen' Templated Linear Algebra\nLibrary",
+        "Version": "0.3.4.0.2",
+        "Date": "2024-08-23",
+        "Authors@R": "c(person(\"Doug\", \"Bates\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0001-8316-9503\")),\n             person(\"Dirk\", \"Eddelbuettel\", role = c(\"aut\", \"cre\"), email = \"edd@debian.org\",\n                    comment = c(ORCID = \"0000-0001-6419-907X\")),\n             person(\"Romain\", \"Francois\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0002-2444-4226\")),\n             person(\"Yixuan\", \"Qiu\", role = \"aut\",\n                    comment = c(ORCID = \"0000-0003-0109-6692\")),\n             person(\"Authors of\", \"Eigen\", role = \"cph\",\n                    comment = \"Authorship and copyright in included Eigen library as detailed in inst/COPYRIGHTS\"))",
+        "Copyright": "See the file COPYRIGHTS for various Eigen copyright details",
+        "Description": "R and 'Eigen' integration using 'Rcpp'.\n 'Eigen' is a C++ template library for linear algebra: matrices, vectors,\n numerical solvers and related algorithms.  It supports dense and sparse\n matrices on integer, floating point and complex numbers, decompositions of\n such matrices, and solutions of linear systems. Its performance on many\n algorithms is comparable with some of the best implementations based on\n 'Lapack' and level-3 'BLAS'. The 'RcppEigen' package includes the header\n files from the 'Eigen' C++ template library. Thus users do not need to\n install 'Eigen' itself in order to use 'RcppEigen'. Since version 3.1.1,\n 'Eigen' is licensed under the Mozilla Public License (version 2); earlier\n version were licensed under the GNU LGPL version 3 or later. 'RcppEigen'\n (the 'Rcpp' bindings/bridge to 'Eigen') is licensed under the GNU GPL\n version 2 or later, as is the rest of 'Rcpp'.",
+        "License": "GPL (>= 2) | file LICENSE",
+        "LazyLoad": "yes",
+        "Depends": "R (>= 3.6.0)",
+        "LinkingTo": "Rcpp",
+        "Imports": "Rcpp (>= 0.11.0), stats, utils",
+        "Suggests": "Matrix, inline, tinytest, pkgKitten, microbenchmark",
+        "URL": "https://github.com/RcppCore/RcppEigen,\nhttps://dirk.eddelbuettel.com/code/rcpp.eigen.html",
+        "BugReports": "https://github.com/RcppCore/RcppEigen/issues",
+        "NeedsCompilation": "yes",
+        "Packaged": "2024-08-23 18:11:22 UTC; edd",
+        "Author": "Doug Bates [aut] (<https://orcid.org/0000-0001-8316-9503>),\n  Dirk Eddelbuettel [aut, cre] (<https://orcid.org/0000-0001-6419-907X>),\n  Romain Francois [aut] (<https://orcid.org/0000-0002-2444-4226>),\n  Yixuan Qiu [aut] (<https://orcid.org/0000-0003-0109-6692>),\n  Authors of Eigen [cph] (Authorship and copyright in included Eigen\n    library as detailed in inst/COPYRIGHTS)",
+        "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
+        "Repository": "CRAN",
+        "Date/Publication": "2024-08-24 06:30:02 UTC",
+        "Built": "R 4.5.0; aarch64-apple-darwin20; 2025-03-31 21:46:11 UTC; unix",
+        "Archs": "RcppEigen.so.dSYM"
       }
     },
     "S7": {
@@ -174,6 +295,36 @@
         "Date/Publication": "2025-11-14 19:50:02 UTC",
         "Built": "R 4.5.2; aarch64-apple-darwin20; 2025-11-19 04:37:29 UTC; unix",
         "Archs": "S7.so.dSYM"
+      }
+    },
+    "TMB": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Package": "TMB",
+        "Type": "Package",
+        "Title": "Template Model Builder: A General Random Effect Tool Inspired by\n'ADMB'",
+        "Version": "1.9.23",
+        "Date": "2026-07-22",
+        "Authors@R": "c(person(\"Kasper\",\"Kristensen\",role=c(\"aut\",\"cre\",\"cph\"),email=\"kaskr@dtu.dk\"),\n             person(\"Brad\",\"Bell\",role=\"cph\"),\n             person(\"Hans\",\"Skaug\",role=\"ctb\"),\n             person(\"Arni\",\"Magnusson\",role=\"ctb\"),\n             person(\"Casper\",\"Berg\",role=\"ctb\"),\n             person(\"Anders\",\"Nielsen\",role=\"ctb\"),\n             person(\"Martin\",\"Maechler\",role=\"ctb\"),\n             person(\"Theo\",\"Michelot\",role=\"ctb\"),\n             person(\"Mollie\",\"Brooks\",role=\"ctb\"),\n             person(\"Alex\",\"Forrence\",role=\"ctb\"),\n             person(\"Christoffer\",\"Moesgaard Albertsen\",role=\"ctb\"),\n             person(\"Cole\",\"Monnahan\",role=\"ctb\") )",
+        "Maintainer": "Kasper Kristensen <kaskr@dtu.dk>",
+        "Author": "Kasper Kristensen [aut, cre, cph],\n  Brad Bell [cph],\n  Hans Skaug [ctb],\n  Arni Magnusson [ctb],\n  Casper Berg [ctb],\n  Anders Nielsen [ctb],\n  Martin Maechler [ctb],\n  Theo Michelot [ctb],\n  Mollie Brooks [ctb],\n  Alex Forrence [ctb],\n  Christoffer Moesgaard Albertsen [ctb],\n  Cole Monnahan [ctb]",
+        "Copyright": "See the file COPYRIGHTS",
+        "Description": "With this tool, a user should be able to quickly implement\n    complex random effect models through simple C++ templates. The package combines\n    'CppAD' (C++ automatic differentiation), 'Eigen' (templated matrix-vector\n    library) and 'CHOLMOD' (sparse matrix routines available from R) to obtain\n    an efficient implementation of the applied Laplace approximation with exact\n    derivatives. Key features are: Automatic sparseness detection, parallelism\n    through 'BLAS' and parallel user templates.",
+        "License": "GPL-2",
+        "URL": "https://github.com/kaskr/adcomp/wiki",
+        "BugReports": "https://github.com/kaskr/adcomp/issues",
+        "Depends": "R (>= 3.0.0)",
+        "Imports": "graphics, methods, stats, utils, Matrix (>= 1.0-12)",
+        "LinkingTo": "Matrix, RcppEigen",
+        "Suggests": "numDeriv, parallel",
+        "RoxygenNote": "7.3.3",
+        "NeedsCompilation": "yes",
+        "Packaged": "2026-07-22 14:19:21 UTC; kaskr",
+        "Repository": "CRAN",
+        "Date/Publication": "2026-07-23 05:30:26 UTC",
+        "Built": "R 4.5.2; aarch64-apple-darwin20; 2026-07-23 07:10:14 UTC; unix",
+        "Archs": "TMB.so.dSYM"
       }
     },
     "askpass": {
@@ -1494,6 +1645,46 @@
         "Author": "Jie-Wen Tsai [aut, cre]",
         "Maintainer": "Jie-Wen Tsai <tsai.jiewen@gmail.com>",
         "Built": "R 4.5.3; ; 2026-11-01 05:29:46 UTC; unix"
+      }
+    },
+    "kits": {
+      "Source": "github",
+      "Repository": null,
+      "description": {
+        "Package": "kits",
+        "Title": "Psychometric Tools for the Kids in Taiwan Developmental Scale",
+        "Version": "0.25.2",
+        "Date": "2026-10-30",
+        "Authors@R": "person(\"Jie-Wen\", \"Tsai\", email = \"tsai.jiewen@gmail.com\", role = c(\"aut\", \"cre\"))",
+        "Description": "Tools for the developmental scale of KIT (Kids in Taiwan: National\n    Longitudinal Study of Child Development and Care). Each model is written\n    once and 'RTMB' gives every derivative (the conditional maximum likelihood,\n    the person scores, the threshold standard errors, the norms); the\n    closed-form steps use base R, and the data are handled with 'dplyr',\n    'tidyr' and 'purrr'. Items are calibrated with the partial credit model\n    (Masters, 1982) <doi:10.1007/BF02296272> by conditional maximum likelihood,\n    written as the elementary symmetric functions of the step parameters.\n    Cohorts are linked by mean/sigma (Marco, 1977)\n    <doi:10.1111/j.1745-3984.1977.tb00033.x> on the Thurstonian thresholds, and\n    anchor items link to the D score of the Global Scales for Early Development\n    (Weber et al., 2019) <doi:10.1136/bmjgh-2019-001724>. Person scores are\n    weighted likelihood estimates (Warm, 1989) <doi:10.1007/BF02294627>; for the\n    partial credit model they equal the Jeffreys modal estimates (Firth, 1993)\n    <doi:10.1093/biomet/80.1.27> (Magis, 2015) <doi:10.1007/s11336-013-9378-5>,\n    which are computed by the Newton method of 'RTMB', one per item set and raw\n    score. Norms are continuous sinh-arcsinh norms (Jones and Pewsey, 2009)\n    <doi:10.1093/biomet/asp053> fitted by maximum likelihood with the\n    polynomial model and bounds of 'cNORM' (Lenhard and Lenhard, 2021)\n    <doi:10.1177/0013164420928457>, minimised by nlminb with the gradient and\n    Hessian of 'RTMB'. Differential item\n    functioning combines the likelihood-ratio test of Andersen (1973)\n    <doi:10.1007/BF02291180> with the item-pair test of Bechger and Maris (2015)\n    <doi:10.1007/s11336-014-9408-y>, computed by CML in each group. The linking\n    error at each score and through a chain of links, the statistics of the\n    waves as a vertical scale, the precision of each form across the scale, and\n    IRT true-score and observed-score equating of raw scores follow Kolen and\n    Brennan (2014) <doi:10.1007/978-1-4939-0317-7>. The plots are drawn with\n    'plotly'. The algorithms are also exported as plain functions (the 'algo_'\n    layer) that chain with the pipe, and kits_algorithm() names the steps,\n    formulas and references behind a result; teaching scripts in 'inst/scripts'\n    recompute the estimates with 'RTMB' on the demo data. The companion package\n    'kitsPreview' computes the same results with 'dexter' and 'cNORM' for\n    validation.",
+        "License": "GPL-3",
+        "Encoding": "UTF-8",
+        "LazyData": "true",
+        "LazyDataCompression": "xz",
+        "Language": "en-US",
+        "Depends": "R (>= 4.1.0)",
+        "Imports": "RTMB, dplyr (>= 1.1.0), graphics, grDevices, htmlwidgets,\nplotly, purrr (>= 1.0.0), stats, tidyr (>= 1.3.0), tools,\nutils, vctrs (>= 0.6.0)",
+        "Suggests": "cNORM, dexter, kitsPreview, knitr, quarto, rmarkdown,\ntestthat (>= 3.0.0), webshot2",
+        "VignetteBuilder": "quarto",
+        "Config/testthat/edition": "3",
+        "Roxygen": "list(markdown = TRUE)",
+        "Config/roxygen2/version": "8.1.0",
+        "Collate": "'ability.R' 'algo.R' 'algorithm.R' 'anchors.R'\n'as_data_frame.R' 'calibrate.R' 'cml.R' 'conditions.R' 'data.R'\n'diagnostics.R' 'dif.R' 'drift.R' 'esf.R' 'fit.R' 'info.R'\n'item_map.R' 'item_table.R' 'items.R' 'kits-package.R' 'kits.R'\n'labels.R' 'line.R' 'link.R' 'link_check.R' 'link_se.R'\n'link_steps.R' 'methods.R' 'norms.R' 'norms_screen.R'\n'norms_shash.R' 'norms_steps.R' 'pcm_core.R' 'style.R'\n'plots.R' 'plots_results.R' 'precision.R' 'print.R' 'resp.R'\n'restscore.R' 'scale.R' 'score.R' 'simulate.R' 'stats.R'\n'utils.R' 'vctrs.R' 'vertical.R'",
+        "RemoteType": "github",
+        "RemoteHost": "api.github.com",
+        "RemoteRepo": "kits",
+        "RemoteUsername": "jiewenTsai",
+        "RemoteRef": "HEAD",
+        "RemoteSha": "6df7a02b86825155a034e830f93d8623d20b0d5f",
+        "GithubRepo": "kits",
+        "GithubUsername": "jiewenTsai",
+        "GithubRef": "HEAD",
+        "GithubSHA1": "6df7a02b86825155a034e830f93d8623d20b0d5f",
+        "NeedsCompilation": "no",
+        "Packaged": "2026-11-01 05:33:27 UTC; mini25",
+        "Author": "Jie-Wen Tsai [aut, cre]",
+        "Maintainer": "Jie-Wen Tsai <tsai.jiewen@gmail.com>",
+        "Built": "R 4.5.3; ; 2026-11-01 05:33:27 UTC; unix"
       }
     },
     "knitr": {
@@ -3371,13 +3562,13 @@
   },
   "files": {
     ".Rbuildignore": {
-      "checksum": "45acbcd7482361ab133ae471479e7139"
+      "checksum": "9e590aee8583a269eeb157d528308be9"
     },
     "app.R": {
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "c2ca8ae5c3e1cb506a41016311e9d68c"
+      "checksum": "06aa62658fc8612a366f169bd3fd5446"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3462,6 +3653,9 @@
     },
     "inst/extdata/kit/item_relations.csv": {
       "checksum": "2eb2acb84c3034d3e09d000d7a145617"
+    },
+    "inst/extdata/kit/item_steps.csv": {
+      "checksum": "8f41c3f285ba66185264a76912001934"
     },
     "inst/extdata/kit/item_versions.csv": {
       "checksum": "44e7acf067d68bceecc5b075b757e118"
@@ -3622,6 +3816,9 @@
     "man/import_group_lineage.Rd": {
       "checksum": "5a26311a91c4bec62b0b0ec31de8e23a"
     },
+    "man/import_item_steps.Rd": {
+      "checksum": "007ea8a2d4fad2cd96d80e5f62019d4d"
+    },
     "man/import_sav_dir.Rd": {
       "checksum": "10299cbb542232b55746b80cfc5e0dd9"
     },
@@ -3646,11 +3843,20 @@
     "man/item_stats.Rd": {
       "checksum": "0ee36b377aff2125a8bf2d83d045649b"
     },
+    "man/item_step_thresholds.Rd": {
+      "checksum": "17fc9d211c4b3d6b47fde3104846c9e4"
+    },
+    "man/item_steps_ui.Rd": {
+      "checksum": "ce73e0aaf5587d0a1eb7669b94d1d442"
+    },
     "man/kit_app.Rd": {
       "checksum": "8cf085a03852e96f89a6bbfbcb2eaafc"
     },
     "man/kit_patch.Rd": {
       "checksum": "5171a7e428dc906bd738638f8e325b28"
+    },
+    "man/kit_without_admin.Rd": {
+      "checksum": "e659a3687ac4e5198ca784302522ecf1"
     },
     "man/kitItemBank-package.Rd": {
       "checksum": "d7fd8482c6487e29d18de634d3314812"
@@ -3736,6 +3942,18 @@
     "man/read_sav_meta.Rd": {
       "checksum": "58758fe2ba61665be59b47b2ea4dad80"
     },
+    "man/report_appendix_docx.Rd": {
+      "checksum": "81ab94d39ca202620a757f1612f80150"
+    },
+    "man/report_appendix_ui.Rd": {
+      "checksum": "5c993b4d7700a8b170dc5508727d5a07"
+    },
+    "man/report_appendix_workbook.Rd": {
+      "checksum": "487a9b53d3142b6a3a117f6b4cfb6c0d"
+    },
+    "man/report_appendix.Rd": {
+      "checksum": "a67e3d6be65f609a2a26e2abf15334a2"
+    },
     "man/resolve_admin.Rd": {
       "checksum": "8aab78601b875a3bb5246cc2b53ca85a"
     },
@@ -3743,7 +3961,7 @@
       "checksum": "132ca768c0f5c10cb13ef6b7facd4a9c"
     },
     "man/review_impact.Rd": {
-      "checksum": "3a88785e429099674f464e187b0c69da"
+      "checksum": "bdf2fde270d38dd7c5ea2f8cab66bd10"
     },
     "man/review_patch.Rd": {
       "checksum": "5696377ed10f2a9fabff5ce9f934c872"
@@ -3797,7 +4015,7 @@
       "checksum": "0e9a464c40049b4067a9095171c0b3c5"
     },
     "man/wave_counts.Rd": {
-      "checksum": "0bf67f7aa4160bdd7183153f9689adc0"
+      "checksum": "21771902eb1f3e74aaa274d81f27199f"
     },
     "man/write_bank_xlsx.Rd": {
       "checksum": "e78976ce6b43546bf0df2b365946daa4"
@@ -3809,13 +4027,13 @@
       "checksum": "9e6bc94fc7052bdd4758c686701befdd"
     },
     "NAMESPACE": {
-      "checksum": "fb361edfc252998aa1f1a40b1b2c212e"
+      "checksum": "11fd0bda850fa158de7ceb4b6923ebed"
     },
     "NEWS.md": {
-      "checksum": "0975aa2f7ac0e1af55f439fbe4ff702f"
+      "checksum": "fb4a8772f74eab0273f0ebf493d99a50"
     },
     "R/admin_merge.R": {
-      "checksum": "532aa8f02b403ab2e832a19dc1ed2970"
+      "checksum": "5cb393b526c311d141ccef05dc9bb395"
     },
     "R/app.R": {
       "checksum": "3531f8ab6b209c0a50b1853007958c3b"
@@ -3827,7 +4045,7 @@
       "checksum": "3fbef8da215f1f1c4ca83923da697752"
     },
     "R/audit.R": {
-      "checksum": "1af4e2d8afcb4db411d7987838e82d3b"
+      "checksum": "d2390287edb4fc5fe910235b0087ea2b"
     },
     "R/bank_store.R": {
       "checksum": "5f0ffe25905cef24c6f7405cefbc39fa"
@@ -3845,10 +4063,10 @@
       "checksum": "a3ec98515060b8fc9a4cdc3c2a14fa3e"
     },
     "R/dims.R": {
-      "checksum": "1c761d5eaa9275d3d94e311a913d5f4f"
+      "checksum": "359a48b8deb26163a365be88a6c6b7b7"
     },
     "R/edit.R": {
-      "checksum": "a4066f3807896b994b3afffef0e00ea6"
+      "checksum": "a1d3a817afaba2aeb769f02ef5c119b7"
     },
     "R/export_datapackage.R": {
       "checksum": "8a28f74c4c7a077dea9998565c64ba7c"
@@ -3860,7 +4078,7 @@
       "checksum": "6f4524f67ad37506248abe323c0fe9de"
     },
     "R/home.R": {
-      "checksum": "87e73a7b9b778d30f169ed94e93a9052"
+      "checksum": "8b3a9c7e4fa4315ca9fa22b12f5eee64"
     },
     "R/import_crosswalk.R": {
       "checksum": "3543b32945a6b411e88f46aa0bd6bfc6"
@@ -3887,34 +4105,34 @@
       "checksum": "a6a6f41413c6c2693cac252f1bb06a1e"
     },
     "R/page_admin.R": {
-      "checksum": "85985cfedddc05c16c673a45ba8aee5b"
+      "checksum": "b99d1c3ab6de123d7abf63b6c9ae086e"
     },
     "R/page_compare.R": {
       "checksum": "6798afb2c585cb6b97d16dd8333d40c3"
     },
     "R/page_dims.R": {
-      "checksum": "425f799145fdd4f36d0fc7a8f0b2a8d6"
+      "checksum": "b783acae70a3c11556c35b837274ddc3"
     },
     "R/page_edit.R": {
-      "checksum": "9fb9bc9987816d49c4102143fe4473dc"
+      "checksum": "496331263b3fbb7549c790bc12e011ef"
     },
     "R/page_home.R": {
-      "checksum": "20364d674517c93731a83acfd8960070"
+      "checksum": "5e8e55f41f45cefd433b00af9ef5cb1c"
     },
     "R/page_merge.R": {
-      "checksum": "e4b22128225ea618d654fc4980a085fa"
+      "checksum": "3392ca75ac30a7110fd38011d0dc6bd6"
     },
     "R/page_review.R": {
-      "checksum": "73318a1895d6912301b37cade8c9a4bf"
+      "checksum": "3f85ce112c97440cb637ec909dd028d9"
     },
     "R/page_revision.R": {
-      "checksum": "7fe17f7cef06289e26501fcbd25e445e"
+      "checksum": "407ea1bfb9efcac5178e738800425769"
     },
     "R/page_search.R": {
-      "checksum": "6ecaaac7c60a448f00235bf671cb798e"
+      "checksum": "98f9817bd2cce1e056499be6f5673e35"
     },
     "R/page_stats.R": {
-      "checksum": "61f90b8f844039d22c60834f44ae6839"
+      "checksum": "5b223d534313852f17d9bd8c426ea430"
     },
     "R/patch.R": {
       "checksum": "d950fc20fac973c9b799b0d64c004868"
@@ -3926,7 +4144,10 @@
       "checksum": "015b4d357c811397b2e731c9c1079281"
     },
     "R/query.R": {
-      "checksum": "7d02509099720bc46daed6b2c0102084"
+      "checksum": "b95cb0a2dd834177427c34bb51abdc6c"
+    },
+    "R/report_appendix.R": {
+      "checksum": "8c78c8c8a696592fb5b57c907f2553c1"
     },
     "R/report_dim_docx.R": {
       "checksum": "ade0d2aa2e11fcb7f43ae2d65b8a75ee"
@@ -3938,19 +4159,22 @@
       "checksum": "2ca4c2837226ffcd6a0bc414b7d3cbc2"
     },
     "R/review_patch.R": {
-      "checksum": "a1c705c6c4a966d2247f13cdc9cbc452"
+      "checksum": "5378ddcfd6d5904a4ca3e4f68fb66414"
     },
     "R/review.R": {
       "checksum": "b609c4894c29b857eb17f5148fb5b977"
     },
     "R/revision.R": {
-      "checksum": "9de0f85764a933dc1c706c89ab73ac97"
+      "checksum": "60f6ae69b0ced9161b4ce92598f31b5f"
     },
     "R/schema_evidence.R": {
       "checksum": "cb21635b275e0360250b082a8ebda38b"
     },
     "R/schema_ext.R": {
       "checksum": "224c10e7c72c4382a244c10c2eba6788"
+    },
+    "R/schema_steps.R": {
+      "checksum": "221d4bd97e5b1f9b1dede2862f405904"
     },
     "R/schema.R": {
       "checksum": "a32752255d6295ddbf06ce8bb628d79f"
