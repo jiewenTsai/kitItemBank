@@ -1693,6 +1693,40 @@
         "Archs": "openssl.so.dSYM"
       }
     },
+    "openxlsx": {
+      "Source": "CRAN",
+      "Repository": "https://cloud.r-project.org",
+      "description": {
+        "Type": "Package",
+        "Package": "openxlsx",
+        "Title": "Read, Write and Edit xlsx Files",
+        "Version": "4.2.8",
+        "Date": "2025-01-25",
+        "Authors@R": "\n    c(person(given = \"Philipp\",\n             family = \"Schauberger\",\n             role = \"aut\",\n             email = \"philipp@schauberger.co.at\"),\n      person(given = \"Alexander\",\n             family = \"Walker\",\n             role = \"aut\",\n             email = \"Alexander.Walker1989@gmail.com\"),\n      person(given = \"Luca\",\n             family = \"Braglia\",\n             role = \"ctb\"),\n      person(given = \"Joshua\",\n             family = \"Sturm\",\n             role = \"ctb\"),\n      person(given = \"Jan Marvin\",\n             family = \"Garbuszus\",\n             role = c(\"ctb\", \"cre\"),\n             email = \"jan.garbuszus@ruhr-uni-bochum.de\"),\n      person(given = \"Jordan Mark\",\n             family = \"Barbone\",\n             role = \"ctb\",\n             email = \"jmbarbone@gmail.com\",\n             comment = c(ORCID = \"0000-0001-9788-3628\")),\n      person(given = \"David\",\n             family = \"Zimmermann\",\n             role = \"ctb\",\n             email = \"david_j_zimmermann@hotmail.com\"),\n      person(given = \"Reinhold\",\n             family = \"Kainhofer\",\n             role = \"ctb\",\n             email = \"reinhold@kainhofer.com\"))",
+        "Description": "Simplifies the creation of Excel .xlsx files by providing a\n    high level interface to writing, styling and editing worksheets.\n    Through the use of 'Rcpp', read/write times are comparable to the\n    'xlsx' and 'XLConnect' packages with the added benefit of removing the\n    dependency on Java.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://ycphs.github.io/openxlsx/index.html,\nhttps://github.com/ycphs/openxlsx",
+        "BugReports": "https://github.com/ycphs/openxlsx/issues",
+        "Depends": "R (>= 3.3.0)",
+        "Imports": "grDevices, methods, Rcpp, stats, stringi, utils, zip",
+        "Suggests": "curl, formula.tools, knitr, rmarkdown, testthat",
+        "LinkingTo": "Rcpp",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "Language": "en-US",
+        "RoxygenNote": "7.3.2",
+        "Collate": "'CommentClass.R' 'HyperlinkClass.R' 'RcppExports.R'\n'class_definitions.R' 'StyleClass.R' 'WorkbookClass.R'\n'asserts.R' 'baseXML.R' 'borderFunctions.R' 'build_workbook.R'\n'chartsheet_class.R' 'conditional_formatting.R'\n'data-fontSizeLookupTables.R' 'helperFunctions.R'\n'loadWorkbook.R' 'onUnload.R' 'openXL.R' 'openxlsx-package.R'\n'openxlsx.R' 'openxlsxCoerce.R' 'readWorkbook.R'\n'setWindowSize.R' 'sheet_data_class.R' 'utils.R'\n'workbook_column_widths.R' 'workbook_read_workbook.R'\n'workbook_write_data.R' 'worksheet_class.R' 'wrappers.R'\n'writeData.R' 'writeDataTable.R' 'writexlsx.R' 'zzz.R'",
+        "LazyData": "true",
+        "NeedsCompilation": "yes",
+        "Packaged": "2025-01-25 19:28:01 UTC; janmarvingarbuszus",
+        "Author": "Philipp Schauberger [aut],\n  Alexander Walker [aut],\n  Luca Braglia [ctb],\n  Joshua Sturm [ctb],\n  Jan Marvin Garbuszus [ctb, cre],\n  Jordan Mark Barbone [ctb] (<https://orcid.org/0000-0001-9788-3628>),\n  David Zimmermann [ctb],\n  Reinhold Kainhofer [ctb]",
+        "Maintainer": "Jan Marvin Garbuszus <jan.garbuszus@ruhr-uni-bochum.de>",
+        "Repository": "CRAN",
+        "Date/Publication": "2025-01-25 20:30:02 UTC",
+        "Built": "R 4.5.0; aarch64-apple-darwin20; 2025-03-31 22:03:35 UTC; unix",
+        "Archs": "openxlsx.so.dSYM"
+      }
+    },
     "otel": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -3144,13 +3178,13 @@
   },
   "files": {
     ".Rbuildignore": {
-      "checksum": "87f9d4ec0ffedff42d9aa1a7e04c6c96"
+      "checksum": "45acbcd7482361ab133ae471479e7139"
     },
     "app.R": {
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "0dbd124fd0c6be49c65884c956544db8"
+      "checksum": "5d3d8476e5f4800d2d43a83a1ba2914c"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3159,7 +3193,7 @@
       "checksum": "04c426907e4bba738536c64620c11d30"
     },
     "inst/extdata/bank/child_adolescent/itemBank.csv": {
-      "checksum": "18efe12f50c585176ca11015ddeddfc0"
+      "checksum": "b01994fbb24ca568c570d1fb8895d214"
     },
     "inst/extdata/bank/child_adolescent/itemDim.csv": {
       "checksum": "32c6bdb4b30900e86c42be037aae8adc"
@@ -3191,6 +3225,60 @@
     "inst/extdata/bank/parent/itemWave.csv": {
       "checksum": "dbda6a2a02567838e30b3c9a00064ed3"
     },
+    "inst/extdata/kit/admins.csv": {
+      "checksum": "e1e5fbc859cea986da1bc0352bb8aa09"
+    },
+    "inst/extdata/kit/aliases.csv": {
+      "checksum": "53ceb2b16d8f472f572685998e77c646"
+    },
+    "inst/extdata/kit/BANK_VERSION": {
+      "checksum": "25595040843842344bf039bce67c4aa1"
+    },
+    "inst/extdata/kit/block_status.csv": {
+      "checksum": "c444a01b66e4f44c8f2fcad9638d7ff4"
+    },
+    "inst/extdata/kit/cohorts.csv": {
+      "checksum": "bd2715a6a5a66eb48bd0692fae7f467a"
+    },
+    "inst/extdata/kit/dataset_vars.csv": {
+      "checksum": "014e413db433bfe82b2a52258888de55"
+    },
+    "inst/extdata/kit/datasets.csv": {
+      "checksum": "9344814f51af647e1a0b3655418ed914"
+    },
+    "inst/extdata/kit/form_notes.csv": {
+      "checksum": "aa5cdbffcc661000298f759f9b4fa437"
+    },
+    "inst/extdata/kit/forms.csv": {
+      "checksum": "d5ffc5f1327101951d29d74209c71cf4"
+    },
+    "inst/extdata/kit/group_members.csv": {
+      "checksum": "8bf79b5dc9271bb71869dfdbd044cca6"
+    },
+    "inst/extdata/kit/group_tree.csv": {
+      "checksum": "e13060f1aec0b528fc69575aaa86a3c9"
+    },
+    "inst/extdata/kit/groups.csv": {
+      "checksum": "8a71fd80c8e09f73e90012bf97b5ea60"
+    },
+    "inst/extdata/kit/item_relations.csv": {
+      "checksum": "88909e2907c7f1936d49194d049c689e"
+    },
+    "inst/extdata/kit/item_versions.csv": {
+      "checksum": "44e7acf067d68bceecc5b075b757e118"
+    },
+    "inst/extdata/kit/items.csv": {
+      "checksum": "87a08554ccf3539154cf870e360678e0"
+    },
+    "inst/extdata/kit/missing_schemes.csv": {
+      "checksum": "197e3f1bac41af9201ba0ac9099bd560"
+    },
+    "inst/extdata/kit/sources.csv": {
+      "checksum": "6e9fdbddae420e54f6f24c89bf44df0f"
+    },
+    "inst/extdata/kit/value_codes.csv": {
+      "checksum": "53ac3c517ea39896cb4601c5e3307e4c"
+    },
     "inst/reports/dim_summary_report.qmd": {
       "checksum": "511e5c1d026016298cc9e6b60181da0c"
     },
@@ -3203,11 +3291,26 @@
     "LICENSE.md": {
       "checksum": "5afe7cda199957758b1309789c850a4b"
     },
+    "man/admin_codebook.Rd": {
+      "checksum": "8176a5fd1375d125db3dd44cc65f5780"
+    },
+    "man/admin_summary.Rd": {
+      "checksum": "86eab8e49c537d194073fb5eb679cf5b"
+    },
     "man/app_server.Rd": {
       "checksum": "dbc915fc1c83e2ea9fe77d14d00c7855"
     },
     "man/app_ui.Rd": {
       "checksum": "b1a6cd5b0ab2c8a37be297f840507ff1"
+    },
+    "man/apply_patch.Rd": {
+      "checksum": "34dff5a148e34aa57ebe864c6030eaf3"
+    },
+    "man/audit_kit_summary.Rd": {
+      "checksum": "223e7bf39d2567b9cbefab273984fb22"
+    },
+    "man/audit_kit.Rd": {
+      "checksum": "481a0e465107b3511609f64a9cb1076e"
     },
     "man/bank_audit_summary.Rd": {
       "checksum": "3f4b34383a16dce47dbc92450c6350e0"
@@ -3218,8 +3321,23 @@
     "man/bank_diff.Rd": {
       "checksum": "ef2da99e48e98297013e77b96f2cee1b"
     },
+    "man/bank_to_v02.Rd": {
+      "checksum": "0dae3377463852ef035e65a5570d668a"
+    },
     "man/check_bank.Rd": {
       "checksum": "414e2b93c27ee572777a637abf64d5b2"
+    },
+    "man/check_kit.Rd": {
+      "checksum": "b79044d2d4c9f66bba4907357706e76c"
+    },
+    "man/codebook_sps.Rd": {
+      "checksum": "f1ba15cd8808f4b1b2a23454f5ee35f0"
+    },
+    "man/codebook_workbook.Rd": {
+      "checksum": "26e727291e1926a97e1c4675988d4285"
+    },
+    "man/compare_sav_v02.Rd": {
+      "checksum": "e8967e9269056ed1a05788b47e0e0ee8"
     },
     "man/crosswalk.Rd": {
       "checksum": "37523d44c216591d3d7b78ea206c7442"
@@ -3236,11 +3354,41 @@
     "man/dim_report_data.Rd": {
       "checksum": "136c67bb25fd893c4404838d66f0be5d"
     },
+    "man/empty_kit.Rd": {
+      "checksum": "2ac5f0565b91013d772b2e5693cbf869"
+    },
+    "man/import_crosswalk.Rd": {
+      "checksum": "ed0c0db8297387f92c48a41bcce49296"
+    },
+    "man/import_design.Rd": {
+      "checksum": "8f6adc16d65a0045bdca9f88415aa9c8"
+    },
+    "man/import_sav_dir.Rd": {
+      "checksum": "10299cbb542232b55746b80cfc5e0dd9"
+    },
+    "man/import_sav_header.Rd": {
+      "checksum": "7671dc428fcbedb1ced2fc7e7fe7a183"
+    },
+    "man/import_usage_doc.Rd": {
+      "checksum": "ce05eeb0a51f176474bbf5b08eb50695"
+    },
+    "man/import_v02.Rd": {
+      "checksum": "105b299cbe83f542b8e588f32d0564c6"
+    },
     "man/item_detail.Rd": {
       "checksum": "d5eee96ce36343a6dce2b449e0a65ec3"
     },
+    "man/item_history_docx.Rd": {
+      "checksum": "8e50e2495ba8ac538b3132122bf6bad3"
+    },
+    "man/item_history.Rd": {
+      "checksum": "68e189d0e87c5217ef00a3c872738975"
+    },
     "man/kit_app.Rd": {
       "checksum": "8cf085a03852e96f89a6bbfbcb2eaafc"
+    },
+    "man/kit_patch.Rd": {
+      "checksum": "5171a7e428dc906bd738638f8e325b28"
     },
     "man/kitItemBank-package.Rd": {
       "checksum": "8d6156156183eb93e52651a7d56db9dc"
@@ -3251,6 +3399,12 @@
     "man/load_bank.Rd": {
       "checksum": "c6d5ba023795f466a97a40a030ddff27"
     },
+    "man/propose_blocks.Rd": {
+      "checksum": "b4f4e343b4fa0549c691c551c00e41d5"
+    },
+    "man/propose_relations.Rd": {
+      "checksum": "8834b0307a7ac7e62ac72ad4d6b679d9"
+    },
     "man/query_code.Rd": {
       "checksum": "3c8620048e559a999ea84da7a402802c"
     },
@@ -3258,16 +3412,37 @@
       "checksum": "67272430bf44df8c8bbd107d80003872"
     },
     "man/query_workbook.Rd": {
-      "checksum": "bb352d19e5cd6f59156016fb08e42726"
+      "checksum": "489a29a7507cb5b894249d9aa240fc01"
     },
     "man/read_bank_xlsx.Rd": {
       "checksum": "702bc20f1733364cb72deecdb2859220"
     },
+    "man/read_kit.Rd": {
+      "checksum": "308054321ed289632553dcd2514ce4c9"
+    },
+    "man/read_patch_xlsx.Rd": {
+      "checksum": "976657447f216282f6cacfef339cac5f"
+    },
+    "man/read_review.Rd": {
+      "checksum": "33eccaf9b1e658f376f4585db7e1fb54"
+    },
+    "man/read_sav_meta.Rd": {
+      "checksum": "58758fe2ba61665be59b47b2ea4dad80"
+    },
+    "man/resolve_admin.Rd": {
+      "checksum": "8aab78601b875a3bb5246cc2b53ca85a"
+    },
     "man/run_kititembank.Rd": {
       "checksum": "fc0156abcfc6444a12adee6f89a635e9"
     },
+    "man/sav_value_sets.Rd": {
+      "checksum": "c049f14fe42907a3561f08ad8fb4eb5d"
+    },
     "man/update_bank.Rd": {
       "checksum": "33bcdcd8542e20c0cca28911ec25011e"
+    },
+    "man/v02_wave_map.Rd": {
+      "checksum": "da63bac36cb46f57b60b1301d71d5d64"
     },
     "man/version_timeline.Rd": {
       "checksum": "0e9a464c40049b4067a9095171c0b3c5"
@@ -3278,29 +3453,56 @@
     "man/write_bank_xlsx.Rd": {
       "checksum": "e78976ce6b43546bf0df2b365946daa4"
     },
+    "man/write_kit.Rd": {
+      "checksum": "9e6bc94fc7052bdd4758c686701befdd"
+    },
     "NAMESPACE": {
-      "checksum": "ec9ffafffd2c51f7cd8d608cb7e9795c"
+      "checksum": "4f772aa358e43becd2bb9e3f95d3d9dc"
     },
     "NEWS.md": {
-      "checksum": "2ebf7d5448f793f402fa3ec7a6ba3ac2"
+      "checksum": "7605a09fc7ec265a115569d0b7dfeedc"
     },
     "R/app.R": {
-      "checksum": "727791b5c9d2337400bedaae649d7c58"
+      "checksum": "234d55b3d3edf853a579f0cf6c847d9e"
+    },
+    "R/audit_kit.R": {
+      "checksum": "3fbef8da215f1f1c4ca83923da697752"
     },
     "R/audit.R": {
       "checksum": "1af4e2d8afcb4db411d7987838e82d3b"
     },
     "R/bank_store.R": {
-      "checksum": "3a4b0e3b87eaa8e375c418fe1062e65e"
+      "checksum": "5f0ffe25905cef24c6f7405cefbc39fa"
     },
     "R/bank.R": {
       "checksum": "f7017bc5e72095ac9f946f6ae586501f"
     },
+    "R/codebook.R": {
+      "checksum": "ec93989004a52c2ded3c2dde0648fe10"
+    },
     "R/dims.R": {
-      "checksum": "87db61088512bf5bdc141b3561f5cb3d"
+      "checksum": "1c761d5eaa9275d3d94e311a913d5f4f"
     },
     "R/edit.R": {
-      "checksum": "79640862354e589c041e1c21ebb9832d"
+      "checksum": "a4066f3807896b994b3afffef0e00ea6"
+    },
+    "R/import_crosswalk.R": {
+      "checksum": "3543b32945a6b411e88f46aa0bd6bfc6"
+    },
+    "R/import_sav.R": {
+      "checksum": "a79002e8ffb65e24c38daa4fda10735a"
+    },
+    "R/import_usage.R": {
+      "checksum": "bb24db357ff98f742e0cb9837a17f311"
+    },
+    "R/import_v02.R": {
+      "checksum": "75eb065bcd8ad483280d8146dfa02c4e"
+    },
+    "R/item_history.R": {
+      "checksum": "4dcd0633fee0b5096cce9af6102f8111"
+    },
+    "R/kit_v02.R": {
+      "checksum": "6e3a43ef9256dad94993ae6c14c38a91"
     },
     "R/kitItemBank-package.R": {
       "checksum": "b4fe12876c37f8a22cde06e9701eecf0"
@@ -3308,17 +3510,29 @@
     "R/network.R": {
       "checksum": "a6a6f41413c6c2693cac252f1bb06a1e"
     },
+    "R/page_admin.R": {
+      "checksum": "9b7035a3099edefd5ea2f0e21929b67f"
+    },
     "R/page_dims.R": {
-      "checksum": "913eec09a25f9c46f86b4ccbbb587b5f"
+      "checksum": "5fd3a8d7f6ca629c927c0af44c4ef3ba"
     },
     "R/page_edit.R": {
-      "checksum": "3e93919cdf47a743498ac8549afbbe44"
+      "checksum": "9fb9bc9987816d49c4102143fe4473dc"
     },
     "R/page_search.R": {
-      "checksum": "c4fcf945f2908f8f53ea46527707cd40"
+      "checksum": "6ecaaac7c60a448f00235bf671cb798e"
+    },
+    "R/patch.R": {
+      "checksum": "eafaa8c4368f6644171476f987371335"
+    },
+    "R/propose_blocks.R": {
+      "checksum": "21bc32ca48d1709369d30b8b272b57c6"
+    },
+    "R/propose_relations.R": {
+      "checksum": "015b4d357c811397b2e731c9c1079281"
     },
     "R/query.R": {
-      "checksum": "0ce373bd2da7de1328fddb0408d65e2b"
+      "checksum": "7d02509099720bc46daed6b2c0102084"
     },
     "R/report_dim_docx.R": {
       "checksum": "ade0d2aa2e11fcb7f43ae2d65b8a75ee"
@@ -3329,8 +3543,14 @@
     "R/report_docx.R": {
       "checksum": "2ca4c2837226ffcd6a0bc414b7d3cbc2"
     },
+    "R/review.R": {
+      "checksum": "b609c4894c29b857eb17f5148fb5b977"
+    },
+    "R/schema.R": {
+      "checksum": "a32752255d6295ddbf06ce8bb628d79f"
+    },
     "R/utils.R": {
-      "checksum": "830ed8ce483adde7723379da40a3ebc1"
+      "checksum": "be10342a9a123a152891fc5a5ed6fa3c"
     },
     "R/zzz.R": {
       "checksum": "4df8907e971455fb79957f35e9dcb065"

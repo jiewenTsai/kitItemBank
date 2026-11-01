@@ -1,14 +1,16 @@
 Package: kitItemBank
 Title: KIT Item Bank Query and Maintenance Tool
-Version: 0.2.0
-Date: 2026-11-01
+Version: 0.3.0
+Date: 2026-11-02
 Authors@R: person("Jie-Wen", "Tsai", email = "tsai.jiewen@gmail.com", role = c("aut", "cre"))
 Description: A 'shiny' app for the KIT item bank (Taiwan Early Childhood
     Development Survey Database): search items by keyword, wave and
     dimension, compare an item across waves and versions, browse dimensions
-    with a network graph and dimension reports, and edit dimension and wave
-    assignments. The app never writes files; edited item banks are downloaded
-    as Excel files with a change log.
+    with a network graph and dimension reports, list what each
+    administration asked (codebook and SPSS label syntax), and edit
+    dimension assignments. The item bank is stored in long format (one CSV
+    per table). The app never writes files; edits are downloaded as a
+    change package that maintainers apply with apply_patch().
 License: MIT + file LICENSE
 URL: https://github.com/jiewenTsai/kitItmBank
 BugReports: https://github.com/jiewenTsai/kitItmBank/issues
