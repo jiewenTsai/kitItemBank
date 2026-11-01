@@ -27,7 +27,8 @@ test_that("the statistics page is disabled by default", {
   html <- as.character(page_stats_ui("stats"))
   # 原文：本機版本
   expect_match(html, "\u672c\u6a5f\u7248\u672c")            # 本機版本
-  expect_match(html, "kititembank.allow_data_upload", fixed = TRUE)
+  expect_match(html, "kitItemBank::run_kititembank()", fixed = TRUE)
+  expect_no_match(html, "kititembank.allow_data_upload", fixed = TRUE)
   expect_false(grepl("type=\"file\"", html, fixed = TRUE))
   shiny::testServer(page_stats_server, args = list(kit = stats_page_kit()), {
     expect_null(session$returned)

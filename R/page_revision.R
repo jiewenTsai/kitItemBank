@@ -2,7 +2,7 @@
 #
 # 由上往下：這一頁做什麼 → 左 1/3：① 選題本、下載改版底稿；② 上傳填好的底稿、
 # 寫新施測的代號｜右 2/3：健康檢查（擋下來／要注意）→ 改了什麼 → [下載修改包]
-# → ▸ 用 R 怎麼做。app 不寫題庫；修改包交給管理員用 apply_patch() 套用。
+# → ▸ 用 R 怎麼做。app 不寫題庫；修改包在「審核」頁上傳、審核後下載套用後的題庫。
 # 計算都在 R/revision.R。
 
 #' 有題目的題本：選單用（「家長 國小 1–3 年級（P-G1-G3）」= formID）
@@ -40,8 +40,8 @@ page_revision_ui <- function(id) {
         # 原文：寫新施測的代號（例如 M03M132G05），沒有擋下來的問題就能下載修改包。
         "\u5beb\u65b0\u65bd\u6e2c\u7684\u4ee3\u865f\uff08\u4f8b\u5982 M03M132G05\uff09\uff0c\u6c92\u6709\u64cb\u4e0b\u4f86\u7684\u554f\u984c\u5c31\u80fd\u4e0b\u8f09\u4fee\u6539\u5305\u3002"
       ),
-      # 原文：改版底稿（Excel）；健康檢查；修改包（Excel，管理員用 apply_patch() 套用）。
-      output = "\u6539\u7248\u5e95\u7a3f\uff08Excel\uff09\uff1b\u5065\u5eb7\u6aa2\u67e5\uff1b\u4fee\u6539\u5305\uff08Excel\uff0c\u7ba1\u7406\u54e1\u7528 apply_patch() \u5957\u7528\uff09\u3002",
+      # 原文：改版底稿（Excel）；健康檢查；修改包（Excel，在「審核」頁上傳審核）。
+      output = "\u6539\u7248\u5e95\u7a3f\uff08Excel\uff09\uff1b\u5065\u5eb7\u6aa2\u67e5\uff1b\u4fee\u6539\u5305\uff08Excel\uff0c\u5728\u300c\u5be9\u6838\u300d\u9801\u4e0a\u50b3\u5be9\u6838\uff09\u3002",
       # 原文：改了文字或選項會變成新的題目版本，舊版留著；刪除只是新的問卷不放，題號不會刪。
       note = "\u6539\u4e86\u6587\u5b57\u6216\u9078\u9805\u6703\u8b8a\u6210\u65b0\u7684\u984c\u76ee\u7248\u672c\uff0c\u820a\u7248\u7559\u8457\uff1b\u522a\u9664\u53ea\u662f\u65b0\u7684\u554f\u5377\u4e0d\u653e\uff0c\u984c\u865f\u4e0d\u6703\u522a\u3002"
     ),
@@ -252,10 +252,10 @@ rv_patch_ui <- function(session, res, admin_id, version) {
       )
     ),
     shiny::p(class = "kit-hint", paste0(
-      # 原文：共  |  列改動。交給題庫管理員：
-      "\u5171 ", kitDesign::kit_num(nrow(res$patch)), " \u5217\u6539\u52d5\u3002\u4ea4\u7d66\u984c\u5eab\u7ba1\u7406\u54e1\uff1a",
-      # 原文：read_patch_xlsx() 讀進來、apply_patch() 套用，再跑 check_kit()。
-      "read_patch_xlsx() \u8b80\u9032\u4f86\u3001apply_patch() \u5957\u7528\uff0c\u518d\u8dd1 check_kit()\u3002"))
+      # 原文：共  |  列改動。
+      "\u5171 ", kitDesign::kit_num(nrow(res$patch)), " \u5217\u6539\u52d5\u3002",
+      # 原文：下載以後，把修改包交給審核的人，在「審核」頁上傳：看改前改後、檢查結果，沒問題就下載套用後的題庫。
+      "\u4e0b\u8f09\u4ee5\u5f8c\uff0c\u628a\u4fee\u6539\u5305\u4ea4\u7d66\u5be9\u6838\u7684\u4eba\uff0c\u5728\u300c\u5be9\u6838\u300d\u9801\u4e0a\u50b3\uff1a\u770b\u6539\u524d\u6539\u5f8c\u3001\u6aa2\u67e5\u7d50\u679c\uff0c\u6c92\u554f\u984c\u5c31\u4e0b\u8f09\u5957\u7528\u5f8c\u7684\u984c\u5eab\u3002"))
   )
 }
 

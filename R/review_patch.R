@@ -69,8 +69,16 @@ kit_table_label <- function(x) {
   ifelse(is.na(out), x, out)
 }
 
-kit_column_label <- function(x) {
+# 同一個欄名在某張表要叫別的名字：題目的版本的 label 是題目文字
+# 原文：題目
+KIT_COLUMN_LABELS_BY_TABLE <- c("item_versions.label" = "\u984c\u76ee")
+
+kit_column_label <- function(x, table = NULL) {
   out <- unname(KIT_COLUMN_LABELS[x])
+  if (length(table)) {
+    by <- unname(KIT_COLUMN_LABELS_BY_TABLE[paste0(table, ".", x)])
+    out <- ifelse(is.na(by), out, by)
+  }
   ifelse(is.na(out) | !nzchar(x), x, out)
 }
 
@@ -174,7 +182,7 @@ review_row_problem <- function(kit, p) {
 
 #' 一列的內容寫成一句：「欄：值；欄：值」（只放有值的欄，或只放 cols）
 #' @noRd
-review_row_text <- function(row, cols = NULL) {
+review_row_text <- function(row, cols = NULL, table = NULL) {
   if (is.null(row) || !nrow(row)) return("")
   cols <- cols %||% names(row)[nzchar(as.character(unlist(row[1L, ])))]
   if (!length(cols)) return("")
@@ -184,7 +192,7 @@ review_row_text <- function(row, cols = NULL) {
     if (nzchar(v)) v else "\uff08\u7a7a\u767d\uff09"
   }, character(1))
   # 原文：： | ；
-  paste(paste0(kit_column_label(cols), "\uff1a", vals), collapse = "\uff1b")
+  paste(paste0(kit_column_label(cols, table), "\uff1a", vals), collapse = "\uff1b")
 }
 
 #' Review a change package against the current bank
@@ -283,18 +291,18 @@ review_changes <- function(old, new, patch) {
     if (!nrow(a)) {
       # 原文：新增
       return(data.frame(kind = "\u65b0\u589e", table = tb, key = key, before = "",
-                        after = review_row_text(b), stringsAsFactors = FALSE))
+                        after = review_row_text(b, table = tb), stringsAsFactors = FALSE))
     }
     if (!nrow(b)) {
       # 原文：刪除
-      return(data.frame(kind = "\u522a\u9664", table = tb, key = key, before = review_row_text(a),
+      return(data.frame(kind = "\u522a\u9664", table = tb, key = key, before = review_row_text(a, table = tb),
                         after = "", stringsAsFactors = FALSE))
     }
     diff <- names(a)[as.character(unlist(a[1L, ])) != as.character(unlist(b[1L, ]))]
     if (!length(diff)) return(NULL)
     # 原文：修改
-    data.frame(kind = "\u4fee\u6539", table = tb, key = key, before = review_row_text(a, diff),
-               after = review_row_text(b, diff), stringsAsFactors = FALSE)
+    data.frame(kind = "\u4fee\u6539", table = tb, key = key, before = review_row_text(a, diff, tb),
+               after = review_row_text(b, diff, tb), stringsAsFactors = FALSE)
   })
   out <- do.call(rbind, rows)
   if (is.null(out)) return(empty)
@@ -305,7 +313,8 @@ review_changes <- function(old, new, patch) {
 #' What a change package touches
 #'
 #' Items, groups, data files and administrations affected by the applied rows: those changed
-#' directly, plus data files that hold a changed item and the administrations of those files.
+#' directly, plus groups that contain a changed item (via `group_members`, before or after),
+#' data files that hold a changed item and the administrations of those files.
 #'
 #' @param old,new The kit before and after the patch.
 #' @param patch The applied patch rows.
@@ -337,6 +346,8 @@ review_impact <- function(old, new, patch) {
                 touched_rows("block_status")$datasetID)
   clean <- function(x) sort(unique(x[!is.na(x) & nzchar(x)]))
   items <- clean(items)
+  gm <- rbind(old$group_members, new$group_members)
+  groups <- c(groups, gm$groupID[gm$item_uid %in% items])
   dv <- rbind(old$dataset_vars, new$dataset_vars)
   datasets <- clean(c(datasets, dv$datasetID[dv$item_uid %in% items]))
   ds <- rbind(old$datasets, new$datasets)
@@ -370,7 +381,7 @@ review_issue_table <- function(issues) {
     # 原文：哪一列
     "\u54ea\u4e00\u5217" = review_key_text(issues$key),
     # 原文：欄
-    "\u6b04" = kit_column_label(issues$column),
+    "\u6b04" = kit_column_label(issues$column, issues$table),
     # 原文：值
     "\u503c" = issues$value,
     # 原文：什麼時候有的 | 這次改動造成的 | 原本就有

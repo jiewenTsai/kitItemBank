@@ -19,8 +19,8 @@ page_review_ui <- function(id) {
       # 原文：審核別人送來的修改包：看清楚改了什麼、會不會弄壞題庫、影響哪些題目和施測，沒問題就下載套用後的題庫。
       goal = "\u5be9\u6838\u5225\u4eba\u9001\u4f86\u7684\u4fee\u6539\u5305\uff1a\u770b\u6e05\u695a\u6539\u4e86\u4ec0\u9ebc\u3001\u6703\u4e0d\u6703\u5f04\u58de\u984c\u5eab\u3001\u5f71\u97ff\u54ea\u4e9b\u984c\u76ee\u548c\u65bd\u6e2c\uff0c\u6c92\u554f\u984c\u5c31\u4e0b\u8f09\u5957\u7528\u5f8c\u7684\u984c\u5eab\u3002",
       steps = c(
-        # 原文：選一個修改包（在「題庫編修」下載的 Excel）。
-        "\u9078\u4e00\u500b\u4fee\u6539\u5305\uff08\u5728\u300c\u984c\u5eab\u7de8\u4fee\u300d\u4e0b\u8f09\u7684 Excel\uff09\u3002",
+        # 原文：選一個修改包（在「題庫編修」或「改版」下載的 Excel）。
+        "\u9078\u4e00\u500b\u4fee\u6539\u5305\uff08\u5728\u300c\u984c\u5eab\u7de8\u4fee\u300d\u6216\u300c\u6539\u7248\u300d\u4e0b\u8f09\u7684 Excel\uff09\u3002",
         # 原文：看右邊：改前改後、檢查結果、影響範圍；修改包是從舊版題庫做的時候會提醒你。
         "\u770b\u53f3\u908a\uff1a\u6539\u524d\u6539\u5f8c\u3001\u6aa2\u67e5\u7d50\u679c\u3001\u5f71\u97ff\u7bc4\u570d\uff1b\u4fee\u6539\u5305\u662f\u5f9e\u820a\u7248\u984c\u5eab\u505a\u7684\u6642\u5019\u6703\u63d0\u9192\u4f60\u3002",
         # 原文：填修改原因、誰決定的、誰送來的、你的名字；修改包裡有記的會先填好。
@@ -115,8 +115,8 @@ page_review_server <- function(id, kit, goto, version = kit_version()) {
     output$result <- shiny::renderUI({
       if (is.null(input$file)) {
         return(shiny::p(class = "kit-hint",
-                        # 原文：先在左邊選一個修改包（在「題庫編修」下載的 Excel），這裡會列出它改了什麼。
-                        "\u5148\u5728\u5de6\u908a\u9078\u4e00\u500b\u4fee\u6539\u5305\uff08\u5728\u300c\u984c\u5eab\u7de8\u4fee\u300d\u4e0b\u8f09\u7684 Excel\uff09\uff0c\u9019\u88e1\u6703\u5217\u51fa\u5b83\u6539\u4e86\u4ec0\u9ebc\u3002"))
+                        # 原文：先在左邊選一個修改包（在「題庫編修」或「改版」下載的 Excel），這裡會列出它改了什麼。
+                        "\u5148\u5728\u5de6\u908a\u9078\u4e00\u500b\u4fee\u6539\u5305\uff08\u5728\u300c\u984c\u5eab\u7de8\u4fee\u300d\u6216\u300c\u6539\u7248\u300d\u4e0b\u8f09\u7684 Excel\uff09\uff0c\u9019\u88e1\u6703\u5217\u51fa\u5b83\u6539\u4e86\u4ec0\u9ebc\u3002"))
       }
       p <- pkg()
       if (!is.null(p$error)) {
@@ -141,7 +141,7 @@ page_review_server <- function(id, kit, goto, version = kit_version()) {
           # 原文：這些格子在修改包匯出以後被改過（套用會用修改包的值蓋掉）：
           head = "\u9019\u4e9b\u683c\u5b50\u5728\u4fee\u6539\u5305\u532f\u51fa\u4ee5\u5f8c\u88ab\u6539\u904e\uff08\u5957\u7528\u6703\u7528\u4fee\u6539\u5305\u7684\u503c\u84cb\u6389\uff09\uff1a",
           # 原文： 的 | ：
-          paste0(kit_table_label(pt$table), " ", pt$key, " \u7684", kit_column_label(pt$column), "\uff1a",
+          paste0(kit_table_label(pt$table), " ", pt$key, " \u7684", kit_column_label(pt$column, pt$table), "\uff1a",
                  pt$conflict)[nzchar(pt$conflict)]
         ),
         if (any(!pt$ok)) kitDesign::kit_problems(
@@ -195,11 +195,11 @@ page_review_server <- function(id, kit, goto, version = kit_version()) {
     })
     output$items_dt <- DT::renderDT({
       x <- impact_items()
-      # 原文：題目 | 代號 | 名稱
-      df <- data.frame("\u984c\u76ee" = x$varname, "\u4ee3\u865f" = x$item_uid, "\u540d\u7a31" = cb_one_line(x$label),
+      # 原文：變項 | 代號 | 題目
+      df <- data.frame("\u8b8a\u9805" = x$varname, "\u4ee3\u865f" = x$item_uid, "\u984c\u76ee" = cb_one_line(x$label),
                        check.names = FALSE, stringsAsFactors = FALSE)
-      # 原文：名稱
-      kitDesign::kit_dt(df, selection = "single", page_length = 10L, wrap_cols = "\u540d\u7a31")
+      # 原文：題目
+      kitDesign::kit_dt(df, selection = "single", page_length = 10L, wrap_cols = "\u984c\u76ee")
     })
     shiny::observeEvent(input$items_dt_rows_selected, {
       i <- input$items_dt_rows_selected
@@ -373,8 +373,8 @@ review_impact_ui <- function(impact) {
     lst("\u8cc7\u6599\u6a94", impact$datasets),
     # 原文：題本
     lst("\u984c\u672c", impact$forms),
-    # 原文：題組
-    lst("\u984c\u7d44", impact$groups)
+    # 原文：題組（含這些題目所屬的題組）
+    lst("\u984c\u7d44\uff08\u542b\u9019\u4e9b\u984c\u76ee\u6240\u5c6c\u7684\u984c\u7d44\uff09", impact$groups)
   )
 }
 
