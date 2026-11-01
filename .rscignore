@@ -1,10 +1,12 @@
-# rsconnect bundle exclusions (files/ must stay — sole data source)
+# rsconnect bundle exclusions
 tests/
+data-raw/
+files/
 .Rhistory
 .Rproj.user/
-reports/*.html
 *.plan.md
 .cursor/
-# Connect Cloud uses manifest.json, not renv
 renv/
 .Rprofile
+.claude/
+tools/

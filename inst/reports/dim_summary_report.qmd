@@ -1,0 +1,68 @@
+---
+title: "KIT 構面題項對應報告"
+lang: zh-TW
+params:
+  data_rds: ""
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-title: "目錄"
+    embed-resources: true
+    css: |
+      body { font-family: "Chiron GoRound TC", "PingFang TC", "Microsoft JhengHei", sans-serif; color: #141414; }
+      h2 { border-bottom: 2px solid #c6d033; padding-bottom: 0.3rem; }
+      .rel { display: inline-block; background: #c6d033; border: 2px solid #141414; padding: 0.1rem 0.5rem; }
+      .rel.none { background: #ffde59; }
+      .warn { background: #ffde59; border: 2px solid #141414; padding: 0.5rem 0.75rem; }
+      table th { background: #141414; color: #fff; }
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+# 由 kitItemBank 的 render_dim_report_file() 呼叫：data_rds 是 dim_report_data() 的結果
+stopifnot(nchar(params$data_rds) > 0, file.exists(params$data_rds))
+rd <- readRDS(params$data_rds)
+esc <- function(x) htmltools::htmlEscape(as.character(x))
+heading <- function(raw, alias) {
+  raw <- trimws(as.character(raw)); alias <- trimws(as.character(alias))
+  if (length(alias) == 1L && !is.na(alias) && nzchar(alias) && alias != raw) paste0(raw, "（", alias, "）") else raw
+}
+```
+
+題庫：`r rd$domain` · 波次：`r rd$wave` · `r length(rd$dims)` 個構面 · `r rd$n_items` 題 · 產生時間：`r format(Sys.time(), "%Y-%m-%d %H:%M")`
+
+```{r problems, results='asis'}
+p <- rd$problems
+if (!is.null(p) && nrow(p) > 0) {
+  cat('<div class="warn"><b>要注意</b><ul>')
+  for (t in unique(p$type)) {
+    m <- p$message[p$type == t]
+    cat("<li>", esc(utils::head(m, 5)), if (length(m) > 5) paste0("…（共 ", length(m), " 項）") else "",
+        "</li>", sep = "")
+  }
+  cat("</ul></div>\n\n")
+}
+```
+
+```{r dims, results='asis'}
+for (d in rd$dims) {
+  cat(sprintf("\n## %s\n\n", heading(d$dimNameRaw, d$alias)))
+  rel <- suppressWarnings(as.numeric(d$reliability))
+  if (length(rel) == 1L && !is.na(rel)) {
+    cat(sprintf('<span class="rel">Cronbach\'s &alpha; = %.3f · %d 題</span>\n\n', rel, nrow(d$items)))
+  } else {
+    cat(sprintf('<span class="rel none">沒有信度 · %d 題</span>\n\n', nrow(d$items)))
+  }
+  if (!is.null(d$note) && nzchar(trimws(d$note))) cat("備註：", esc(d$note), "\n\n")
+  items <- d$items[, c("itemID", "itemVer", "block", "label")]
+  items$label <- esc(items$label)
+  print(knitr::kable(items, format = "html", escape = FALSE,
+                     table.attr = 'class="table table-sm"'))
+  cat("\n\n")
+}
+```

@@ -1,0 +1,16 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^app\.R$
+^run\.bat$
+^manifest\.json$
+^renv$
+^renv\.lock$
+^\.Rprofile$
+^\.rscignore$
+^\.cursor$
+^data-raw$
+^KIT_itembank_shiny_spec\.md$
+^files$
+^LICENSE\.md$
+^\.claude$
+^tools$
