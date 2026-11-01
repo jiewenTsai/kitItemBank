@@ -137,6 +137,8 @@ audit_kit <- function(kit, sav = NULL, noresponse = NULL) {
     k_sav <- paste(sv$datasetID, sv$varname, sep = "|")
     in_ids <- dv$datasetID %in% sv_ids
     k_kit <- paste(dv$datasetID, dv$varname, sep = "|")
+    # public = 0 的變項本來就不在釋出檔裡
+    if (!is.null(dv$public)) in_ids <- in_ids & dv$public != "0"
     a <- setdiff(unique(k_sav), k_kit)
     # 原文：.sav 表頭有，dataset_vars 沒有
     add("coverage_sav", "dataset_vars", a, rep(".sav \u8868\u982d\u6709\uff0cdataset_vars \u6c92\u6709", length(a)))

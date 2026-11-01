@@ -1,5 +1,7 @@
 formID,groupID,item_uid,varname,item_exists,group_exists,reverse,cw_path,current_groups,source,confidence,basis
 P-00-24,P.親子眼神接觸,P.fameviA03,fameviA03,1,1,,家庭問卷資料 > 學習環境 > 親子接觸,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.famD14,famD14,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.famD14a,famD14a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
 P-G1-G3,P.3C產品環境,P.fameviD1101,fameviD1101,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
 P-G1-G3,P.3C產品環境,P.fameviD1102,fameviD1102,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
 P-G1-G3,P.3C產品環境,P.fameviD1103,fameviD1103,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
@@ -17,6 +19,27 @@ P-G1-G3,P.3C產品環境,P.fameviD1114,fameviD1114,1,1,,家庭問卷資料 > 學
 P-G1-G3,P.3C產品環境,P.fameviD1115,fameviD1115,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
 P-G1-G3,P.3C產品環境,P.fameviD1116,fameviD1116,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
 P-G1-G3,P.3C產品環境,P.fameviD1116a,fameviD1116a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1119,fameviD1119,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1120,fameviD1120,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1121,fameviD1121,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1122,fameviD1122,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1123,fameviD1123,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1124,fameviD1124,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1125,fameviD1125,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1126,fameviD1126,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1127,fameviD1127,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1128,fameviD1128,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1128a,fameviD1128a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1131,fameviD1131,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1132,fameviD1132,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1133,fameviD1133,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1134,fameviD1134,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1135,fameviD1135,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1136,fameviD1136,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1137,fameviD1137,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1138,fameviD1138,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1139,fameviD1139,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
+P-G1-G3,P.3C產品環境,P.fameviD1139a,fameviD1139a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,,cw_path,high,crosswalk construct path leaf; item has no group in this form
 P-G1-G3,P.女方,P.caregiverf02n,caregiverf02n,1,1,,家庭問卷資料 > 親職參與 > 親友女_親職參與,,cw_path+renamed_from:P.caregiverf02,high,new varname inherits the renamed item's group; crosswalk path agrees; item has no group in this form
 P-G1-G3,P.女方,P.caregiverf04n,caregiverf04n,1,1,,家庭問卷資料 > 親職參與 > 親友女_親職參與,,cw_path+renamed_from:P.caregiverf04,high,new varname inherits the renamed item's group; crosswalk path agrees; item has no group in this form
 P-G1-G3,P.女方,P.caregiverf05n,caregiverf05n,1,1,,家庭問卷資料 > 親職參與 > 親友女_親職參與,,cw_path+renamed_from:P.caregiverf05,high,new varname inherits the renamed item's group; crosswalk path agrees; item has no group in this form
@@ -41,9 +64,6 @@ P-G1-G3,P.才藝學習,P.fameviD1213,fameviD1213,1,1,,家庭問卷資料 > 學�
 P-G1-G3,P.母親親職參與,P.motherinvo02n,motherinvo02n,1,1,,家庭問卷資料 > 親職參與 > 母親親職參與,P.母職參與,cw_path+renamed_from:P.motherinvo02,high,new varname inherits the renamed item's group; crosswalk path agrees; item already in other group(s) in this form
 P-G1-G3,P.母親親職參與,P.motherinvo04n,motherinvo04n,1,1,,家庭問卷資料 > 親職參與 > 母親親職參與,P.母職參與,cw_path+renamed_from:P.motherinvo04,high,new varname inherits the renamed item's group; crosswalk path agrees; item already in other group(s) in this form
 P-G1-G3,P.母親親職參與,P.motherinvo05n,motherinvo05n,1,1,,家庭問卷資料 > 親職參與 > 母親親職參與,P.母職參與,cw_path+renamed_from:P.motherinvo05,high,new varname inherits the renamed item's group; crosswalk path agrees; item already in other group(s) in this form
-P-G1-G3,P.父親親職參與,P.fatherinvo02n,fatherinvo02n,1,1,,家庭問卷資料 > 親職參與 > 父親親職參與,P.父職參與,cw_path+renamed_from:P.fatherinvo02,high,new varname inherits the renamed item's group; crosswalk path agrees; item already in other group(s) in this form
-P-G1-G3,P.父親親職參與,P.fatherinvo04n,fatherinvo04n,1,1,,家庭問卷資料 > 親職參與 > 父親親職參與,P.父職參與,cw_path+renamed_from:P.fatherinvo04,high,new varname inherits the renamed item's group; crosswalk path agrees; item already in other group(s) in this form
-P-G1-G3,P.父親親職參與,P.fatherinvo05n,fatherinvo05n,1,1,,家庭問卷資料 > 親職參與 > 父親親職參與,P.父職參與,cw_path+renamed_from:P.fatherinvo05,high,new varname inherits the renamed item's group; crosswalk path agrees; item already in other group(s) in this form
 P-G1-G3,P.男方,P.caregiverm02n,caregiverm02n,1,1,,家庭問卷資料 > 親職參與 > 親友男_親職參與,,cw_path+renamed_from:P.caregiverm02,high,new varname inherits the renamed item's group; crosswalk path agrees; item has no group in this form
 P-G1-G3,P.男方,P.caregiverm04n,caregiverm04n,1,1,,家庭問卷資料 > 親職參與 > 親友男_親職參與,,cw_path+renamed_from:P.caregiverm04,high,new varname inherits the renamed item's group; crosswalk path agrees; item has no group in this form
 P-G1-G3,P.男方,P.caregiverm05n,caregiverm05n,1,1,,家庭問卷資料 > 親職參與 > 親友男_親職參與,,cw_path+renamed_from:P.caregiverm05,high,new varname inherits the renamed item's group; crosswalk path agrees; item has no group in this form
@@ -53,6 +73,108 @@ P-G1-G3,P.親友親職參與,P.caregiverf05n,caregiverf05n,1,1,,,,renamed_from:P
 P-G1-G3,P.親友親職參與,P.caregiverm02n,caregiverm02n,1,1,,,,renamed_from:P.caregiverm02,high,new varname inherits the renamed item's group; item has no group in this form
 P-G1-G3,P.親友親職參與,P.caregiverm04n,caregiverm04n,1,1,,,,renamed_from:P.caregiverm04,high,new varname inherits the renamed item's group; item has no group in this form
 P-G1-G3,P.親友親職參與,P.caregiverm05n,caregiverm05n,1,1,,,,renamed_from:P.caregiverm05,high,new varname inherits the renamed item's group; item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB02,pfB02,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201,pfB0201,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201a,pfB0201a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201b,pfB0201b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201c,pfB0201c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201d,pfB0201d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201e,pfB0201e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201f,pfB0201f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201g,pfB0201g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201h,pfB0201h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0201i,pfB0201i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202,pfB0202,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202a,pfB0202a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202b,pfB0202b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202c,pfB0202c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202d,pfB0202d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202e,pfB0202e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202f,pfB0202f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202g,pfB0202g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202h,pfB0202h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0202i,pfB0202i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203,pfB0203,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203a,pfB0203a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203b,pfB0203b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203c,pfB0203c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203d,pfB0203d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203e,pfB0203e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203f,pfB0203f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203g,pfB0203g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203h,pfB0203h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0203i,pfB0203i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204,pfB0204,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204a,pfB0204a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204b,pfB0204b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204c,pfB0204c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204d,pfB0204d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204e,pfB0204e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204f,pfB0204f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204g,pfB0204g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204h,pfB0204h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.兄弟姊妹,P.pfB0204i,pfB0204i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者保母專業課程,P.pfC10,pfC10,1,0,,其他主要照顧者基本資料 > 其他主要照顧者保母專業課程,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者出生年,P.pfC01,pfC01,1,0,,其他主要照顧者基本資料 > 其他主要照顧者出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者原國籍,P.pfC03,pfC03,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者原國籍,P.pfC0301,pfC0301,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者原國籍,P.pfC0301a,pfC0301a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者原國籍,P.pfC0302,pfC0302,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者原國籍,P.pfC0302a,pfC0302a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者原國籍,P.pfC03a,pfC03a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者吸菸喝酒習慣,P.pfC05,pfC05,1,0,,其他主要照顧者基本資料 > 其他主要照顧者吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者吸菸喝酒習慣,P.pfC06,pfC06,1,0,,其他主要照顧者基本資料 > 其他主要照顧者吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者婚姻狀況,P.pfC04,pfC04,1,0,,其他主要照顧者基本資料 > 其他主要照顧者婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者婚姻狀況,P.pfC04a,pfC04a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者工作狀況,P.pfC0701,pfC0701,1,0,,其他主要照顧者基本資料 > 其他主要照顧者工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者工作狀況,P.pfC0702,pfC0702,1,0,,其他主要照顧者基本資料 > 其他主要照顧者工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者常說語言,P.pfC09,pfC09,1,0,,其他主要照顧者基本資料 > 其他主要照顧者常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者常說語言,P.pfC09a,pfC09a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者憂鬱,P.pfC1101,pfC1101,1,0,,其他主要照顧者基本資料 > 其他主要照顧者憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者憂鬱,P.pfC1102,pfC1102,1,0,,其他主要照顧者基本資料 > 其他主要照顧者憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者教育程度,P.pfC0201,pfC0201,1,0,,其他主要照顧者基本資料 > 其他主要照顧者教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者教育程度,P.pfC0202,pfC0202,1,0,,其他主要照顧者基本資料 > 其他主要照顧者教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者照顧幼兒時數,P.pfC08,pfC08,1,0,,其他主要照顧者基本資料 > 其他主要照顧者照顧幼兒時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者非本國籍者中文能力,P.pfC030401,pfC030401,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者非本國籍者中文能力,P.pfC030402,pfC030402,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者非本國籍者中文能力,P.pfC030403,pfC030403,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者非本國籍者中文能力,P.pfC030404,pfC030404,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.其他主要照顧者非本國籍者在台居住時間,P.pfC0303,pfC0303,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.包尿布,P.pfB10,pfB10,1,0,,孩子與家庭基本資料 > 包尿布,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.包尿布,P.pfB10a,pfB10a,1,0,,孩子與家庭基本資料 > 包尿布,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.包尿布,P.pfB10b,pfB10b,1,0,,孩子與家庭基本資料 > 包尿布,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0101,pfB0101,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0102,pfB0102,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0103,pfB0103,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0104,pfB0104,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0105,pfB0105,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0106,pfB0106,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0107,pfB0107,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0108,pfB0108,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0109,pfB0109,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0110,pfB0110,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0111,pfB0111,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0112,pfB0112,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0112a,pfB0112a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0113,pfB0113,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0113a,pfB0113a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0114,pfB0114,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0114a,pfB0114a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0115,pfB0115,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0115a,pfB0115a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0116,pfB0116,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0116a,pfB0116a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0117,pfB0117,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0117a,pfB0117a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0118,pfB0118,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0119,pfB0119,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0120,pfB0120,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0120a,pfB0120a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0121,pfB0121,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.同住人,P.pfB0122,pfB0122,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.吸奶嘴,P.pfB09,pfB09,1,0,,孩子與家庭基本資料 > 吸奶嘴,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.吸奶嘴,P.pfB09a,pfB09a,1,0,,孩子與家庭基本資料 > 吸奶嘴,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.吸奶嘴,P.pfB09b,pfB09b,1,0,,孩子與家庭基本資料 > 吸奶嘴,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子出生狀況,P.postc0101,postc0101,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子出生狀況,P.postc0102,postc0102,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子出生狀況,P.postc0103,postc0103,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -79,6 +201,8 @@ P-00-24,P.孩子出生狀況,P.postn0513,postn0513,1,0,,健康問卷資料 > 孩
 P-00-24,P.孩子出生狀況,P.postn06,postn06,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子出生狀況,P.postn06a,postn06a,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子出生狀況,P.postn07,postn07,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.孩子從出生到現在居住最久之地區,P.city1,city1,1,0,,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.孩子從出生到現在居住最久之地區,P.city2,city2,1,0,,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子現在的健康狀況,P.health01,health01,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子現在的健康狀況,P.health0101,health0101,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.孩子現在的健康狀況,P.health0102,health0102,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -177,6 +301,8 @@ P-00-24,P.家園關係,P.carehome02,carehome02,1,0,,托育狀況調查問卷資�
 P-00-24,P.家園關係,P.carehome03,carehome03,1,0,,托育狀況調查問卷資料 > 家園關係,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.家園關係,P.carehome04,carehome04,1,0,,托育狀況調查問卷資料 > 家園關係,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.家園關係,P.carehome05,carehome05,1,0,,托育狀況調查問卷資料 > 家園關係,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.家庭型態,P.pfA14,pfA14,1,0,,父母基本資料 > 家庭型態,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.家庭收入,P.pfB12,pfB12,1,0,,孩子與家庭基本資料 > 家庭收入,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.懷孕期間狀況,P.prec01,prec01,1,0,,健康問卷資料 > 懷孕期間狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.懷孕期間狀況,P.prec02,prec02,1,0,,健康問卷資料 > 懷孕期間狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.懷孕期間狀況,P.prec03,prec03,1,0,,健康問卷資料 > 懷孕期間狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -203,9 +329,122 @@ P-00-24,P.托育狀況,P.schoolhour,schoolhour,1,0,,托育狀況調查問卷資�
 P-00-24,P.托育狀況,P.teacherinfo,teacherinfo,1,0,,托育狀況調查問卷資料 > 托育狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.托育狀況,P.trelationship01,trelationship01,1,0,,托育狀況調查問卷資料 > 托育狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.托育狀況,P.trelationship02,trelationship02,1,0,,托育狀況調查問卷資料 > 托育狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.撫慰物,P.pfB11,pfB11,1,0,,孩子與家庭基本資料 > 撫慰物,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.撫慰物,P.pfB11a,pfB11a,1,0,,孩子與家庭基本資料 > 撫慰物,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.撫慰物,P.pfB11b,pfB11b,1,0,,孩子與家庭基本資料 > 撫慰物,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.是否跳答主要照顧者問卷,P.pfB13,pfB13,1,0,,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.是否跳答主要照顧者問卷,P.pfB14,pfB14,1,0,,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.照顧者更換,P.pfB04,pfB04,1,0,,孩子與家庭基本資料 > 照顧者更換,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.照顧者更換,P.pfB04a,pfB04a,1,0,,孩子與家庭基本資料 > 照顧者更換,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母出生年,P.pfA0101,pfA0101,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母出生年,P.pfA0101a,pfA0101a,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母出生年,P.pfA0102,pfA0102,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母出生年,P.pfA0102a,pfA0102a,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA03,pfA03,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0301,pfA0301,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0301a,pfA0301a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0302,pfA0302,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0302a,pfA0302a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA03a,pfA03a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA04,pfA04,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0401,pfA0401,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0401a,pfA0401a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0402,pfA0402,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA0402a,pfA0402a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母原國籍,P.pfA04a,pfA04a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母吸菸喝酒習慣,P.pfA08,pfA08,1,0,,父母基本資料 > 父母吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母吸菸喝酒習慣,P.pfA09,pfA09,1,0,,父母基本資料 > 父母吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母婚姻狀況,P.pfA05,pfA05,1,0,,父母基本資料 > 父母婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作時數,P.pfA12,pfA12,1,0,,父母基本資料 > 父母工作時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作時數,P.pfA13,pfA13,1,0,,父母基本資料 > 父母工作時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作狀況,P.pfA1001,pfA1001,1,0,,父母基本資料 > 父母工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作狀況,P.pfA1002,pfA1002,1,0,,父母基本資料 > 父母工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作類型,P.pfA1101,pfA1101,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作類型,P.pfA1101a,pfA1101a,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作類型,P.pfA1102,pfA1102,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母工作類型,P.pfA1102a,pfA1102a,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母常說語言,P.pfA1501,pfA1501,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母常說語言,P.pfA1501a,pfA1501a,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母常說語言,P.pfA1502,pfA1502,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母常說語言,P.pfA1502a,pfA1502a,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母憂鬱,P.pfA1601,pfA1601,1,0,,父母基本資料 > 父母憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母憂鬱,P.pfA1602,pfA1602,1,0,,父母基本資料 > 父母憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母教育程度,P.pfA0201,pfA0201,1,0,,父母基本資料 > 父母教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母教育程度,P.pfA0202,pfA0202,1,0,,父母基本資料 > 父母教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA030401,pfA030401,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA030402,pfA030402,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA030403,pfA030403,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA030404,pfA030404,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA040401,pfA040401,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA040402,pfA040402,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA040403,pfA040403,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者中文能力,P.pfA040404,pfA040404,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者在台居住時間,P.pfA0303,pfA0303,1,0,,父母基本資料 > 父母非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.父母非本國籍者在台居住時間,P.pfA0403,pfA0403,1,0,,父母基本資料 > 父母非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.白天主要照顧者(含時間地點),P.pfB0501a,pfB0501a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.白天主要照顧者(含時間地點),P.pfB0501b,pfB0501b,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.白天主要照顧者(含時間地點),P.pfB0502,pfB0502,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.白天主要照顧者(含時間地點),P.pfB0502a,pfB0502a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.白天主要照顧者(含時間地點),P.pfB050a,pfB050a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.白天主要照顧者(含時間地點),P.pfB050b,pfB050b,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.白天主要照顧者(含時間地點),P.pfB05a,pfB05a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.白天主要照顧者(含時間地點),P.pfB05b,pfB05b,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.社會期許題,P.sd1,sd1,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.社會期許題,P.sd2,sd2,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.社會期許題,P.sd3,sd3,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.社會期許題,P.sd4,sd4,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.社會期許題,P.sd5,sd5,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA06,pfA06,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060101,pfA060101,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060102,pfA060102,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060103,pfA060103,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060104,pfA060104,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060105,pfA060105,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060106,pfA060106,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060107,pfA060107,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060108,pfA060108,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育兒的相關津貼／補助,P.pfA060108a,pfA060108a,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA07,pfA07,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA0701,pfA0701,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070101,pfA070101,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070101a,pfA070101a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070101b,pfA070101b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070102a,pfA070102a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070102b,pfA070102b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070103a,pfA070103a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070103b,pfA070103b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070104a,pfA070104a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070104b,pfA070104b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA0702,pfA0702,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070201,pfA070201,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070201a,pfA070201a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070201b,pfA070201b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070202a,pfA070202a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070202b,pfA070202b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070203a,pfA070203a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070203b,pfA070203b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070204a,pfA070204a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.育嬰假,P.pfA070204b,pfA070204b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB07,pfB07,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0701,pfB0701,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0702,pfB0702,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0703,pfB0703,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0704,pfB0704,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0705,pfB0705,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0706,pfB0706,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0707,pfB0707,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0708,pfB0708,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡床,P.pfB0708a,pfB0708a,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB06,pfB06,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0601,pfB0601,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0602,pfB0602,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0603,pfB0603,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0604,pfB0604,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0605,pfB0605,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0606,pfB0606,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0607,pfB0607,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0608,pfB0608,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.與誰同睡房間,P.pfB0608a,pfB0608a,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.親子互動時間,P.fameviC1301,fameviC1301,1,0,,家庭問卷資料 > 學習環境 > 親子互動時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.親子互動時間,P.fameviC1302,fameviC1302,1,0,,家庭問卷資料 > 學習環境 > 親子互動時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.親職參與_身分跳題,P.fammar07,fammar07,1,0,,家庭問卷資料 > 親職參與 > 親職參與_身分跳題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -217,6 +456,32 @@ P-00-24,P.角色及責任,P.careduty05,careduty05,1,0,,托育狀況調查問卷�
 P-00-24,P.角色及責任,P.careduty06,careduty06,1,0,,托育狀況調查問卷資料 > 角色及責任,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.角色及責任,P.careduty07,careduty07,1,0,,托育狀況調查問卷資料 > 角色及責任,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.角色及責任,P.careduty08,careduty08,1,0,,托育狀況調查問卷資料 > 角色及責任,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB0801,pfB0801,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB0801a,pfB0801a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB0802,pfB0802,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB0802a,pfB0802a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080301,pfB080301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080302,pfB080302,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08030201,pfB08030201,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080303,pfB080303,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08030301,pfB08030301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080304,pfB080304,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08030401,pfB08030401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080305,pfB080305,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08030501,pfB08030501,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080305a,pfB080305a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080306,pfB080306,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080307,pfB080307,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080401,pfB080401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080402,pfB080402,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08040201,pfB08040201,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080403,pfB080403,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08040301,pfB08040301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080404,pfB080404,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB08040401,pfB08040401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080404a,pfB080404a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080405,pfB080405,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.語言接觸,P.pfB080406,pfB080406,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.身體動作環境,P.fameviC16,fameviC16,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.身體動作環境,P.fameviC1601,fameviC1601,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.身體動作環境,P.fameviC1602,fameviC1602,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -238,6 +503,144 @@ P-00-24,P.重視孩子的特質,P.famedu1402,famedu1402,1,0,,家庭問卷資料 
 P-00-24,P.重視孩子的特質,P.famedu1402a,famedu1402a,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.重視孩子的特質,P.famedu1403,famedu1403,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-00-24,P.重視孩子的特質,P.famedu1403a,famedu1403a,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.開始托人照顧時間,P.pfB03,pfB03,1,0,,孩子與家庭基本資料 > 開始托人照顧時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.開始托人照顧時間,P.pfB03a,pfB03a,1,0,,孩子與家庭基本資料 > 開始托人照顧時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-00-24,P.開始托人照顧時間,P.pfB03b,pfB03b,1,0,,孩子與家庭基本資料 > 開始托人照顧時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB02,pfB02,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201,pfB0201,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201a,pfB0201a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201b,pfB0201b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201c,pfB0201c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201d,pfB0201d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201e,pfB0201e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201f,pfB0201f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201g,pfB0201g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201h,pfB0201h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201i,pfB0201i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0201n,pfB0201n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202,pfB0202,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202a,pfB0202a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202b,pfB0202b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202c,pfB0202c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202d,pfB0202d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202e,pfB0202e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202f,pfB0202f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202g,pfB0202g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202h,pfB0202h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202i,pfB0202i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0202n,pfB0202n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203,pfB0203,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203a,pfB0203a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203b,pfB0203b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203c,pfB0203c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203d,pfB0203d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203e,pfB0203e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203f,pfB0203f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203g,pfB0203g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203h,pfB0203h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203i,pfB0203i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0203n,pfB0203n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204,pfB0204,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204a,pfB0204a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204b,pfB0204b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204c,pfB0204c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204d,pfB0204d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204e,pfB0204e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204f,pfB0204f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204g,pfB0204g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204h,pfB0204h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204i,pfB0204i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.兄弟姊妹,P.pfB0204n,pfB0204n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者保母專業課程,P.pfC10,pfC10,1,0,,其他主要照顧者基本資料 > 其他主要照顧者保母專業課程,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者出生年,P.pfC01,pfC01,1,0,,其他主要照顧者基本資料 > 其他主要照顧者出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者原國籍,P.pfC03,pfC03,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者原國籍,P.pfC0301,pfC0301,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者原國籍,P.pfC0301a,pfC0301a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者原國籍,P.pfC0302,pfC0302,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者原國籍,P.pfC0302a,pfC0302a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者原國籍,P.pfC03a,pfC03a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者吸菸喝酒習慣,P.pfC05,pfC05,1,0,,其他主要照顧者基本資料 > 其他主要照顧者吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者吸菸喝酒習慣,P.pfC06,pfC06,1,0,,其他主要照顧者基本資料 > 其他主要照顧者吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者婚姻狀況,P.pfC04,pfC04,1,0,,其他主要照顧者基本資料 > 其他主要照顧者婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者婚姻狀況,P.pfC04a,pfC04a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者工作狀況,P.pfC0701,pfC0701,1,0,,其他主要照顧者基本資料 > 其他主要照顧者工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者工作狀況,P.pfC0702,pfC0702,1,0,,其他主要照顧者基本資料 > 其他主要照顧者工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者常說語言,P.pfC09,pfC09,1,0,,其他主要照顧者基本資料 > 其他主要照顧者常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者常說語言,P.pfC09a,pfC09a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者憂鬱,P.pfC1101,pfC1101,1,0,,其他主要照顧者基本資料 > 其他主要照顧者憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者憂鬱,P.pfC1102,pfC1102,1,0,,其他主要照顧者基本資料 > 其他主要照顧者憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者教育程度,P.pfC0201,pfC0201,1,0,,其他主要照顧者基本資料 > 其他主要照顧者教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者教育程度,P.pfC0202,pfC0202,1,0,,其他主要照顧者基本資料 > 其他主要照顧者教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者照顧幼兒時數,P.pfC08,pfC08,1,0,,其他主要照顧者基本資料 > 其他主要照顧者照顧幼兒時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者非本國籍者中文能力,P.pfC030401,pfC030401,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者非本國籍者中文能力,P.pfC030402,pfC030402,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者非本國籍者中文能力,P.pfC030403,pfC030403,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者非本國籍者中文能力,P.pfC030404,pfC030404,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.其他主要照顧者非本國籍者在台居住時間,P.pfC0303,pfC0303,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.包尿布,P.pfB10,pfB10,1,0,,孩子與家庭基本資料 > 包尿布,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.包尿布,P.pfB10a,pfB10a,1,0,,孩子與家庭基本資料 > 包尿布,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.包尿布,P.pfB10b,pfB10b,1,0,,孩子與家庭基本資料 > 包尿布,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0101,pfB0101,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0101n,pfB0101n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0102,pfB0102,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0102n,pfB0102n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0103,pfB0103,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0103n,pfB0103n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0104,pfB0104,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0104n,pfB0104n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0105,pfB0105,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0105n,pfB0105n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0106,pfB0106,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0106n,pfB0106n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0107,pfB0107,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0107n,pfB0107n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0108,pfB0108,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0108n,pfB0108n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0109,pfB0109,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0109n,pfB0109n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0110,pfB0110,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0110n,pfB0110n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0111,pfB0111,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0111n,pfB0111n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0112,pfB0112,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0112a,pfB0112a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0112n,pfB0112n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0112na,pfB0112na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0113,pfB0113,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0113a,pfB0113a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0113n,pfB0113n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0113na,pfB0113na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0114,pfB0114,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0114a,pfB0114a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0114n,pfB0114n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0114na,pfB0114na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0115,pfB0115,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0115a,pfB0115a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0115n,pfB0115n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0115na,pfB0115na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0116,pfB0116,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0116a,pfB0116a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0116n,pfB0116n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0116na,pfB0116na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0117,pfB0117,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0117a,pfB0117a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0117n,pfB0117n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0117na,pfB0117na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0118,pfB0118,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0118n,pfB0118n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0119,pfB0119,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0119n,pfB0119n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0120,pfB0120,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0120a,pfB0120a,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0120n,pfB0120n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0120na,pfB0120na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0121,pfB0121,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0121n,pfB0121n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0122,pfB0122,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.同住人,P.pfB0122n,pfB0122n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.吸奶嘴,P.pfB09,pfB09,1,0,,孩子與家庭基本資料 > 吸奶嘴,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.吸奶嘴,P.pfB09a,pfB09a,1,0,,孩子與家庭基本資料 > 吸奶嘴,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.吸奶嘴,P.pfB09b,pfB09b,1,0,,孩子與家庭基本資料 > 吸奶嘴,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子出生狀況,P.postn01,postn01,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子出生狀況,P.postn02,postn02,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子出生狀況,P.postn02a,postn02a,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -261,6 +664,8 @@ P-36-72,P.孩子出生狀況,P.postn0513,postn0513,1,0,,健康問卷資料 > 孩
 P-36-72,P.孩子出生狀況,P.postn06,postn06,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子出生狀況,P.postn06a,postn06a,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子出生狀況,P.postn07,postn07,1,0,,健康問卷資料 > 孩子出生狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.孩子從出生到現在居住最久之地區,P.city1,city1,1,0,,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.孩子從出生到現在居住最久之地區,P.city2,city2,1,0,,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子現在的健康狀況,P.health01,health01,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子現在的健康狀況,P.health0101,health0101,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.孩子現在的健康狀況,P.health0102,health0102,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -401,6 +806,8 @@ P-36-72,P.家園關係,P.carehome02,carehome02,1,0,,托育狀況調查問卷資�
 P-36-72,P.家園關係,P.carehome03,carehome03,1,0,,托育狀況調查問卷資料 > 家園關係,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.家園關係,P.carehome04,carehome04,1,0,,托育狀況調查問卷資料 > 家園關係,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.家園關係,P.carehome05,carehome05,1,0,,托育狀況調查問卷資料 > 家園關係,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.家庭型態,P.pfA14,pfA14,1,0,,父母基本資料 > 家庭型態,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.家庭收入,P.pfB12,pfB12,1,0,,孩子與家庭基本資料 > 家庭收入,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.懷孕期間狀況,P.prec01,prec01,1,0,,健康問卷資料 > 懷孕期間狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.懷孕期間狀況,P.prec02,prec02,1,0,,健康問卷資料 > 懷孕期間狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.懷孕期間狀況,P.prec03,prec03,1,0,,健康問卷資料 > 懷孕期間狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -423,8 +830,149 @@ P-36-72,P.托育狀況,P.teacherinfo,teacherinfo,1,0,,托育狀況調查問卷�
 P-36-72,P.托育狀況,P.trelationship01,trelationship01,1,0,,托育狀況調查問卷資料 > 托育狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.托育狀況,P.trelationship02,trelationship02,1,0,,托育狀況調查問卷資料 > 托育狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.托育狀況,P.trelationship03,trelationship03,1,0,,托育狀況調查問卷資料 > 托育狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.撫慰物,P.pfB11,pfB11,1,0,,孩子與家庭基本資料 > 撫慰物,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.撫慰物,P.pfB11a,pfB11a,1,0,,孩子與家庭基本資料 > 撫慰物,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.撫慰物,P.pfB11b,pfB11b,1,0,,孩子與家庭基本資料 > 撫慰物,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.是否跳答主要照顧者問卷,P.pfB13,pfB13,1,0,,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.照顧者更換,P.pfB04,pfB04,1,0,,孩子與家庭基本資料 > 照顧者更換,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.照顧者更換,P.pfB04a,pfB04a,1,0,,孩子與家庭基本資料 > 照顧者更換,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母出生年,P.pfA0101,pfA0101,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母出生年,P.pfA0101a,pfA0101a,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母出生年,P.pfA0102,pfA0102,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母出生年,P.pfA0102a,pfA0102a,1,0,,父母基本資料 > 父母出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA03,pfA03,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0301,pfA0301,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0301a,pfA0301a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0302,pfA0302,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0302a,pfA0302a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA03a,pfA03a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA04,pfA04,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0401,pfA0401,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0401a,pfA0401a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0402,pfA0402,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA0402a,pfA0402a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母原國籍,P.pfA04a,pfA04a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母吸菸喝酒習慣,P.pfA08,pfA08,1,0,,父母基本資料 > 父母吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母吸菸喝酒習慣,P.pfA09,pfA09,1,0,,父母基本資料 > 父母吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母婚姻狀況,P.pfA05,pfA05,1,0,,父母基本資料 > 父母婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作時數,P.pfA12,pfA12,1,0,,父母基本資料 > 父母工作時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作時數,P.pfA13,pfA13,1,0,,父母基本資料 > 父母工作時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作狀況,P.pfA1001,pfA1001,1,0,,父母基本資料 > 父母工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作狀況,P.pfA1002,pfA1002,1,0,,父母基本資料 > 父母工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作類型,P.pfA1101,pfA1101,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作類型,P.pfA1101a,pfA1101a,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作類型,P.pfA1102,pfA1102,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母工作類型,P.pfA1102a,pfA1102a,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母常說語言,P.pfA1501,pfA1501,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母常說語言,P.pfA1501a,pfA1501a,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母常說語言,P.pfA1502,pfA1502,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母常說語言,P.pfA1502a,pfA1502a,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母憂鬱,P.pfA1601,pfA1601,1,0,,父母基本資料 > 父母憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母憂鬱,P.pfA1602,pfA1602,1,0,,父母基本資料 > 父母憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母教育程度,P.pfA0201,pfA0201,1,0,,父母基本資料 > 父母教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母教育程度,P.pfA0202,pfA0202,1,0,,父母基本資料 > 父母教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA030401,pfA030401,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA030402,pfA030402,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA030403,pfA030403,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA030404,pfA030404,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA040401,pfA040401,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA040402,pfA040402,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA040403,pfA040403,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者中文能力,P.pfA040404,pfA040404,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者在台居住時間,P.pfA0303,pfA0303,1,0,,父母基本資料 > 父母非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.父母非本國籍者在台居住時間,P.pfA0403,pfA0403,1,0,,父母基本資料 > 父母非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.白天主要照顧者(含時間地點),P.pfB0501a,pfB0501a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.白天主要照顧者(含時間地點),P.pfB0501b,pfB0501b,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.白天主要照顧者(含時間地點),P.pfB0502,pfB0502,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.白天主要照顧者(含時間地點),P.pfB0502a,pfB0502a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.白天主要照顧者(含時間地點),P.pfB050a,pfB050a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.白天主要照顧者(含時間地點),P.pfB050b,pfB050b,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.白天主要照顧者(含時間地點),P.pfB05a,pfB05a,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.白天主要照顧者(含時間地點),P.pfB05b,pfB05b,1,0,,孩子與家庭基本資料 > 白天主要照顧者(含時間地點),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.社會期許題,P.sd1,sd1,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.社會期許題,P.sd2,sd2,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.社會期許題,P.sd3,sd3,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.社會期許題,P.sd4,sd4,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.社會期許題,P.sd5,sd5,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA06,pfA06,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060101,pfA060101,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060102,pfA060102,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060103,pfA060103,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060104,pfA060104,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060105,pfA060105,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060106,pfA060106,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060107,pfA060107,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060108,pfA060108,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060108a,pfA060108a,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060108n,pfA060108n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060108na,pfA060108na,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060109n,pfA060109n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060110n,pfA060110n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060111n,pfA060111n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060112n,pfA060112n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060113n,pfA060113n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060114n,pfA060114n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfA060115n,pfA060115n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育兒的相關津貼／補助,P.pfa06n,pfA06n,1,0,,父母基本資料 > 育兒的相關津貼／補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA07,pfA07,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA0701,pfA0701,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070101,pfA070101,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070101a,pfA070101a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070101b,pfA070101b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070102a,pfA070102a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070102b,pfA070102b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070103a,pfA070103a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070103b,pfA070103b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070104a,pfA070104a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070104b,pfA070104b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA0702,pfA0702,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070201,pfA070201,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070201a,pfA070201a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070201b,pfA070201b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070202a,pfA070202a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070202b,pfA070202b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070203a,pfA070203a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070203b,pfA070203b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070204a,pfA070204a,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.育嬰假,P.pfA070204b,pfA070204b,1,0,,父母基本資料 > 育嬰假,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB07,pfB07,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0701,pfB0701,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0701n,pfB0701n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0702,pfB0702,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0702n,pfB0702n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0703,pfB0703,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0703n,pfB0703n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0704,pfB0704,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0704n,pfB0704n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0705,pfB0705,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0705n,pfB0705n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0706,pfB0706,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0706n,pfB0706n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0707,pfB0707,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0707n,pfB0707n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0708,pfB0708,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0708a,pfB0708a,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0708n,pfB0708n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡床,P.pfB0708na,pfB0708na,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB06,pfB06,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0601,pfB0601,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0601n,pfB0601n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0602,pfB0602,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0602n,pfB0602n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0603,pfB0603,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0603n,pfB0603n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0604,pfB0604,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0604n,pfB0604n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0605,pfB0605,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0605n,pfB0605n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0606,pfB0606,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0606n,pfB0606n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0607,pfB0607,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0607n,pfB0607n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0608,pfB0608,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0608a,pfB0608a,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0608n,pfB0608n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.與誰同睡房間,P.pfB0608na,pfB0608na,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.親子互動時間,P.fameviC1301,fameviC1301,1,0,,家庭問卷資料 > 學習環境 > 親子互動時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.親子互動時間,P.fameviC1302,fameviC1302,1,0,,家庭問卷資料 > 學習環境 > 親子互動時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.親職參與_身分跳題,P.fammar07,fammar07,1,0,,家庭問卷資料 > 親職參與 > 親職參與_身分跳題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -436,6 +984,32 @@ P-36-72,P.角色及責任,P.careduty05,careduty05,1,0,,托育狀況調查問卷�
 P-36-72,P.角色及責任,P.careduty06,careduty06,1,0,,托育狀況調查問卷資料 > 角色及責任,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.角色及責任,P.careduty07,careduty07,1,0,,托育狀況調查問卷資料 > 角色及責任,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.角色及責任,P.careduty08,careduty08,1,0,,托育狀況調查問卷資料 > 角色及責任,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB0801,pfB0801,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB0801a,pfB0801a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB0802,pfB0802,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB0802a,pfB0802a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080301,pfB080301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080302,pfB080302,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08030201,pfB08030201,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080303,pfB080303,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08030301,pfB08030301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080304,pfB080304,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08030401,pfB08030401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080305,pfB080305,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08030501,pfB08030501,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080305a,pfB080305a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080306,pfB080306,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080307,pfB080307,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080401,pfB080401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080402,pfB080402,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08040201,pfB08040201,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080403,pfB080403,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08040301,pfB08040301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080404,pfB080404,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB08040401,pfB08040401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080404a,pfB080404a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080405,pfB080405,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.語言接觸,P.pfB080406,pfB080406,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.身體動作環境,P.fameviC16,fameviC16,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.身體動作環境,P.fameviC1601,fameviC1601,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.身體動作環境,P.fameviC1602,fameviC1602,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -457,32 +1031,109 @@ P-36-72,P.重視孩子的特質,P.famedu1402,famedu1402,1,0,,家庭問卷資料 
 P-36-72,P.重視孩子的特質,P.famedu1402a,famedu1402a,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.重視孩子的特質,P.famedu1403,famedu1403,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-36-72,P.重視孩子的特質,P.famedu1403a,famedu1403a,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
-P-G1-G3,P.3C產品環境,P.famD14,famD14,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.famD14a,famD14a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1119,fameviD1119,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1120,fameviD1120,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1121,fameviD1121,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1122,fameviD1122,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1123,fameviD1123,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1124,fameviD1124,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1125,fameviD1125,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1126,fameviD1126,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1127,fameviD1127,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1128,fameviD1128,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1128a,fameviD1128a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1131,fameviD1131,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1132,fameviD1132,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1133,fameviD1133,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1134,fameviD1134,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1135,fameviD1135,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1136,fameviD1136,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1137,fameviD1137,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1138,fameviD1138,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1139,fameviD1139,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
-P-G1-G3,P.3C產品環境,P.fameviD1139a,fameviD1139a,1,1,,家庭問卷資料 > 學習環境 > 3C產品環境,P.家庭問卷資料_學習環境,cw_path,medium,crosswalk construct path leaf; item already in other group(s) in this form
+P-36-72,P.開始托人照顧時間,P.pfB03,pfB03,1,0,,孩子與家庭基本資料 > 開始托人照顧時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.開始托人照顧時間,P.pfB03a,pfB03a,1,0,,孩子與家庭基本資料 > 開始托人照顧時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-36-72,P.開始托人照顧時間,P.pfB03b,pfB03b,1,0,,孩子與家庭基本資料 > 開始托人照顧時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB02,pfB02,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201a,pfB0201a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201b,pfB0201b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201c,pfB0201c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201d,pfB0201d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201e,pfB0201e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201f,pfB0201f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201g,pfB0201g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201h,pfB0201h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201i,pfB0201i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0201n,pfB0201n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202a,pfB0202a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202b,pfB0202b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202c,pfB0202c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202d,pfB0202d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202e,pfB0202e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202f,pfB0202f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202g,pfB0202g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202h,pfB0202h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202i,pfB0202i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0202n,pfB0202n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203a,pfB0203a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203b,pfB0203b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203c,pfB0203c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203d,pfB0203d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203e,pfB0203e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203f,pfB0203f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203g,pfB0203g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203h,pfB0203h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203i,pfB0203i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0203n,pfB0203n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204a,pfB0204a,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204b,pfB0204b,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204c,pfB0204c,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204d,pfB0204d,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204e,pfB0204e,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204f,pfB0204f,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204g,pfB0204g,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204h,pfB0204h,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204i,pfB0204i,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.兄弟姊妹,P.pfB0204n,pfB0204n,1,0,,孩子與家庭基本資料 > 兄弟姊妹,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者出生年,P.pfC01,pfC01,1,0,,其他主要照顧者基本資料 > 其他主要照顧者出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者原國籍,P.pfC03,pfC03,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者原國籍,P.pfC0301,pfC0301,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者原國籍,P.pfC0301a,pfC0301a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者原國籍,P.pfC0302,pfC0302,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者原國籍,P.pfC0302a,pfC0302a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者原國籍,P.pfC03a,pfC03a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者吸菸喝酒習慣,P.pfC05,pfC05,1,0,,其他主要照顧者基本資料 > 其他主要照顧者吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者吸菸喝酒習慣,P.pfC06,pfC06,1,0,,其他主要照顧者基本資料 > 其他主要照顧者吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者婚姻狀況,P.pfC04,pfC04,1,0,,其他主要照顧者基本資料 > 其他主要照顧者婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者婚姻狀況,P.pfC04a,pfC04a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者工作狀況,P.pfC0701,pfC0701,1,0,,其他主要照顧者基本資料 > 其他主要照顧者工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者工作狀況,P.pfC0702,pfC0702,1,0,,其他主要照顧者基本資料 > 其他主要照顧者工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者常說語言,P.pfC09,pfC09,1,0,,其他主要照顧者基本資料 > 其他主要照顧者常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者常說語言,P.pfC09a,pfC09a,1,0,,其他主要照顧者基本資料 > 其他主要照顧者常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者憂鬱,P.pfC1101,pfC1101,1,0,,其他主要照顧者基本資料 > 其他主要照顧者憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者憂鬱,P.pfC1102,pfC1102,1,0,,其他主要照顧者基本資料 > 其他主要照顧者憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者教育程度,P.pfC0201,pfC0201,1,0,,其他主要照顧者基本資料 > 其他主要照顧者教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者教育程度,P.pfC0202,pfC0202,1,0,,其他主要照顧者基本資料 > 其他主要照顧者教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者照顧幼兒時數,P.pfC08,pfC08,1,0,,其他主要照顧者基本資料 > 其他主要照顧者照顧幼兒時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者非本國籍者中文能力,P.pfC030401,pfC030401,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者非本國籍者中文能力,P.pfC030402,pfC030402,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者非本國籍者中文能力,P.pfC030403,pfC030403,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者非本國籍者中文能力,P.pfC030404,pfC030404,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.其他主要照顧者非本國籍者在台居住時間,P.pfC0303,pfC0303,1,0,,其他主要照顧者基本資料 > 其他主要照顧者非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0101n,pfB0101n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0102n,pfB0102n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0103n,pfB0103n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0104n,pfB0104n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0105n,pfB0105n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0106n,pfB0106n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0107n,pfB0107n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0108n,pfB0108n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0109n,pfB0109n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0110n,pfB0110n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0111n,pfB0111n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0112n,pfB0112n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0112na,pfB0112na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0113n,pfB0113n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0113na,pfB0113na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0114n,pfB0114n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0114na,pfB0114na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0115n,pfB0115n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0115na,pfB0115na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0116n,pfB0116n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0116na,pfB0116na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0117n,pfB0117n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0117na,pfB0117na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0118n,pfB0118n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0119n,pfB0119n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0120n,pfB0120n,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.同住人,P.pfB0120na,pfB0120na,1,0,,孩子與家庭基本資料 > 同住人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子就學的狀況,P.pfD01,pfD01,1,0,,孩子與家庭基本資料 > 孩子就學的狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子就學的狀況,P.pfD02,pfD02,1,0,,孩子與家庭基本資料 > 孩子就學的狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子就學的狀況,P.pfD03,pfD03,1,0,,孩子與家庭基本資料 > 孩子就學的狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子就學的狀況,P.pfD04,pfD04,1,0,,孩子與家庭基本資料 > 孩子就學的狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子就學的狀況,P.pfD04a,pfD04a,1,0,,孩子與家庭基本資料 > 孩子就學的狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子從出生到現在居住最久之地區,P.city1,city1,1,0,,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子從出生到現在居住最久之地區,P.city2,city2,1,0,,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子現在的健康狀況,P.health04,health04,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子現在的健康狀況,P.health04a,health04a,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子現在的健康狀況,P.health05,health05,1,0,,健康問卷資料 > 孩子現在的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -534,6 +1185,13 @@ P-G1-G3,P.孩子的生長發育情形,P.weight,weight,1,0,,健康問卷資料 > 
 P-G1-G3,P.孩子的生長發育情形,P.weightd,weightd,1,0,,健康問卷資料 > 孩子的生長發育情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子的生長發育情形,P.weightm,weightm,1,0,,健康問卷資料 > 孩子的生長發育情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子的生長發育情形,P.weighty,weighty,1,0,,健康問卷資料 > 孩子的生長發育情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05,pfD05,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05a,pfD05a,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05b,pfD05b,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05c,pfD05c,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05d,pfD05d,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05e,pfD05e,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.孩子的相關補助,P.pfD05f,pfD05f,1,0,,父母基本資料 > 孩子的相關補助,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子的睡眠狀況,P.sleep02a,sleep02a,1,0,,健康問卷資料 > 孩子的睡眠狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子的睡眠狀況,P.sleep02b,sleep02b,1,0,,健康問卷資料 > 孩子的睡眠狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子的睡眠狀況,P.sleep02c,sleep02c,1,0,,健康問卷資料 > 孩子的睡眠狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -563,6 +1221,16 @@ P-G1-G3,P.孩子過去12個月的健康狀況,P.med1203,med1203,1,0,,健康問�
 P-G1-G3,P.孩子過去12個月的健康狀況,P.med1204,med1204,1,0,,健康問卷資料 > 孩子過去12個月的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子過去12個月的健康狀況,P.med1205,med1205,1,0,,健康問卷資料 > 孩子過去12個月的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.孩子過去12個月的健康狀況,P.med1205a,med1205a,1,0,,健康問卷資料 > 孩子過去12個月的健康狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.學習情形,P.motiv01,motiv01,1,0,,發展問卷資料 > 學習情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.學習情形,P.motiv02,motiv02,1,0,,發展問卷資料 > 學習情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.學習情形,P.motiv03,motiv03,1,0,,發展問卷資料 > 學習情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.學習情形,P.motiv04,motiv04,1,0,,發展問卷資料 > 學習情形,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.家庭型態,P.pfA14,pfA14,1,0,,父母基本資料 > 家庭型態,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.家庭收入,P.pfB12,pfB12,1,0,,孩子與家庭基本資料 > 家庭收入,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.家教或陪讀,P.fameviD1197,fameviD1197,1,0,,家庭問卷資料 > 學習環境 > 家教或陪讀,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.家教或陪讀,P.fameviD1197a,fameviD1197a,1,0,,家庭問卷資料 > 學習環境 > 家教或陪讀,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.家校合作及父母參與,P.school01,school01,1,0,,家庭問卷資料 > 學習環境 > 家校合作及父母參與,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.家校合作及父母參與,P.school02,school02,1,0,,家庭問卷資料 > 學習環境 > 家校合作及父母參與,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.家校合作及父母參與,P.school03,school03,1,0,,家庭問卷資料 > 學習環境 > 家校合作及父母參與,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.家校合作及父母參與,P.school04,school04,1,0,,家庭問卷資料 > 學習環境 > 家校合作及父母參與,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.家校合作及父母參與,P.school05,school05,1,0,,家庭問卷資料 > 學習環境 > 家校合作及父母參與,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -570,6 +1238,17 @@ P-G1-G3,P.家校合作及父母參與,P.school06,school06,1,0,,家庭問卷資�
 P-G1-G3,P.家長對孩子國小的課程與作業的態度,P.fameviD1214,fameviD1214,1,0,,家庭問卷資料 > 學習環境 > 家長對孩子國小的課程與作業的態度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.家長對孩子國小的課程與作業的態度,P.fameviD1215,fameviD1215,1,0,,家庭問卷資料 > 學習環境 > 家長對孩子國小的課程與作業的態度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.家長對孩子國小的課程與作業的態度,P.fameviD1216,fameviD1216,1,0,,家庭問卷資料 > 學習環境 > 家長對孩子國小的課程與作業的態度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1187,fameviD1187,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1188,fameviD1188,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1189,fameviD1189,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1190,fameviD1190,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1191,fameviD1191,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1192,fameviD1192,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1193,fameviD1193,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1194,fameviD1194,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1195,fameviD1195,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1196,fameviD1196,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.寒暑假的安排,P.fameviD1196a,fameviD1196a,1,0,,家庭問卷資料 > 學習環境 > 寒暑假的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.放學後的安排,P.fameviD1175,fameviD1175,1,0,,家庭問卷資料 > 學習環境 > 放學後的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.放學後的安排,P.fameviD1175a,fameviD1175a,1,0,,家庭問卷資料 > 學習環境 > 放學後的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.放學後的安排,P.fameviD1176,fameviD1176,1,0,,家庭問卷資料 > 學習環境 > 放學後的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -590,9 +1269,97 @@ P-G1-G3,P.放學後的安排,P.fameviD1185,fameviD1185,1,0,,家庭問卷資料 >
 P-G1-G3,P.放學後的安排,P.fameviD1185a,fameviD1185a,1,0,,家庭問卷資料 > 學習環境 > 放學後的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.放學後的安排,P.fameviD1186,fameviD1186,1,0,,家庭問卷資料 > 學習環境 > 放學後的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.放學後的安排,P.fameviD1186a,fameviD1186a,1,0,,家庭問卷資料 > 學習環境 > 放學後的安排,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.是否跳答主要照顧者問卷,P.pfB13,pfB13,1,0,,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA03,pfA03,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0301,pfA0301,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0301a,pfA0301a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0302,pfA0302,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0302a,pfA0302a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA03a,pfA03a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA04,pfA04,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0401,pfA0401,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0401a,pfA0401a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0402,pfA0402,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA0402a,pfA0402a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母原國籍,P.pfA04a,pfA04a,1,0,,父母基本資料 > 父母原國籍,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母吸菸喝酒習慣,P.pfA08,pfA08,1,0,,父母基本資料 > 父母吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母吸菸喝酒習慣,P.pfA09,pfA09,1,0,,父母基本資料 > 父母吸菸喝酒習慣,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母婚姻狀況,P.pfA05,pfA05,1,0,,父母基本資料 > 父母婚姻狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作時數,P.pfA12,pfA12,1,0,,父母基本資料 > 父母工作時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作時數,P.pfA13,pfA13,1,0,,父母基本資料 > 父母工作時數,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作狀況,P.pfA1001,pfA1001,1,0,,父母基本資料 > 父母工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作狀況,P.pfA1002,pfA1002,1,0,,父母基本資料 > 父母工作狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作類型,P.pfA1101,pfA1101,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作類型,P.pfA1101a,pfA1101a,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作類型,P.pfA1102,pfA1102,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母工作類型,P.pfA1102a,pfA1102a,1,0,,父母基本資料 > 父母工作類型,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母常說語言,P.pfA1501,pfA1501,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母常說語言,P.pfA1501a,pfA1501a,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母常說語言,P.pfA1502,pfA1502,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母常說語言,P.pfA1502a,pfA1502a,1,0,,父母基本資料 > 父母常說語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母憂鬱,P.pfA1601,pfA1601,1,0,,父母基本資料 > 父母憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母憂鬱,P.pfA1602,pfA1602,1,0,,父母基本資料 > 父母憂鬱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母教育程度,P.pfA0201,pfA0201,1,0,,父母基本資料 > 父母教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母教育程度,P.pfA0202,pfA0202,1,0,,父母基本資料 > 父母教育程度,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA030401,pfA030401,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA030402,pfA030402,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA030403,pfA030403,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA030404,pfA030404,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA040401,pfA040401,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA040402,pfA040402,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA040403,pfA040403,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者中文能力,P.pfA040404,pfA040404,1,0,,父母基本資料 > 父母非本國籍者中文能力,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者在台居住時間,P.pfA0303,pfA0303,1,0,,父母基本資料 > 父母非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.父母非本國籍者在台居住時間,P.pfA0403,pfA0403,1,0,,父母基本資料 > 父母非本國籍者在台居住時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.社會期許題,P.sd1,sd1,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.社會期許題,P.sd2,sd2,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.社會期許題,P.sd3,sd3,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.社會期許題,P.sd4,sd4,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.社會期許題,P.sd5,sd5,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB07,pfB07,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0701n,pfB0701n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0702n,pfB0702n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0703n,pfB0703n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0704n,pfB0704n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0705n,pfB0705n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0706n,pfB0706n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0707n,pfB0707n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0708n,pfB0708n,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡床,P.pfB0708na,pfB0708na,1,0,,孩子與家庭基本資料 > 與誰同睡床,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB06,pfB06,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0601n,pfB0601n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0602n,pfB0602n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0603n,pfB0603n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0604n,pfB0604n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0605n,pfB0605n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0606n,pfB0606n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0607n,pfB0607n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0608n,pfB0608n,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.與誰同睡房間,P.pfB0608na,pfB0608na,1,0,,孩子與家庭基本資料 > 與誰同睡房間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.親子相處時間,P.fameviD1171,fameviD1171,1,0,,家庭問卷資料 > 學習環境 > 親子相處時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.親子相處時間,P.fameviD1172,fameviD1172,1,0,,家庭問卷資料 > 學習環境 > 親子相處時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.親子相處時間,P.fameviD1173,fameviD1173,1,0,,家庭問卷資料 > 學習環境 > 親子相處時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.親子相處時間,P.fameviD1173a,fameviD1173a,1,0,,家庭問卷資料 > 學習環境 > 親子相處時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.親子相處時間,P.fameviD1174,fameviD1174,1,0,,家庭問卷資料 > 學習環境 > 親子相處時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.親職參與_身分跳題,P.fammar07,fammar07,1,0,,家庭問卷資料 > 親職參與 > 親職參與_身分跳題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080301,pfB080301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080302,pfB080302,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08030201,pfB08030201,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080303,pfB080303,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08030301,pfB08030301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080304,pfB080304,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08030401,pfB08030401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080305,pfB080305,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08030501,pfB08030501,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080305a,pfB080305a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080401,pfB080401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080402,pfB080402,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08040201,pfB08040201,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080403,pfB080403,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08040301,pfB08040301,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080404,pfB080404,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB08040401,pfB08040401,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.語言接觸,P.pfB080404a,pfB080404a,1,0,,孩子與家庭基本資料 > 語言接觸,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1140,fameviD1140,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1142,fameviD1142,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1143,fameviD1143,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -602,7 +1369,21 @@ P-G1-G3,P.身體動作環境,P.fameviD1146,fameviD1146,1,0,,家庭問卷資料 >
 P-G1-G3,P.身體動作環境,P.fameviD1147,fameviD1147,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1148,fameviD1148,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1148a,fameviD1148a,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1151,fameviD1151,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1152,fameviD1152,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1153,fameviD1153,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1154,fameviD1154,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1155,fameviD1155,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1156,fameviD1156,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1157,fameviD1157,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1158,fameviD1158,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1159,fameviD1159,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1160,fameviD1160,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1161,fameviD1161,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1162,fameviD1162,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1163,fameviD1163,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1164,fameviD1164,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.身體動作環境,P.fameviD1165,fameviD1165,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1166,fameviD1166,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1166a,fameviD1166a,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.身體動作環境,P.fameviD1166b,fameviD1166b,1,0,,家庭問卷資料 > 學習環境 > 身體動作環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -637,7 +1418,9 @@ P-G1-G3,P.重視孩子的特質,P.famedu1403,famedu1403,1,0,,家庭問卷資料 
 P-G1-G3,P.重視孩子的特質,P.famedu1403a,famedu1403a,1,0,,家庭問卷資料 > 教養 > 重視孩子的特質,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.閱讀環境,P.fameviD01,fameviD01,1,0,,家庭問卷資料 > 學習環境 > 閱讀環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.閱讀環境,P.fameviD02,fameviD02,1,0,,家庭問卷資料 > 學習環境 > 閱讀環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.閱讀環境,P.fameviD03,fameviD03,1,0,,家庭問卷資料 > 學習環境 > 閱讀環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 P-G1-G3,P.閱讀環境,P.fameviD04,fameviD04,1,0,,家庭問卷資料 > 學習環境 > 閱讀環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+P-G1-G3,P.閱讀環境,P.fameviD05,fameviD05,1,0,,家庭問卷資料 > 學習環境 > 閱讀環境,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-G1-G3,T.12年國教課綱,T.T54004,T54004,1,0,,學校環境問卷 > 12年國教課綱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-G1-G3,T.12年國教課綱,T.T54005,T54005,1,0,,學校環境問卷 > 12年國教課綱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-G1-G3,T.12年國教課綱,T.T54006,T54006,1,0,,學校環境問卷 > 12年國教課綱,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -737,6 +1520,60 @@ T-G1-G3,T.語文學習,T.T2032,T2032,1,0,,學生學習情形問卷 > 語文學�
 T-G1-G3,T.語文學習,T.T2033,T2033,1,0,,學生學習情形問卷 > 語文學習,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-G1-G3,T.語文學習,T.T2034,T2034,1,0,,學生學習情形問卷 > 語文學習,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-G1-G3,T.語文學習,T.T2034a,T2034a,1,0,,學生學習情形問卷 > 語文學習,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.人,T.basic09,basic09,1,0,,教保人員基本資料 > 一起照顧孩子的有 > 人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.人,T.basic0901,basic0901,1,0,,教保人員基本資料 > 一起照顧孩子的有 > 人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.人,T.basic0902,basic0902,1,0,,教保人員基本資料 > 一起照顧孩子的有 > 人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.人,T.basic0903,basic0903,1,0,,教保人員基本資料 > 一起照顧孩子的有 > 人,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.個孩子,T.basic08,basic08,1,0,,教保人員基本資料 > 照顧 > 個孩子,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.個孩子,T.basic0801,basic0801,1,0,,教保人員基本資料 > 照顧 > 個孩子,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.個孩子,T.basic0802,basic0802,1,0,,教保人員基本資料 > 照顧 > 個孩子,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.個孩子,T.basic0803,basic0803,1,0,,教保人員基本資料 > 照顧 > 個孩子,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.填答問卷教保人員類別,T.tsorting,tsorting,1,0,,教保人員基本資料 > 填答問卷教保人員類別,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.孩子抵達時間,T.am,am,1,0,,孩子教保狀況 > 孩子抵達時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.孩子是否好照顧或好教,T.teach,teach,1,0,,孩子教保狀況 > 孩子是否好照顧或好教,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.孩子每天看電視時間長短,T.tv,tv,1,0,,孩子教保狀況 > 孩子每天看電視時間長短,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.孩子離開時間,T.pm,pm,1,0,,孩子教保狀況 > 孩子離開時間,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.工作經驗(年),T.basic01,basic01,1,0,,教保人員基本資料 > 工作經驗(年),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.工作經驗(年),T.basic0101,basic0101,1,0,,教保人員基本資料 > 工作經驗(年),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.工作經驗(年),T.basic0102,basic0102,1,0,,教保人員基本資料 > 工作經驗(年),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.工作經驗(年),T.basic0103,basic0103,1,0,,教保人員基本資料 > 工作經驗(年),,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.性別,T.tgender,tgender,1,0,,教保人員基本資料 > 性別,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.性別,T.tgender01,tgender01,1,0,,教保人員基本資料 > 性別,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.性別,T.tgender02,tgender02,1,0,,教保人員基本資料 > 性別,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.性別,T.tgender03,tgender03,1,0,,教保人員基本資料 > 性別,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0401,basic0401,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0402,basic0402,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0403,basic0403,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0404,basic0404,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0404a,basic0404a,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0405,basic0405,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0406,basic0406,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0407,basic0407,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0501,basic0501,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0502,basic0502,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0503,basic0503,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0504,basic0504,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0505,basic0505,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0506,basic0506,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0507,basic0507,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0508,basic0508,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0601,basic0601,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0602,basic0602,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0603,basic0603,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0604,basic0604,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0605,basic0605,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic0606,basic0606,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.教保人員資格,T.basic07,basic07,1,0,,教保人員基本資料 > 教保人員資格,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.機構性質與立案狀況,T.basic0301,basic0301,1,0,,教保人員基本資料 > 機構性質與立案狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.機構性質與立案狀況,T.basic030101,basic030101,1,0,,教保人員基本資料 > 機構性質與立案狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.機構性質與立案狀況,T.basic030102,basic030102,1,0,,教保人員基本資料 > 機構性質與立案狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.機構性質與立案狀況,T.basic0302,basic0302,1,0,,教保人員基本資料 > 機構性質與立案狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.機構性質與立案狀況,T.basic030201,basic030201,1,0,,教保人員基本資料 > 機構性質與立案狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.機構性質與立案狀況,T.basic030202,basic030202,1,0,,教保人員基本資料 > 機構性質與立案狀況,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.民國出生年,T.basic02,basic02,1,0,,教保人員基本資料 > 民國出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.民國出生年,T.basic0201,basic0201,1,0,,教保人員基本資料 > 民國出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.民國出生年,T.basic0202,basic0202,1,0,,教保人員基本資料 > 民國出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.民國出生年,T.basic0203,basic0203,1,0,,教保人員基本資料 > 民國出生年,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-presch,T.社會期許題,T.sd1,sd1,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-presch,T.社會期許題,T.sd2,sd2,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-presch,T.社會期許題,T.sd3,sd3,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
@@ -744,3 +1581,12 @@ T-presch,T.社會期許題,T.sd4,sd4,1,0,,受訪者資料 > 社會期許題,,cw_
 T-presch,T.社會期許題,T.sd5,sd5,1,0,,受訪者資料 > 社會期許題,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
 T-presch,T.系統提供,T.baby_dob,baby_dob,0,0,,樣本基本資料 > 系統提供,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form; item not in kit$items yet
 T-presch,T.系統提供,T.int_date,int_date,0,0,,樣本基本資料 > 系統提供,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form; item not in kit$items yet
+T-presch,T.與孩子溝通的語言,T.language01,language01,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language02,language02,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language03,language03,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language04,language04,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language05,language05,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language06,language06,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language06a,language06a,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language07,language07,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form
+T-presch,T.與孩子溝通的語言,T.language08,language08,1,0,,孩子教保狀況 > 與孩子溝通的語言,,cw_path,low,crosswalk construct path leaf; group not in kit (proposed ID); item has no group in this form

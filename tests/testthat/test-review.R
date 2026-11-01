@@ -1,0 +1,18 @@
+test_that("read_review returns only filled-in rows", {
+  skip_if_not_installed("openxlsx")
+  f <- withr::local_tempfile(fileext = ".xlsx")
+  wb <- openxlsx::createWorkbook()
+  openxlsx::addWorksheet(wb, "intro")
+  openxlsx::writeData(wb, "intro", data.frame(a = "x"))
+  openxlsx::addWorksheet(wb, "s1")
+  d <- data.frame(c("R0001", "R0002", "R0003"), c("x", "y", "z"), c("同意", NA, NA),
+                  c(NA, NA, "note"), c("a|1", "b|1", "c|1"), stringsAsFactors = FALSE)
+  names(d) <- c(REVIEW_ID_COL, "other", REVIEW_INPUT_COLS[1], REVIEW_COMMENT_COL, REVIEW_KEY_COL)
+  openxlsx::writeData(wb, "s1", d)
+  openxlsx::saveWorkbook(wb, f)
+  r <- read_review(f)
+  expect_equal(r$id, c("R0001", "R0003"))
+  expect_equal(r$key, c("a|1", "c|1"))
+  expect_equal(r$comment, c("", "note"))
+  expect_equal(r$sheet, c("s1", "s1"))
+})

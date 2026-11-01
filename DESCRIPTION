@@ -32,6 +32,7 @@ Imports:
     writexl (>= 1.4.0)
 Suggests:
     dplyr,
+    openxlsx,
     pkgload,
     quarto,
     testthat (>= 3.0.0),

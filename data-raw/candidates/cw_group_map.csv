@@ -1,7 +1,7 @@
 instrument,cw_path,label,depth,leaf,groupID,method,members,proposed_groupID,confidence,basis
-P,樣本基本資料,樣本基本資料,1,0,P.樣本基本資料,label_exact,,,high,crosswalk label matched by label_exact
-P,樣本基本資料 > 系統提供,系統提供,2,1,P.樣本基本資料,member_overlap,2/2,,medium,crosswalk label matched by member_overlap (members 2/2)
-P,父母基本資料,父母基本資料,1,0,P.父母基本資料,label_exact,,,high,crosswalk label matched by label_exact
+P,樣本基本資料,樣本基本資料,1,0,,none,,P.樣本基本資料,low,no kit group with this label
+P,樣本基本資料 > 系統提供,系統提供,2,1,,none,,P.系統提供,low,no kit group with this label
+P,父母基本資料,父母基本資料,1,0,,none,,P.父母基本資料,low,no kit group with this label
 P,父母基本資料 > 父母出生年,父母出生年,2,1,,none,,P.父母出生年,low,no kit group with this label
 P,父母基本資料 > 父母教育程度,父母教育程度,2,1,,none,,P.父母教育程度,low,no kit group with this label
 P,父母基本資料 > 父母原國籍,父母原國籍,2,1,,none,,P.父母原國籍,low,no kit group with this label
@@ -17,7 +17,7 @@ P,父母基本資料 > 父母工作時數,父母工作時數,2,1,,none,,P.父母
 P,父母基本資料 > 家庭型態,家庭型態,2,1,,none,,P.家庭型態,low,no kit group with this label
 P,父母基本資料 > 父母常說語言,父母常說語言,2,1,,none,,P.父母常說語言,low,no kit group with this label
 P,父母基本資料 > 父母憂鬱,父母憂鬱,2,1,,none,,P.父母憂鬱,low,no kit group with this label
-P,孩子與家庭基本資料,孩子與家庭基本資料,1,0,P.孩子與家庭基本資料,label_exact,,,high,crosswalk label matched by label_exact
+P,孩子與家庭基本資料,孩子與家庭基本資料,1,0,,none,,P.孩子與家庭基本資料,low,no kit group with this label
 P,孩子與家庭基本資料 > 同住人,同住人,2,1,,none,,P.同住人,low,no kit group with this label
 P,孩子與家庭基本資料 > 兄弟姊妹,兄弟姊妹,2,1,,none,,P.兄弟姊妹,low,no kit group with this label
 P,孩子與家庭基本資料 > 開始托人照顧時間,開始托人照顧時間,2,1,,none,,P.開始托人照顧時間,low,no kit group with this label
@@ -29,7 +29,7 @@ P,孩子與家庭基本資料 > 語言接觸,語言接觸,2,1,,none,,P.語言接
 P,孩子與家庭基本資料 > 吸奶嘴,吸奶嘴,2,1,,none,,P.吸奶嘴,low,no kit group with this label
 P,孩子與家庭基本資料 > 包尿布,包尿布,2,1,,none,,P.包尿布,low,no kit group with this label
 P,孩子與家庭基本資料 > 撫慰物,撫慰物,2,1,,none,,P.撫慰物,low,no kit group with this label
-P,孩子與家庭基本資料 > 家庭收入,家庭收入,2,1,P.樣本基本資料,member_overlap,1/1,,medium,crosswalk label matched by member_overlap (members 1/1)
+P,孩子與家庭基本資料 > 家庭收入,家庭收入,2,1,,none,,P.家庭收入,low,no kit group with this label
 P,其他主要照顧者基本資料,其他主要照顧者基本資料,1,0,,none,,P.其他主要照顧者基本資料,low,no kit group with this label
 P,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,是否跳答主要照顧者問卷,2,1,,none,,P.是否跳答主要照顧者問卷,low,no kit group with this label
 P,其他主要照顧者基本資料 > 其他主要照顧者出生年,其他主要照顧者出生年,2,1,,none,,P.其他主要照顧者出生年,low,no kit group with this label
@@ -86,7 +86,7 @@ P,發展問卷資料 > 身體動作 > 精細動作,精細動作,3,1,,none,,P.精
 P,發展問卷資料 > 身體動作 > 精細動作 > 捉握和手部操作,捉握和手部操作,4,1,,none,,P.捉握和手部操作,low,no kit group with this label
 P,發展問卷資料 > 身體動作 > 精細動作 > 視動整合,視動整合,4,1,P.視動整合,label_exact,16/16,,high,crosswalk label matched by label_exact (members 16/16)
 P,家庭問卷資料,家庭問卷資料,1,0,,none,,P.家庭問卷資料,low,no kit group with this label
-P,家庭問卷資料 > 學習環境,學習環境,2,0,P.家庭問卷資料_學習環境,label_joined,,,high,crosswalk label matched by label_joined
+P,家庭問卷資料 > 學習環境,學習環境,2,0,,none,,P.學習環境,low,no kit group with this label
 P,家庭問卷資料 > 學習環境 > HOME,HOME,3,0,P.Home,label_normalized,,,medium,crosswalk label matched by label_normalized
 P,家庭問卷資料 > 學習環境 > HOME > 環境多樣,環境多樣,4,1,P.環境多樣,label_exact,6/6,,high,crosswalk label matched by label_exact (members 6/6)
 P,家庭問卷資料 > 學習環境 > HOME > 學習材料,學習材料,4,1,P.學習材料,label_exact,9/9,,high,crosswalk label matched by label_exact (members 9/9)
@@ -98,7 +98,7 @@ P,家庭問卷資料 > 學習環境 > HOME > 條件式管教,條件式管教,4,1
 P,家庭問卷資料 > 學習環境 > 物理環境,物理環境,3,1,P.物理環境,label_exact,1/1,,high,crosswalk label matched by label_exact (members 1/1)
 P,家庭問卷資料 > 學習環境 > 親子接觸,親子接觸,3,1,P.親子眼神接觸,member_overlap,2/2,,medium,crosswalk label matched by member_overlap (members 2/2)
 P,家庭問卷資料 > 學習環境 > 圖書與共讀,圖書與共讀,3,1,P.圖書與共讀,label_exact,3/3,,high,crosswalk label matched by label_exact (members 3/3)
-P,家庭問卷資料 > 學習環境 > 3C產品環境,3C產品環境,3,1,P.3C產品環境,label_exact,,,high,crosswalk label matched by label_exact
+P,家庭問卷資料 > 學習環境 > 3C產品環境,3C產品環境,3,1,P.3C產品環境,label_exact,11/11,,high,crosswalk label matched by label_exact (members 11/11)
 P,家庭問卷資料 > 學習環境 > 親子互動時間,親子互動時間,3,1,,none,,P.親子互動時間,low,no kit group with this label
 P,家庭問卷資料 > 學習環境 > 家庭支持人力,家庭支持人力,3,1,P.家庭支持人力,label_exact,1/1,,high,crosswalk label matched by label_exact (members 1/1)
 P,家庭問卷資料 > 學習環境 > 學習才藝,學習才藝,3,1,P.才藝學習,member_overlap,35/35,,medium,crosswalk label matched by member_overlap (members 35/35)
@@ -120,7 +120,7 @@ P,家庭問卷資料 > 家庭生活狀況 > 偏心,偏心,3,1,P.偏心,label_exa
 P,家庭問卷資料 > 家庭生活狀況 > 手足關係,手足關係,3,1,P.手足關係,label_exact,2/2,,high,crosswalk label matched by label_exact (members 2/2)
 P,家庭問卷資料 > 親職參與,親職參與,2,0,,none,,P.親職參與,low,no kit group with this label
 P,家庭問卷資料 > 親職參與 > 親職參與_身分跳題,親職參與_身分跳題,3,1,,none,,P.親職參與_身分跳題,low,no kit group with this label
-P,家庭問卷資料 > 親職參與 > 父親親職參與,父親親職參與,3,1,P.父親親職參與,label_exact,,,high,crosswalk label matched by label_exact
+P,家庭問卷資料 > 親職參與 > 父親親職參與,父親親職參與,3,1,P.父親親職參與,label_exact,10/10,,high,crosswalk label matched by label_exact (members 10/10)
 P,家庭問卷資料 > 親職參與 > 母親親職參與,母親親職參與,3,1,P.母親親職參與,label_exact,,,high,crosswalk label matched by label_exact
 P,家庭問卷資料 > 親職參與 > 親友男_親職參與,親友男_親職參與,3,1,P.男方,member_overlap,7/7,,medium,crosswalk label matched by member_overlap (members 7/7)
 P,家庭問卷資料 > 親職參與 > 親友女_親職參與,親友女_親職參與,3,1,P.女方,member_overlap,7/7,,medium,crosswalk label matched by member_overlap (members 7/7)
@@ -128,7 +128,7 @@ P,托育狀況調查問卷資料,托育狀況調查問卷資料,1,0,,none,,P.托
 P,托育狀況調查問卷資料 > 托育狀況,托育狀況,2,1,,none,,P.托育狀況,low,no kit group with this label
 P,托育狀況調查問卷資料 > 家園關係,家園關係,2,1,,none,,P.家園關係,low,no kit group with this label
 P,托育狀況調查問卷資料 > 角色及責任,角色及責任,2,1,,none,,P.角色及責任,low,no kit group with this label
-P,健康問卷資料,健康問卷資料,1,0,P.健康問卷資料,label_exact,,,high,crosswalk label matched by label_exact
+P,健康問卷資料,健康問卷資料,1,0,,none,,P.健康問卷資料,low,no kit group with this label
 P,健康問卷資料 > 懷孕期間狀況,懷孕期間狀況,2,1,,none,,P.懷孕期間狀況,low,no kit group with this label
 P,健康問卷資料 > 孩子出生狀況,孩子出生狀況,2,1,,none,,P.孩子出生狀況,low,no kit group with this label
 P,健康問卷資料 > 孩子的生長發育情形,孩子的生長發育情形,2,1,,none,,P.孩子的生長發育情形,low,no kit group with this label
@@ -149,7 +149,7 @@ P,加權值 > 不等機率加權值,不等機率加權值,2,1,,none,,P.不等機
 T,樣本基本資料,樣本基本資料,1,0,,none,,T.樣本基本資料,low,no kit group with this label
 T,樣本基本資料 > 系統提供,系統提供,2,1,,none,,T.系統提供,low,no kit group with this label
 T,教保人員基本資料,教保人員基本資料,1,0,,none,,T.教保人員基本資料,low,no kit group with this label
-T,教保人員基本資料 > 填答問卷教保人員類別,填答問卷教保人員類別,2,1,T.幼兒基本資料,member_overlap,1/1,,medium,crosswalk label matched by member_overlap (members 1/1)
+T,教保人員基本資料 > 填答問卷教保人員類別,填答問卷教保人員類別,2,1,,none,,T.填答問卷教保人員類別,low,no kit group with this label
 T,教保人員基本資料 > 工作經驗(年),工作經驗(年),2,1,,none,,T.工作經驗(年),low,no kit group with this label
 T,教保人員基本資料 > 民國出生年,民國出生年,2,1,,none,,T.民國出生年,low,no kit group with this label
 T,教保人員基本資料 > 性別,性別,2,1,,none,,T.性別,low,no kit group with this label
@@ -171,10 +171,10 @@ T,教養(華人特質教養) > 恥感,恥感,2,1,T.恥感,label_exact,2/2,,high,
 T,教養(華人特質教養) > 成就期待,成就期待,2,1,T.成就期待,label_exact,2/2,,high,crosswalk label matched by label_exact (members 2/2)
 T,師生關係,師生關係,1,0,T.師生關係,label_exact,,,high,crosswalk label matched by label_exact
 T,師生關係 > 師生關係信念,師生關係信念,2,1,T.師生關係,member_overlap,6/6,,medium,crosswalk label matched by member_overlap (members 6/6)
-T,孩子教保狀況,孩子教保狀況,1,0,T.孩子教保狀況,label_exact,,,high,crosswalk label matched by label_exact
+T,孩子教保狀況,孩子教保狀況,1,0,,none,,T.孩子教保狀況,low,no kit group with this label
 T,孩子教保狀況 > 孩子抵達時間,孩子抵達時間,2,1,,none,,T.孩子抵達時間,low,no kit group with this label
 T,孩子教保狀況 > 孩子離開時間,孩子離開時間,2,1,,none,,T.孩子離開時間,low,no kit group with this label
-T,孩子教保狀況 > 與孩子溝通的語言,與孩子溝通的語言,2,1,T.孩子教保狀況,member_overlap,9/9,,medium,crosswalk label matched by member_overlap (members 9/9)
+T,孩子教保狀況 > 與孩子溝通的語言,與孩子溝通的語言,2,1,,none,,T.與孩子溝通的語言,low,no kit group with this label
 T,孩子教保狀況 > 孩子每天看電視時間長短,孩子每天看電視時間長短,2,1,,none,,T.孩子每天看電視時間長短,low,no kit group with this label
 T,孩子教保狀況 > 孩子是否好照顧或好教,孩子是否好照顧或好教,2,1,,none,,T.孩子是否好照顧或好教,low,no kit group with this label
 T,師生互動,師生互動,1,1,T.師生互動,label_exact,10/10,,high,crosswalk label matched by label_exact (members 10/10)
@@ -205,7 +205,7 @@ P,發展問卷資料 > 社會情緒 > 外化性行為問題,外化性行為問�
 P,發展問卷資料 > 社會情緒 > 外化性行為問題 > 違規行為,違規行為,4,1,P.違規行為,label_exact,3/3,,high,crosswalk label matched by label_exact (members 3/3)
 P,發展問卷資料 > 身體動作 > 精細動作 > 手部操作,手部操作,4,1,P.手部操作,label_exact,8/8,,high,crosswalk label matched by label_exact (members 8/8)
 P,發展問卷資料 > 身體動作 > 粗大動作 > 穩定度和肌力,穩定度和肌力,4,1,P.穩定度和肌力,label_exact,7/7,,high,crosswalk label matched by label_exact (members 7/7)
-P,發展問卷資料 > 學習情形,學習情形,2,1,P.發展問卷資料_學習情形,label_joined,4/4,,high,crosswalk label matched by label_joined (members 4/4)
+P,發展問卷資料 > 學習情形,學習情形,2,1,,none,,P.學習情形,low,no kit group with this label
 P,父母基本資料 > 孩子的相關補助,孩子的相關補助,2,1,,none,,P.孩子的相關補助,low,no kit group with this label
 P,孩子與家庭基本資料 > 孩子就學的狀況,孩子就學的狀況,2,1,,none,,P.孩子就學的狀況,low,no kit group with this label
 P,家庭問卷資料 > 學習環境 > HOME > 學習輔助,學習輔助,4,1,P.學習輔助,label_exact,3/3,,high,crosswalk label matched by label_exact (members 3/3)

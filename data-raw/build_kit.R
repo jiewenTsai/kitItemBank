@@ -106,6 +106,44 @@ kit$dataset_vars <- dataset_vars
 kit$group_members <- group_members
 kit$group_tree <- group_tree
 
+# 已決定事項（data-raw/kit_decisions/）----
+dec_dir <- "data-raw/kit_decisions"
+rd <- function(f) utils::read.csv(file.path(dec_dir, f), encoding = "UTF-8",
+                                  stringsAsFactors = FALSE, colClasses = "character")
+
+# D4 段落名稱不是題組：拿掉；題目的 block 空白時用段落名稱補上
+drop <- rd("drop_groups.csv")$groupID
+gm <- kit$group_members[kit$group_members$groupID %in% drop, ]
+sec <- tapply(kit$groups$label[match(gm$groupID, kit$groups$groupID)], gm$item_uid,
+              function(x) if (length(unique(x)) == 1L) x[1] else NA_character_)
+fill <- !nzchar(kit$items$block) & kit$items$item_uid %in% names(sec)
+kit$items$block[fill] <- unname(sec[kit$items$item_uid[fill]])
+kit$items$block[is.na(kit$items$block)] <- ""
+kit$groups <- kit$groups[!kit$groups$groupID %in% drop, ]
+kit$group_members <- kit$group_members[!kit$group_members$groupID %in% drop, ]
+kit$group_tree <- kit$group_tree[!kit$group_tree$groupID %in% drop, ]
+kit$group_tree$parentID[kit$group_tree$parentID %in% drop] <- ""
+
+# D1 合併題組：成員、樹改指向新題組，舊名稱留作別名
+mg <- rd("merge_groups.csv")
+for (i in seq_len(nrow(mg))) {
+  from <- mg$from[i]; to <- mg$to[i]
+  kit$aliases <- rbind(kit$aliases, conform_kit_table(data.frame(
+    alias = kit$groups$label[kit$groups$groupID == from], target_type = "group",
+    target_id = to, kind = "merged"), "aliases"))
+  kit$group_members$groupID[kit$group_members$groupID == from] <- to
+  kit$group_tree$groupID[kit$group_tree$groupID == from] <- to
+  kit$group_tree$parentID[kit$group_tree$parentID == from] <- to
+  kit$groups <- kit$groups[kit$groups$groupID != from, ]
+}
+kit$group_members <- kit$group_members[!duplicated(kit_key_str(kit$group_members,
+                                                               KIT_SCHEMA$group_members$key)), ]
+gt <- kit$group_tree[kit$group_tree$groupID != kit$group_tree$parentID, ]
+gt <- gt[!duplicated(kit_key_str(gt, KIT_SCHEMA$group_tree$key)), ]
+# 拿掉上層之後變成根的題組，如果還有別的上層就不要再留一列空白上層
+has_parent <- paste(gt$formID, gt$groupID)[nzchar(gt$parentID)]
+kit$group_tree <- gt[nzchar(gt$parentID) | !paste(gt$formID, gt$groupID) %in% has_parent, ]
+
 # 1.5–1.7：候選。只有 confidence = high 的進 kit；全部寫到 data-raw/candidates/ 給人確認 ----
 cand_dir <- "data-raw/candidates"
 dir.create(cand_dir, showWarnings = FALSE)
@@ -123,6 +161,26 @@ k <- match(paste(kit$dataset_vars$datasetID, kit$dataset_vars$varname),
            paste(cw$positions$datasetID, cw$positions$varname))
 kit$dataset_vars$position[!is.na(k)] <- cw$positions$position[k[!is.na(k)]]
 write_crosswalk_candidates(cw, cand_dir)
+
+# D2 對照表為準：調查有問、公開釋出檔沒有的變項也記下來，public = 0
+cl <- cw$cw_long[cw$cw_long$present == "O" & nzchar(cw$cw_long$datasetID), ]
+# 對照表和 .sav 的大小寫不一定一樣
+cl <- cl[!paste(cl$datasetID, tolower(cl$varname)) %in%
+           paste(kit$dataset_vars$datasetID, tolower(kit$dataset_vars$varname)) &
+           cl$datasetID %in% sav$datasets$datasetID, ]
+cl <- cl[!duplicated(paste(cl$datasetID, cl$varname)), ]
+uid <- kit$items$item_uid[match(tolower(paste0(cl$instrument, ".", cl$varname)),
+                                 tolower(kit$items$item_uid))]
+uid[is.na(uid)] <- ""
+latest <- tapply(as.integer(kit$item_versions$itemVer), kit$item_versions$item_uid, max)
+kit$dataset_vars <- rbind(kit$dataset_vars, conform_kit_table(data.frame(
+  datasetID = cl$datasetID, varname = cl$varname, item_uid = uid,
+  itemVer = ifelse(nzchar(uid), as.character(latest[uid]), ""),
+  kind = ifelse(nzchar(uid) & !kit$items$role[match(uid, kit$items$item_uid)] %in% "admin",
+                "item", "system"),
+  public = "0", stringsAsFactors = FALSE), "dataset_vars"))
+cat("\n== D2 crosswalk-only vars:", nrow(cl), "\n")
+print(cl[, c("datasetID", "varname")], row.names = FALSE)
 
 # 1.6 區塊狀態
 blocks <- propose_blocks(kit, usage_dir = all_dir, meta_dir = sav_dir,

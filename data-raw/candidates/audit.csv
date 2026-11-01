@@ -5,6 +5,7 @@ note,form_year_diff,datasets,M03M012-P|M03M018-P,同為 P-00-24、家長|2017，
 note,form_year_diff,datasets,M03M012-T|M03M018-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 沒有多的題；M03M018-T 多 5 題（受訪者資料 5）
 note,form_year_diff,datasets,M03M012-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 多 25 題（教保人員基本資料 25）；M36M048-T 沒有多的題
 note,form_year_diff,datasets,M03M018-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M018-T 多 30 題（教保人員基本資料 25、受訪者資料 5）；M36M048-T 沒有多的題
+note,form_year_diff,datasets,M03M036-P|M36M072-P,同為 P-36-72、家長|2019，沒有區塊狀態可以解釋：M03M036-P 多 1 題（托育狀況調查問卷資料 1）；M36M072-P 沒有多的題
 note,renamed_no_group,item_relations,P.caregiverf02|2|P.caregiverf02n|1,舊題 P.caregiverf02 在題組 P.女方、P.親友親職參與；新題 P.caregiverf02n 沒有任何題組
 note,renamed_no_group,item_relations,P.caregiverf04|2|P.caregiverf04n|1,舊題 P.caregiverf04 在題組 P.女方、P.親友親職參與；新題 P.caregiverf04n 沒有任何題組
 note,renamed_no_group,item_relations,P.caregiverm02|2|P.caregiverm02n|1,舊題 P.caregiverm02 在題組 P.親友親職參與、P.男方；新題 P.caregiverm02n 沒有任何題組
@@ -680,14 +681,12 @@ note,group_single_item,group_members,T-G7-G9|T.情緒調節,只有 1 題：T.T13
 note,group_single_item,group_members,T-G7-G9|T.調節力,只有 1 題：T.T11002
 note,group_single_item,group_members,T-G7-G9|T.退縮,只有 1 題：T.T13041
 note,group_single_item,group_members,T-G7-G9|T.違規行為,只有 1 題：T.T13051
-note,group_single_item,group_members,T-presch|T.幼兒基本資料,只有 1 題：T.tsorting
 note,group_empty,groups,P.HOME量表,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.動作能力總分,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.家庭互動,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.情緒能力,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.整體,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.理解,沒有任何題目，也沒有下層題組
-note,group_empty,groups,P.目標幼兒身分確認,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.社會能力,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.粗大動作總分,沒有任何題目，也沒有下層題組
 note,group_empty,groups,P.精細動作總分,沒有任何題目，也沒有下層題組
@@ -719,10 +718,8 @@ note,group_empty,groups,T.調節,沒有任何題目，也沒有下層題組
 note,group_empty,groups,T.識字+閱讀,沒有任何題目，也沒有下層題組
 note,group_nonleaf_member,group_members,C-G4-G6|C.學校環境,中間層題組直接掛了 18 題：C.Crelation01、C.Crelation02、C.Crelation03、C.Crelation04、C.Crelation05…（共 18）
 note,group_nonleaf_member,group_members,C-G4-G6|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
-note,group_nonleaf_member,group_members,C-G4-G6|C.家庭問卷資料_學習環境(家庭互動環境),中間層題組直接掛了 64 題：C.CfamA00、C.CfamA01、C.CfamA02、C.CfamA03、C.CfamA04…（共 64）
 note,group_nonleaf_member,group_members,C-G7-G9|C.學校環境,中間層題組直接掛了 34 題：C.Crelation01、C.Crelation02、C.Crelation03、C.Crelation04、C.Crelation05…（共 34）
 note,group_nonleaf_member,group_members,C-G7-G9|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
-note,group_nonleaf_member,group_members,C-G7-G9|C.家庭問卷資料_學習環境(家庭互動環境),中間層題組直接掛了 24 題：C.CfamA13、C.CfamA15、C.CfamA16、C.CfamA17、C.CfamA18…（共 24）
 note,text_simplified,item_versions,P.med0303|1,題目文字（label）有簡體字「髋」（應為「髖」）
 note,text_simplified,item_versions,T.T51010n|1,題目文字（label）有簡體字「内」（應為「內」）
 note,text_newline,item_versions,P.med0801|1,題目文字（label）裡有換行

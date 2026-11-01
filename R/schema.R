@@ -59,7 +59,9 @@ KIT_SCHEMA <- list(
     cols = list(datasetID = kcol(req = TRUE), varname = kcol(req = TRUE),
                 item_uid = kcol(), itemVer = kcol(),
                 kind = kcol(enum = "var_kind", req = TRUE),
-                position = kcol(), order = kcol("int")),
+                position = kcol(), order = kcol("int"),
+                # 0 = 調查有問、但公開釋出檔沒有（以對照表為準）；空白 = 有釋出
+                public = kcol(enum = "flag01")),
     key = c("datasetID", "varname"),
     fk = list(list(cols = "datasetID", table = "datasets"),
               list(cols = "item_uid", table = "items"),

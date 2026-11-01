@@ -1,9 +1,11 @@
 formID,groupID,parentID,label,cw_path,n_items,in_kit_groups,in_kit_tree,source,confidence,basis
-P-00-24,P.樣本基本資料,,樣本基本資料,樣本基本資料,10,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
-P-36-72,P.樣本基本資料,,樣本基本資料,樣本基本資料,12,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
-P-00-24,P.父母基本資料,,父母基本資料,父母基本資料,0,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+P-00-24,P.樣本基本資料,,樣本基本資料,樣本基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.系統提供,P.樣本基本資料,系統提供,樣本基本資料 > 系統提供,9,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.樣本基本資料,,樣本基本資料,樣本基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.系統提供,P.樣本基本資料,系統提供,樣本基本資料 > 系統提供,11,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.父母基本資料,,父母基本資料,父母基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.父母出生年,P.父母基本資料,父母出生年,父母基本資料 > 父母出生年,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.父母基本資料,,父母基本資料,父母基本資料,0,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+P-36-72,P.父母基本資料,,父母基本資料,父母基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.父母出生年,P.父母基本資料,父母出生年,父母基本資料 > 父母出生年,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.父母教育程度,P.父母基本資料,父母教育程度,父母基本資料 > 父母教育程度,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.父母教育程度,P.父母基本資料,父母教育程度,父母基本資料 > 父母教育程度,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -33,9 +35,9 @@ P-00-24,P.父母常說語言,P.父母基本資料,父母常說語言,父母基�
 P-36-72,P.父母常說語言,P.父母基本資料,父母常說語言,父母基本資料 > 父母常說語言,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.父母憂鬱,P.父母基本資料,父母憂鬱,父母基本資料 > 父母憂鬱,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.父母憂鬱,P.父母基本資料,父母憂鬱,父母基本資料 > 父母憂鬱,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.孩子與家庭基本資料,,孩子與家庭基本資料,孩子與家庭基本資料,0,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+P-00-24,P.孩子與家庭基本資料,,孩子與家庭基本資料,孩子與家庭基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.同住人,P.孩子與家庭基本資料,同住人,孩子與家庭基本資料 > 同住人,29,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.孩子與家庭基本資料,,孩子與家庭基本資料,孩子與家庭基本資料,0,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+P-36-72,P.孩子與家庭基本資料,,孩子與家庭基本資料,孩子與家庭基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.同住人,P.孩子與家庭基本資料,同住人,孩子與家庭基本資料 > 同住人,58,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.兄弟姊妹,P.孩子與家庭基本資料,兄弟姊妹,孩子與家庭基本資料 > 兄弟姊妹,41,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.兄弟姊妹,P.孩子與家庭基本資料,兄弟姊妹,孩子與家庭基本資料 > 兄弟姊妹,45,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -57,8 +59,8 @@ P-00-24,P.包尿布,P.孩子與家庭基本資料,包尿布,孩子與家庭基�
 P-36-72,P.包尿布,P.孩子與家庭基本資料,包尿布,孩子與家庭基本資料 > 包尿布,3,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.撫慰物,P.孩子與家庭基本資料,撫慰物,孩子與家庭基本資料 > 撫慰物,3,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.撫慰物,P.孩子與家庭基本資料,撫慰物,孩子與家庭基本資料 > 撫慰物,3,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.樣本基本資料,P.孩子與家庭基本資料,家庭收入,孩子與家庭基本資料 > 家庭收入,10,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.樣本基本資料,P.孩子與家庭基本資料,家庭收入,孩子與家庭基本資料 > 家庭收入,12,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-00-24,P.家庭收入,P.孩子與家庭基本資料,家庭收入,孩子與家庭基本資料 > 家庭收入,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.家庭收入,P.孩子與家庭基本資料,家庭收入,孩子與家庭基本資料 > 家庭收入,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.其他主要照顧者基本資料,,其他主要照顧者基本資料,其他主要照顧者基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.是否跳答主要照顧者問卷,P.其他主要照顧者基本資料,是否跳答主要照顧者問卷,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.其他主要照顧者基本資料,,其他主要照顧者基本資料,其他主要照顧者基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -158,12 +160,12 @@ P-36-72,P.精細動作,P.身體動作,精細動作,發展問卷資料 > 身體�
 P-36-72,P.捉握和手部操作,P.精細動作,捉握和手部操作,發展問卷資料 > 身體動作 > 精細動作 > 捉握和手部操作,8,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.視動整合,P.精細動作,視動整合,發展問卷資料 > 身體動作 > 精細動作 > 視動整合,8,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.家庭問卷資料,,家庭問卷資料,家庭問卷資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.家庭問卷資料_學習環境,P.家庭問卷資料,學習環境,家庭問卷資料 > 學習環境,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.Home,P.家庭問卷資料_學習環境,HOME,家庭問卷資料 > 學習環境 > HOME,0,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-00-24,P.學習環境,P.家庭問卷資料,學習環境,家庭問卷資料 > 學習環境,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.Home,P.學習環境,HOME,家庭問卷資料 > 學習環境 > HOME,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.環境多樣,P.Home,環境多樣,家庭問卷資料 > 學習環境 > HOME > 環境多樣,4,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-36-72,P.家庭問卷資料,,家庭問卷資料,家庭問卷資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.家庭問卷資料_學習環境,P.家庭問卷資料,學習環境,家庭問卷資料 > 學習環境,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.Home,P.家庭問卷資料_學習環境,HOME,家庭問卷資料 > 學習環境 > HOME,0,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-36-72,P.學習環境,P.家庭問卷資料,學習環境,家庭問卷資料 > 學習環境,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.Home,P.學習環境,HOME,家庭問卷資料 > 學習環境 > HOME,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.環境多樣,P.Home,環境多樣,家庭問卷資料 > 學習環境 > HOME > 環境多樣,4,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-00-24,P.學習材料,P.Home,學習材料,家庭問卷資料 > 學習環境 > HOME > 學習材料,5,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-36-72,P.學習材料,P.Home,學習材料,家庭問卷資料 > 學習環境 > HOME > 學習材料,5,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
@@ -171,27 +173,27 @@ P-00-24,P.學習刺激,P.Home,學習刺激,家庭問卷資料 > 學習環境 > H
 P-36-72,P.學習刺激,P.Home,學習刺激,家庭問卷資料 > 學習環境 > HOME > 學習刺激,5,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-00-24,P.語文環境與口語互動品質,P.語言,語文環境與口語互動品質,發展問卷資料 > 語言 > 語文環境與口語互動品質,7,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.語文環境與口語互動品質,P.語言,語文環境與口語互動品質,發展問卷資料 > 語言 > 語文環境與口語互動品質,7,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.語文環境與口語互動品質,P.家庭問卷資料_學習環境,語文環境與口語互動品質,家庭問卷資料 > 學習環境 > 語文環境與口語互動品質,7,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.語文環境與口語互動品質,P.家庭問卷資料_學習環境,語文環境與口語互動品質,家庭問卷資料 > 學習環境 > 語文環境與口語互動品質,7,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-00-24,P.語文環境與口語互動品質,P.學習環境,語文環境與口語互動品質,家庭問卷資料 > 學習環境 > 語文環境與口語互動品質,7,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.語文環境與口語互動品質,P.學習環境,語文環境與口語互動品質,家庭問卷資料 > 學習環境 > 語文環境與口語互動品質,7,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.父母回應,P.Home,父母回應,家庭問卷資料 > 學習環境 > HOME > 父母回應,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-36-72,P.父母回應,P.Home,父母回應,家庭問卷資料 > 學習環境 > HOME > 父母回應,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-00-24,P.條件式管教,P.Home,條件式管教,家庭問卷資料 > 學習環境 > HOME > 條件式管教,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-36-72,P.條件式管教,P.Home,條件式管教,家庭問卷資料 > 學習環境 > HOME > 條件式管教,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.物理環境,P.家庭問卷資料_學習環境,物理環境,家庭問卷資料 > 學習環境 > 物理環境,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.物理環境,P.家庭問卷資料_學習環境,物理環境,家庭問卷資料 > 學習環境 > 物理環境,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.親子眼神接觸,P.家庭問卷資料_學習環境,親子接觸,家庭問卷資料 > 學習環境 > 親子接觸,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.圖書與共讀,P.家庭問卷資料_學習環境,圖書與共讀,家庭問卷資料 > 學習環境 > 圖書與共讀,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.圖書與共讀,P.家庭問卷資料_學習環境,圖書與共讀,家庭問卷資料 > 學習環境 > 圖書與共讀,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.3C產品環境,P.家庭問卷資料_學習環境,3C產品環境,家庭問卷資料 > 學習環境 > 3C產品環境,11,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.3C產品環境,P.家庭問卷資料_學習環境,3C產品環境,家庭問卷資料 > 學習環境 > 3C產品環境,11,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.親子互動時間,P.家庭問卷資料_學習環境,親子互動時間,家庭問卷資料 > 學習環境 > 親子互動時間,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.親子互動時間,P.家庭問卷資料_學習環境,親子互動時間,家庭問卷資料 > 學習環境 > 親子互動時間,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.家庭支持人力,P.家庭問卷資料_學習環境,家庭支持人力,家庭問卷資料 > 學習環境 > 家庭支持人力,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.家庭支持人力,P.家庭問卷資料_學習環境,家庭支持人力,家庭問卷資料 > 學習環境 > 家庭支持人力,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.才藝學習,P.家庭問卷資料_學習環境,學習才藝,家庭問卷資料 > 學習環境 > 學習才藝,35,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-36-72,P.才藝學習,P.家庭問卷資料_學習環境,學習才藝,家庭問卷資料 > 學習環境 > 學習才藝,35,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-00-24,P.身體動作環境,P.家庭問卷資料_學習環境,身體動作環境,家庭問卷資料 > 學習環境 > 身體動作環境,15,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.身體動作環境,P.家庭問卷資料_學習環境,身體動作環境,家庭問卷資料 > 學習環境 > 身體動作環境,15,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.物理環境,P.學習環境,物理環境,家庭問卷資料 > 學習環境 > 物理環境,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.物理環境,P.學習環境,物理環境,家庭問卷資料 > 學習環境 > 物理環境,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.親子眼神接觸,P.學習環境,親子接觸,家庭問卷資料 > 學習環境 > 親子接觸,3,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.圖書與共讀,P.學習環境,圖書與共讀,家庭問卷資料 > 學習環境 > 圖書與共讀,3,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.圖書與共讀,P.學習環境,圖書與共讀,家庭問卷資料 > 學習環境 > 圖書與共讀,3,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.3C產品環境,P.學習環境,3C產品環境,家庭問卷資料 > 學習環境 > 3C產品環境,11,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.3C產品環境,P.學習環境,3C產品環境,家庭問卷資料 > 學習環境 > 3C產品環境,11,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.親子互動時間,P.學習環境,親子互動時間,家庭問卷資料 > 學習環境 > 親子互動時間,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.親子互動時間,P.學習環境,親子互動時間,家庭問卷資料 > 學習環境 > 親子互動時間,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.家庭支持人力,P.學習環境,家庭支持人力,家庭問卷資料 > 學習環境 > 家庭支持人力,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.家庭支持人力,P.學習環境,家庭支持人力,家庭問卷資料 > 學習環境 > 家庭支持人力,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.才藝學習,P.學習環境,學習才藝,家庭問卷資料 > 學習環境 > 學習才藝,35,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.才藝學習,P.學習環境,學習才藝,家庭問卷資料 > 學習環境 > 學習才藝,35,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-00-24,P.身體動作環境,P.學習環境,身體動作環境,家庭問卷資料 > 學習環境 > 身體動作環境,15,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-36-72,P.身體動作環境,P.學習環境,身體動作環境,家庭問卷資料 > 學習環境 > 身體動作環境,15,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.教養,P.家庭問卷資料,教養,家庭問卷資料 > 教養,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.華人特質教養,P.教養,華人特質教養,家庭問卷資料 > 教養 > 華人特質教養,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.管,P.華人特質教養,管,家庭問卷資料 > 教養 > 華人特質教養 > 管,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
@@ -242,9 +244,9 @@ P-00-24,P.家園關係,P.托育狀況調查問卷資料,家園關係,托育狀�
 P-36-72,P.家園關係,P.托育狀況調查問卷資料,家園關係,托育狀況調查問卷資料 > 家園關係,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.角色及責任,P.托育狀況調查問卷資料,角色及責任,托育狀況調查問卷資料 > 角色及責任,8,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.角色及責任,P.托育狀況調查問卷資料,角色及責任,托育狀況調查問卷資料 > 角色及責任,8,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.健康問卷資料,,健康問卷資料,健康問卷資料,0,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-00-24,P.健康問卷資料,,健康問卷資料,健康問卷資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.懷孕期間狀況,P.健康問卷資料,懷孕期間狀況,健康問卷資料 > 懷孕期間狀況,18,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.健康問卷資料,,健康問卷資料,健康問卷資料,0,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-36-72,P.健康問卷資料,,健康問卷資料,健康問卷資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.懷孕期間狀況,P.健康問卷資料,懷孕期間狀況,健康問卷資料 > 懷孕期間狀況,12,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.孩子出生狀況,P.健康問卷資料,孩子出生狀況,健康問卷資料 > 孩子出生狀況,26,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.孩子出生狀況,P.健康問卷資料,孩子出生狀況,健康問卷資料 > 孩子出生狀況,23,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -266,7 +268,7 @@ P-00-24,P.受訪者資料,,受訪者資料,受訪者資料,0,0,0,crosswalk,low,e
 P-00-24,P.社會期許題,P.受訪者資料,社會期許題,受訪者資料 > 社會期許題,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.受訪者資料,,受訪者資料,受訪者資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.社會期許題,P.受訪者資料,社會期許題,受訪者資料 > 社會期許題,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-00-24,P.網路設備,P.孩子與家庭基本資料,家中電腦相關設備,孩子與家庭基本資料 > 家中電腦相關設備,6,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-00-24,P.網路設備,P.孩子與家庭基本資料,家中電腦相關設備,孩子與家庭基本資料 > 家中電腦相關設備,6,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.加權值,,加權值,加權值,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-00-24,P.事後分層法加權值,P.加權值,事後分層法加權值,加權值 > 事後分層法加權值,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.加權值,,加權值,加權值,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -278,7 +280,7 @@ P-36-72,P.不等機率加權值,P.加權值,不等機率加權值,加權值 > �
 T-presch,T.樣本基本資料,,樣本基本資料,樣本基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.系統提供,T.樣本基本資料,系統提供,樣本基本資料 > 系統提供,10,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.教保人員基本資料,,教保人員基本資料,教保人員基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-T-presch,T.幼兒基本資料,T.教保人員基本資料,填答問卷教保人員類別,教保人員基本資料 > 填答問卷教保人員類別,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+T-presch,T.填答問卷教保人員類別,T.教保人員基本資料,填答問卷教保人員類別,教保人員基本資料 > 填答問卷教保人員類別,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.工作經驗(年),T.教保人員基本資料,工作經驗(年),教保人員基本資料 > 工作經驗(年),4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.民國出生年,T.教保人員基本資料,民國出生年,教保人員基本資料 > 民國出生年,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.性別,T.教保人員基本資料,性別,教保人員基本資料 > 性別,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -298,9 +300,10 @@ T-presch,T.管,T.教養(華人特質教養),管,教養(華人特質教養) > 管
 T-presch,T.恥感,T.教養(華人特質教養),恥感,教養(華人特質教養) > 恥感,2,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 T-presch,T.成就期待,T.教養(華人特質教養),成就期待,教養(華人特質教養) > 成就期待,2,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 T-presch,T.師生關係,,師生關係,師生關係,6,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
-T-presch,T.孩子教保狀況,,孩子教保狀況,孩子教保狀況,9,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+T-presch,T.孩子教保狀況,,孩子教保狀況,孩子教保狀況,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.孩子抵達時間,T.孩子教保狀況,孩子抵達時間,孩子教保狀況 > 孩子抵達時間,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.孩子離開時間,T.孩子教保狀況,孩子離開時間,孩子教保狀況 > 孩子離開時間,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+T-presch,T.與孩子溝通的語言,T.孩子教保狀況,與孩子溝通的語言,孩子教保狀況 > 與孩子溝通的語言,9,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.孩子每天看電視時間長短,T.孩子教保狀況,孩子每天看電視時間長短,孩子教保狀況 > 孩子每天看電視時間長短,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.孩子是否好照顧或好教,T.孩子教保狀況,孩子是否好照顧或好教,孩子教保狀況 > 孩子是否好照顧或好教,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.師生互動,,師生互動,師生互動,10,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
@@ -308,8 +311,9 @@ T-presch,T.家園關係,,家園關係,家園關係,5,1,1,crosswalk,high,crosswal
 T-presch,T.角色及責任,T.家園關係,角色及責任,家園關係 > 角色及責任,8,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 T-presch,T.受訪者資料,,受訪者資料,受訪者資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 T-presch,T.社會期許題,T.受訪者資料,社會期許題,受訪者資料 > 社會期許題,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.樣本基本資料,,樣本基本資料,樣本基本資料,12,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
-P-G1-G3,P.父母基本資料,,父母基本資料,父母基本資料,0,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+P-G1-G3,P.樣本基本資料,,樣本基本資料,樣本基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.系統提供,P.樣本基本資料,系統提供,樣本基本資料 > 系統提供,11,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.父母基本資料,,父母基本資料,父母基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.父母教育程度,P.父母基本資料,父母教育程度,父母基本資料 > 父母教育程度,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.父母原國籍,P.父母基本資料,父母原國籍,父母基本資料 > 父母原國籍,12,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.父母非本國籍者在台居住時間,P.父母基本資料,父母非本國籍者在台居住時間,父母基本資料 > 父母非本國籍者在台居住時間,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -322,13 +326,13 @@ P-G1-G3,P.父母工作時數,P.父母基本資料,父母工作時數,父母基�
 P-G1-G3,P.家庭型態,P.父母基本資料,家庭型態,父母基本資料 > 家庭型態,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.父母常說語言,P.父母基本資料,父母常說語言,父母基本資料 > 父母常說語言,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.父母憂鬱,P.父母基本資料,父母憂鬱,父母基本資料 > 父母憂鬱,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.孩子與家庭基本資料,,孩子與家庭基本資料,孩子與家庭基本資料,0,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
+P-G1-G3,P.孩子與家庭基本資料,,孩子與家庭基本資料,孩子與家庭基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.同住人,P.孩子與家庭基本資料,同住人,孩子與家庭基本資料 > 同住人,27,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.兄弟姊妹,P.孩子與家庭基本資料,兄弟姊妹,孩子與家庭基本資料 > 兄弟姊妹,41,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.與誰同睡房間,P.孩子與家庭基本資料,與誰同睡房間,孩子與家庭基本資料 > 與誰同睡房間,10,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.與誰同睡床,P.孩子與家庭基本資料,與誰同睡床,孩子與家庭基本資料 > 與誰同睡床,10,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.語言接觸,P.孩子與家庭基本資料,語言接觸,孩子與家庭基本資料 > 語言接觸,18,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.樣本基本資料,P.孩子與家庭基本資料,家庭收入,孩子與家庭基本資料 > 家庭收入,12,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-G1-G3,P.家庭收入,P.孩子與家庭基本資料,家庭收入,孩子與家庭基本資料 > 家庭收入,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.其他主要照顧者基本資料,,其他主要照顧者基本資料,其他主要照顧者基本資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.是否跳答主要照顧者問卷,P.其他主要照顧者基本資料,是否跳答主要照顧者問卷,其他主要照顧者基本資料 > 是否跳答主要照顧者問卷,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.其他主要照顧者出生年,P.其他主要照顧者基本資料,其他主要照顧者出生年,其他主要照顧者基本資料 > 其他主要照顧者出生年,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -369,14 +373,14 @@ P-G1-G3,P.精細動作,P.身體動作,精細動作,發展問卷資料 > 身體�
 P-G1-G3,P.視動整合,P.精細動作,視動整合,發展問卷資料 > 身體動作 > 精細動作 > 視動整合,9,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.捉握和手部操作,P.精細動作,捉握和手部操作,發展問卷資料 > 身體動作 > 精細動作 > 捉握和手部操作,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.家庭問卷資料,,家庭問卷資料,家庭問卷資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.家庭問卷資料_學習環境,P.家庭問卷資料,學習環境,家庭問卷資料 > 學習環境,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.語文環境與口語互動品質,P.家庭問卷資料_學習環境,語文環境與口語互動品質,家庭問卷資料 > 學習環境 > 語文環境與口語互動品質,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-G1-G3,P.Home,P.家庭問卷資料_學習環境,HOME,家庭問卷資料 > 學習環境 > HOME,0,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-G1-G3,P.學習環境,P.家庭問卷資料,學習環境,家庭問卷資料 > 學習環境,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.語文環境與口語互動品質,P.學習環境,語文環境與口語互動品質,家庭問卷資料 > 學習環境 > 語文環境與口語互動品質,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.Home,P.學習環境,HOME,家庭問卷資料 > 學習環境 > HOME,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.父母回應,P.Home,父母回應,家庭問卷資料 > 學習環境 > HOME > 父母回應,4,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-G1-G3,P.條件式管教,P.Home,條件式管教,家庭問卷資料 > 學習環境 > HOME > 條件式管教,2,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-G1-G3,P.物理環境,P.家庭問卷資料_學習環境,物理環境,家庭問卷資料 > 學習環境 > 物理環境,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-G1-G3,P.圖書與共讀,P.家庭問卷資料_學習環境,圖書與共讀,家庭問卷資料 > 學習環境 > 圖書與共讀,1,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-G1-G3,P.3C產品環境,P.家庭問卷資料_學習環境,3C產品環境,家庭問卷資料 > 學習環境 > 3C產品環境,47,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-G1-G3,P.物理環境,P.學習環境,物理環境,家庭問卷資料 > 學習環境 > 物理環境,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.圖書與共讀,P.學習環境,圖書與共讀,家庭問卷資料 > 學習環境 > 圖書與共讀,1,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.3C產品環境,P.學習環境,3C產品環境,家庭問卷資料 > 學習環境 > 3C產品環境,47,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.教養,P.家庭問卷資料,教養,家庭問卷資料 > 教養,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.華人特質教養,P.教養,華人特質教養,家庭問卷資料 > 教養 > 華人特質教養,0,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.管,P.華人特質教養,管,家庭問卷資料 > 教養 > 華人特質教養 > 管,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
@@ -396,7 +400,7 @@ P-G1-G3,P.家庭互動,P.家庭生活狀況,家庭互動,家庭問卷資料 > �
 P-G1-G3,P.手足關係,P.家庭互動,手足關係,家庭問卷資料 > 家庭生活狀況 > 家庭互動 > 手足關係,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-G1-G3,P.親職參與,P.家庭問卷資料,親職參與,家庭問卷資料 > 親職參與,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.親職參與_身分跳題,P.親職參與,親職參與_身分跳題,家庭問卷資料 > 親職參與 > 親職參與_身分跳題,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.健康問卷資料,,健康問卷資料,健康問卷資料,0,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-G1-G3,P.健康問卷資料,,健康問卷資料,健康問卷資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.孩子的生長發育情形,P.健康問卷資料,孩子的生長發育情形,健康問卷資料 > 孩子的生長發育情形,8,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.孩子現在的健康狀況,P.健康問卷資料,孩子現在的健康狀況,健康問卷資料 > 孩子現在的健康狀況,43,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-36-72,P.孩子過去六個月的健康狀況,P.健康問卷資料,孩子過去六個月的健康狀況,健康問卷資料 > 孩子過去六個月的健康狀況,12,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -405,7 +409,7 @@ P-G1-G3,P.孩子的睡眠狀況,P.健康問卷資料,孩子的睡眠狀況,健�
 P-G1-G3,P.孩子從出生到現在居住最久之地區,P.孩子與家庭基本資料,孩子從出生到現在居住最久之地區,孩子與家庭基本資料 > 孩子從出生到現在居住最久之地區,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.受訪者資料,,受訪者資料,受訪者資料,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.社會期許題,P.受訪者資料,社會期許題,受訪者資料 > 社會期許題,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-36-72,P.網路設備,P.孩子與家庭基本資料,家中電腦相關設備,孩子與家庭基本資料 > 家中電腦相關設備,6,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
+P-36-72,P.網路設備,P.孩子與家庭基本資料,家中電腦相關設備,孩子與家庭基本資料 > 家中電腦相關設備,6,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.加權值,,加權值,加權值,0,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.事後分層法加權值,P.加權值,事後分層法加權值,加權值 > 事後分層法加權值,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.多變項反覆加權值,P.加權值,多變項反覆加權值,加權值 > 多變項反覆加權值,1,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
@@ -431,22 +435,22 @@ P-G1-G3,P.外化性行為問題,P.社會情緒,外化性行為問題,發展問�
 P-G1-G3,P.違規行為,P.外化性行為問題,違規行為,發展問卷資料 > 社會情緒 > 外化性行為問題 > 違規行為,3,1,1,crosswalk,high,crosswalk path agrees with kit group_tree
 P-G1-G3,P.手部操作,P.精細動作,手部操作,發展問卷資料 > 身體動作 > 精細動作 > 手部操作,8,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.穩定度和肌力,P.粗大動作,穩定度和肌力,發展問卷資料 > 身體動作 > 粗大動作 > 穩定度和肌力,7,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.發展問卷資料_學習情形,P.發展問卷資料,學習情形,發展問卷資料 > 學習情形,4,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.學習情形,P.發展問卷資料,學習情形,發展問卷資料 > 學習情形,4,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.孩子的飲食狀況,P.健康問卷資料,孩子的飲食狀況,健康問卷資料 > 孩子的飲食狀況,6,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.孩子的相關補助,P.父母基本資料,孩子的相關補助,父母基本資料 > 孩子的相關補助,7,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.孩子就學的狀況,P.孩子與家庭基本資料,孩子就學的狀況,孩子與家庭基本資料 > 孩子就學的狀況,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.環境多樣,P.Home,環境多樣,家庭問卷資料 > 學習環境 > HOME > 環境多樣,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-G1-G3,P.學習材料,P.Home,學習材料,家庭問卷資料 > 學習環境 > HOME > 學習材料,4,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-G1-G3,P.學習輔助,P.Home,學習輔助,家庭問卷資料 > 學習環境 > HOME > 學習輔助,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-G1-G3,P.家校合作及父母參與,P.家庭問卷資料_學習環境,家校合作及父母參與,家庭問卷資料 > 學習環境 > 家校合作及父母參與,6,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.閱讀環境,P.家庭問卷資料_學習環境,閱讀環境,家庭問卷資料 > 學習環境 > 閱讀環境,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.身體動作環境,P.家庭問卷資料_學習環境,身體動作環境,家庭問卷資料 > 學習環境 > 身體動作環境,50,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.親子相處時間,P.家庭問卷資料_學習環境,親子相處時間,家庭問卷資料 > 學習環境 > 親子相處時間,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.放學後的安排,P.家庭問卷資料_學習環境,放學後的安排,家庭問卷資料 > 學習環境 > 放學後的安排,20,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.寒暑假的安排,P.家庭問卷資料_學習環境,寒暑假的安排,家庭問卷資料 > 學習環境 > 寒暑假的安排,11,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.家教或陪讀,P.家庭問卷資料_學習環境,家教或陪讀,家庭問卷資料 > 學習環境 > 家教或陪讀,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
-P-G1-G3,P.才藝學習,P.家庭問卷資料_學習環境,學習才藝,家庭問卷資料 > 學習環境 > 學習才藝,18,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
-P-G1-G3,P.家長對孩子國小的課程與作業的態度,P.家庭問卷資料_學習環境,家長對孩子國小的課程與作業的態度,家庭問卷資料 > 學習環境 > 家長對孩子國小的課程與作業的態度,3,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.家校合作及父母參與,P.學習環境,家校合作及父母參與,家庭問卷資料 > 學習環境 > 家校合作及父母參與,6,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.閱讀環境,P.學習環境,閱讀環境,家庭問卷資料 > 學習環境 > 閱讀環境,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.身體動作環境,P.學習環境,身體動作環境,家庭問卷資料 > 學習環境 > 身體動作環境,50,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.親子相處時間,P.學習環境,親子相處時間,家庭問卷資料 > 學習環境 > 親子相處時間,5,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.放學後的安排,P.學習環境,放學後的安排,家庭問卷資料 > 學習環境 > 放學後的安排,20,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.寒暑假的安排,P.學習環境,寒暑假的安排,家庭問卷資料 > 學習環境 > 寒暑假的安排,11,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.家教或陪讀,P.學習環境,家教或陪讀,家庭問卷資料 > 學習環境 > 家教或陪讀,2,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.才藝學習,P.學習環境,學習才藝,家庭問卷資料 > 學習環境 > 學習才藝,18,1,0,crosswalk,low,edge needs a new group (not in kit$groups)
+P-G1-G3,P.家長對孩子國小的課程與作業的態度,P.學習環境,家長對孩子國小的課程與作業的態度,家庭問卷資料 > 學習環境 > 家長對孩子國小的課程與作業的態度,3,0,0,crosswalk,low,edge needs a new group (not in kit$groups)
 P-G1-G3,P.家庭氣氛,P.家庭生活狀況,家庭互動-家庭氣氛,家庭問卷資料 > 家庭生活狀況 > 家庭互動-家庭氣氛,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-G1-G3,P.親子溝通,P.家庭生活狀況,家庭互動-親子溝通,家庭問卷資料 > 家庭生活狀況 > 家庭互動-親子溝通,3,1,0,crosswalk,medium,both groups exist in kit; edge only in crosswalk
 P-G1-G3,P.社會情緒相關題目,P.家庭生活狀況,社會情緒相關題目,家庭問卷資料 > 家庭生活狀況 > 社會情緒相關題目,12,0,0,crosswalk,low,edge needs a new group (not in kit$groups)

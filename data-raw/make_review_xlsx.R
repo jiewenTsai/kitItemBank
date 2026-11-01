@@ -150,6 +150,14 @@ dec <- data.frame(
   決定 = "", 意見 = "",
   check.names = FALSE, stringsAsFactors = FALSE)
 
+# 已經回覆過的決定直接帶入
+for (f in list.files("data-raw/kit_decisions", "^review_.*\\.csv$", full.names = TRUE)) {
+  done <- read.csv(f, encoding = "UTF-8", stringsAsFactors = FALSE, colClasses = "character")
+  k <- match(dec$編號, done$id)
+  dec$決定[!is.na(k)] <- done$decision[k[!is.na(k)]]
+  dec$意見[!is.na(k)] <- done$comment[k[!is.na(k)]]
+}
+
 # 說明 ----
 counts <- c(nrow(dec), nrow(rel), nrow(blk), nrow(mem), nrow(gmap), nrow(tree), nrow(miss), nrow(oth))
 sheets <- c("待決定", "題目關係", "區塊狀態", "題組成員", "題組對應", "題組上下層", "遺漏代碼",
