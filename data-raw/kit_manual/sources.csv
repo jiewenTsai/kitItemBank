@@ -1,0 +1,17 @@
+sourceID,kind,title,version,date,location
+US-M03W03,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第一波3月齡 資料使用說明,D00180-2,2024,Dropbox 06_datasets，M03W03 釋出包：資料使用說明.docx
+US-M03W06,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第二波6月齡 資料使用說明,D00181-2,2024,Dropbox 06_datasets，M03W06 釋出包：資料使用說明.docx
+US-M03W12,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第三波12月齡 資料使用說明,D00214-3,2024,Dropbox 06_datasets，M03W12 釋出包：資料使用說明.docx
+US-M03W18,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第四波18月齡 資料使用說明,D00215-2,2023,Dropbox 06_datasets，M03W18 釋出包：資料使用說明.docx
+US-M03W24,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第五波24月齡 資料使用說明,D00228-2,2024,Dropbox 06_datasets，M03W24 釋出包：資料使用說明.docx
+US-M03W36,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第六波36月齡 資料使用說明,D00229-2,2024,Dropbox 06_datasets，M03W36 釋出包：資料使用說明.docx
+US-M03W48,usage_doc,幼兒發展調查資料庫建置計畫：3月齡組第七波48月齡 資料使用說明,D00266-1,2025,Dropbox 06_datasets，M03W48 釋出包：資料使用說明.docx
+US-M36W36,usage_doc,幼兒發展調查資料庫建置計畫：36月齡組第一波36月齡 資料使用說明,D00168-4,2025,Dropbox 06_datasets，M36W36 釋出包：資料使用說明.docx
+US-M36W48,usage_doc,幼兒發展調查資料庫建置計畫：36月齡組第二波48月齡 資料使用說明,D00187-3,2025,Dropbox 06_datasets，M36W48 釋出包：資料使用說明.docx
+US-M36W60,usage_doc,幼兒發展調查資料庫建置計畫：36月齡組第三波60月齡 資料使用說明,D00223-4,2025,Dropbox 06_datasets，M36W60 釋出包：資料使用說明.docx
+US-M36W72,usage_doc,幼兒發展調查資料庫建置計畫：36月齡組第四波72月齡 資料使用說明,D00249-2,2025,Dropbox 06_datasets，M36W72 釋出包：資料使用說明.docx
+US-M36W84,usage_doc,幼兒發展調查資料庫建置計畫：36月齡組第五波84月齡（國小1年級） 資料使用說明,D00250-1,2025,Dropbox 06_datasets，M36W84 釋出包：資料使用說明.docx
+CW-M03W48,crosswalk,跨波次變項對照表（3月齡組 3–48 月齡；家長、教保）,M03W48,2025,Dropbox 06_datasets，M03W48 釋出包：跨波次變項對照表.xlsx
+CW-M36W84,crosswalk,跨波次變項對照表（36月齡組 36–84 月齡；家長、教師）,M36W84,2025,Dropbox 06_datasets，M36W84 釋出包：跨波次變項對照表.xlsx
+FORMREV-v0,pdf,題本修訂草稿（v0，請團隊確認）,v0,2026-11-01,kitItemBank_題本修訂草稿.md（專案資料夾）
+V02-BANK,v02_bank,kitItemBank 0.2 寬表題庫（parent、childcare_teacher、child_adolescent）,2026-09-12,2026-09-12,kitItmBank inst/extdata/bank/（0.2 分支）

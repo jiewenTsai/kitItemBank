@@ -1,0 +1,71 @@
+datasetID,adminID,file,instrument,formID,respondent,missingScheme,note
+M03M003-P,M03M003,data1,P,P-00-24,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M003-PK,M03M003,data2,P,P-00-24,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M003-S,M03M003,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M03M006-P,M03M006,data1,P,P-00-24,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M006-PK,M03M006,data2,P,P-00-24,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M006-S,M03M006,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M03M012-P,M03M012,data1,P,P-00-24,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M012-PK,M03M012,data2,P,P-00-24,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M012-S,M03M012,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M03M012-T,M03M012,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M03M018-P,M03M018,data1,P,P-00-24,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M018-PK,M03M018,data2,P,P-00-24,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M018-S,M03M018,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M03M018-T,M03M018,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M03M024-P,M03M024,data1,P,P-00-24,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M024-PK,M03M024,data2,P,P-00-24,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M024-S,M03M024,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M03M024-T,M03M024,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M03M036-P,M03M036,data1,P,P-36-72,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M036-PK,M03M036,data2,P,P-36-72,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M036-S,M03M036,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M03M036-T,M03M036,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M03M048-P,M03M048,data1,P,P-36-72,家長,2020,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M03M048-PK,M03M048,data2,P,P-36-72,親友,2020,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M03M048-S,M03M048,IRT,S,,,2020,家長發展題目之能力估計值（IRT）
+M03M048-T,M03M048,data3,T,T-presch,教保人員,2020,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M03M060-P,M03M060,v02,P,P-36-72,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M060小; scheme assumed
+M03M072-P,M03M072,v02,P,P-36-72,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M072小; scheme assumed
+M03M084G01-P,M03M084G01,v02,P,P-G1-G3,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M084小; scheme assumed
+M03M096G02-C,M03M096G02,v02,C,C-G1-G3,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 小2_小月齡; scheme assumed
+M03M096G02-P,M03M096G02,v02,P,P-G1-G3,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M096小; scheme assumed
+M03M108G03-C,M03M108G03,v02,C,C-G1-G3,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 小3_小月齡; scheme assumed
+M03M108G03-P,M03M108G03,v02,P,P-G1-G3,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M108小; scheme assumed
+M03M120G04-C,M03M120G04,v02,C,C-G4-G6,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 小4_小月齡; scheme assumed
+M03M120G04-P,M03M120G04,v02,P,P-G4-G6,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M120小; scheme assumed
+M36M036-P,M36M036,data1,P,P-36-72,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M36M036-PK,M36M036,data2,P,P-36-72,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M36M036-S,M36M036,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M36M036-T,M36M036,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M36M048-P,M36M048,data1,P,P-36-72,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M36M048-PK,M36M048,data2,P,P-36-72,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M36M048-S,M36M048,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M36M048-T,M36M048,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M36M060-P,M36M060,data1,P,P-36-72,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M36M060-PK,M36M060,data2,P,P-36-72,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M36M060-S,M36M060,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M36M060-T,M36M060,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M36M072-P,M36M072,data1,P,P-36-72,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M36M072-PK,M36M072,data2,P,P-36-72,親友,2016,親友或到宅保母；學前階段親友問卷與家長問卷同一版本，暫用家長題本
+M36M072-S,M36M072,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M36M072-T,M36M072,data3,T,T-presch,教保人員,2016,幼兒園教保人員、托嬰中心托育人員、居家托育人員（保母）三類，用 tsorting 區分
+M36M084G01-P,M36M084G01,data1,P,P-G1-G3,家長,2016,父母；父母長期不在家時由主要照顧者（親友或到宅保母）填答
+M36M084G01-S,M36M084G01,IRT,S,,,2016,家長發展題目之能力估計值（IRT）
+M36M084G01-T,M36M084G01,data2,T,T-G1-G3,教師,2016,國小教師
+M36M096G02-P,M36M096G02,v02,P,P-G1-G3,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M096大; scheme assumed
+M36M096G02-T,M36M096G02,v02,T,T-G1-G3,教師,2020,v02 placeholder: from 0.2 bank childcare_teacher column(s) M096; scheme assumed
+M36M108G03-P,M36M108G03,v02,P,P-G1-G3,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M108大; scheme assumed
+M36M108G03-T,M36M108G03,v02,T,T-G1-G3,教師,2020,v02 placeholder: from 0.2 bank childcare_teacher column(s) M108; scheme assumed
+M36M120G04-C,M36M120G04,v02,C,C-G4-G6,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 小4_大月齡; scheme assumed
+M36M120G04-P,M36M120G04,v02,P,P-G4-G6,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M120大; scheme assumed
+M36M120G04-T,M36M120G04,v02,T,T-G4-G6,教師,2020,v02 placeholder: from 0.2 bank childcare_teacher column(s) M120; scheme assumed
+M36M132G05-C,M36M132G05,v02,C,C-G4-G6,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 小5_大月齡; scheme assumed
+M36M132G05-P,M36M132G05,v02,P,P-G4-G6,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M132大; scheme assumed
+M36M132G05-T,M36M132G05,v02,T,T-G4-G6,教師,2020,v02 placeholder: from 0.2 bank childcare_teacher column(s) M132; scheme assumed
+M36M144G06-C,M36M144G06,v02,C,C-G4-G6,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 小6_大月齡; scheme assumed
+M36M144G06-P,M36M144G06,v02,P,P-G4-G6,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M144大; scheme assumed
+M36M144G06-T,M36M144G06,v02,T,T-G4-G6,教師,2020,v02 placeholder: from 0.2 bank childcare_teacher column(s) M144; scheme assumed
+M36M156G07-C,M36M156G07,v02,C,C-G7-G9,兒童,2020,v02 placeholder: from 0.2 bank child_adolescent column(s) 國1_大月齡; scheme assumed
+M36M156G07-P,M36M156G07,v02,P,P-G7-G9,家長,2020,v02 placeholder: from 0.2 bank parent column(s) M156大; scheme assumed
+M36M156G07-T,M36M156G07,v02,T,T-G7-G9,教師,2020,v02 placeholder: from 0.2 bank childcare_teacher column(s) M156大; scheme assumed

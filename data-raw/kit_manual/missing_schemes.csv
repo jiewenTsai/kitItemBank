@@ -1,0 +1,10 @@
+scheme,code,label,kind
+2016,7777,拒答,refused
+2016,8888,不知道,dont_know
+2016,9996,跳答或不適用,not_applicable
+2016,9999,遺漏值,missing
+2020,7777,拒答,refused
+2020,8888,不知道,dont_know
+2020,9995,不適用,not_applicable
+2020,9996,跳答,skipped
+2020,9999,遺漏值,missing
