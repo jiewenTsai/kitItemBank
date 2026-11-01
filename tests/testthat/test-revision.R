@@ -171,3 +171,18 @@ test_that("a planned admin outside the form's ages gets a note, not a block", {
   expect_identical(p$severity, "要注意")
   expect_match(p$message, "不在題本 P-G1-G3 適用的 84–108 月齡內")
 })
+
+test_that("放在哪一列之後 也可以寫變項名稱或小寫列號", {
+  k <- rv_kit()
+  f <- withr::local_tempfile(fileext = ".xlsx")
+  g <- withr::local_tempfile(fileext = ".xlsx")
+  revision_template(k, "P-G1-G3", f, version = "2026.2", date = "2026-11-02")
+  new <- data.frame(varname = c("qa", "qb"), label = c("新題 A", "新題 B"),
+                    values = c("1=有; 2=沒有", "1=有; 2=沒有"), after = c("q2", "q003"),
+                    block = "", note = "")
+  rv_fill(f, g, new = new)
+  r <- read_revision_xlsx(g)
+  expect_equal(r$new$after[1:2], c("Q002", "Q003"))
+  chk <- check_revision_xlsx(g, k, version = "2026.2")
+  expect_false(any(chk$severity == "擋下來" & grepl("列號", chk$message)))
+})

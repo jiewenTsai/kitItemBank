@@ -264,8 +264,8 @@ revision_template <- function(kit, formID, file, adminID = NULL, datasetID = NUL
   openxlsx::addStyle(wb, RV_SHEET_NEW, green, rows = seq_len(RV_NEW_ROWS) + 1L,
                      cols = seq_along(nw), gridExpand = TRUE)
   openxlsx::writeComment(wb, RV_SHEET_NEW, col = 1, row = 1, comment = openxlsx::createComment(
-    # 原文：紅字的欄一定要填。放在哪一列之後：寫「題目」表的列號，或「開頭」。
-    "\u7d05\u5b57\u7684\u6b04\u4e00\u5b9a\u8981\u586b\u3002\u653e\u5728\u54ea\u4e00\u5217\u4e4b\u5f8c\uff1a\u5beb\u300c\u984c\u76ee\u300d\u8868\u7684\u5217\u865f\uff0c\u6216\u300c\u958b\u982d\u300d\u3002", visible = FALSE))
+    # 原文：紅字的欄一定要填。放在哪一列之後：寫「題目」表的列號或變項名稱，或「開頭」。
+    "\u7d05\u5b57\u7684\u6b04\u4e00\u5b9a\u8981\u586b\u3002\u653e\u5728\u54ea\u4e00\u5217\u4e4b\u5f8c\uff1a\u5beb\u300c\u984c\u76ee\u300d\u8868\u7684\u5217\u865f\u6216\u8b8a\u9805\u540d\u7a31\uff0c\u6216\u300c\u958b\u982d\u300d\u3002", visible = FALSE))
   openxlsx::freezePane(wb, RV_SHEET_NEW, firstRow = TRUE)
   openxlsx::setColWidths(wb, RV_SHEET_NEW, seq_along(nw), c(16, 44, 30, 14, 20, 24))
   protect(RV_SHEET_NEW)
@@ -317,6 +317,19 @@ read_revision_xlsx <- function(path) {
   }
   if (RV_SHEET_Q %in% sheets) out$questions <- rename(rv_read_sheet(path, RV_SHEET_Q), RV_Q_COLS)
   if (RV_SHEET_NEW %in% sheets) out$new <- rename(rv_read_sheet(path, RV_SHEET_NEW), RV_NEW_COLS)
+  # 「放在哪一列之後」老師常寫變項名稱（weighty）或小寫列號（q012）：換成題目表的列號
+  q <- out$questions
+  nw <- out$new
+  if (!is.null(q) && !is.null(nw) && all(c("rowid", "varname") %in% names(q)) &&
+      "after" %in% names(nw) && nrow(nw)) {
+    a <- trimws(cb_blank(nw$after))
+    rid <- cb_blank(q$rowid)
+    by_id <- match(toupper(a), toupper(rid))
+    by_var <- match(tolower(a), tolower(cb_blank(q$varname)))
+    swap <- nzchar(a) & !a %in% rid & (!is.na(by_id) | !is.na(by_var))
+    a[swap] <- ifelse(!is.na(by_id[swap]), rid[by_id[swap]], rid[by_var[swap]])
+    out$new$after <- a
+  }
   out
 }
 
@@ -588,8 +601,8 @@ rv_check <- function(x, kit, version = codebook_bank_version()) {
       paste0(n_lab(i), "\uff1a\u8cc7\u6599\u6a94\u88e1\u5df2\u7d93\u6709\u8b8a\u9805 ", nw$varname[i], "\u3002"))
   i <- which(nzchar(nw$after) & !anchor_ok(nw$after))
   add(RV_BLOCK, RV_SHEET_NEW, nw$excel_row[i], RV_NEW_COLS[["after"]],
-      # 原文：：「 | 」不是「題目」表的列號；請寫像 Q012 的列號，或「 | 」。
-      paste0(n_lab(i), "\uff1a\u300c", nw$after[i], "\u300d\u4e0d\u662f\u300c\u984c\u76ee\u300d\u8868\u7684\u5217\u865f\uff1b\u8acb\u5beb\u50cf Q012 \u7684\u5217\u865f\uff0c\u6216\u300c", RV_TOP, "\u300d\u3002"))
+      # 原文：：「 | 」不是「題目」表的列號或變項名稱；請寫像 Q012 的列號、表裡的變項名稱，或「 | 」。
+      paste0(n_lab(i), "\uff1a\u300c", nw$after[i], "\u300d\u4e0d\u662f\u300c\u984c\u76ee\u300d\u8868\u7684\u5217\u865f\u6216\u8b8a\u9805\u540d\u7a31\uff1b\u8acb\u5beb\u50cf Q012 \u7684\u5217\u865f\u3001\u8868\u88e1\u7684\u8b8a\u9805\u540d\u7a31\uff0c\u6216\u300c", RV_TOP, "\u300d\u3002"))
   i <- which(nzchar(nw$label) & !nzchar(nw$values))
   add(RV_NOTE, RV_SHEET_NEW, nw$excel_row[i], RV_NEW_COLS[["values"]],
       # 原文：：沒有選項，會當成開放題。
