@@ -9,7 +9,7 @@ revision_patch(
   path,
   adminID,
   version = codebook_bank_version(),
-  date = Sys.Date()
+  date = kit_today()
 )
 }
 \arguments{

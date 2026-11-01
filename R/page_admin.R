@@ -283,7 +283,7 @@ page_admin_server <- function(id, kit, goto, request) {
       d <- current_ds()
       ds <- cb()$datasets
       resp <- ds$respondent_label[ds$datasetID == d]
-      day <- format(Sys.Date(), "%Y%m%d")
+      day <- format(kit_today(), "%Y%m%d")
       cls <- kitDesign::kit_btn_class("secondary")
       shiny::tagList(
         shiny::div(

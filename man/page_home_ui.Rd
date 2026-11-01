@@ -2,7 +2,7 @@
 % Please edit documentation in R/page_home.R
 \name{page_home_ui}
 \alias{page_home_ui}
-\title{The home page (我的工作): UI}
+\title{The home page (待辦事項): UI}
 \usage{
 page_home_ui(id)
 }
@@ -13,5 +13,5 @@ page_home_ui(id)
 UI.
 }
 \description{
-The home page (我的工作): UI
+The home page (待辦事項): UI
 }

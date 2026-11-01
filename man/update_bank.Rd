@@ -4,7 +4,7 @@
 \alias{update_bank}
 \title{Replace the built-in item bank with an edited Excel file (for maintainers)}
 \usage{
-update_bank(path, domain, pkg_dir = ".", version = format(Sys.Date()))
+update_bank(path, domain, pkg_dir = ".", version = format(kit_today()))
 }
 \arguments{
 \item{path}{The edited bank (\code{.xlsx}), as downloaded from the app.}

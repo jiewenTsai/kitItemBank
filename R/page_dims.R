@@ -151,6 +151,7 @@ page_dims_server <- function(id, store, goto, request) {
         # 原文：「 | 」：
         shiny::h4(paste0("\u300c", dims_label(bank(), d), "\u300d\uff1a", dims_count_text(row))),
         dims_alias_line(bank(), d),
+        concept_info_ui(kit_builtin(), dims_group_id(store$domain(), d)),
         if (length(kids)) dims_children_line(bank(), kids, ns("child_dim")) else shiny::tagList(
           shiny::p(
             class = "kit-hint",
@@ -163,7 +164,8 @@ page_dims_server <- function(id, store, goto, request) {
         ),
         kitDesign::kit_details_row(shiny::uiOutput(ns("overlap_ui"))),
         # 題組沿革（kit 的 group_lineage；這一頁其他部分讀 0.2 形狀的題庫）
-        group_lineage_ui(kit_builtin(), dims_label(bank(), d)),
+        group_lineage_ui(kit_builtin(), dims_group_id(store$domain(), d)),
+        dim_item_wave_ui(bank(), d),
         # 原文：各波次信度
         shiny::h4("\u5404\u6ce2\u6b21\u4fe1\u5ea6"),
         shiny::uiOutput(ns("rel_ui")),
@@ -381,7 +383,7 @@ page_dims_server <- function(id, store, goto, request) {
       who <- if (is.null(rd$scope)) "" else paste0("_", gsub("[\\/:*?\"<>|[:space:]]+", "_", rd$dims[[1]]$dimNameRaw))
       # 原文：構面報告_
       base <- paste0("\u69cb\u9762\u5831\u544a_", dims_domain_label(rd$domain), "_", rd$wave, who,
-                     "_", format(Sys.Date(), "%Y%m%d"))
+                     "_", format(kit_today(), "%Y%m%d"))
       cls <- kitDesign::kit_btn_class("secondary")
       shiny::div(
         class = "kit-buttons",

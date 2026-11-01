@@ -25,3 +25,15 @@ test_that("every wave in the built-in banks gets a plain label", {
     expect_false(anyNA(wave_meaning(w)), info = d)
   }
 })
+
+test_that("dates and times use the user's time zone, not the server's", {
+  withr::local_options(kititembank.tz = "Asia/Taipei")
+  expect_identical(kit_tz(), "Asia/Taipei")
+  expect_identical(kit_today(), as.Date(format(Sys.time(), "%Y-%m-%d", tz = "Asia/Taipei")))
+  expect_identical(attr(kit_now(), "tzone"), "Asia/Taipei")
+  withr::local_options(kititembank.tz = "Not/AZone")
+  expect_true(kit_tz() %in% OlsonNames())
+  s <- shiny::MockShinySession$new()
+  s$userData$tz <- "America/New_York"
+  shiny::withReactiveDomain(s, expect_identical(kit_tz(), "America/New_York"))
+})

@@ -199,7 +199,7 @@ compare_workbook <- function(kit, a, b, diff = NULL) {
           paste0(a, "\uff1a", compare_dataset_label(kit, a)),
           # 原文：：
           paste0(b, "\uff1a", compare_dataset_label(kit, b)),
-          format(Sys.Date(), "%Y-%m-%d"),
+          format(kit_today(), "%Y-%m-%d"),
           # 原文：兩個資料檔問的題目和問法都一樣。
           if (nrow(d)) cnt else "\u5169\u500b\u8cc7\u6599\u6a94\u554f\u7684\u984c\u76ee\u548c\u554f\u6cd5\u90fd\u4e00\u6a23\u3002",
           # 原文：有題號的用題號對；系統變項用變項名稱對（不分大小寫）。

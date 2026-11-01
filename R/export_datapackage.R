@@ -53,7 +53,7 @@ datapackage_descriptor <- function(version = codebook_bank_version()) {
   })
   list(profile = "tabular-data-package", name = "kit-item-bank",
        title = "Kids in Taiwan (KIT) item bank", version = version,
-       created = format(Sys.time(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
+       created = format(kit_now(), "%Y-%m-%dT%H:%M:%SZ", tz = "UTC"),
        resources = resources)
 }
 

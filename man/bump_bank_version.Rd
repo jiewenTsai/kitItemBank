@@ -4,22 +4,22 @@
 \alias{bump_bank_version}
 \title{Next bank version}
 \usage{
-bump_bank_version(version, date = Sys.Date())
+bump_bank_version(version, date = kit_today())
 }
 \arguments{
-\item{version}{The current version, e.g. \code{"2026.1"}. Empty or unreadable → the first
-version of \code{date}'s year.}
+\item{version}{The current version, e.g. \code{"2026-11-02-v1"}. Empty, unreadable or an
+older \verb{<year>.<n>} version → \verb{<date>-v1}.}
 
-\item{date}{The day of the new version (its year is used).}
+\item{date}{The day of the new version.}
 }
 \value{
-One string, e.g. \code{"2026.2"} or \code{"2027.1"}.
+One string, e.g. \code{"2026-11-02-v2"} or \code{"2026-11-03-v1"}.
 }
 \description{
-Bank versions are \verb{<year>.<n>}: the next one in the same year adds one to \code{n}; the first
-one in a new year is \verb{<year>.1}.
+Bank versions are \verb{<date>-v<n>}, e.g. \code{"2026-11-02-v1"}: the day the new bank was made,
+and which version of that day. A second version on the same day adds one to \code{n}.
 }
 \examples{
-bump_bank_version("2026.1", as.Date("2026-11-02"))
-bump_bank_version("2026.3", as.Date("2027-01-05"))
+bump_bank_version("2026-11-02-v1", as.Date("2026-11-02"))
+bump_bank_version("2026-11-02-v1", as.Date("2026-11-05"))
 }

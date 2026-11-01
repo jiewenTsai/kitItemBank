@@ -8,7 +8,7 @@ codebook_sps(
   kit,
   datasetID,
   version = codebook_bank_version(),
-  date = Sys.Date()
+  date = kit_today()
 )
 }
 \arguments{

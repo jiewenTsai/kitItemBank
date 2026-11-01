@@ -141,7 +141,7 @@ ra_scope <- function(kit, year, admins) {
 #' app$form_changes
 #' @export
 report_appendix <- function(kit, year = NULL, admins = NULL,
-                            version = codebook_bank_version(), date = Sys.Date()) {
+                            version = codebook_bank_version(), date = kit_today()) {
   sc <- ra_scope(kit, year, admins)
   form_label <- function(f) {
     l <- cb_blank(kit$forms$label[match(f, kit$forms$formID)])
@@ -442,14 +442,14 @@ report_appendix_ui <- function(session, kit) {
   k <- kit_now()
   years <- sort(unique(ra_admin_year(k)), decreasing = TRUE)
   years <- years[nzchar(years)]
-  this_year <- format(Sys.Date(), "%Y")
+  this_year <- format(kit_today(), "%Y")
   ov <- admin_summary(k)
   current <- function() {
     yr <- shiny::isolate(session$input[["ra_year"]]) %||% ""
     ad <- shiny::isolate(session$input[["ra_admins"]]) %||% character(0)
     report_appendix(kit_now(), year = if (nzchar(yr)) yr, admins = if (length(ad)) ad)
   }
-  day <- format(Sys.Date(), "%Y%m%d")
+  day <- format(kit_today(), "%Y%m%d")
   cls <- kitDesign::kit_btn_class("secondary")
   shiny::div(
     class = "kit-report-appendix",

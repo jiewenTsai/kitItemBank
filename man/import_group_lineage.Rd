@@ -8,7 +8,7 @@ import_group_lineage(
   candidates_df,
   kit,
   decided_by = "PI",
-  decided_on = format(Sys.Date())
+  decided_on = format(kit_today())
 )
 }
 \arguments{

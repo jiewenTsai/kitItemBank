@@ -181,7 +181,7 @@ patch_workbook <- function(res, changes, domain, base_version = kit_version(), m
     "\u9805\u76ee" = c("kitItemBank", "domain", "base_version", "date", "n_patch", "n_unsupported",
                        names(meta)),
     # 原文：內容 | 0.3 修改包
-    "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305", domain, base_version %||% "", format(Sys.Date()),
+    "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305", domain, base_version %||% "", format(kit_today()),
                        nrow(res$patch), nrow(res$unsupported), unname(meta)),
     check.names = FALSE, stringsAsFactors = FALSE)
   sheets <- list(info, res$patch)

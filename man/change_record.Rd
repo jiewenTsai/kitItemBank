@@ -4,7 +4,7 @@
 \alias{change_record}
 \title{A change record for a reviewed package}
 \usage{
-change_record(review, meta, new_version, date = Sys.Date(), row_meta = NULL)
+change_record(review, meta, new_version, date = kit_today(), row_meta = NULL)
 }
 \arguments{
 \item{review}{The result of \code{\link[=review_patch]{review_patch()}}.}

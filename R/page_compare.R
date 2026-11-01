@@ -204,7 +204,7 @@ page_compare_server <- function(id, kit, goto, request = NULL) {
       p <- pick()
       shiny::req(nzchar(p$a), nzchar(p$b), p$a != p$b)
       k <- kit_now()
-      day <- format(Sys.Date(), "%Y%m%d")
+      day <- format(kit_today(), "%Y%m%d")
       shiny::div(
         class = "kit-buttons",
         kitDesign::kit_download_button(

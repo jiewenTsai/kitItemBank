@@ -366,7 +366,7 @@ bank_summary_text <- function(bank) {
 #' @param version Bank version written to `BANK_VERSION` (default: today).
 #' @return The output folder, invisibly.
 #' @export
-update_bank <- function(path, domain, pkg_dir = ".", version = format(Sys.Date())) {
+update_bank <- function(path, domain, pkg_dir = ".", version = format(kit_today())) {
   domain <- match.arg(domain, unname(BANK_DOMAINS))
   out <- file.path(pkg_dir, "inst", "extdata", "bank", domain)
   if (!dir.exists(file.path(pkg_dir, "inst"))) {

@@ -12,7 +12,7 @@ stats_analysis(
   official = FALSE,
   note = "",
   bank_version = kit_version(),
-  date = Sys.Date(),
+  date = kit_today(),
   analysisID = NULL
 )
 }

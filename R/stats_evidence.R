@@ -39,7 +39,7 @@ stats_software <- function() {
 #' @return A named list of three data frames: `analyses`, `item_stats`, `group_stats`.
 #' @export
 stats_analysis <- function(data, kit, datasetID, run_by = "", official = FALSE, note = "",
-                           bank_version = kit_version(), date = Sys.Date(),
+                           bank_version = kit_version(), date = kit_today(),
                            analysisID = NULL) {
   if (!datasetID %in% kit$datasets$datasetID) {
     # 原文：題庫裡沒有資料檔「 | 」。
@@ -55,7 +55,7 @@ stats_analysis <- function(data, kit, datasetID, run_by = "", official = FALSE, 
 #' @noRd
 stats_bundle <- function(items, groups, datasetID, analysisID = NULL, run_by = "",
                          official = FALSE, note = "", bank_version = kit_version(),
-                         date = Sys.Date()) {
+                         date = kit_today()) {
   analysisID <- analysisID %||% stats_new_id(datasetID)
   an <- conform_kit_table(data.frame(
     analysisID = analysisID, datasetID = datasetID,
@@ -77,7 +77,7 @@ stats_bundle <- function(items, groups, datasetID, analysisID = NULL, run_by = "
 #' 分析代號：AN_<datasetID>_<年月日時分秒>
 #' @noRd
 stats_new_id <- function(datasetID) {
-  paste0("AN_", datasetID, "_", format(Sys.time(), "%Y%m%d%H%M%S"))
+  paste0("AN_", datasetID, "_", format(kit_now(), "%Y%m%d%H%M%S"))
 }
 
 #' Excel workbook of one analysis

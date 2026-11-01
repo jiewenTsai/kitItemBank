@@ -7,7 +7,7 @@
 datapackage_descriptor(version = codebook_bank_version())
 }
 \arguments{
-\item{version}{Bank version, e.g. \code{"2026.1"}.}
+\item{version}{Bank version, e.g. \code{"2026-11-02-v1"}.}
 }
 \value{
 A list ready for \code{jsonlite::toJSON(auto_unbox = TRUE)}.

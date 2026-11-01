@@ -83,7 +83,7 @@ page_home_server <- function(id, kit, goto) {
           # 原文：下載要注意的完整清單（Excel）
           session, "dl_audit", "\u4e0b\u8f09\u8981\u6ce8\u610f\u7684\u5b8c\u6574\u6e05\u55ae\uff08Excel\uff09",
           # 原文：要注意清單_
-          paste0("\u8981\u6ce8\u610f\u6e05\u55ae_", format(Sys.Date(), "%Y%m%d"), ".xlsx"),
+          paste0("\u8981\u6ce8\u610f\u6e05\u55ae_", format(kit_today(), "%Y%m%d"), ".xlsx"),
           function(file) writexl::write_xlsx(home_audit_sheets(ha()), file),
           class = kitDesign::kit_btn_class("secondary")))
       )

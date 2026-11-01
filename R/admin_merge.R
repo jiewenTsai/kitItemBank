@@ -922,7 +922,7 @@ apply_admin_merge <- function(kit, proposals, accept = TRUE,
   new_it <- list(); new_iv <- list(); new_rel <- list(); new_gm <- list()
   new_bs <- list(); dvr <- list()
   done_iv <- character(0)
-  today <- format(Sys.Date(), "%Y-%m-%d")
+  today <- format(kit_today(), "%Y-%m-%d")
 
   add_version <- function(uid, ver, r, from) {
     key <- paste(uid, ver, sep = "|")
@@ -1196,7 +1196,7 @@ admin_merge_workbook <- function(proposals) {
                                             ifelse(nzchar(ds$prev), ds$prev, "\u6c92\u6709"), "\uff09"),
                                      # 原文：；
                                      collapse = "\uff1b"),
-      format(Sys.Date(), "%Y-%m-%d"),
+      format(kit_today(), "%Y-%m-%d"),
       # 原文：每列是一個提案。看過後把要接受的 proposal_id 交給 apply_admin_merge()（或全部接受），產生題庫的新列，再用 check_kit() 檢查。
       "\u6bcf\u5217\u662f\u4e00\u500b\u63d0\u6848\u3002\u770b\u904e\u5f8c\u628a\u8981\u63a5\u53d7\u7684 proposal_id \u4ea4\u7d66 apply_admin_merge()\uff08\u6216\u5168\u90e8\u63a5\u53d7\uff09\uff0c\u7522\u751f\u984c\u5eab\u7684\u65b0\u5217\uff0c\u518d\u7528 check_kit() \u6aa2\u67e5\u3002",
       # 原文：題目和版本題庫裡已經有。

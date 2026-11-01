@@ -394,7 +394,7 @@ admin_block_sentences <- function(cb) {
 #' names(sheets)
 #' @export
 codebook_workbook <- function(kit, adminID, version = codebook_bank_version(),
-                              date = Sys.Date()) {
+                              date = kit_today()) {
   cb <- admin_codebook(kit, adminID)
   ad <- cb$admin
   ds <- cb$datasets
@@ -507,7 +507,7 @@ cb_sheet_name <- function(x, taken) {
 #' @examples
 #' cat(substr(codebook_sps(read_kit(), "M03M036-P"), 1, 600))
 #' @export
-codebook_sps <- function(kit, datasetID, version = codebook_bank_version(), date = Sys.Date()) {
+codebook_sps <- function(kit, datasetID, version = codebook_bank_version(), date = kit_today()) {
   ds <- kit$datasets[kit$datasets$datasetID %in% datasetID, , drop = FALSE]
   if (length(datasetID) != 1L || nrow(ds) != 1L) {
     stop("Unknown datasetID: ", paste(datasetID, collapse = ", "), call. = FALSE)

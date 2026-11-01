@@ -24,6 +24,11 @@ app_ui <- function(request) {
     # kit_step_tabs_ui("nav", groups = ) 的兩半拆開，中間放題庫選擇列：
     # 分頁列 → 題庫選擇列 → 分頁內容（tabset id 照模組的 "nav-tabs"）
     kitDesign::kit_navgroups(APP_TAB_GROUPS, "nav-tabs", selected = tab),
+    # 瀏覽器回報時區：匯出檔名和產生時間用使用者的時區，不用主機的 UTC（kit_tz()）
+    shiny::tags$script(shiny::HTML(paste0(
+      "$(document).on('shiny:connected', function () {",
+      " try { Shiny.setInputValue('client_tz', Intl.DateTimeFormat().resolvedOptions().timeZone); } catch (e) {}",
+      " });"))),
     bank_bar_ui("bank"),
     shiny::tabsetPanel(
       id = "nav-tabs", type = "hidden", selected = tab,
@@ -85,6 +90,7 @@ APP_TABS <- c("search", "dims", "admin", "compare", "home", "edit", "revision", 
 #' @param input,output,session Shiny's arguments.
 #' @export
 app_server <- function(input, output, session) {
+  shiny::observeEvent(input$client_tz, session$userData$tz <- input$client_tz)
   store <- bank_store_server("bank")
   nav <- kitDesign::kit_step_tabs_server("nav")
   # 頁和頁之間用連結接起來，不靠共用狀態：
@@ -92,7 +98,7 @@ app_server <- function(input, output, session) {
   #   goto("search", item = "sleC1203") → 切到題項查詢、打開那一題
   request <- shiny::reactiveVal(NULL)
   goto <- function(tab, ...) {
-    request(list(tab = tab, args = list(...), at = Sys.time()))
+    request(list(tab = tab, args = list(...), at = kit_now()))
     nav$select(tab)
   }
   # 查詢條件寫進網址（kit_app() 用 enableBookmarking = "url"），網址貼給同事就看到同樣的結果

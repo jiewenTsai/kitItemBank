@@ -234,7 +234,7 @@ dim_items_workbook <- function(bank, dim_id, domain = NULL, kit = kit_builtin())
       "\u984c\u7d44", "\u984c\u5eab", "\u984c\u5eab\u7248\u672c", "\u7522\u751f\u65e5\u671f", "\u8aaa\u660e"),
     "\u5167\u5bb9" = c(
       dims_label(bank, dim_id), bank_domain_label(domain) %||% "", kit_version() %||% "",
-      format(Sys.Date()), note),
+      format(kit_today()), note),
     check.names = FALSE, stringsAsFactors = FALSE)
   # 原文：說明 | 題目
   stats::setNames(list(info, items), c("\u8aaa\u660e", "\u984c\u76ee"))

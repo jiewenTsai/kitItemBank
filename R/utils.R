@@ -319,3 +319,31 @@ bank_cohort <- function(bank, cohort = NULL) {
   bank$itemDim <- bank$itemDim[item_key(bank$itemDim$itemID, bank$itemDim$itemVer) %in% key, , drop = FALSE]
   bank
 }
+
+# ── 使用者的時區 ──
+# 雲端主機的時鐘是 UTC：匯出檔名和「產生時間」要用使用者瀏覽器的時區。
+# app 一連上就由瀏覽器回報時區（input$client_tz，存在 session$userData$tz）；
+# 沒有回報（測試、R console）時用 options(kititembank.tz)，再沒有就用本機時區，本機是 UTC 時用臺北。
+kit_tz <- function() {
+  ok <- function(z) is.character(z) && length(z) == 1L && !is.na(z) && z %in% OlsonNames()
+  d <- shiny::getDefaultReactiveDomain()
+  z <- if (!is.null(d)) d$userData$tz
+  if (ok(z)) return(z)
+  z <- getOption("kititembank.tz")
+  if (ok(z)) return(z)
+  z <- Sys.timezone()
+  if (ok(z) && !z %in% c("UTC", "Etc/UTC", "GMT")) return(z)
+  "Asia/Taipei"
+}
+
+#' 現在時間（使用者時區）
+#' @noRd
+kit_now <- function() {
+  x <- Sys.time()
+  attr(x, "tzone") <- kit_tz()
+  x
+}
+
+#' 今天的日期（使用者時區）
+#' @noRd
+kit_today <- function() as.Date(format(Sys.time(), "%Y-%m-%d", tz = kit_tz()))

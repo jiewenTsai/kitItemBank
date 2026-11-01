@@ -24,7 +24,7 @@ GROUP_LINEAGE_ZH <- c(continued = "\u5ef6\u7e8c", renamed = "\u6539\u540d", spli
 #' @return A data frame with the columns of the `group_lineage` table, one row per link.
 #' @export
 import_group_lineage <- function(candidates_df, kit, decided_by = "PI",
-                                 decided_on = format(Sys.Date())) {
+                                 decided_on = format(kit_today())) {
   cd <- as.data.frame(candidates_df, stringsAsFactors = FALSE)
   if (is.null(cd$to_formID)) cd$to_formID <- cd$formID
   for (cc in c("from_group", "to_group", "from_formID", "to_formID", "year", "varnames",

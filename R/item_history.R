@@ -79,7 +79,7 @@ item_history_docx <- function(hist, path) {
   add(paste0("\u984c\u76ee\u6cbf\u9769\u55ae\uff1a", hist$item_uid), KIT_DOCX_TITLE)
   # 原文：題庫版本： |   ·  產生時間：
   add(paste0("\u984c\u5eab\u7248\u672c\uff1a", kit_version() %||% "", "  \u00b7  \u7522\u751f\u6642\u9593\uff1a",
-             format(Sys.time(), "%Y-%m-%d %H:%M")))
+             format(kit_now(), "%Y-%m-%d %H:%M")))
   if (length(hist$family) > 1L) {
     # 原文：同一個題目家族（換過題號）：
     add(paste0("\u540c\u4e00\u500b\u984c\u76ee\u5bb6\u65cf\uff08\u63db\u904e\u984c\u865f\uff09\uff1a",

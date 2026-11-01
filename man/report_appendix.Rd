@@ -9,7 +9,7 @@ report_appendix(
   year = NULL,
   admins = NULL,
   version = codebook_bank_version(),
-  date = Sys.Date()
+  date = kit_today()
 )
 }
 \arguments{

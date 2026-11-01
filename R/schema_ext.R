@@ -6,7 +6,11 @@
 #   group_lineage  題組沿革：一個題本的題組在後來的題本延續、改名、拆開或合併成哪個題組
 #   contacts       聯絡人名冊：誰負責哪些問卷、題本、題組、施測，請教單要問誰
 
-KIT_ENUMS$lineage_kind <- c("continued", "renamed", "split", "merged")
+KIT_ENUMS$lineage_kind <- c("continued", "renamed", "split", "merged",
+                            # 0.3.7：隨年齡改寫題目、加減題、同一題本兩種計分
+                            "age_version", "items_changed", "alternative_scoring")
+# 0.3.7：兩個題組的分數能不能比：同一量尺／有共同題可連結／只有概念相同
+KIT_ENUMS$comparability <- c("same_scale", "linkable", "conceptual_only")
 KIT_ENUMS$scope_type <- c("all", "instrument", "form", "group", "admin")
 
 KIT_SCHEMA[["group_lineage"]] <- list(
@@ -15,6 +19,7 @@ KIT_SCHEMA[["group_lineage"]] <- list(
               kind = kcol(enum = "lineage_kind", req = TRUE),
               # 從哪一次施測開始用新的題組
               effective_admin = kcol(),
+              comparability = kcol(enum = "comparability"),
               reason = kcol(), decided_by = kcol(), decided_on = kcol("date"),
               sourceID = kcol()),
   key = c("from_group", "from_formID", "to_group", "to_formID"),

@@ -172,7 +172,7 @@ page_stats_server <- function(id, kit) {
       info <- data_info()
       r <- result()
       n_grp <- sum(!nzchar(r$group_stats$varname))
-      day <- format(Sys.Date(), "%Y%m%d")
+      day <- format(kit_today(), "%Y%m%d")
       d <- input$dataset
       cls <- kitDesign::kit_btn_class("secondary")
       shiny::tagList(

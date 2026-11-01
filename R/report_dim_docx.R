@@ -27,7 +27,7 @@ generate_dim_report_docx <- function(report_payload, out_path) {
              # 原文：、 |  題
              if (!is.null(report_payload$n_items)) paste0("\u3001", report_payload$n_items, " \u984c") else ""))
   # 原文：產生時間：
-  add(paste0("\u7522\u751f\u6642\u9593\uff1a", format(Sys.time(), "%Y-%m-%d %H:%M")))
+  add(paste0("\u7522\u751f\u6642\u9593\uff1a", format(kit_now(), "%Y-%m-%d %H:%M")))
 
   warn <- dim_report_warnings(report_payload)
   if (length(warn)) {

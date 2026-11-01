@@ -116,7 +116,7 @@ page_revision_server <- function(id, kit) {
             # 原文：下載改版底稿（Excel）
             session, "dl_template", "\u4e0b\u8f09\u6539\u7248\u5e95\u7a3f\uff08Excel\uff09",
             # 原文：改版底稿_
-            paste0("\u6539\u7248\u5e95\u7a3f_", f, "_", format(Sys.Date(), "%Y%m%d"), ".xlsx"),
+            paste0("\u6539\u7248\u5e95\u7a3f_", f, "_", format(kit_today(), "%Y%m%d"), ".xlsx"),
             function(file) revision_template(k, f, file, datasetID = b$dataset$datasetID,
                                              version = version),
             class = kitDesign::kit_btn_class("secondary")
@@ -246,7 +246,7 @@ rv_patch_ui <- function(session, res, admin_id, version) {
         # 原文：下載修改包（Excel）
         session, "dl_patch", "\u4e0b\u8f09\u4fee\u6539\u5305\uff08Excel\uff09",
         # 原文：修改包_改版_
-        paste0("\u4fee\u6539\u5305_\u6539\u7248_", res$adminID, "_", format(Sys.Date(), "%Y%m%d"), ".xlsx"),
+        paste0("\u4fee\u6539\u5305_\u6539\u7248_", res$adminID, "_", format(kit_today(), "%Y%m%d"), ".xlsx"),
         function(file) writexl::write_xlsx(revision_patch_workbook(res, version), file),
         class = kitDesign::kit_btn_class("primary")
       )

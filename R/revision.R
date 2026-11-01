@@ -132,7 +132,7 @@ revision_base <- function(kit, formID, adminID = NULL, datasetID = NULL) {
 #' 底稿三張表的內容（還沒有格式）
 #' @noRd
 revision_template_sheets <- function(kit, formID, adminID = NULL, datasetID = NULL,
-                                     version = codebook_bank_version(), date = Sys.Date()) {
+                                     version = codebook_bank_version(), date = kit_today()) {
   b <- revision_base(kit, formID, adminID, datasetID)
   q <- b$questions
   info_keys <- unname(RV_INFO_KEYS[c("version", "form", "admin", "dataset", "date")])
@@ -206,7 +206,7 @@ revision_template_sheets <- function(kit, formID, adminID = NULL, datasetID = NU
 #' }
 #' @export
 revision_template <- function(kit, formID, file, adminID = NULL, datasetID = NULL,
-                              version = codebook_bank_version(), date = Sys.Date()) {
+                              version = codebook_bank_version(), date = kit_today()) {
   rv_need_openxlsx()
   sh <- revision_template_sheets(kit, formID, adminID, datasetID, version, date)
   wb <- openxlsx::createWorkbook()
@@ -711,13 +711,13 @@ rv_parse_admin <- function(kit, adminID) {
 #'   planned data file, and `base` (the template's data file).
 #' @export
 revision_patch <- function(kit, path, adminID, version = codebook_bank_version(),
-                           date = Sys.Date()) {
+                           date = kit_today()) {
   rv_patch_from_check(kit, rv_check(read_revision_xlsx(path), kit, version), adminID, date)
 }
 
 #' 健康檢查過的底稿 → 修改包（有「擋下來」就停）
 #' @noRd
-rv_patch_from_check <- function(kit, chk, adminID, date = Sys.Date()) {
+rv_patch_from_check <- function(kit, chk, adminID, date = kit_today()) {
   blocking <- chk$problems$severity == RV_BLOCK
   if (any(blocking)) {
     # 原文：底稿有  |  個問題要先改好才能匯入：
@@ -746,7 +746,7 @@ rv_admin_notes <- function(kit, base, ad) {
   rv_empty_problems()
 }
 
-rv_build_patch <- function(kit, chk, ad, date = Sys.Date()) {
+rv_build_patch <- function(kit, chk, ad, date = kit_today()) {
   base <- chk$base
   q <- chk$questions
   nw <- chk$new
@@ -933,7 +933,7 @@ revision_patch_workbook <- function(res, base_version = codebook_bank_version())
     "\u9805\u76ee" = c("kitItemBank", "kind", "base_version", "date", "adminID", "datasetID",
              "based_on", "n_patch", "kept", "text", "options", "deleted", "new"),
     # 原文：內容 | 0.3 修改包（改版底稿）
-    "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305\uff08\u6539\u7248\u5e95\u7a3f\uff09", "revision", base_version %||% "", format(Sys.Date()),
+    "\u5167\u5bb9" = c("0.3 \u4fee\u6539\u5305\uff08\u6539\u7248\u5e95\u7a3f\uff09", "revision", base_version %||% "", format(kit_today()),
              res$adminID, res$datasetID, res$base, nrow(res$patch),
              s[["kept"]], s[["text"]], s[["options"]], s[["deleted"]], s[["new"]]),
     check.names = FALSE, stringsAsFactors = FALSE)

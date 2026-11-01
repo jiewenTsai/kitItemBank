@@ -95,7 +95,7 @@ kit_column_label <- function(x, table = NULL) {
 #' bump_bank_version("2026-11-02-v1", as.Date("2026-11-02"))
 #' bump_bank_version("2026-11-02-v1", as.Date("2026-11-05"))
 #' @export
-bump_bank_version <- function(version, date = Sys.Date()) {
+bump_bank_version <- function(version, date = kit_today()) {
   day <- format(as.Date(date), "%Y-%m-%d")
   v <- trimws(as.character(version %||% ""))
   if (length(v) != 1L || is.na(v) || !grepl("^[0-9]{4}-[0-9]{2}-[0-9]{2}-v[0-9]+$", v)) {
@@ -429,7 +429,7 @@ review_change_table <- function(changes) {
 #'   `table`, `key`, `column`, `from`, `to`, `reason`, `decided_by`, `submitted_by`,
 #'   `approved_by`. `from` is the bank's value before the change (for `set` rows).
 #' @export
-change_record <- function(review, meta, new_version, date = Sys.Date(), row_meta = NULL) {
+change_record <- function(review, meta, new_version, date = kit_today(), row_meta = NULL) {
   p <- review$patch
   keep <- p$ok %||% rep(TRUE, nrow(p))
   m <- function(f) {

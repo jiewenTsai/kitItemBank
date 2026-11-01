@@ -2,7 +2,7 @@
 % Please edit documentation in R/page_home.R
 \name{page_home_server}
 \alias{page_home_server}
-\title{The home page (我的工作): server}
+\title{The home page (待辦事項): server}
 \usage{
 page_home_server(id, kit, goto)
 }
@@ -18,5 +18,5 @@ page_home_server(id, kit, goto)
 Invisibly, a list with the reactive \code{audit}.
 }
 \description{
-The home page (我的工作): server
+The home page (待辦事項): server
 }

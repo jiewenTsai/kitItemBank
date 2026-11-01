@@ -255,7 +255,7 @@ page_search_server <- function(id, store, goto, request) {
             session, "download", "\u4e0b\u8f09\u67e5\u8a62\u7d50\u679c",
             # 原文：題項查詢_
             filename = paste0("\u984c\u9805\u67e5\u8a62_", bank_domain_label(domain) %||% domain, "_",
-                              format(Sys.Date()), ".xlsx"),
+                              format(kit_today()), ".xlsx"),
             content = function(file) {
               b <- shiny::isolate(bank())
               rr <- shiny::isolate(results())
@@ -427,7 +427,7 @@ page_search_server <- function(id, store, goto, request) {
         kitDesign::kit_download_button(
           # 原文：下載跨波次對照總表（CSV） | 跨波次對照總表_
           session, "dl_xw", "\u4e0b\u8f09\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868\uff08CSV\uff09",
-          filename = paste0("\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868_", store$domain(), "_", format(Sys.Date(), "%Y%m%d"), ".csv"),
+          filename = paste0("\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868_", store$domain(), "_", format(kit_today(), "%Y%m%d"), ".csv"),
           content = function(file) {
             b <- bank()
             xw <- crosswalk(b, b$itemBank[c("itemID", "itemVer")])

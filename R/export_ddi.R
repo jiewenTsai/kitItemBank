@@ -121,7 +121,7 @@ ddi_codebook <- function(kit, admin, datasetID = NULL, public_only = TRUE,
 #' @return A `tagList` of two download buttons.
 #' @export
 admin_export_buttons <- function(session, kit, adminID, datasetID = NULL) {
-  day <- format(Sys.Date(), "%Y%m%d")
+  day <- format(kit_today(), "%Y%m%d")
   cls <- kitDesign::kit_btn_class("secondary")
   shiny::tagList(
     kitDesign::kit_download_button(

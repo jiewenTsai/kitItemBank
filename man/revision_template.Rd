@@ -11,7 +11,7 @@ revision_template(
   adminID = NULL,
   datasetID = NULL,
   version = codebook_bank_version(),
-  date = Sys.Date()
+  date = kit_today()
 )
 }
 \arguments{

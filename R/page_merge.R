@@ -384,7 +384,7 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
             # 原文：下載併入提案（Excel）
             session, "dl_xlsx", "\u4e0b\u8f09\u4f75\u5165\u63d0\u6848\uff08Excel\uff09",
             # 原文：併入提案_
-            paste0("\u4f75\u5165\u63d0\u6848_", ad$adminID, "_", format(Sys.Date(), "%Y%m%d"), ".xlsx"),
+            paste0("\u4f75\u5165\u63d0\u6848_", ad$adminID, "_", format(kit_today(), "%Y%m%d"), ".xlsx"),
             function(file) writexl::write_xlsx(admin_merge_workbook(p), file),
             class = kitDesign::kit_btn_class("secondary")
           )

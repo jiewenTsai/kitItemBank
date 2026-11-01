@@ -81,7 +81,7 @@ generate_dim_report_html <- function(report_payload, out_path) {
     " \u00b7 ", length(dims), " \u500b\u69cb\u9762 \u00b7 ",
     # 原文： 題 · 產生時間：
     report_payload$n_items %||% "", " \u984c \u00b7 \u7522\u751f\u6642\u9593\uff1a",
-    format(Sys.time(), "%Y-%m-%d %H:%M"), "</p>",
+    format(kit_now(), "%Y-%m-%d %H:%M"), "</p>",
     warn_html,
     paste(dim_sections, collapse = "\n"),
     "</body></html>"

@@ -1,0 +1,181 @@
+groupID,refID,role,evidence
+C.HOME,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_學習材料,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_學習輔助,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_條件式管教,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_正向教養,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_父母回應,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_環境多樣,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.HOME_鼓勵成熟,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+C.上下學途中安全,R028,source,Chappy01 items are the six CW-SWBS items
+C.兒童幸福感,R028,source,Chappy01 items are the six CW-SWBS items
+C.學校環境_師生關係,R031,source,Closeness and conflict items; 親子依附 reuses them reworded for parents
+C.安全感,R028,source,Chappy01 items are the six CW-SWBS items
+C.居住地安全,R028,source,Chappy01 items are the six CW-SWBS items
+C.幸福感,R028,source,Chappy01 items are the six CW-SWBS items
+C.時間運用,R028,source,Chappy01 items are the six CW-SWBS items
+C.正向心理適應_整體性自尊,R029,source,Three items paraphrase RSES items
+C.正向心理適應_生活滿意度,R027,source,Global life satisfaction items; weak link
+C.生長發育情形,R025,source,Voice change facial hair body hair breast development and menarche items
+C.粗大動作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+C.粗大動作,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+C.粗大動作,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+C.粗大動作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+C.精細動作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+C.精細動作,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+C.精細動作,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+C.精細動作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+C.縱容,R018,source,縱容 (laxness) and 過度反應 (over-reactivity) are Parenting Scale factor names
+C.華人特質教養,R017,source,管/教 follow the guan/jiao training ideology
+C.華人特質教養_恥感,R017,source,管/教 follow the guan/jiao training ideology
+C.華人特質教養_成就期待,R017,source,管/教 follow the guan/jiao training ideology
+C.華人特質教養_教,R017,source,管/教 follow the guan/jiao training ideology
+C.華人特質教養_管,R017,source,管/教 follow the guan/jiao training ideology
+C.親子依附,R031,source,Closeness and conflict items; 親子依附 reuses them reworded for parents
+C.親子衝突解決方式,R023,adaptation,Same four-strategy taxonomy from Yeh's Taiwanese work
+C.負向心理適應,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+C.負向心理適應_攻擊行為,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+C.負向心理適應_衝動,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+C.負向心理適應_違規行為,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.Home,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.兒童執行功能量表,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+P.內化性行為問題,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.共同教養,R022,source,Cooperation lack of involvement and undermining items
+P.共親職,R022,source,Cooperation lack of involvement and undermining items
+P.兼容並蓄,R023,adaptation,Same four-strategy taxonomy from Yeh's Taiwanese work
+P.前語言期溝通,R002,kit_validation,KIT document cites it as the development paper for the language domain
+P.外化性行為問題,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.外放性,R012,source,Three broad factors match the KIT subscales
+P.外放性,R013,source,Same three-factor structure
+P.外放性,R014,source,Same three broad scales
+P.外放性,R015,source,Theoretical source of the three temperament factors and the Shyness scale
+P.奮力控制,R012,source,Three broad factors match the KIT subscales
+P.奮力控制,R013,source,Same three-factor structure
+P.奮力控制,R014,source,Same three broad scales
+P.奮力控制,R015,source,Theoretical source of the three temperament factors and the Shyness scale
+P.學習刺激,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.學習材料,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.學習輔助,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.害羞,R014,source,Same three broad scales
+P.害羞,R015,source,Theoretical source of the three temperament factors and the Shyness scale
+P.對己有利,R023,adaptation,Same four-strategy taxonomy from Yeh's Taiwanese work
+P.工作記憶,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+P.工作記憶,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+P.心理控制,R019,source,Guilt induction shaming and love withdrawal items
+P.心理控制,R020,adaptation,Chinese-context control items; 親子溝通 items resemble its autonomy-support items
+P.恥感,R017,source,管/教 follow the guan/jiao training ideology
+P.憂鬱,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.成就期待,R017,source,管/教 follow the guan/jiao training ideology
+P.抑制力,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+P.抑制力,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+P.抓握和手部操作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.抓握和手部操作,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+P.抓握和手部操作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.抓握和手部操作,R008,criterion,KIT G1-G3 document reports BOT-2 correlations
+P.攻擊,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.教,R017,source,管/教 follow the guan/jiao training ideology
+P.條件式管教,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.正向教養,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.氣質,R012,source,Three broad factors match the KIT subscales
+P.氣質,R013,source,Same three-factor structure
+P.氣質,R014,source,Same three broad scales
+P.注意力,R001,kit_validation,KIT document cites it as the development paper for the cognitive domain
+P.焦慮,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.父母參與,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.父母回應,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.環境多樣,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.社會期許題,R026,source,Three items are Marlowe-Crowne items
+P.視動整合,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.視動整合,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+P.視動整合,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.穩定度和移位,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.穩定度和移位,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+P.穩定度和移位,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.穩定度和肌力,R008,criterion,KIT G1-G3 document reports BOT-2 correlations
+P.管,R017,source,管/教 follow the guan/jiao training ideology
+P.粗大動作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.粗大動作,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+P.粗大動作,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+P.粗大動作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.精細動作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.精細動作,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+P.精細動作,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+P.精細動作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.網路成癮,R030,source,Compulsion withdrawal and tolerance items
+P.縱容,R018,source,縱容 (laxness) and 過度反應 (over-reactivity) are Parenting Scale factor names
+P.華人特質教養,R017,source,管/教 follow the guan/jiao training ideology
+P.行為監督,R021,source,Parental knowledge and solicitation items
+P.衝動,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.規避逃離,R023,adaptation,Same four-strategy taxonomy from Yeh's Taiwanese work
+P.親子依附,R031,source,Closeness and conflict items; 親子依附 reuses them reworded for parents
+P.親子溝通,R020,adaptation,Chinese-context control items; 親子溝通 items resemble its autonomy-support items
+P.親職壓力,R032,source,Two items resemble PSS items; weak link
+P.計畫力,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+P.計畫力,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+P.記憶能力,R001,kit_validation,KIT document cites it as the development paper for the cognitive domain
+P.記憶能力,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+P.認知,R001,kit_validation,KIT document cites it as the development paper for the cognitive domain
+P.認知,R006,criterion,KIT documents report criterion correlations with CDIIT
+P.語言,R002,kit_validation,KIT document cites it as the development paper for the language domain
+P.語言,R006,criterion,KIT documents report criterion correlations with CDIIT
+P.語言刺激,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+P.語言理解,R002,kit_validation,KIT document cites it as the development paper for the language domain
+P.語言理解,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+P.語言表達,R002,kit_validation,KIT document cites it as the development paper for the language domain
+P.語言表達,R005,kit_validation,Uses KIT cognitive language and motor parent questionnaires with Rasch analysis
+P.調節力,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+P.調節力,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+P.讀寫萌發,R002,kit_validation,KIT document cites it as the development paper for the language domain
+P.負向情緒,R012,source,Three broad factors match the KIT subscales
+P.負向情緒,R013,source,Same three-factor structure
+P.負向情緒,R014,source,Same three broad scales
+P.負向情緒,R015,source,Theoretical source of the three temperament factors and the Shyness scale
+P.身體動作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.身體動作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.身體協調,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+P.身體協調,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+P.身體協調,R007,criterion,KIT documents report criterion correlations with PDMS-II
+P.退縮,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.違規行為,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+P.順從退讓,R023,adaptation,Same four-strategy taxonomy from Yeh's Taiwanese work
+P.鼓勵成熟,R016,source,KIT G1-G3 document names it HOME量表; subscale names match HOME subscales
+T.內化性行為問題,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+T.外化性行為問題,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+T.學習環境與教學品質,R009,criterion,KIT documents report r = .30 with a 20-item ECERS-R
+T.工作記憶,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+T.工作記憶,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+T.師生互動,R009,criterion,KIT documents report r = .30 with a 20-item ECERS-R
+T.師生關係,R031,source,Closeness and conflict items; 親子依附 reuses them reworded for parents
+T.恥感,R017,source,管/教 follow the guan/jiao training ideology
+T.憂鬱,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+T.成就期待,R017,source,管/教 follow the guan/jiao training ideology
+T.抑制力,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+T.抑制力,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+T.攻擊行為,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+T.教保學習區與教材,R009,criterion,KIT documents report r = .30 with a 20-item ECERS-R
+T.教養(華人特質教養),R017,source,管/教 follow the guan/jiao training ideology
+T.活動、課程與教學,R009,criterion,KIT documents report r = .30 with a 20-item ECERS-R
+T.焦慮,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF
+T.社會期許題,R026,source,Three items are Marlowe-Crowne items
+T.管,R017,source,管/教 follow the guan/jiao training ideology
+T.粗大_穩定度和肌力,R008,criterion,KIT G1-G3 document reports BOT-2 correlations
+T.粗大_身體協調,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+T.粗大_身體協調,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+T.粗大_身體協調,R007,criterion,KIT documents report criterion correlations with PDMS-II
+T.精細_手部操作,R008,criterion,KIT G1-G3 document reports BOT-2 correlations
+T.精細_視動整合,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+T.精細_視動整合,R004,kit_validation,KIT document cites it (year shown as 2015 or 2016)
+T.精細_視動整合,R007,criterion,KIT documents report criterion correlations with PDMS-II
+T.衝突,R031,source,Closeness and conflict items; 親子依附 reuses them reworded for parents
+T.親密,R031,source,Closeness and conflict items; 親子依附 reuses them reworded for parents
+T.計畫力,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+T.計畫力,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+T.認知,R001,kit_validation,KIT document cites it as the development paper for the cognitive domain
+T.認知,R006,criterion,KIT documents report criterion correlations with CDIIT
+T.語言,R002,kit_validation,KIT document cites it as the development paper for the language domain
+T.語言,R006,criterion,KIT documents report criterion correlations with CDIIT
+T.調節力,R010,source,KIT G1-G3 document names TC-CHEXI; same four subscales
+T.調節力,R011,adaptation,Chinese CHEXI parent and teacher ratings; the TC-CHEXI adaptation used by KIT is not identified
+T.身體動作,R003,kit_validation,KIT document cites it as the motor development paper; subscale names match
+T.身體動作,R007,criterion,KIT documents report criterion correlations with PDMS-II
+T.違規行為,R024,source,Item wording matches SDQ; subscale names follow CBCL/TRF

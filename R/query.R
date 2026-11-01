@@ -835,7 +835,7 @@ query_workbook <- function(bank, items, args = NULL, domain = NULL,
     # 原文：題庫
     if (nzchar(dom)) paste0(dom, "\u984c\u5eab") else "",
     ver,
-    format(Sys.Date()),
+    format(kit_today()),
     # 原文：；
     if (!is.null(args)) paste(search_settings_parts(args, bank), collapse = "\uff1b") else "",
     # 原文： 題
