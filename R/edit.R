@@ -453,6 +453,6 @@ edit_changes_summary <- function(changes) {
 
 # 下載檔名：KIT_parent_2026-11-01_改.xlsx
 edit_download_filename <- function(domain, date = Sys.Date()) {
-  # 原文：_改.xlsx
-  paste0("KIT_", domain, "_", format(as.Date(date), "%Y-%m-%d"), "_\u6539.xlsx")
+  # 原文：_修改包.xlsx
+  paste0("KIT_", domain, "_", format(as.Date(date), "%Y-%m-%d"), "_\u4fee\u6539\u5305.xlsx")
 }

@@ -131,7 +131,7 @@ test_that("構面資訊按「套用」才改；波次信度設定與拿掉", {
   })
 })
 
-test_that("下載的 Excel 有改動紀錄；沒有改動時主要按鈕停用；復原清掉改動", {
+test_that("下載的修改包有改動和原始改動；沒有改動時主要按鈕停用；復原清掉改動", {
   shiny::testServer(page_edit_server, args = .edit_args(), {
     session$setInputs(what = "itemDim")
     html <- htmltools::renderTags(output$download_ui)$html
@@ -152,10 +152,13 @@ test_that("下載的 Excel 有改動紀錄；沒有改動時主要按鈕停用�
     expect_identical(dl$filename, edit_download_filename("parent"))
     f <- dl$content$file
     on.exit(unlink(f), add = TRUE)
-    expect_true("改動紀錄" %in% readxl::excel_sheets(f))
-    log <- readxl::read_excel(f, sheet = "改動紀錄")
+    expect_true(all(c("說明", "改動", "原始改動") %in% readxl::excel_sheets(f)))
+    log <- readxl::read_excel(f, sheet = "原始改動")
     expect_equal(nrow(log), 2L)
     expect_true(all(log[["欄"]] == dim))
+    p <- read_patch_xlsx(f)$patch
+    expect_true(nrow(p) > 0L)
+    expect_true(all(p$table == "group_members" & p$op == "add"))
 
     session$setInputs(revert = 1)
     expect_match(htmltools::renderTags(output$revert_ui)$html, "復原，丟掉這些改動", fixed = TRUE)

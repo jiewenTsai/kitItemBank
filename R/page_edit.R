@@ -23,8 +23,8 @@ page_edit_ui <- function(id) {
   shiny::tagList(
     kitDesign::kit_tab_guide(
       # 原文：改題目的構面、波次歸屬與構面資訊，下載改好的題庫。
-      # 原文：改題目內容、題目的構面與波次、構面資訊，下載改好的題庫。
-      goal = "\u6539\u984c\u76ee\u5167\u5bb9\u3001\u984c\u76ee\u7684\u69cb\u9762\u8207\u6ce2\u6b21\u3001\u69cb\u9762\u8cc7\u8a0a\uff0c\u4e0b\u8f09\u6539\u597d\u7684\u984c\u5eab\u3002",
+      # 原文：改題目內容、題目的構面、構面資訊，下載修改包。
+      goal = "\u6539\u984c\u76ee\u5167\u5bb9\u3001\u984c\u76ee\u7684\u69cb\u9762\u3001\u69cb\u9762\u8cc7\u8a0a\uff0c\u4e0b\u8f09\u4fee\u6539\u5305\u3002",
       steps = c(
         # 原文：選要改什麼：題目內容、題目的構面、題目的波次，或構面資訊。
         "\u9078\u8981\u6539\u4ec0\u9ebc\uff1a\u984c\u76ee\u5167\u5bb9\u3001\u984c\u76ee\u7684\u69cb\u9762\u3001\u984c\u76ee\u7684\u6ce2\u6b21\uff0c\u6216\u69cb\u9762\u8cc7\u8a0a\u3002",
@@ -32,11 +32,11 @@ page_edit_ui <- function(id) {
         "\u984c\u76ee\u5167\u5bb9\uff1a\u5728\u300c\u8981\u6ce8\u610f\u300d\u8868\u9ede\u4e00\u5217\uff0c\u6216\u76f4\u63a5\u9078\u4e00\u984c\u4e00\u7248\uff1b\u6539\u597d\u6309\u300c\u5957\u7528\u9019\u4e00\u984c\u7684\u6539\u52d5\u300d\u3002",
         # 原文：選一個構面或波次，在右邊的表點題目：點一下勾選，再點一下取消。
         "\u9078\u4e00\u500b\u69cb\u9762\u6216\u6ce2\u6b21\uff0c\u5728\u53f3\u908a\u7684\u8868\u9ede\u984c\u76ee\uff1a\u9ede\u4e00\u4e0b\u52fe\u9078\uff0c\u518d\u9ede\u4e00\u4e0b\u53d6\u6d88\u3002",
-        # 原文：看下面的「本次改動」，沒問題就下載改好的題庫。
-        "\u770b\u4e0b\u9762\u7684\u300c\u672c\u6b21\u6539\u52d5\u300d\uff0c\u6c92\u554f\u984c\u5c31\u4e0b\u8f09\u6539\u597d\u7684\u984c\u5eab\u3002"
+        # 原文：看下面的「本次改動」，沒問題就下載修改包。
+        "\u770b\u4e0b\u9762\u7684\u300c\u672c\u6b21\u6539\u52d5\u300d\uff0c\u6c92\u554f\u984c\u5c31\u4e0b\u8f09\u4fee\u6539\u5305\u3002"
       ),
-      # 原文：改好的題庫 Excel（四個工作表＋「改動紀錄」），交給題庫維護者。
-      output = "\u6539\u597d\u7684\u984c\u5eab Excel\uff08\u56db\u500b\u5de5\u4f5c\u8868\uff0b\u300c\u6539\u52d5\u7d00\u9304\u300d\uff09\uff0c\u4ea4\u7d66\u984c\u5eab\u7dad\u8b77\u8005\u3002",
+      # 原文：修改包 Excel（說明、改動，和原始改動紀錄），交給題庫維護者套用。
+      output = "\u4fee\u6539\u5305 Excel\uff08\u8aaa\u660e\u3001\u6539\u52d5\uff0c\u548c\u539f\u59cb\u6539\u52d5\u7d00\u9304\uff09\uff0c\u4ea4\u7d66\u984c\u5eab\u7dad\u8b77\u8005\u5957\u7528\u3002",
       # 原文：改動只存在這個瀏覽器分頁裡，app 不會寫回任何檔案；離開前記得下載。
       note = "\u6539\u52d5\u53ea\u5b58\u5728\u9019\u500b\u700f\u89bd\u5668\u5206\u9801\u88e1\uff0capp \u4e0d\u6703\u5beb\u56de\u4efb\u4f55\u6a94\u6848\uff1b\u96e2\u958b\u524d\u8a18\u5f97\u4e0b\u8f09\u3002"
     ),
@@ -121,17 +121,18 @@ page_edit_server <- function(id, store, goto, request) {
         return(shiny::tagList(
           # 原文：還沒有改動
           kitDesign::kit_ready_line("\u9084\u6c92\u6709\u6539\u52d5"),
-          # 原文：下載改好的題庫
-          kitDesign::kit_button(ns("download_off"), "\u4e0b\u8f09\u6539\u597d\u7684\u984c\u5eab", "primary",
+          # 原文：下載修改包
+          kitDesign::kit_button(ns("download_off"), "\u4e0b\u8f09\u4fee\u6539\u5305", "primary",
                                 disabled = TRUE)
         ))
       }
       kitDesign::kit_download_button(
-        # 原文：下載改好的題庫
-        session, "download", "\u4e0b\u8f09\u6539\u597d\u7684\u984c\u5eab",
+        # 原文：下載修改包
+        session, "download", "\u4e0b\u8f09\u4fee\u6539\u5305",
         filename = edit_download_filename(store$domain()),
         content = function(file) {
-          write_bank_xlsx(store$bank(), file, changes = store$changes())
+          res <- kit_patch(kit_builtin(), store$base(), store$bank(), store$domain())
+          writexl::write_xlsx(patch_workbook(res, store$changes(), store$domain()), file)
         },
         class = "btn-primary"
       )
@@ -148,16 +149,17 @@ page_edit_server <- function(id, store, goto, request) {
         kitDesign::kit_code(c(
           # 原文：# 「要注意」表：題庫內容要人看一下的地方，一列一個
           "# \u300c\u8981\u6ce8\u610f\u300d\u8868\uff1a\u984c\u5eab\u5167\u5bb9\u8981\u4eba\u770b\u4e00\u4e0b\u7684\u5730\u65b9\uff0c\u4e00\u5217\u4e00\u500b",
-          paste0("audit <- kitItemBank::bank_audit(kitItemBank::load_bank(\"", d, "\"))"),
+          paste0("audit <- kitItemBank::bank_audit(kitItemBank::bank_to_v02(kitItemBank::read_kit(), \"", d, "\"))"),
           "kitItemBank::bank_audit_summary(audit)",
           "",
           # 原文：# 給題庫維護者：在 kitItemBank 的原始碼資料夾執行。
           "# \u7d66\u984c\u5eab\u7dad\u8b77\u8005\uff1a\u5728 kitItemBank \u7684\u539f\u59cb\u78bc\u8cc7\u6599\u593e\u57f7\u884c\u3002",
-          # 原文：# 讀這一頁下載的 Excel、檢查格式，換掉 inst/extdata/bank/ 裡的
-          "# \u8b80\u9019\u4e00\u9801\u4e0b\u8f09\u7684 Excel\u3001\u6aa2\u67e5\u683c\u5f0f\uff0c\u63db\u6389 inst/extdata/bank/ \u88e1\u7684",
-          # 原文：# 內建題庫，並更新 BANK_VERSION；console 會印出改動紀錄的筆數。
-          "# \u5167\u5efa\u984c\u5eab\uff0c\u4e26\u66f4\u65b0 BANK_VERSION\uff1bconsole \u6703\u5370\u51fa\u6539\u52d5\u7d00\u9304\u7684\u7b46\u6578\u3002",
-          paste0("kitItemBank::update_bank(\"", edit_download_filename(d), "\", \"", d, "\")"),
+          # 原文：# 讀這一頁下載的修改包，套到內建題庫（kit），檢查後寫回 inst/extdata/kit/。
+          "# \u8b80\u9019\u4e00\u9801\u4e0b\u8f09\u7684\u4fee\u6539\u5305\uff0c\u5957\u5230\u5167\u5efa\u984c\u5eab\uff08kit\uff09\uff0c\u6aa2\u67e5\u5f8c\u5beb\u56de inst/extdata/kit/\u3002",
+          paste0("p <- kitItemBank::read_patch_xlsx(\"", edit_download_filename(d), "\")"),
+          "kit <- kitItemBank::apply_patch(kitItemBank::read_kit(\"inst/extdata/kit\"), p$patch)",
+          "kitItemBank::check_kit(kit)   # 0 \u5217 = \u6c92\u554f\u984c",
+          "kitItemBank::write_kit(kit, \"inst/extdata/kit\")",
           # 原文：# 寫完用 git diff 看改了什麼，再 commit、發一版。
           "# \u5beb\u5b8c\u7528 git diff \u770b\u6539\u4e86\u4ec0\u9ebc\uff0c\u518d commit\u3001\u767c\u4e00\u7248\u3002"
         ))

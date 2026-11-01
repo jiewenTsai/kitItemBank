@@ -149,7 +149,7 @@ test_that("query_code parses and reproduces the query", {
   expect_no_match(code, "dim_match")
   plain <- query_code("child_adolescent")
   expect_match(plain, "items <- query_items(bank)", fixed = TRUE)
-  expect_match(plain, 'load_bank("child_adolescent")', fixed = TRUE)
+  expect_match(plain, 'bank_to_v02(read_kit(), "child_adolescent")', fixed = TRUE)
   expect_silent(parse(text = plain))
   f <- query_code(keyword = 'a"b', file = "我的 題庫.xlsx")
   expect_silent(parse(text = f))

@@ -138,7 +138,7 @@ test_that("edit_changes_summary 一句話", {
   expect_identical(edit_changes_summary(bank_diff(b, rb)), paste0("刪除構面「", dim, "」"))
   expect_identical(edit_changes_summary(bank_diff(b, b)), "")
   expect_identical(edit_download_filename("parent", as.Date("2026-11-01")),
-                   "KIT_parent_2026-11-01_改.xlsx")
+                   "KIT_parent_2026-11-01_修改包.xlsx")
 })
 
 test_that("set_item_fields 改一題一版的內容，bank_diff 記成 itemBank", {

@@ -171,7 +171,7 @@ test_that("request() with a dimension selects it", {
 
 test_that("用 R 怎麼做 uses the exported functions", {
   code <- shiny::isolate(dims_code(dims_fake_store(), "注意力", "M036小"))
-  expect_match(code, "kitItemBank::load_bank(\"parent\")", fixed = TRUE)
+  expect_match(code, "kitItemBank::bank_to_v02(kitItemBank::read_kit(), \"parent\")", fixed = TRUE)
   expect_match(code, "dim_items(bank, \"注意力\")", fixed = TRUE)
   expect_match(code, "dim_report_data(bank, \"M036小\", domain = \"parent\", dims = \"注意力\")", fixed = TRUE)
   expect_match(code, "dim_overlap(bank, \"注意力\")", fixed = TRUE)

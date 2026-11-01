@@ -191,7 +191,7 @@ test_that("the search page UI renders and bookmarks leave out DT inputs", {
   expect_match(ui, "每個波次都有")
   expect_match(ui, "任一個詞")
   expect_match(ui, "search-keyword_match")
-  expect_match(ui, "大月齡世代")  # 波次代碼的說明
+  expect_match(ui, "M03 世代")  # 波次代碼的說明
   expect_true(all(c("edit_go", "back_go") %in% SEARCH_BOOKMARK_EXCLUDE))
   expect_match(ui, "包含已停用的題目")
   expect_true("table_rows_selected" %in% SEARCH_BOOKMARK_EXCLUDE)

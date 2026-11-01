@@ -423,7 +423,7 @@ dims_report_details <- function(bank, rd) {
   )
 }
 
-# 用 R 怎麼做：同樣的函式，用在 kitItemBank::load_bank() 讀到的題庫
+# 用 R 怎麼做：同樣的函式，用在 kitItemBank::bank_to_v02() 轉好的題庫
 dims_code <- function(store, dim_id, wave) {
   domain <- store$domain()
   src <- store$source()
@@ -435,7 +435,7 @@ dims_code <- function(store, dim_id, wave) {
     # 原文：bank <- kitItemBank::read_bank_xlsx(\"你打開的題庫.xlsx\")
     "bank <- kitItemBank::read_bank_xlsx(\"\u4f60\u6253\u958b\u7684\u984c\u5eab.xlsx\")"
   } else {
-    paste0("bank <- kitItemBank::load_bank(", q(domain), ")")
+    paste0("bank <- kitItemBank::bank_to_v02(kitItemBank::read_kit(), ", q(domain), ")")
   }
   paste(c(
     load_line,

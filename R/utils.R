@@ -11,6 +11,10 @@ get_matrix_cols <- function(df) {
 #' 從波次欄名取出排序用主鍵（月齡／年級數字）
 #' @noRd
 wave_col_sort_primary <- function(col_name) {
+  # 0.3 的施測代碼：M03M036、M36M084G01 → 月齡
+  if (grepl("^M\\d{2}M\\d{3}", col_name, perl = TRUE)) {
+    return(as.integer(sub("^M\\d{2}M(\\d{3}).*", "\\1", col_name, perl = TRUE)))
+  }
   if (grepl("^M(\\d+)", col_name, perl = TRUE)) {
     return(as.integer(sub("^M(\\d+).*", "\\1", col_name, perl = TRUE)))
   }
@@ -33,6 +37,10 @@ wave_col_sort_primary <- function(col_name) {
 #' 波次欄名次要排序：小月齡 < 無後綴 < 大月齡；保母 < 保母b < 機構 < 機構b
 #' @noRd
 wave_col_sort_secondary <- function(col_name) {
+  # 0.3 的施測代碼：同月齡先排 M03 世代，再排 M36 世代
+  if (grepl("^M\\d{2}M\\d{3}", col_name, perl = TRUE)) {
+    return(as.integer(substr(col_name, 2L, 3L)))
+  }
   # 原文：小月齡
   if (grepl("\u5c0f\u6708\u9f61", col_name, fixed = TRUE)) return(1L)
   # 原文：大月齡
@@ -81,7 +89,12 @@ col_display_labels <- function(col_names, plain = FALSE) {
 #' 波次代碼的 label 加白話（「M036大 · 36 個月（大月齡世代）」）；value 不變。
 #' @noRd
 make_col_choices <- function(col_names) {
-  stats::setNames(col_names, col_display_labels(col_names, plain = TRUE))
+  lab <- col_display_labels(col_names, plain = TRUE)
+  # 施測代碼再加上舊名稱，選單打 M036小、M03W36 也找得到
+  al <- admin_alias_text(col_names)
+  # 原文：（舊稱 | ）
+  lab[nzchar(al)] <- paste0(lab[nzchar(al)], "\uff08\u820a\u7a31 ", al[nzchar(al)], "\uff09")
+  stats::setNames(col_names, lab)
 }
 
 #' 波次代碼的白話說明
@@ -97,6 +110,19 @@ wave_meaning <- function(x) {
   cohort <- c("\u5927" = "\u5927\u6708\u9f61\u4e16\u4ee3", "\u5c0f" = "\u5c0f\u6708\u9f61\u4e16\u4ee3")
   # 原文：一 | 二 | 三 | 四 | 五 | 六 | 七 | 八 | 九
   num_zh <- c("\u4e00", "\u4e8c", "\u4e09", "\u56db", "\u4e94", "\u516d", "\u4e03", "\u516b", "\u4e5d")
+  # 0.3 施測代碼：M03M036 → 36 個月（M03 世代）；M36M084G01 → 84 個月・小一（M36 世代）
+  a <- regmatches(x, regexec("^(M[0-9]{2})M([0-9]{3})(?:G([0-9]{2}))?[AB]?$", x, perl = TRUE))
+  for (i in which(lengths(a) > 0L)) {
+    g <- a[[i]]
+    # 原文： 個月
+    months <- paste0(as.integer(g[3]), " \u500b\u6708")
+    gr <- if (nzchar(g[4])) as.integer(g[4]) else NA_integer_
+    # 原文：・小 | ・國
+    grade <- if (is.na(gr)) "" else if (gr <= 6L) paste0("\u30fb\u5c0f", num_zh[gr]) else
+      paste0("\u30fb\u570b", num_zh[gr - 6L])
+    # 原文：（ |  世代）
+    out[i] <- paste0(months, grade, "\uff08", g[2], " \u4e16\u4ee3\uff09")
+  }
   # M + 月齡 + 後綴
   # 原文：^M0*([0-9]+)(大|小|保母|機構)?(b)?$
   m <- regmatches(x, regexec("^M0*([0-9]+)(\u5927|\u5c0f|\u4fdd\u6bcd|\u6a5f\u69cb)?(b)?$", x, perl = TRUE))

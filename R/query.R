@@ -577,7 +577,7 @@ query_code <- function(domain = "parent", keyword = "", fields = "text",
   if (isTRUE(include_deprecated)) add("include_deprecated", "TRUE")
 
   load_line <- if (is.null(file)) {
-    paste0("bank <- load_bank(", r_str(domain), ")")
+    paste0("bank <- bank_to_v02(read_kit(), ", r_str(domain), ")")
   } else {
     paste0("bank <- read_bank_xlsx(", r_str(file), ")")
   }
@@ -822,7 +822,7 @@ item_dim_names <- function(bank, items) {
 #' names(sheets)
 #' @export
 query_workbook <- function(bank, items, args = NULL, domain = NULL,
-                           version = bank_version()) {
+                           version = kit_version()) {
   cols <- intersect(c(names(bank$itemBank), "n_waves"), names(items))
   it <- items[cols]
   # 原文：構面

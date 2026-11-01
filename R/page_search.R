@@ -259,7 +259,7 @@ page_search_server <- function(id, store, goto, request) {
               b <- shiny::isolate(bank())
               rr <- shiny::isolate(results())
               src <- shiny::isolate(store$source())
-              ver <- if (identical(src$kind, "builtin")) bank_version() else src$label
+              ver <- if (identical(src$kind, "builtin")) kit_version() else src$label
               if (nrow(shiny::isolate(store$changes())) > 0L) {
                 # 原文：（含還沒下載的改動）
                 ver <- paste0(ver %||% "", "\uff08\u542b\u9084\u6c92\u4e0b\u8f09\u7684\u6539\u52d5\uff09")
@@ -575,10 +575,10 @@ SAME_STEM_SHOW <- 10L
 
 # 波次代碼的白話（放在「這一頁做什麼」裡）
 WAVE_CODE_NOTE <- paste0(
-  # 原文：波次代碼：M036 是孩子 36 個月大時的調查；「大」「小」是兩個世代（大月齡世代、小月齡世代）；
-  "\u6ce2\u6b21\u4ee3\u78bc\uff1aM036 \u662f\u5b69\u5b50 36 \u500b\u6708\u5927\u6642\u7684\u8abf\u67e5\uff1b\u300c\u5927\u300d\u300c\u5c0f\u300d\u662f\u5169\u500b\u4e16\u4ee3\uff08\u5927\u6708\u9f61\u4e16\u4ee3\u3001\u5c0f\u6708\u9f61\u4e16\u4ee3\uff09\uff1b",
-  # 原文：「保母」「機構」是孩子在哪裡受照顧；小4、國1 是年級。波次選單裡每個代碼後面都有白話。
-  "\u300c\u4fdd\u6bcd\u300d\u300c\u6a5f\u69cb\u300d\u662f\u5b69\u5b50\u5728\u54ea\u88e1\u53d7\u7167\u9867\uff1b\u5c0f4\u3001\u570b1 \u662f\u5e74\u7d1a\u3002\u6ce2\u6b21\u9078\u55ae\u88e1\u6bcf\u500b\u4ee3\u78bc\u5f8c\u9762\u90fd\u6709\u767d\u8a71\u3002"
+  # 原文：波次代碼：M03M036 是 M03 世代（3 個月起追蹤）的孩子 36 個月大時的調查；M36 是 36 個月起追蹤的世代；
+  "\u6ce2\u6b21\u4ee3\u78bc\uff1aM03M036 \u662f M03 \u4e16\u4ee3\uff083 \u500b\u6708\u8d77\u8ffd\u8e64\uff09\u7684\u5b69\u5b50 36 \u500b\u6708\u5927\u6642\u7684\u8abf\u67e5\uff1bM36 \u662f 36 \u500b\u6708\u8d77\u8ffd\u8e64\u7684\u4e16\u4ee3\uff1b",
+  # 原文：G01 是國小一年級。舊代碼（M036大、M036小）也可以在「施測」頁搜尋。波次選單裡每個代碼後面都有白話。
+  "G01 \u662f\u570b\u5c0f\u4e00\u5e74\u7d1a\u3002\u820a\u4ee3\u78bc\uff08M036\u5927\u3001M036\u5c0f\uff09\u4e5f\u53ef\u4ee5\u5728\u300c\u65bd\u6e2c\u300d\u9801\u641c\u5c0b\u3002\u6ce2\u6b21\u9078\u55ae\u88e1\u6bcf\u500b\u4ee3\u78bc\u5f8c\u9762\u90fd\u6709\u767d\u8a71\u3002"
 )
 
 # 一個查詢的簡短說法（「回到剛才的查詢」旁邊）：不寫「不限」的條件，最多兩段

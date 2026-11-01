@@ -48,7 +48,7 @@ bank_store_server <- function(id) {
     pending <- shiny::reactiveVal(NULL)  # 打開了、還沒確認的 Excel
 
     builtin_source <- function() {
-      v <- bank_version()
+      v <- kit_version()
       list(kind = "builtin",
            # 原文：內建題庫
            label = paste0("\u5167\u5efa\u984c\u5eab", if (!is.na(v)) paste0(" ", v)))
@@ -60,7 +60,7 @@ bank_store_server <- function(id) {
     shiny::observeEvent(domain(), {
       d <- domain()
       if (is.null(slots[[d]])) {
-        b <- load_bank(d)
+        b <- kit_bank(d)
         slots[[d]] <- list(base = b, current = b, source = builtin_source())
       }
     }, priority = 100)
@@ -122,7 +122,7 @@ bank_store_server <- function(id) {
       res <- tryCatch({
         b <- read_bank_xlsx(f$datapath)
         list(bank = b, name = f$name,
-             check = check_bank(b, reference = load_bank(domain())))
+             check = check_bank(b, reference = kit_bank(domain())))
       }, error = function(e) list(error = e, name = f$name))
       pending(res)
     })
@@ -174,7 +174,7 @@ bank_store_server <- function(id) {
     shiny::observeEvent(input$open_cancel, pending(NULL))
     shiny::observeEvent(domain(), pending(NULL), ignoreInit = TRUE)
     shiny::observeEvent(input$back_builtin, {
-      b <- load_bank(domain())
+      b <- kit_bank(domain())
       slots[[domain()]] <- list(base = b, current = b, source = builtin_source())
     })
 
