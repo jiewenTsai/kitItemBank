@@ -375,28 +375,47 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
         ),
         # 原文：提案表
         shiny::h4("\u63d0\u6848\u8868"),
-        # 原文：「已有」的題目不用動；先看信心低的列。
-        shiny::p(class = "kit-hint", "\u300c\u5df2\u6709\u300d\u7684\u984c\u76ee\u4e0d\u7528\u52d5\uff1b\u5148\u770b\u4fe1\u5fc3\u4f4e\u7684\u5217\u3002"),
+        # 原文：「已有」的題目不用動；先看信心低的列。點一列，到「題項查詢」看這一題；和 Excel 對照用提案編號。
+        shiny::p(class = "kit-hint", "\u300c\u5df2\u6709\u300d\u7684\u984c\u76ee\u4e0d\u7528\u52d5\uff1b\u5148\u770b\u4fe1\u5fc3\u4f4e\u7684\u5217\u3002\u9ede\u4e00\u5217\uff0c\u5230\u300c\u984c\u9805\u67e5\u8a62\u300d\u770b\u9019\u4e00\u984c\uff1b\u548c Excel \u5c0d\u7167\u7528\u63d0\u6848\u7de8\u865f\u3002"),
         kitDesign::kit_table_scroll(DT::DTOutput(ns("prop_dt")))
       )
     })
 
-    output$prop_dt <- DT::renderDT({
+    # 畫面上的順序：信心低的排前面，「已有」排最後（Excel 照提案編號排，用編號對照）
+    shown <- shiny::reactive({
       p <- proposals()
       shiny::req(p)
-      # 信心低的排前面，「已有」排最後
       o <- order(p$class == "same", match(p$confidence, c("low", "medium", "high")),
                  p$datasetID, suppressWarnings(as.integer(p$order)))
-      p <- p[o, , drop = FALSE]
-      df <- data.frame(unname(AM_CLASS_LABEL[p$class]), unname(AM_CONF_LABEL[p$confidence]),
+      p[o, , drop = FALSE]
+    })
+
+    output$prop_dt <- DT::renderDT({
+      p <- shown()
+      df <- data.frame(p$proposal_id, unname(AM_CLASS_LABEL[p$class]), unname(AM_CONF_LABEL[p$confidence]),
                        p$datasetID, ifelse(nzchar(p$varname), p$varname, p$block),
                        p$item_uid, p$reason, stringsAsFactors = FALSE)
-      # 原文：類別 | 信心 | 資料檔 | 變項 | 題號 | 理由
-      names(df) <- c("\u985e\u5225", "\u4fe1\u5fc3", "\u8cc7\u6599\u6a94", "\u8b8a\u9805", "\u984c\u865f", "\u7406\u7531")
+      # 原文：提案編號 | 類別 | 信心 | 資料檔 | 變項 | 題號 | 理由
+      names(df) <- c("\u63d0\u6848\u7de8\u865f", "\u985e\u5225", "\u4fe1\u5fc3", "\u8cc7\u6599\u6a94", "\u8b8a\u9805", "\u984c\u865f", "\u7406\u7531")
       # 原文：理由
-      kitDesign::kit_dt(df, page_length = 25L, search = TRUE, wrap_cols = "\u7406\u7531",
+      kitDesign::kit_dt(df, selection = "single", page_length = 25L, search = TRUE, wrap_cols = "\u7406\u7531",
                         # 原文：理由
                         min_widths = c("\u7406\u7531" = "14rem"))
+    })
+
+    # 點一列：題庫裡已有這一題，就到「題項查詢」看它
+    shiny::observeEvent(input$prop_dt_rows_selected, {
+      i <- input$prop_dt_rows_selected
+      p <- shown()
+      if (length(i) != 1L || i > nrow(p)) return()
+      DT::selectRows(DT::dataTableProxy("prop_dt"), NULL)
+      uid <- p$item_uid[i]
+      if (!nzchar(uid) || !uid %in% kit_now()$items$item_uid) {
+        # 原文：這一列沒有題庫裡的題目（新題或系統變項），不能到「題項查詢」看。
+        kitDesign::kit_notify("\u9019\u4e00\u5217\u6c92\u6709\u984c\u5eab\u88e1\u7684\u984c\u76ee\uff08\u65b0\u984c\u6216\u7cfb\u7d71\u8b8a\u9805\uff09\uff0c\u4e0d\u80fd\u5230\u300c\u984c\u9805\u67e5\u8a62\u300d\u770b\u3002", session)
+        return()
+      }
+      goto("search", item = sub("^[A-Z]+\\.", "", uid), uid = uid)
     })
 
     kitDesign::kit_code_panel_server("code", shiny::reactive({
