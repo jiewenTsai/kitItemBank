@@ -40,6 +40,7 @@ Imports:
 Suggests:
     dplyr,
     haven,
+    kits,
     pkgload,
     quarto,
     rlang,

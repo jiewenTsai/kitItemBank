@@ -407,7 +407,9 @@ page_search_server <- function(id, store, goto, request) {
           )
         )
       }
-      shiny::tagList(item_detail_ui(d, ns, notes), history)
+      # kitsUI 步驟參數（沒有匯入過就是 NULL）
+      steps <- if (uid %in% kit$items$item_uid) item_steps_ui(kit, uid, as.integer(it$itemVer))
+      shiny::tagList(item_detail_ui(d, ns, notes), history, steps)
     })
 
     # ---- 細節列 ---------------------------------------------------------------

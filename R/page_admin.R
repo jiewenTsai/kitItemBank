@@ -171,7 +171,11 @@ page_admin_server <- function(id, kit, goto, request) {
           shiny::h4(paste0("\u65bd\u6e2c\u6e05\u55ae\uff08", kitDesign::kit_num(nrow(ov)), " \u6b21\uff09")),
           # 原文：點一列，看這次施測的資料檔和變項。標「內部」的還沒有公開釋出。
           shiny::p(class = "kit-hint", "\u9ede\u4e00\u5217\uff0c\u770b\u9019\u6b21\u65bd\u6e2c\u7684\u8cc7\u6599\u6a94\u548c\u8b8a\u9805\u3002\u6a19\u300c\u5167\u90e8\u300d\u7684\u9084\u6c92\u6709\u516c\u958b\u91cb\u51fa\u3002"),
-          kitDesign::kit_table_scroll(DT::DTOutput(ns("summary_dt")))
+          kitDesign::kit_table_scroll(DT::DTOutput(ns("summary_dt"))),
+          # 期中、期末報告附表：選年度或施測，下載 Word／Excel
+          # 原文：期中、期末報告附表
+          shiny::h4("\u671f\u4e2d\u3001\u671f\u672b\u5831\u544a\u9644\u8868"),
+          report_appendix_ui(session, kit_now())
         ))
       }
       s <- ov[ov$adminID == a, , drop = FALSE]
