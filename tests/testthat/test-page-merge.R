@@ -105,3 +105,73 @@ test_that("the page lists the previous data files needed and uses their headers"
     expect_match(mg_html(output$result), "用 .sav 表頭")
   }))
 })
+
+mg_sav <- function(dir, name) {
+  f <- file.path(dir, name)
+  d <- data.frame(a01 = haven::labelled(c(0, 1), c("不會" = 0, "會" = 1), label = "一.1.穿衣服"))
+  haven::write_sav(d, f)
+  f
+}
+
+test_that("cloud version: only _meta.csv; a .sav is refused and deleted unread", {
+  skip_if_not_installed("haven")
+  withr::local_options(kititembank.allow_data_upload = NULL)
+  ui <- as.character(page_merge_ui("merge"))
+  expect_match(ui, "accept=\".csv\"", fixed = TRUE)
+  expect_no_match(ui, ".sav,", fixed = TRUE)
+  expect_match(ui, "雲端版，只收 _meta.csv")
+  expect_match(ui, "kitItemBank::sav_header_meta(", fixed = TRUE)
+  expect_match(ui, "kitItemBank::run_kititembank()", fixed = TRUE)
+  expect_match(ui, "再選一次會換掉前一批")
+  dir <- withr::local_tempdir()
+  f <- mg_sav(dir, "data1.sav")
+  expect_error(merge_read_upload(f, "data1.sav"), "雲端版不收 .sav")
+  expect_false(file.exists(f))
+  f <- mg_sav(dir, "data1.sav")
+  suppressWarnings(shiny::testServer(page_merge_server, args = list(kit = mg_kit(), goto = function(...) NULL), {
+    session$setInputs(files = data.frame(name = "data1.sav", size = 1, type = "", datapath = f,
+                                         stringsAsFactors = FALSE))
+    expect_false(file.exists(f))
+    expect_length(headers(), 0L)
+  }))
+})
+
+test_that("local version: a .sav is accepted (header only) and deleted after reading", {
+  skip_if_not_installed("haven")
+  withr::local_options(kititembank.allow_data_upload = TRUE)
+  ui <- as.character(page_merge_ui("merge"))
+  expect_match(ui, "accept=\".sav,.csv\"", fixed = TRUE)
+  expect_no_match(ui, "雲端版，只收 _meta.csv")
+  dir <- withr::local_tempdir()
+  f <- mg_sav(dir, "data1.sav")
+  suppressWarnings(shiny::testServer(page_merge_server, args = list(kit = mg_kit(), goto = function(...) NULL), {
+    session$setInputs(files = data.frame(name = "data1.sav", size = 1, type = "", datapath = f,
+                                         stringsAsFactors = FALSE))
+    expect_false(file.exists(f))
+    expect_equal(headers()[["data1.sav"]]$var, "a01")
+  }))
+})
+
+test_that("practice: an administration already in the kit is proposed against a copy without it", {
+  dir <- withr::local_tempdir()
+  f <- mg_header_csv(dir, "x.csv")
+  kit <- mg_kit()
+  suppressWarnings(shiny::testServer(page_merge_server, args = list(kit = kit, goto = function(...) NULL), {
+    session$setInputs(admin = "m03m036",
+                      files = data.frame(name = "M03M036-P.csv", size = 1, type = "text/csv",
+                                         datapath = f, stringsAsFactors = FALSE))
+    expect_match(mg_html(output$prev_ui), "題庫裡已經有")
+    expect_match(mg_html(output$prev_ui), "勾上面的「練習」")
+    session$setInputs(run = 1)
+    expect_null(proposals())
+    session$setInputs(practice = TRUE)
+    expect_match(mg_html(output$prev_ui), "練習：先把 M03M036 從題庫的複本拿掉")
+    session$setInputs(run = 2)
+    p <- proposals()
+    expect_false(is.null(p))
+    expect_equal(attr(p, "admin")$adminID, "M03M036")
+    expect_match(mg_html(output$result), "題庫沒有改")
+    expect_match(mg_html(output$`code-code`), "kit_without_admin(kit, \"M03M036\")", fixed = TRUE)
+  }))
+  expect_true("M03M036" %in% kit$admins$adminID)
+})

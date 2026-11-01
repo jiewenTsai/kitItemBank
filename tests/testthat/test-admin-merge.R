@@ -228,10 +228,46 @@ test_that("a partly dropped item is proposed as deprecated; workbook starts with
   unlink(f)
 })
 
+test_that("the workbook has Chinese column names, a 類別 label and an empty 決定 column", {
+  full <- am_fixture()
+  base <- am_remove_admin(full, "M03M048")
+  p <- propose_admin_merge(base, list("M03M048-P" = am_header(full, "M03M048-P")), "M03M048")
+  wb <- admin_merge_workbook(p)
+  prop <- wb[["提案"]]
+  nm <- names(prop)
+  expect_equal(nm[1:3], c("提案編號", "類別代碼", "類別"))
+  expect_equal(prop[["類別代碼"]], p$class)
+  expect_equal(prop[["類別"]], unname(AM_CLASS_LABEL[p$class]))
+  expect_equal(which(nm == "理由") + 1L, which(startsWith(nm, "決定")))
+  expect_true(all(prop[[which(startsWith(nm, "決定"))]] == ""))
+  expect_false(any(nm %in% names(p)[-1]))
+  expect_equal(names(wb[["統計"]]), c("類別代碼", "類別", "信心高", "信心中", "信心低", "合計"))
+  expect_true(any(wb[["說明"]][[1]] == "決定"))
+  expect_true(any(wb[["說明"]][[1]] == "same（已有）"))
+})
+
+test_that("kit_without_admin removes an administration as if it was never merged", {
+  full <- am_fixture()
+  out <- kit_without_admin(full, "M03M048")
+  ref <- am_remove_admin(full, "M03M048")
+  for (tb in c("admins", "datasets", "dataset_vars", "block_status", "items", "item_versions",
+               "item_relations", "group_members", "value_codes")) {
+    expect_equal(out[[tb]], ref[[tb]], info = tb)
+  }
+  expect_false("M03M048" %in% out$admins$adminID)
+  expect_false(any(out$item_relations$effective_admin == "M03M048"))
+  # 練習：在拿掉的題庫上產生提案，和真的新施測一樣
+  p <- propose_admin_merge(out, list("M03M048-P" = am_header(full, "M03M048-P")), "M03M048")
+  expect_equal(p$class[p$varname == "d01"], "new_item")
+  expect_error(kit_without_admin(full, "M99M999"), "no administration")
+  # 原來的題庫沒有被改
+  expect_true("M03M048" %in% full$admins$adminID)
+})
+
 test_that("errors are plain: existing admin, unknown adminID", {
   full <- am_fixture()
   meta <- am_header(full, "M03M048-P")
-  expect_error(propose_admin_merge(full, list("M03M048-P" = meta), "M03M048"), "already")
+  expect_error(propose_admin_merge(full, list("M03M048-P" = meta), "M03M048"), "已經有")
   expect_error(propose_admin_merge(full, list("X-P" = meta), "weird"), "cannot read")
   expect_error(propose_admin_merge(full, meta, "M03M060"), "named list")
 })
