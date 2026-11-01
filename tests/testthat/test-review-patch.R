@@ -1,10 +1,16 @@
 # review_patch.R：審核修改包（改前改後、檢查、影響範圍、改動紀錄、版本）
 
+# 一題還不在「女方」題組的題目（照題庫現在的內容挑，不寫死）
+review_test_item <- function() {
+  dm <- bank_to_v02(kit_builtin(), "parent")$itemDim
+  setdiff(dm$itemID, dm$itemID[dm[["女方"]] == 1L])[1]
+}
+
 review_test_package <- function(meta = list()) {
   kit <- kit_builtin()
   old <- bank_to_v02(kit, "parent")
   new <- old
-  i <- which(new$itemDim$itemID == "caregiverf02n")
+  i <- which(new$itemDim$itemID == review_test_item())
   new$itemDim[i, "女方"] <- 1L
   new$itemBank$label[new$itemBank$itemID == "fatherinvo01n"] <- "y"
   res <- kit_patch(kit, old, new, "parent")
@@ -60,7 +66,7 @@ test_that("review_patch shows before/after, checks, impact; nothing blocks a cle
   expect_match(m$before, "^名稱：孩子父親")
   expect_identical(m$after, "名稱：y")
   expect_match(ch$after[ch$kind == "新增"][1], "題組：P.女方")
-  expect_true(all(c("P.caregiverf02n", "P.fatherinvo01n") %in% rv$impact$items))
+  expect_true(all(c(paste0("P.", review_test_item()), "P.fatherinvo01n") %in% rv$impact$items))
   expect_identical(rv$impact$groups, "P.女方")
   expect_gt(length(rv$impact$datasets), 0L)
   expect_gt(length(rv$impact$admins), 0L)
@@ -140,16 +146,23 @@ test_that("review_files and review_zip hold the changed tables, BANK_VERSION and
   # 沒改到的表和原本的檔一模一樣：只寫改到的那幾張
   gm <- rawToChar(fl[["inst/extdata/kit/group_members.csv"]])
   Encoding(gm) <- "UTF-8"
-  expect_match(gm, "P.caregiverf02n", fixed = TRUE)
+  expect_match(gm, paste0("P.", review_test_item()), fixed = TRUE)
 
   z <- withr::local_tempfile(fileext = ".zip")
   review_zip(rv, rec, "2026.2", z)
   ls <- zip::zip_list(z)$filename
-  expect_true(all(c("kit/BANK_VERSION", "kit/changes/2026.2.csv", "kit/items.csv") %in% ls))
+  ls <- ls[!grepl("/$", ls)]
+  # zip 裡只有改到的表、BANK_VERSION、改動紀錄
+  expect_setequal(ls, sub("^inst/extdata/", "", names(fl)))
+  # 解壓縮到一份題庫的 inst/extdata/ 上（蓋掉同名檔）= 套用後的題庫
   d <- withr::local_tempdir()
+  write_kit(kit_builtin(), file.path(d, "kit"))
   zip::unzip(z, exdir = d)
   expect_identical(readLines(file.path(d, "kit", "BANK_VERSION")), "2026.2")
+  expect_true(file.exists(file.path(d, "kit", "changes", "2026.2.csv")))
   k2 <- read_kit(file.path(d, "kit"))
+  expect_true(any(k2$group_members$item_uid == paste0("P.", review_test_item()) &
+                    k2$group_members$groupID == "P.女方"))
   expect_identical(nrow(check_kit(k2)), 0L)
   expect_identical(k2$item_versions$label[k2$item_versions$item_uid == "P.fatherinvo01n" &
                                             k2$item_versions$itemVer == "1"], "y")
