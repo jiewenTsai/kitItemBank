@@ -1,3 +1,8 @@
+# kitItemBank 0.3.4 (2026-11-02)
+
+* 頁首的版本行只列 kitItemBank 和日期：「kitItemBank v0.3.4 · 2026-11-02」（不再列 kitDesign，它只是介面模板）。
+* 改用 kitDesign 0.7.1（和 kitsUI、kitJoin、kitverse 同一版）。
+
 # kitItemBank 0.3.3 (2026-11-02)
 
 階段 3（維護流程）與階段 4（證據層）一次發布（原規劃的 0.3.3–0.3.11 合成這一版）。操作手冊：`docs/操作手冊.md`。

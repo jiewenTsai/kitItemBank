@@ -1,6 +1,6 @@
 Package: kitItemBank
 Title: KIT Item Bank Query and Maintenance Tool
-Version: 0.3.3
+Version: 0.3.4
 Date: 2026-11-02
 Authors@R: person("Jie-Wen", "Tsai", email = "tsai.jiewen@gmail.com", role = c("aut", "cre"))
 Description: A 'shiny' app for the KIT item bank (Taiwan Early Childhood
@@ -22,7 +22,7 @@ Imports:
     flextable (>= 0.9.0),
     htmltools,
     jsonlite,
-    kitDesign (>= 0.7.0),
+    kitDesign (>= 0.7.1),
     officer (>= 0.6.0),
     openxlsx,
     plotly (>= 4.10.0),
@@ -47,7 +47,7 @@ Suggests:
     testthat (>= 3.0.0),
     withr
 Remotes:
-    jiewenTsai/kitDesign@v0.7.0
+    jiewenTsai/kitDesign@v0.7.1
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

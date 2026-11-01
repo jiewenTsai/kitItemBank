@@ -1615,8 +1615,8 @@
       "description": {
         "Package": "kitDesign",
         "Title": "Shared 'Shiny' User Interface Components for KIT Research Tools",
-        "Version": "0.7.0",
-        "Date": "2026-11-01",
+        "Version": "0.7.1",
+        "Date": "2026-11-02",
         "Authors@R": "person(\"Jie-Wen\", \"Tsai\", email = \"tsai.jiewen@gmail.com\", role = c(\"aut\", \"cre\"))",
         "Description": "The shared user interface layer of the KIT research tools built\n    with 'shiny': a 'bslib' theme based on Bootswatch Brite, the KIT style\n    sheets and logos, a page wrapper with the KIT header, and documented\n    components (page guide, buttons, download buttons, callouts, cloud-version\n    banner and footer, status boxes, details rows, code panels, step cards,\n    checklists, step tabs, diagrams, tables and a 'plotly' chart style),\n    a skeleton for tabs with one run button (page order and status flow),\n    plus a few server-side helpers (run gate, scroll to result, tab states,\n    notifications, number formatting, user-facing errors), value objects\n    for status boxes, checklists and code, 'shiny' modules for the stateful\n    pieces (step cards, step tabs, run gate, code panel) and a scaffold for\n    new apps. Load it with one call to kit_page() and build the page from\n    kit_*() components. The logo and the colour palette come from a brand\n    object (kit_brand()), so projects other than KIT can use their own.",
         "License": "MIT + file LICENSE",
@@ -1634,12 +1634,12 @@
         "RemoteHost": "api.github.com",
         "RemoteRepo": "kitDesign",
         "RemoteUsername": "jiewenTsai",
-        "RemoteRef": "v0.7.0",
-        "RemoteSha": "ab535824a89fda3a68a7f016577d53aa71237166",
+        "RemoteRef": "v0.7.1",
+        "RemoteSha": "d5d8e64e43def0d31cf8cb3b4f087e3b00faec6e",
         "GithubRepo": "kitDesign",
         "GithubUsername": "jiewenTsai",
-        "GithubRef": "v0.7.0",
-        "GithubSHA1": "ab535824a89fda3a68a7f016577d53aa71237166",
+        "GithubRef": "v0.7.1",
+        "GithubSHA1": "d5d8e64e43def0d31cf8cb3b4f087e3b00faec6e",
         "NeedsCompilation": "no",
         "Packaged": "2026-11-01 05:29:46 UTC; mini25",
         "Author": "Jie-Wen Tsai [aut, cre]",
@@ -3568,7 +3568,7 @@
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "06aa62658fc8612a366f169bd3fd5446"
+      "checksum": "f72dd2853824c30dc23fdb476efb02e9"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -4030,13 +4030,13 @@
       "checksum": "11fd0bda850fa158de7ceb4b6923ebed"
     },
     "NEWS.md": {
-      "checksum": "fb4a8772f74eab0273f0ebf493d99a50"
+      "checksum": "55efeff950a28e41c3b898671c948510"
     },
     "R/admin_merge.R": {
       "checksum": "ac7c44f327dc7cf08b3f86e823d888b6"
     },
     "R/app.R": {
-      "checksum": "3531f8ab6b209c0a50b1853007958c3b"
+      "checksum": "7d2d2d3538f16d6d3942e9884e46f399"
     },
     "R/apply_candidates.R": {
       "checksum": "be73fa167536d57dcc2baaeb76f63cff"
