@@ -1213,8 +1213,8 @@ admin_merge_workbook <- function(proposals) {
       "\u4e0a\u4e00\u6b21\u6709\u3001\u9019\u6b21\u6c92\u6709\u7684\u984c\u76ee\u6216\u5340\u584a\uff08action\uff1ablock_none \u6c92\u554f\u3001block_subset \u53ea\u554f\u4e00\u90e8\u5206\u3001deprecate \u505c\u7528\u3001not_asked \u53ea\u8a18\u4e0b\uff09\u3002",
       # 原文：遺漏代碼和上一次的方案不一樣，建議換方案（scheme 欄）。
       "\u907a\u6f0f\u4ee3\u78bc\u548c\u4e0a\u4e00\u6b21\u7684\u65b9\u6848\u4e0d\u4e00\u6a23\uff0c\u5efa\u8b70\u63db\u65b9\u6848\uff08scheme \u6b04\uff09\u3002",
-      # 原文：high 可以直接接受；medium 建議看一下；low 一定要人看。
-      "high \u53ef\u4ee5\u76f4\u63a5\u63a5\u53d7\uff1bmedium \u5efa\u8b70\u770b\u4e00\u4e0b\uff1blow \u4e00\u5b9a\u8981\u4eba\u770b\u3002",
+      # 原文：高：可以直接接受；中：建議看一下；低：一定要人看。
+      "\u9ad8\uff1a\u53ef\u4ee5\u76f4\u63a5\u63a5\u53d7\uff1b\u4e2d\uff1a\u5efa\u8b70\u770b\u4e00\u4e0b\uff1b\u4f4e\uff1a\u4e00\u5b9a\u8981\u4eba\u770b\u3002",
       # 原文：只讀了 .sav 的表頭（變項名、標籤、值標籤），沒有讀任何個人資料。
       "\u53ea\u8b80\u4e86 .sav \u7684\u8868\u982d\uff08\u8b8a\u9805\u540d\u3001\u6a19\u7c64\u3001\u503c\u6a19\u7c64\uff09\uff0c\u6c92\u6709\u8b80\u4efb\u4f55\u500b\u4eba\u8cc7\u6599\u3002"),
     stringsAsFactors = FALSE)
@@ -1242,6 +1242,9 @@ admin_merge_workbook <- function(proposals) {
   k <- match("class", names(prop))
   prop <- cbind(prop[, seq_len(k), drop = FALSE], class_label = cls_lab,
                 prop[, -seq_len(k), drop = FALSE], stringsAsFactors = FALSE)
+  # 信心寫成和畫面一樣的 高／中／低
+  conf <- unname(AM_CONF_LABEL[prop$confidence])
+  prop$confidence <- ifelse(is.na(conf), prop$confidence, conf)
   prop$decision <- rep("", nrow(prop))
   zh <- AM_COLUMN_ZH[names(prop)]
   names(prop) <- ifelse(is.na(zh), names(prop), zh)
