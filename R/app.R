@@ -21,7 +21,6 @@ app_ui <- function(request) {
     # 原文：查詢與維護題庫
     tagline = "\u67e5\u8a62\u8207\u7dad\u8b77\u984c\u5eab",
     version = ver$version, date = ver$date, package = "kitItemBank",
-    show_kitdesign = TRUE,
     # kit_step_tabs_ui("nav", groups = ) 的兩半拆開，中間放題庫選擇列：
     # 分頁列 → 題庫選擇列 → 分頁內容（tabset id 照模組的 "nav-tabs"）
     kitDesign::kit_navgroups(APP_TAB_GROUPS, "nav-tabs", selected = tab),

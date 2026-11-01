@@ -1,4 +1,4 @@
-# kitItemBank 0.3.4 (2026-11-02)
+# kitItemBank 0.3.5 (2026-11-02)
 
 * **操作手冊放進 app**：新的分頁組「說明 → 操作手冊」，像 kitsUI 一樣左邊目錄、右邊內文；
   上面的「在新分頁開」開單獨的網頁（方便列印）。兩個都由 `data-raw/build_manual.R` 從 `docs/操作手冊.md` 產生
@@ -13,6 +13,11 @@
 * **IRT 檔不讀**：題庫只收 data1、data2、data3；12 個 IRT 能力估計值資料檔（`-S`）從題庫拿掉
   （`datasets`、`dataset_vars`），內建題庫版本是 `2026-11-02-v1`。「併入新施測」上傳 IRT 檔會直接刪掉、不讀，並提示不用上傳。
 * 「我的工作」改名「待辦事項」。
+
+# kitItemBank 0.3.4 (2026-11-02)
+
+* 頁首的版本行只列 kitItemBank 和日期：「kitItemBank v0.3.4 · 2026-11-02」（不再列 kitDesign，它只是介面模板）。
+* 改用 kitDesign 0.7.1（和 kitsUI、kitJoin、kitverse 同一版）。
 
 # kitItemBank 0.3.3 (2026-11-02)
 
