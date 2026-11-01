@@ -669,17 +669,21 @@ P.careduty06,P,careduty06,托育狀況調查問卷資料,background,,childcare,q
 P.careduty07,P,careduty07,托育狀況調查問卷資料,background,,childcare,questionnaire,0,,
 P.careduty08,P,careduty08,托育狀況調查問卷資料,background,,childcare,questionnaire,0,,
 P.caregiverf01,P,caregiverf01,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.caregiverf01n,P,caregiverf01n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.caregiverf01
 P.caregiverf02,P,caregiverf02,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.caregiverf02n,P,caregiverf02n,,measure,,family,questionnaire,0,,
 P.caregiverf03,P,caregiverf03,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.caregiverf03n,P,caregiverf03n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.caregiverf03
 P.caregiverf04,P,caregiverf04,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.caregiverf04n,P,caregiverf04n,,measure,,family,questionnaire,0,,
 P.caregiverf05,P,caregiverf05,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.caregiverf05n,P,caregiverf05n,,measure,,family,questionnaire,0,,
 P.caregiverm01,P,caregiverm01,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.caregiverm01n,P,caregiverm01n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.caregiverm01
 P.caregiverm02,P,caregiverm02,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.caregiverm02n,P,caregiverm02n,,measure,,family,questionnaire,0,,
 P.caregiverm03,P,caregiverm03,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.caregiverm03n,P,caregiverm03n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.caregiverm03
 P.caregiverm04,P,caregiverm04,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.caregiverm04n,P,caregiverm04n,,measure,,family,questionnaire,0,,
 P.caregiverm05,P,caregiverm05,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
@@ -1215,9 +1219,11 @@ P.famteaE09,P,famteaE09,對己有利,measure,,family,questionnaire,0,,
 P.famteaE10,P,famteaE10,規避逃離,measure,,family,questionnaire,0,,
 P.famteaE11,P,famteaE11,規避逃離,measure,,family,questionnaire,0,,
 P.fatherinvo01,P,fatherinvo01,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.fatherinvo01n,P,fatherinvo01n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.fatherinvo01
 P.fatherinvo02,P,fatherinvo02,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.fatherinvo02n,P,fatherinvo02n,父職參與,measure,,family,questionnaire,0,,
 P.fatherinvo03,P,fatherinvo03,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.fatherinvo03n,P,fatherinvo03n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.fatherinvo03
 P.fatherinvo04,P,fatherinvo04,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.fatherinvo04n,P,fatherinvo04n,父職參與,measure,,family,questionnaire,0,,
 P.fatherinvo05,P,fatherinvo05,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
@@ -1424,9 +1430,11 @@ P.mmobile,P,mmobile,,admin,,system,questionnaire,0,,
 P.mmobilenumber,P,mmobilenumber,,admin,,system,questionnaire,0,,
 P.mname,P,mname,,admin,,system,questionnaire,0,,
 P.motherinvo01,P,motherinvo01,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.motherinvo01n,P,motherinvo01n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.motherinvo01
 P.motherinvo02,P,motherinvo02,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.motherinvo02n,P,motherinvo02n,母職參與,measure,,family,questionnaire,0,,
 P.motherinvo03,P,motherinvo03,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
+P.motherinvo03n,P,motherinvo03n,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,new varname from .sav header (M36M084G01-P); predecessor P.motherinvo03
 P.motherinvo04,P,motherinvo04,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
 P.motherinvo04n,P,motherinvo04n,母職參與,measure,,family,questionnaire,0,,
 P.motherinvo05,P,motherinvo05,家庭問卷資料_親職參與,measure,,family,questionnaire,0,,
@@ -1518,6 +1526,7 @@ P.pfA060112n,P,pfA060112n,父母的基本資料,background,,demographic,question
 P.pfA060113n,P,pfA060113n,父母的基本資料,background,,demographic,questionnaire,0,,
 P.pfA060114n,P,pfA060114n,父母的基本資料,background,,demographic,questionnaire,0,,
 P.pfA060115n,P,pfA060115n,父母的基本資料,background,,demographic,questionnaire,0,,
+P.pfa06n,P,pfa06n,父母基本資料,background,,demographic,questionnaire,0,,new varname from .sav header (M03M048-P); predecessor P.pfA06
 P.pfA07,P,pfA07,父母基本資料,background,,demographic,questionnaire,0,,
 P.pfA0701,P,pfA0701,父母基本資料,background,,demographic,questionnaire,0,,
 P.pfA070101,P,pfA070101,父母基本資料,background,,demographic,questionnaire,0,,

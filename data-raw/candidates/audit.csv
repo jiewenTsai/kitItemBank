@@ -1,0 +1,813 @@
+level,check,table,key,detail
+note,form_year_diff,datasets,M03M003-P|M03M006-P,同為 P-00-24、家長|2016，沒有區塊狀態可以解釋：M03M003-P 多 61 題（健康問卷資料 61）；M03M006-P 多 16 題（健康問卷資料 16）
+note,form_year_diff,datasets,M03M012-PK|M03M018-PK,同為 P-00-24、親友|2017，沒有區塊狀態可以解釋：M03M012-PK 沒有多的題；M03M018-PK 多 5 題（受訪者資料 5）
+note,form_year_diff,datasets,M03M012-P|M03M018-P,同為 P-00-24、家長|2017，沒有區塊狀態可以解釋：M03M012-P 多 1 題（其他主要照顧者基本資料 1）；M03M018-P 多 58 題（健康問卷資料 53、受訪者資料 5）
+note,form_year_diff,datasets,M03M012-T|M03M018-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 沒有多的題；M03M018-T 多 5 題（受訪者資料 5）
+note,form_year_diff,datasets,M03M012-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 多 25 題（教保人員基本資料 25）；M36M048-T 沒有多的題
+note,form_year_diff,datasets,M03M018-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M018-T 多 30 題（教保人員基本資料 25、受訪者資料 5）；M36M048-T 沒有多的題
+note,renamed_no_group,item_relations,P.caregiverf02|2|P.caregiverf02n|1,舊題 P.caregiverf02 在題組 P.女方、P.親友親職參與；新題 P.caregiverf02n 沒有任何題組
+note,renamed_no_group,item_relations,P.caregiverf04|2|P.caregiverf04n|1,舊題 P.caregiverf04 在題組 P.女方、P.親友親職參與；新題 P.caregiverf04n 沒有任何題組
+note,renamed_no_group,item_relations,P.caregiverm02|2|P.caregiverm02n|1,舊題 P.caregiverm02 在題組 P.親友親職參與、P.男方；新題 P.caregiverm02n 沒有任何題組
+note,renamed_no_group,item_relations,P.caregiverm04|2|P.caregiverm04n|1,舊題 P.caregiverm04 在題組 P.親友親職參與、P.男方；新題 P.caregiverm04n 沒有任何題組
+note,renamed_no_group,item_relations,T.T13020|1|T.T13020n|1,舊題 T.T13020 在題組 T.自我控制；新題 T.T13020n 沒有任何題組
+note,missing_code_scheme,item_versions,C.Cgrow01|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow02|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow03|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow04|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow05|2,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow06a|2,0.2 題庫寫「不知道:8」，不在遺漏方案 2020：M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow06b|2,0.2 題庫寫「不知道:3」，不在遺漏方案 2020：M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Cgrow06|2,0.2 題庫寫「不知道:4」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Csub01|1,0.2 題庫寫「不知道:3」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Csub02|1,0.2 題庫寫「不知道:3」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,C.Csub03|1,0.2 題庫寫「不知道:3」，不在遺漏方案 2020：M03M120G04-C、M36M120G04-C、M36M132G05-C、M36M144G06-C
+note,missing_code_scheme,item_versions,P.bodyAf01|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf04|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf05|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf07|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf08|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf09|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf10|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf11|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf12|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf13|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf14|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf15|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAf16|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg05|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg07|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg08|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg09|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg10|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg11|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyAg12|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.bodyBf01|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf04|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf05|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf07|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf08|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf09|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf10|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf11|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf12|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf13|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf14|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf15|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBf16|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg10|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg11|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg12|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg13|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyBg14|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.bodyCf01|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf04|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf05|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf07|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCf08|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg04|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.bodyCg08|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.care1|1,0.2 題庫寫「不知道:4」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M36M060-P、M36M072-P
+note,missing_code_scheme,item_versions,P.care1|3,0.2 題庫寫「不知道:4」，不在遺漏方案 2016、2020：M03M024-P、M03M072-P
+note,missing_code_scheme,item_versions,P.careduty01|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty02|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty03|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty04|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty05|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty06|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty07|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.careduty08|1,0.2 題庫寫「拒答:4（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.caregiverf01|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverf01|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverf02n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.caregiverf02|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverf02|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverf03|2,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M03M036-P、M03M036-PK、M36M072-P、M36M072-PK
+note,missing_code_scheme,item_versions,P.caregiverf03|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverf04n|1,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M36M084G01-P
+note,missing_code_scheme,item_versions,P.caregiverf04n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.caregiverf04|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverf04|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverf05n|1,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M36M084G01-P
+note,missing_code_scheme,item_versions,P.caregiverf05n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.caregiverf05|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverf05|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverm01|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverm01|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverm02n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.caregiverm02|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverm02|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverm03|2,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M03M036-P、M03M036-PK、M36M072-P、M36M072-PK
+note,missing_code_scheme,item_versions,P.caregiverm03|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverm04n|1,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M36M084G01-P
+note,missing_code_scheme,item_versions,P.caregiverm04n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.caregiverm04|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverm04|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.caregiverm05n|1,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M36M084G01-P
+note,missing_code_scheme,item_versions,P.caregiverm05n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.caregiverm05|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M036-PK、M03M048-P、M03M048-PK、M03M060-P、M03M072-P…（共 8）
+note,missing_code_scheme,item_versions,P.caregiverm05|3,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 16）
+note,missing_code_scheme,item_versions,P.carehome01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.carehome02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.carehome03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.carehome04|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.carehome05|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogA01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA10|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA11|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA12|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogA13|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.cogB01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB02|3,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB10|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogB11|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.cogC01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogC02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogC03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogC04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogC05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogC06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.cogC07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.contentment|1,0.2 題庫寫「不知道:7、拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.coparentE01|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M36M156G07-P
+note,missing_code_scheme,item_versions,P.coparentE02|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M36M156G07-P
+note,missing_code_scheme,item_versions,P.coparentE03|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M36M156G07-P
+note,missing_code_scheme,item_versions,P.famC01n|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC02n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC03n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC04n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC05n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC06n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC07n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC08n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC09n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC10n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC10|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC11n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC11|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC12n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC12|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC13n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC13|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC14n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC14|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC15n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC15|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC16n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC16|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC17n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC17|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC18n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC18|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.famC19n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famC20|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.famedu10|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.famedu11|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.famedu12|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.famedu13_0|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.famedu13|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviA01|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 10）
+note,missing_code_scheme,item_versions,P.fameviA02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 10）
+note,missing_code_scheme,item_versions,P.fameviA03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 10）
+note,missing_code_scheme,item_versions,P.fameviC01n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC01|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC02n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC02|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC03n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC04n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC04|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC05n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC05|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC06n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC06|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC07n|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.fameviC07|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 22）
+note,missing_code_scheme,item_versions,P.fameviC08|1,0.2 題庫寫「不知道:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC09|1,0.2 題庫寫「不知道:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC10|1,0.2 題庫寫「不知道:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC1201|1,0.2 題庫寫「不知道:14、拒答:13」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC1202|1,0.2 題庫寫「不知道:14、拒答:13」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC1301|1,0.2 題庫寫「不知道:14、拒答:13」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC1302|1,0.2 題庫寫「不知道:14、拒答:13」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC14|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC1501|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.fameviC15|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.fameviC16|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviC17|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fameviD1259|1,0.2 題庫寫「不適用:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M084G01-P、M36M084G01-P、M36M096G02-P、M36M108G03-P
+note,missing_code_scheme,item_versions,P.fameviD1259|2,0.2 題庫寫「不適用:5」，不在遺漏方案 2020：M03M096G02-P、M36M120G04-P、M36M132G05-P
+note,missing_code_scheme,item_versions,P.fameviD1259|3,0.2 題庫寫「不適用:5」，不在遺漏方案 2020：M03M108G03-P、M03M120G04-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.fammar02|1,0.2 題庫寫「不適用:5、不適答:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.fammar02|1,0.2 題庫寫「不適用:5」，不在遺漏方案 2020：M03M048-P、M03M060-P、M03M072-P、M03M084G01-P、M03M096G02-P、M36M096G02-P…（共 9）
+note,missing_code_scheme,item_versions,P.fammar02|3,0.2 題庫寫「不適用:5」，不在遺漏方案 2020：M03M108G03-P、M03M120G04-P、M36M144G06-P、M36M156G07-P
+note,missing_code_scheme,item_versions,P.fammar03|1,0.2 題庫寫「不適用:5、不適答:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.fammar03|1,0.2 題庫寫「不適用:5」，不在遺漏方案 2020：M03M048-P、M03M060-P、M03M072-P、M03M084G01-P、M03M096G02-P、M36M096G02-P…（共 9）
+note,missing_code_scheme,item_versions,P.fammar03|4,0.2 題庫寫「不適用:5」，不在遺漏方案 2020：M03M108G03-P、M03M120G04-P、M36M144G06-P、M36M156G07-P
+note,missing_code_scheme,item_versions,P.fammar04|1,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 20）
+note,missing_code_scheme,item_versions,P.fammar05|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.fammar06|1,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 20）
+note,missing_code_scheme,item_versions,P.fammar07|2,0.2 題庫寫「不適用:5」，不在遺漏方案 2016、2020：M36M084G01-P、M36M096G02-P
+note,missing_code_scheme,item_versions,P.fatherinvo01|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.fatherinvo01|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.fatherinvo02n|4,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M36M156G07-P
+note,missing_code_scheme,item_versions,P.fatherinvo02|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.fatherinvo02|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.fatherinvo03|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.fatherinvo03|2,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M03M036-P、M36M036-P、M36M048-P、M36M060-P、M36M072-P
+note,missing_code_scheme,item_versions,P.fatherinvo04n|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M084G01-P、M36M096G02-P…（共 11）
+note,missing_code_scheme,item_versions,P.fatherinvo04|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.fatherinvo04|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.fatherinvo05n|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M084G01-P、M36M096G02-P…（共 11）
+note,missing_code_scheme,item_versions,P.fatherinvo05|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.fatherinvo05|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.food01|1,0.2 題庫寫「不知道:5、拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.food02|1,0.2 題庫寫「不知道:12、拒答:11」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.health01|1,0.2 題庫寫「不知道:3、不知道有沒有做過:3、拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.health02|1,0.2 題庫寫「不知道:3、不知道有沒有做過:3、拒答:4」，不在遺漏方案 2016、2020：M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P…（共 12）
+note,missing_code_scheme,item_versions,P.health03|1,0.2 題庫寫「不知道:3、不知道有沒有做過:3、拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.lanA01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.lanA02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.lanA03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.lanA04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.lanA05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.lanA06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.lanB01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanB09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.lanC01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.lanC09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.med07|1,0.2 題庫寫「不知道:3、拒答:4」，不在遺漏方案 2016：M03M006-P、M03M012-P、M03M018-P、M03M024-P、M36M036-P、M36M048-P…（共 7）
+note,missing_code_scheme,item_versions,P.med08|1,0.2 題庫寫「不知道:3、拒答:4」，不在遺漏方案 2016：M03M006-P、M03M012-P、M03M018-P、M03M024-P、M36M036-P、M36M048-P…（共 7）
+note,missing_code_scheme,item_versions,P.med0901|1,0.2 題庫寫「不知道:3、拒答:4」，不在遺漏方案 2016：M03M012-P、M03M018-P、M03M024-P、M36M048-P、M36M060-P
+note,missing_code_scheme,item_versions,P.med0902|1,0.2 題庫寫「不知道:3、拒答:4」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M018-P、M03M024-P、M36M036-P、M36M060-P
+note,missing_code_scheme,item_versions,P.med1303|1,0.2 題庫寫「不清楚:6」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M36M084G01-P、M36M096G02-P
+note,missing_code_scheme,item_versions,P.med1304|1,0.2 題庫寫「不清楚:6」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M36M084G01-P、M36M096G02-P
+note,missing_code_scheme,item_versions,P.med1305|1,0.2 題庫寫「不清楚:6」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M36M084G01-P、M36M096G02-P
+note,missing_code_scheme,item_versions,P.med1306|1,0.2 題庫寫「不清楚:6」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M36M084G01-P、M36M096G02-P
+note,missing_code_scheme,item_versions,P.motherinvo01|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.motherinvo01|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.motherinvo02n|2,0.2 題庫寫「不適答:5」，不在遺漏方案 2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M120G04-P、M36M132G05-P…（共 8）
+note,missing_code_scheme,item_versions,P.motherinvo02|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.motherinvo02|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.motherinvo03|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.motherinvo03|2,0.2 題庫寫「不適答:9995」，不在遺漏方案 2016：M03M036-P、M36M036-P、M36M048-P、M36M060-P、M36M072-P
+note,missing_code_scheme,item_versions,P.motherinvo04n|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M084G01-P、M36M096G02-P…（共 11）
+note,missing_code_scheme,item_versions,P.motherinvo04|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.motherinvo04|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.motherinvo05n|1,0.2 題庫寫「不適答:5」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M084G01-P、M36M096G02-P…（共 11）
+note,missing_code_scheme,item_versions,P.motherinvo05|1,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.motherinvo05|2,0.2 題庫寫「不適用:5、不適答:5、拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.pfA0101|1,0.2 題庫寫「不知道:2、不適用:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA0102|1,0.2 題庫寫「不知道:2、不適用:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA0201n|1,0.2 題庫寫「不知道:7、不適用:9」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.pfA0201n|2,0.2 題庫寫「不知道:7、不適用:8」，不在遺漏方案 2020：M36M096G02-P、M36M108G03-P
+note,missing_code_scheme,item_versions,P.pfA0201|1,0.2 題庫寫「不知道:7、不適用:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 12）
+note,missing_code_scheme,item_versions,P.pfA0202n|1,0.2 題庫寫「不知道:7、不適用:9」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.pfA0202n|2,0.2 題庫寫「不知道:7、不適用:8」，不在遺漏方案 2020：M36M096G02-P、M36M108G03-P
+note,missing_code_scheme,item_versions,P.pfA0202|1,0.2 題庫寫「不知道:7、不適用:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 12）
+note,missing_code_scheme,item_versions,P.pfA03|1,0.2 題庫寫「不知道:8、不適用:10、拒答:9」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 12）
+note,missing_code_scheme,item_versions,P.pfA04|1,0.2 題庫寫「不知道:8、不適用:10、拒答:9」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 12）
+note,missing_code_scheme,item_versions,P.pfA05|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA06|1,0.2 題庫寫「不知道:5、不適用:3（也是選項代碼）、拒答:4」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.pfA06|2,0.2 題庫寫「不知道:5、不適用:3（也是選項代碼）、拒答:4」，不在遺漏方案 2016、2020：M03M036-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P、M36M060-P…（共 7）
+note,missing_code_scheme,item_versions,P.pfA07|1,0.2 題庫寫「不知道:5、不適用:3（也是選項代碼）、拒答:4」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.pfA07|2,0.2 題庫寫「不知道:5、不適用:3（也是選項代碼）、拒答:4」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.pfA08|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA09|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA1001|1,0.2 題庫寫「不知道:7（也是選項代碼）、不適用:8（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 17）
+note,missing_code_scheme,item_versions,P.pfA1001|3,0.2 題庫寫「不知道:7、不適用:8」，不在遺漏方案 2020：M03M096G02-P、M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P、M36M156G07-P
+note,missing_code_scheme,item_versions,P.pfA1001|7,0.2 題庫寫「不適用:8」，不在遺漏方案 2020：M03M108G03-P
+note,missing_code_scheme,item_versions,P.pfA1002|1,0.2 題庫寫「不知道:7（也是選項代碼）、不適用:8（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 17）
+note,missing_code_scheme,item_versions,P.pfA1002|3,0.2 題庫寫「不知道:7、不適用:8」，不在遺漏方案 2020：M03M096G02-P、M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P、M36M156G07-P
+note,missing_code_scheme,item_versions,P.pfA1002|7,0.2 題庫寫「不適用:8」，不在遺漏方案 2020：M03M108G03-P
+note,missing_code_scheme,item_versions,P.pfA1101|1,0.2 題庫寫「不知道:16（也是選項代碼）、不適用:17（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 17）
+note,missing_code_scheme,item_versions,P.pfA1101|3,0.2 題庫寫「不知道:16、不適用:17」，不在遺漏方案 2020：M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P…（共 7）
+note,missing_code_scheme,item_versions,P.pfA1102|1,0.2 題庫寫「不知道:16（也是選項代碼）、不適用:17（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 17）
+note,missing_code_scheme,item_versions,P.pfA1102|3,0.2 題庫寫「不知道:16、不適用:17」，不在遺漏方案 2020：M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P…（共 7）
+note,missing_code_scheme,item_versions,P.pfA12|1,0.2 題庫寫「不知道:8、不適用:10、拒答:9」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.pfA12|2,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M036-P、M36M036-P、M36M048-P、M36M060-P、M36M072-P、M36M084G01-P
+note,missing_code_scheme,item_versions,P.pfA13|1,0.2 題庫寫「不知道:8、不適用:10、拒答:9」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.pfA13|2,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M036-P、M36M036-P、M36M048-P、M36M060-P、M36M072-P、M36M084G01-P
+note,missing_code_scheme,item_versions,P.pfA14|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA1501|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA1502|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA1601|1,0.2 題庫寫「不知道:5、不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA1601|1,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M048-P、M03M060-P、M03M072-P、M03M120G04-P、M36M096G02-P、M36M108G03-P…（共 10）
+note,missing_code_scheme,item_versions,P.pfA1602|1,0.2 題庫寫「不知道:5、不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 11）
+note,missing_code_scheme,item_versions,P.pfA1602|1,0.2 題庫寫「不知道:5」，不在遺漏方案 2020：M03M048-P、M03M060-P、M03M072-P、M03M120G04-P、M36M096G02-P、M36M108G03-P…（共 10）
+note,missing_code_scheme,item_versions,P.pfB03|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB04|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB0501a|2,0.2 題庫寫「不知道:9、拒答:8」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M36M072-P
+note,missing_code_scheme,item_versions,P.pfB0502|1,0.2 題庫寫「不知道:8、拒答:7」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB0801|1,0.2 題庫寫「不知道:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB0802|1,0.2 題庫寫「不知道:9、拒答:8」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB09|1,0.2 題庫寫「不知道:5、拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB10|1,0.2 題庫寫「不知道:5、拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfB11|1,0.2 題庫寫「不知道:5、拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.pfC0201|1,0.2 題庫寫「不知道:8、不適用:9、拒答:7」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.pfC0201|2,0.2 題庫寫「不知道:7、不適用:9」，不在遺漏方案 2016、2020：M36M084G01-P、M36M096G02-P、M36M108G03-P
+note,missing_code_scheme,item_versions,P.pfC0202|1,0.2 題庫寫「不知道:8、不適用:9、拒答:7」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.pfC0202|2,0.2 題庫寫「不知道:7、不適用:9」，不在遺漏方案 2016、2020：M36M084G01-P、M36M096G02-P、M36M108G03-P
+note,missing_code_scheme,item_versions,P.pfC0701|1,0.2 題庫寫「不知道:7（也是選項代碼）、不適用:8（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 28）
+note,missing_code_scheme,item_versions,P.pfC0701|3,0.2 題庫寫「不知道:7、不適用:8」，不在遺漏方案 2020：M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.pfC0702|1,0.2 題庫寫「不知道:7（也是選項代碼）、不適用:8（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 28）
+note,missing_code_scheme,item_versions,P.pfC0702|3,0.2 題庫寫「不知道:7、不適用:8」，不在遺漏方案 2020：M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.pfC10|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 24）
+note,missing_code_scheme,item_versions,P.pfC1101|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 21）
+note,missing_code_scheme,item_versions,P.pfC1102|1,0.2 題庫寫「不適用:9995」，不在遺漏方案 2016：M03M003-P、M03M003-PK、M03M006-P、M03M006-PK、M03M012-P、M03M012-PK…（共 21）
+note,missing_code_scheme,item_versions,P.pfD01|1,0.2 題庫寫「不適用:3」，不在遺漏方案 2016、2020：M36M084G01-P、M36M096G02-P、M36M108G03-P
+note,missing_code_scheme,item_versions,P.pfD01|2,0.2 題庫寫「不適用:3」，不在遺漏方案 2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M120G04-P、M36M132G05-P…（共 8）
+note,missing_code_scheme,item_versions,P.pfD05|1,0.2 題庫寫「不適用:4」，不在遺漏方案 2016、2020：M03M084G01-P、M03M096G02-P、M03M108G03-P、M03M120G04-P、M36M084G01-P、M36M096G02-P…（共 11）
+note,missing_code_scheme,item_versions,P.postc0101|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.postc0102|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.postc0103|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.postc0104|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.postn04|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.postn06|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.postn07|1,0.2 題庫寫「不知道:7、拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.prec03|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.prec04|1,0.2 題庫寫「不知道:3、拒答:4」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.prec05|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.prec06|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M018-P、M03M024-P、M03M036-P、M03M048-P、M03M060-P…（共 10）
+note,missing_code_scheme,item_versions,P.preem0201|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.preem0202|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.preem0203|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.preem0204|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.preem03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M003-P
+note,missing_code_scheme,item_versions,P.school08|1,0.2 題庫寫「不知道:1」，不在遺漏方案 2020：M03M120G04-P、M36M120G04-P、M36M132G05-P、M36M144G06-P
+note,missing_code_scheme,item_versions,P.school08|2,0.2 題庫寫「不知道:1」，不在遺漏方案 2020：M36M156G07-P
+note,missing_code_scheme,item_versions,P.sd1|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M018-P、M03M018-PK、M03M024-P、M03M024-PK、M03M036-P、M03M036-PK…（共 14）
+note,missing_code_scheme,item_versions,P.sd2|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M018-P、M03M018-PK、M03M024-P、M03M024-PK、M03M036-P、M03M036-PK…（共 14）
+note,missing_code_scheme,item_versions,P.sd3|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M018-P、M03M018-PK、M03M024-P、M03M024-PK、M03M036-P、M03M036-PK…（共 14）
+note,missing_code_scheme,item_versions,P.sd4|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M018-P、M03M018-PK、M03M024-P、M03M024-PK、M03M036-P、M03M036-PK…（共 14）
+note,missing_code_scheme,item_versions,P.sd5|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M018-P、M03M018-PK、M03M024-P、M03M024-PK、M03M036-P、M03M036-PK…（共 14）
+note,missing_code_scheme,item_versions,P.sleep01|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.slequa1|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socA01|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA02|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA03|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA04|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA05|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA06|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA07|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA08|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA09|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA10|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA11|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA12|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA13|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA14|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA15|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA16|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA17|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socA18|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P
+note,missing_code_scheme,item_versions,P.socB01|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB02|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB03|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB04|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB05|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB06|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB07|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB08|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB09|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB10|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB12|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB14|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB16|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB17|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB19|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB20|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB21|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB22|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB23|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socB26|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M036-P、M03M048-P、M03M060-P、M03M072-P、M36M036-P、M36M048-P…（共 8）
+note,missing_code_scheme,item_versions,P.socC01|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC02|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC03|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC04|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC05|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC06|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC07|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC09|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC10|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC12|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC13|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC14|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC15_0|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2020：M03M060-P、M03M072-P
+note,missing_code_scheme,item_versions,P.socC15|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC16|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC17|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC18|1,0.2 題庫寫「拒答:6（也是選項代碼）」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC19|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.socC20|1,0.2 題庫寫「拒答:6」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 13）
+note,missing_code_scheme,item_versions,P.vac01|1,0.2 題庫寫「不知道:4、拒答:5」，不在遺漏方案 2016、2020：M03M003-P、M03M006-P、M03M012-P、M03M018-P、M03M024-P、M03M036-P…（共 12）
+note,missing_code_scheme,item_versions,T.T4002|1,0.2 題庫寫「不適用:3」，不在遺漏方案 2016、2020：M36M084G01-T、M36M096G02-T、M36M108G03-T、M36M120G04-T、M36M132G05-T、M36M144G06-T…（共 7）
+note,missing_code_scheme,item_versions,T.act01|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act02|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act03|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act04|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act05|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act06|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act07|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act08|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act09|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act10|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act11|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act12|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act13|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act14|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act15|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act16|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.act17|1,0.2 題庫寫「拒答:7」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.basic030101|1,0.2 題庫寫「不知道:5、拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.basic030102|1,0.2 題庫寫「不知道:5、拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.basic0301|1,0.2 題庫寫「不知道:5、拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.basic030201|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.basic030202|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.basic0302|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.basic07|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.basic10|1,0.2 題庫寫「不知道:4、拒答:3」，不在遺漏方案 2016：M36M036-T
+note,missing_code_scheme,item_versions,T.con01|1,0.2 題庫寫「不知道:7、拒答:6」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env10|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env11|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env12|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env13|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env14|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.env15|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.faith01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.faith02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.faith03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.faith04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.faith05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.faith06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter03|1,0.2 題庫寫「拒答:5（也是選項代碼）」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter07|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter08|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter09|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.inter10|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.learn01|1,0.2 題庫寫「拒答:14」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.learn02|1,0.2 題庫寫「拒答:14」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.learn03|1,0.2 題庫寫「拒答:14」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.parents01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.parents02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.parents03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.parents04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.parents05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.pro01|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.relation01|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.relation02|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.relation03|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.relation04|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.relation05|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.relation06|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp01|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp02|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp03|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp04|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp05|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp06|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp07|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.resp08|1,0.2 題庫寫「拒答:4」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.sd1|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M018-T、M03M024-T、M36M060-T
+note,missing_code_scheme,item_versions,T.sd2|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M018-T、M03M024-T、M36M060-T
+note,missing_code_scheme,item_versions,T.sd3|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M018-T、M03M024-T、M36M060-T
+note,missing_code_scheme,item_versions,T.sd4|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M018-T、M03M024-T、M36M060-T
+note,missing_code_scheme,item_versions,T.sd5|1,0.2 題庫寫「拒答:5」，不在遺漏方案 2016：M03M018-T、M03M024-T、M36M060-T
+note,missing_code_scheme,item_versions,T.teach|1,0.2 題庫寫「不知道:6、拒答:5」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.tgender01|1,0.2 題庫寫「拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.tgender02|1,0.2 題庫寫「拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.tgender03|1,0.2 題庫寫「拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M060-T…（共 7）
+note,missing_code_scheme,item_versions,T.tgender|1,0.2 題庫寫「拒答:3」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,missing_code_scheme,item_versions,T.tv|1,0.2 題庫寫「不知道:14、拒答:13」，不在遺漏方案 2016、2020：M03M012-T、M03M018-T、M03M024-T、M03M036-T、M03M048-T、M36M036-T…（共 9）
+note,group_single_item,group_members,C-G4-G6|C.上下學途中安全,只有 1 題：C.Chappy04
+note,group_single_item,group_members,C-G4-G6|C.寫作業時間,只有 1 題：C.CfameviA01
+note,group_single_item,group_members,C-G4-G6|C.縱容,只有 1 題：C.Cfamedu07
+note,group_single_item,group_members,C-G4-G6|C.負向心理適應_孤寂感,只有 1 題：C.CsocB07
+note,group_single_item,group_members,C-G4-G6|C.身體意象,只有 1 題：C.Chealth02
+note,group_single_item,group_members,C-G7-G9|C.上下學途中安全,只有 1 題：C.Chappy04
+note,group_single_item,group_members,C-G7-G9|C.寫作業時間,只有 1 題：C.CfameviA01
+note,group_single_item,group_members,C-G7-G9|C.縱容,只有 1 題：C.Cfamedu07
+note,group_single_item,group_members,C-G7-G9|C.語文參與程度_行為,只有 1 題：C.ClanB03
+note,group_single_item,group_members,C-G7-G9|C.負向心理適應_孤寂感,只有 1 題：C.CsocB07
+note,group_single_item,group_members,C-G7-G9|C.身體意象,只有 1 題：C.Chealth02
+note,group_single_item,group_members,P-00-24|P.一般教養,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-00-24|P.偏心,只有 1 題：P.fammar04
+note,group_single_item,group_members,P-00-24|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-00-24|P.利社會行為,只有 1 題：P.socC21
+note,group_single_item,group_members,P-00-24|P.婚姻滿意,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-00-24|P.婚姻滿意度,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-00-24|P.害羞,只有 1 題：P.socC07
+note,group_single_item,group_members,P-00-24|P.家庭支持人力,只有 1 題：P.fameviC14
+note,group_single_item,group_members,P-00-24|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-00-24|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-00-24|P.物理環境,只有 1 題：P.famC20
+note,group_single_item,group_members,P-00-24|P.經濟條件,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-00-24|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-00-24|P.親職效能感,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-00-24|P.親職自我效能,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-00-24|P.讀,只有 1 題：P.lanC09
+note,group_single_item,group_members,P-00-24|P.過度反應,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-00-24|P.遵守規範,只有 1 題：P.socC22
+note,group_single_item,group_members,P-36-72|P.一般教養,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-36-72|P.偏心,只有 1 題：P.fammar04
+note,group_single_item,group_members,P-36-72|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-36-72|P.利社會行為,只有 1 題：P.socC21
+note,group_single_item,group_members,P-36-72|P.婚姻滿意,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-36-72|P.婚姻滿意度,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-36-72|P.害羞,只有 1 題：P.socC07
+note,group_single_item,group_members,P-36-72|P.家庭支持人力,只有 1 題：P.fameviC14
+note,group_single_item,group_members,P-36-72|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-36-72|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-36-72|P.寫,只有 1 題：P.lanB09
+note,group_single_item,group_members,P-36-72|P.手部操作,只有 1 題：P.bodyBf12
+note,group_single_item,group_members,P-36-72|P.物理環境,只有 1 題：P.famC20
+note,group_single_item,group_members,P-36-72|P.穩定度和肌力,只有 1 題：P.bodyBg05
+note,group_single_item,group_members,P-36-72|P.經濟條件,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-36-72|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-36-72|P.聽,只有 1 題：P.lanB01
+note,group_single_item,group_members,P-36-72|P.親職效能感,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-36-72|P.親職自我效能,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-36-72|P.說,只有 1 題：P.lanB06
+note,group_single_item,group_members,P-36-72|P.過度反應,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-36-72|P.遵守規範,只有 1 題：P.socC22
+note,group_single_item,group_members,P-G1-G3|P.一般教養,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G1-G3|P.偏心,只有 1 題：P.fammar04
+note,group_single_item,group_members,P-G1-G3|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G1-G3|P.合群性,只有 1 題：P.socC21
+note,group_single_item,group_members,P-G1-G3|P.圖書與共讀,只有 1 題：P.fameviC08
+note,group_single_item,group_members,P-G1-G3|P.外化性問題行為,只有 1 題：P.socD42
+note,group_single_item,group_members,P-G1-G3|P.婚姻滿意,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-G1-G3|P.婚姻滿意度,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-G1-G3|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G1-G3|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G1-G3|P.抓握和手部操作,只有 1 題：P.bodyBf12
+note,group_single_item,group_members,P-G1-G3|P.物理環境,只有 1 題：P.famC20
+note,group_single_item,group_members,P-G1-G3|P.生活常規,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G1-G3|P.穩定度和移位,只有 1 題：P.bodyBg06
+note,group_single_item,group_members,P-G1-G3|P.經濟條件,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G1-G3|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G1-G3|P.親職效能感,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G1-G3|P.親職自我效能,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G1-G3|P.語文環境與口語互動品質,只有 1 題：P.fameviC01
+note,group_single_item,group_members,P-G1-G3|P.語言理解,只有 1 題：P.lanB01
+note,group_single_item,group_members,P-G1-G3|P.語言表達,只有 1 題：P.lanB06
+note,group_single_item,group_members,P-G1-G3|P.過度反應,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G1-G3|P.順從性,只有 1 題：P.socC22
+note,group_single_item,group_members,P-G4-G6|P.一般教養,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G4-G6|P.偏心,只有 1 題：P.fammar04
+note,group_single_item,group_members,P-G4-G6|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G4-G6|P.同理,只有 1 題：P.socD11
+note,group_single_item,group_members,P-G4-G6|P.婚姻滿意,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-G4-G6|P.婚姻滿意度,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-G4-G6|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G4-G6|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G4-G6|P.物理環境,只有 1 題：P.famC20
+note,group_single_item,group_members,P-G4-G6|P.生活常規,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G4-G6|P.穩定度和肌力,只有 1 題：P.bodyBg05
+note,group_single_item,group_members,P-G4-G6|P.經濟條件,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G4-G6|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G4-G6|P.視動整合,只有 1 題：P.bodyDf05
+note,group_single_item,group_members,P-G4-G6|P.親職效能感,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G4-G6|P.親職自我效能,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G4-G6|P.語文環境與口語互動品質,只有 1 題：P.fameviC01
+note,group_single_item,group_members,P-G4-G6|P.過度反應,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G4-G6|P.違規行為,只有 1 題：P.socD42
+note,group_single_item,group_members,P-G4-G6|P.鼓勵成熟,只有 1 題：P.famD20
+note,group_single_item,group_members,P-G7-G9|P.一般教養,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G7-G9|P.偏心,只有 1 題：P.fammar04
+note,group_single_item,group_members,P-G7-G9|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G7-G9|P.同理,只有 1 題：P.socD11
+note,group_single_item,group_members,P-G7-G9|P.嗜好培養,只有 1 題：P.famE04
+note,group_single_item,group_members,P-G7-G9|P.婚姻滿意,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-G7-G9|P.婚姻滿意度,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-G7-G9|P.家庭生活狀況,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G7-G9|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-G7-G9|P.對孩子的成就期待,只有 1 題：P.fameviE06
+note,group_single_item,group_members,P-G7-G9|P.物理環境,只有 1 題：P.famC20
+note,group_single_item,group_members,P-G7-G9|P.生活常規,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G7-G9|P.經濟條件,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-G7-G9|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G7-G9|P.親職效能感,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G7-G9|P.親職自我效能,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-G7-G9|P.語文環境與口語互動品質,只有 1 題：P.fameviC01
+note,group_single_item,group_members,P-G7-G9|P.調節力,只有 1 題：P.cogD02
+note,group_single_item,group_members,P-G7-G9|P.過度反應,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-G7-G9|P.違規行為,只有 1 題：P.socD42
+note,group_single_item,group_members,T-G1-G3|T.口語理解,只有 1 題：T.T12001
+note,group_single_item,group_members,T-G1-G3|T.識字,只有 1 題：T.T12005
+note,group_single_item,group_members,T-G4-G6|T.違規行為,只有 1 題：T.T13051
+note,group_single_item,group_members,T-G7-G9|T.情緒調節,只有 1 題：T.T13035
+note,group_single_item,group_members,T-G7-G9|T.調節力,只有 1 題：T.T11002
+note,group_single_item,group_members,T-G7-G9|T.退縮,只有 1 題：T.T13041
+note,group_single_item,group_members,T-G7-G9|T.違規行為,只有 1 題：T.T13051
+note,group_single_item,group_members,T-presch|T.幼兒基本資料,只有 1 題：T.tsorting
+note,group_empty,groups,P.HOME量表,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.動作能力總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.家庭互動,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.情緒能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.整體,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.理解,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.目標幼兒身分確認,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.社會能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.粗大動作總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.精細動作總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.聽+說,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.華人教養,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.表達,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.覺察,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.語言發展能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,P.調節,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.內化性行為問題,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.動作能力總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.口語理解+口語表達,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.外化性行為問題,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.情緒能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.攻擊,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.整體,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.理解,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.社會能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.粗大_穩定度和肌力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.粗大_身體協調,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.粗大動作總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.精細_手部操作,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.精細_視動整合,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.精細動作總分,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.表達,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.覺察,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.語文發展能力,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.調節,沒有任何題目，也沒有下層題組
+note,group_empty,groups,T.識字+閱讀,沒有任何題目，也沒有下層題組
+note,group_nonleaf_member,group_members,C-G4-G6|C.學校環境,中間層題組直接掛了 18 題：C.Crelation01、C.Crelation02、C.Crelation03、C.Crelation04、C.Crelation05…（共 18）
+note,group_nonleaf_member,group_members,C-G4-G6|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
+note,group_nonleaf_member,group_members,C-G4-G6|C.家庭問卷資料_學習環境(家庭互動環境),中間層題組直接掛了 64 題：C.CfamA00、C.CfamA01、C.CfamA02、C.CfamA03、C.CfamA04…（共 64）
+note,group_nonleaf_member,group_members,C-G7-G9|C.學校環境,中間層題組直接掛了 34 題：C.Crelation01、C.Crelation02、C.Crelation03、C.Crelation04、C.Crelation05…（共 34）
+note,group_nonleaf_member,group_members,C-G7-G9|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
+note,group_nonleaf_member,group_members,C-G7-G9|C.家庭問卷資料_學習環境(家庭互動環境),中間層題組直接掛了 24 題：C.CfamA13、C.CfamA15、C.CfamA16、C.CfamA17、C.CfamA18…（共 24）
+note,text_simplified,item_versions,P.med0303|1,題目文字（label）有簡體字「髋」（應為「髖」）
+note,text_simplified,item_versions,T.T51010n|1,題目文字（label）有簡體字「内」（應為「內」）
+note,text_newline,item_versions,P.med0801|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.med0802|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.med0803|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.med0804a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.med0804|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.parentsfreq|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070103a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070103b|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070104a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070104b|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070203a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070203b|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070204a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfA070204b|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfB03a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.pfB03b|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.postn0506|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.sleep01a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.sleep01d|1,題目文字（label）裡有換行
+note,text_newline,item_versions,P.slequa1|1,題目文字（label）裡有換行
+note,text_newline,item_versions,T.am|1,題目文字（label）裡有換行
+note,text_newline,item_versions,T.learn01a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,T.learn02a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,T.learn03a|1,題目文字（label）裡有換行
+note,text_newline,item_versions,T.pm|1,題目文字（label）裡有換行
+note,internal_admins,datasets,v02,25 個資料檔（12 次施測）還沒有 .sav，題目只來自 0.2 題庫：M03M060-P、M03M072-P、M03M084G01-P、M36M096G02-P…（共 25）
+note,role_module_blank,items,C.CelderE01,role 和 module 都空白
+note,role_module_blank,items,C.CelderE02,role 和 module 都空白
+note,role_module_blank,items,C.CelderE03,role 和 module 都空白
+note,role_module_blank,items,P.care3,role 和 module 都空白
+note,role_module_blank,items,P.covid01,role 和 module 都空白
+note,role_module_blank,items,P.covid02,role 和 module 都空白
+note,role_module_blank,items,P.covid03,role 和 module 都空白
+note,role_module_blank,items,P.covid04,role 和 module 都空白
+note,role_module_blank,items,P.covid0401a,role 和 module 都空白
+note,role_module_blank,items,P.covid0401b,role 和 module 都空白
+note,role_module_blank,items,P.covid0402a,role 和 module 都空白
+note,role_module_blank,items,P.covid0402b,role 和 module 都空白
+note,role_module_blank,items,P.covid0403a,role 和 module 都空白
+note,role_module_blank,items,P.covid0403b,role 和 module 都空白
+note,role_module_blank,items,P.covid0404a,role 和 module 都空白
+note,role_module_blank,items,P.covid0404b,role 和 module 都空白
+note,role_module_blank,items,P.covid0405a,role 和 module 都空白
+note,role_module_blank,items,P.covid0405b,role 和 module 都空白
+note,role_module_blank,items,P.covid0406a,role 和 module 都空白
+note,role_module_blank,items,P.covid0406b,role 和 module 都空白
+note,role_module_blank,items,P.covid0407a,role 和 module 都空白
+note,role_module_blank,items,P.covid0407b,role 和 module 都空白
+note,role_module_blank,items,P.covid0408a,role 和 module 都空白
+note,role_module_blank,items,P.covid0408b,role 和 module 都空白
+note,role_module_blank,items,P.covid0409a,role 和 module 都空白
+note,role_module_blank,items,P.covid0409b,role 和 module 都空白
+note,role_module_blank,items,P.covid0410a,role 和 module 都空白
+note,role_module_blank,items,P.covid0410b,role 和 module 都空白
+note,role_module_blank,items,P.covid04n,role 和 module 都空白
+note,role_module_blank,items,P.famtea02,role 和 module 都空白
+note,role_module_blank,items,P.trelationship03,role 和 module 都空白
+note,role_module_blank,items,T.T14037,role 和 module 都空白
+note,role_module_blank,items,T.T14037a,role 和 module 都空白
+note,role_module_blank,items,T.T14037b,role 和 module 都空白
+note,role_module_blank,items,T.T14037c,role 和 module 都空白
+note,role_module_blank,items,T.T14037d,role 和 module 都空白
+note,role_module_blank,items,T.T14037e,role 和 module 都空白
+note,role_module_blank,items,T.T14037f,role 和 module 都空白
+note,role_module_blank,items,T.T14037g,role 和 module 都空白
+note,role_module_blank,items,T.T14037h,role 和 module 都空白
+note,role_module_blank,items,T.T14037i,role 和 module 都空白
+note,role_module_blank,items,T.T14037j,role 和 module 都空白
+note,role_module_blank,items,T.T14037k,role 和 module 都空白
+note,role_module_blank,items,T.T14037l,role 和 module 都空白
+note,role_module_blank,items,T.T14037m,role 和 module 都空白
+note,role_module_blank,items,T.T14037n,role 和 module 都空白
+note,role_module_blank,items,T.T14037o,role 和 module 都空白
+note,role_module_blank,items,T.T14037oa,role 和 module 都空白
+note,role_module_blank,items,T.T14038a,role 和 module 都空白
+note,role_module_blank,items,T.T14038b,role 和 module 都空白
+note,role_module_blank,items,T.T54001,role 和 module 都空白
+note,role_module_blank,items,T.T54002,role 和 module 都空白
+note,role_module_blank,items,T.T54003,role 和 module 都空白
+note,role_module_blank,items,T.T54004,role 和 module 都空白
+note,role_module_blank,items,T.T54005,role 和 module 都空白
+note,role_module_blank,items,T.T54006,role 和 module 都空白
+note,role_module_blank,items,T.T54007,role 和 module 都空白
+note,role_module_blank,items,T.T54008,role 和 module 都空白
+note,role_module_blank,items,T.T54009,role 和 module 都空白
+note,role_module_blank,items,T.T55001,role 和 module 都空白

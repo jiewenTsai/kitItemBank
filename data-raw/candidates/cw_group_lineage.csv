@@ -1,0 +1,3 @@
+from_group,to_group,from_formID,formID,year,n_items,varnames,confidence,basis
+P.合群性,P.利社會行為,P-36-72,P-G1-G3,2020,1,socC21,high,crosswalk sub-construct 'A/G1-G3 B': form-tagged alternative path
+P.順從性,P.遵守規範,P-36-72,P-G1-G3,2020,1,socC22,high,crosswalk sub-construct 'A/G1-G3 B': form-tagged alternative path

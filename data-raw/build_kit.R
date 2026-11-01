@@ -106,7 +106,39 @@ kit$dataset_vars <- dataset_vars
 kit$group_members <- group_members
 kit$group_tree <- group_tree
 
+# 1.5–1.7：候選。只有 confidence = high 的進 kit；全部寫到 data-raw/candidates/ 給人確認 ----
+cand_dir <- "data-raw/candidates"
+dir.create(cand_dir, showWarnings = FALSE)
+all_dir <- file.path(sav_dir, "all")
+
+# 1.5 題目關係（含 .sav 有、題庫沒有的新題號）
+rel <- propose_relations(kit, v02, sav, meta_dir = sav_dir)
+kit <- apply_relations(kit, rel, levels = "high")
+readr::write_csv(rel$relations, file.path(cand_dir, "item_relations.csv"), na = "")
+
+# 1.4 對照表：題目位置直接寫入；題組樹、成員、關係提示只出候選
+cw <- import_crosswalk(file.path(all_dir, c("cw_M03W48.xlsx", "cw_M36W84.xlsx")), kit,
+                       usage_dir = all_dir, sav_dir = sav_dir)
+k <- match(paste(kit$dataset_vars$datasetID, kit$dataset_vars$varname),
+           paste(cw$positions$datasetID, cw$positions$varname))
+kit$dataset_vars$position[!is.na(k)] <- cw$positions$position[k[!is.na(k)]]
+write_crosswalk_candidates(cw, cand_dir)
+
+# 1.6 區塊狀態
+blocks <- propose_blocks(kit, usage_dir = all_dir, meta_dir = sav_dir,
+                         crosswalk = utils::read.csv(file.path(sav_dir, "item_admin_from_crosswalk.csv"),
+                                                     encoding = "UTF-8", stringsAsFactors = FALSE))
+kit$block_status <- conform_kit_table(blocks$block_status[blocks$block_status$confidence == "high", ],
+                                      "block_status")
+readr::write_csv(blocks$block_status, file.path(cand_dir, "block_status.csv"), na = "")
+
 res <- check_kit(kit)
+
+# 1.7 要注意清單
+aud <- audit_kit(kit, sav = sav, noresponse = v02$noresponse_codes)
+readr::write_csv(aud, file.path(cand_dir, "audit.csv"), na = "")
+cat("\n== audit_kit\n")
+print(audit_kit_summary(aud), row.names = FALSE)
 cat("\n== check_kit:", nrow(res), "issues\n")
 if (nrow(res)) print(table(res$table, res$check))
 
@@ -116,5 +148,6 @@ print(vapply(kit, nrow, integer(1)))
 cat("\n== sav coverage\n")
 print(sav$summary[, c("datasetID", "n_vars", "matched", "pct_matched", "items",
                       "items_matched", "system", "weight", "derived")], row.names = FALSE)
-saveRDS(list(kit = kit, v02 = v02, des = des, sav = sav, check = res),
+saveRDS(list(kit = kit, v02 = v02, des = des, sav = sav, rel = rel, cw = cw, blocks = blocks,
+             audit = aud, check = res),
         file.path(sav_dir, "..", "kit_build.rds"))
