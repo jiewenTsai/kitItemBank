@@ -70,10 +70,10 @@ page_search_ui <- function(id) {
                             # 原文：任一構面 | 每個構面都有
                             c("\u4efb\u4e00\u69cb\u9762" = "any", "\u6bcf\u500b\u69cb\u9762\u90fd\u6709" = "all"), inline = TRUE),
         kitDesign::kit_advanced(
-          # 原文：進階設定（題組、題型、填答者）
-          title = "\u9032\u968e\u8a2d\u5b9a\uff08\u984c\u7d44\u3001\u984c\u578b\u3001\u586b\u7b54\u8005\uff09", open = advanced_set,
-          # 原文：題組
-          multi("blocks", "\u984c\u7d44"),
+          # 原文：進階設定（區塊、題型、填答者）
+          title = "\u9032\u968e\u8a2d\u5b9a\uff08\u5340\u584a\u3001\u984c\u578b\u3001\u586b\u7b54\u8005\uff09", open = advanced_set,
+          # 原文：區塊
+          multi("blocks", "\u5340\u584a"),
           # 原文：題型
           multi("item_types", "\u984c\u578b"),
           # 原文：填答者
@@ -106,8 +106,8 @@ page_search_ui <- function(id) {
           "\u5404\u6ce2\u6b21\u984c\u6578",
           # 原文：每一列是
           shiny::radioButtons(ns("heat_by"), "\u6bcf\u4e00\u5217\u662f",
-                              # 原文：題組 | 構面
-                              c("\u984c\u7d44" = "block", "\u69cb\u9762" = "dim"), inline = TRUE),
+                              # 原文：區塊 | 構面
+                              c("\u5340\u584a" = "block", "\u69cb\u9762" = "dim"), inline = TRUE),
           shiny::uiOutput(ns("heat_ui")),
           shiny::uiOutput(ns("heat_note"))
         ),
@@ -453,8 +453,8 @@ page_search_server <- function(id, store, goto, request) {
       plotly::plotlyOutput(ns("heat"), height = paste0(180L + 22L * nrow(m), "px"))
     })
     output$heat_note <- shiny::renderUI({
-      # 原文：構面 | 題組
-      what <- if (heat_by() == "dim") "\u69cb\u9762" else "\u984c\u7d44"
+      # 原文：構面 | 區塊
+      what <- if (heat_by() == "dim") "\u69cb\u9762" else "\u5340\u584a"
       shiny::p(class = "kit-hint", paste0(
         # 原文：每一格是一個 | 在一個波次有幾題，顏色越深題數越多；空白表示那一波次沒有。
         "\u6bcf\u4e00\u683c\u662f\u4e00\u500b", what, "\u5728\u4e00\u500b\u6ce2\u6b21\u6709\u5e7e\u984c\uff0c\u984f\u8272\u8d8a\u6df1\u984c\u6578\u8d8a\u591a\uff1b\u7a7a\u767d\u8868\u793a\u90a3\u4e00\u6ce2\u6b21\u6c92\u6709\u3002",
@@ -681,8 +681,8 @@ item_detail_ui <- function(d, ns, notes = character()) {
     if (is.na(x)) "" else x
   }
   meta <- c(
-    # 原文：題組 
-    if (nzchar(chr1(it$block))) paste0("\u984c\u7d44 ", it$block),
+    # 原文：區塊 
+    if (nzchar(chr1(it$block))) paste0("\u5340\u584a ", it$block),
     # 原文：題型 
     if (nzchar(chr1(it$itemType))) paste0("\u984c\u578b ", item_type_label(it$itemType)),
     # 原文：填答者 
@@ -851,7 +851,7 @@ item_detail_ui <- function(d, ns, notes = character()) {
   )
 }
 
-# 題組（或構面）× 波次的熱圖：格子裡寫題數，波次放上面
+# 區塊（或構面）× 波次的熱圖：格子裡寫題數，波次放上面
 wave_heatmap <- function(m) {
   z <- m
   z[z == 0L] <- NA

@@ -102,8 +102,8 @@ AUDIT_SIMPLIFIED <- c(
 # 檢查會看的文字欄：畫面上的名稱
 # 原文：題目文字 | 題幹（stemID） | 選項
 AUDIT_TEXT_COLS <- c(label = "\u984c\u76ee\u6587\u5b57", stemID = "\u984c\u5e79\uff08stemID\uff09", value = "\u9078\u9805",
-                     # 原文：遺漏值 | 題組 | 填答者
-                     noResponse = "\u907a\u6f0f\u503c", block = "\u984c\u7d44", respondent = "\u586b\u7b54\u8005",
+                     # 原文：遺漏值 | 區塊 | 填答者
+                     noResponse = "\u907a\u6f0f\u503c", block = "\u5340\u584a", respondent = "\u586b\u7b54\u8005",
                      # 原文：備註
                      note = "\u5099\u8a3b")
 

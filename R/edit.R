@@ -220,8 +220,8 @@ ITEM_FIELDS_01 <- c("reverseScored", "deprecated")
 ITEM_FIELD_LABELS <- c(label = "\u984c\u76ee\u6587\u5b57", value = "\u9078\u9805", noResponse = "\u907a\u6f0f\u503c",
                        # 原文：反向計分 | 題型 | 填答者
                        reverseScored = "\u53cd\u5411\u8a08\u5206", itemType = "\u984c\u578b", respondent = "\u586b\u7b54\u8005",
-                       # 原文：停用 | 備註 | 題組 | 題幹（stemID）
-                       deprecated = "\u505c\u7528", note = "\u5099\u8a3b", block = "\u984c\u7d44", stemID = "\u984c\u5e79\uff08stemID\uff09")
+                       # 原文：停用 | 備註 | 區塊 | 題幹（stemID）
+                       deprecated = "\u505c\u7528", note = "\u5099\u8a3b", block = "\u5340\u584a", stemID = "\u984c\u5e79\uff08stemID\uff09")
 
 #' 改一題一版的內容
 #'
@@ -328,7 +328,7 @@ edit_column_choices <- function(bank, table) {
 }
 
 # 右邊的題目表：itemID、itemVer、block、label，加上 assigned（0/1）
-# keyword：itemID、題組、題目裡有這幾個字（不分大小寫）；only_assigned：只留勾了的
+# keyword：itemID、區塊、題目裡有這幾個字（不分大小寫）；only_assigned：只留勾了的
 edit_item_rows <- function(bank, table, column, keyword = "", only_assigned = FALSE) {
   df <- bank[[table]]
   ib <- bank$itemBank
