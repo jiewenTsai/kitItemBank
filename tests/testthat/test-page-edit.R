@@ -54,19 +54,8 @@ test_that("點一列就勾選／取消，store 跟著變", {
   })
 })
 
-test_that("波次也一樣", {
-  shiny::testServer(page_edit_server, args = .edit_args(), {
-    b <- store$bank()
-    w <- get_wave_cols(b$itemWave)[1]
-    session$setInputs(what = "itemWave", `wave-column` = w, `wave-keyword` = "",
-                      `wave-only` = TRUE)
-    assigned <- which(b$itemWave[[w]] == 1L)
-    session$setInputs(`wave-tbl_rows_selected` = seq_along(assigned))
-    # 只看已勾的：取消第一題
-    session$setInputs(`wave-tbl_rows_selected` = seq_along(assigned)[-1])
-    expect_identical(store$bank()$itemWave[[w]][assigned[1]], 0L)
-    expect_identical(store$changes()[["表"]], "itemWave")
-  })
+test_that("0.3 不從這裡改題目的波次", {
+  expect_false("itemWave" %in% EDIT_WHAT)
 })
 
 test_that("新增、刪除構面（先問一次）", {

@@ -170,6 +170,12 @@ page_merge_server <- function(id, kit, goto, request = NULL) {
     plan <- shiny::reactive(merge_prev_plan(kit_now(), trimws(input$admin %||% ""), names(headers())))
 
     output$prev_ui <- shiny::renderUI({
+      a <- trimws(input$admin %||% "")
+      if (nzchar(a) && toupper(a) %in% toupper(kit_now()$admins$adminID)) {
+        # 原文：題庫裡已經有 | 了。新施測要用題庫裡還沒有的代號（例如下一個月齡或年級）。
+        return(kitDesign::kit_status("warn", paste0("\u984c\u5eab\u88e1\u5df2\u7d93\u6709 ", a,
+          " \u4e86\u3002\u65b0\u65bd\u6e2c\u8981\u7528\u984c\u5eab\u88e1\u9084\u6c92\u6709\u7684\u4ee3\u865f\uff08\u4f8b\u5982\u4e0b\u4e00\u500b\u6708\u9f61\u6216\u5e74\u7d1a\uff09\u3002")))
+      }
       pl <- plan()
       if (is.null(pl)) {
         # 原文：寫好代號、上傳這次的資料檔後，這裡會列出要上傳上一次的哪幾個檔。

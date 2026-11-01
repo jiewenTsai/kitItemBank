@@ -200,7 +200,10 @@ am_admin_row <- function(kit, admin) {
       waveNo = as.character(wave), status = "internal", stringsAsFactors = FALSE), "admins")
   }
   if (row$adminID %in% kit$admins$adminID) {
-    stop("admin ", row$adminID, " is already in the kit", call. = FALSE)
+    # 原文：題庫裡已經有 | ，不能再併入一次。新施測要用題庫裡還沒有的代號。
+    stop("\u984c\u5eab\u88e1\u5df2\u7d93\u6709 ", row$adminID,
+         "\uff0c\u4e0d\u80fd\u518d\u4f75\u5165\u4e00\u6b21\u3002\u65b0\u65bd\u6e2c\u8981\u7528\u984c\u5eab\u88e1\u9084\u6c92\u6709\u7684\u4ee3\u865f\u3002",
+         call. = FALSE)
   }
   row
 }
@@ -878,7 +881,10 @@ apply_admin_merge <- function(kit, proposals, accept = TRUE,
   acc[is.na(acc)] <- FALSE
   admin <- conform_kit_table(admin, "admins")
   if (admin$adminID %in% kit$admins$adminID) {
-    stop("admin ", admin$adminID, " is already in the kit", call. = FALSE)
+    # 原文：題庫裡已經有 | ，不能再併入一次。新施測要用題庫裡還沒有的代號。
+    stop("\u984c\u5eab\u88e1\u5df2\u7d93\u6709 ", admin$adminID,
+         "\uff0c\u4e0d\u80fd\u518d\u4f75\u5165\u4e00\u6b21\u3002\u65b0\u65bd\u6e2c\u8981\u7528\u984c\u5eab\u88e1\u9084\u6c92\u6709\u7684\u4ee3\u865f\u3002",
+         call. = FALSE)
   }
   ds <- as.data.frame(datasets, stringsAsFactors = FALSE)
   sch <- p[acc & p$class == "missing_scheme_change" & nzchar(p$scheme), , drop = FALSE]

@@ -12,8 +12,6 @@ EDIT_WHAT <- c(
   "\u984c\u76ee\u5167\u5bb9" = "item",
   # 原文：題目的構面
   "\u984c\u76ee\u7684\u69cb\u9762" = "itemDim",
-  # 原文：題目的波次
-  "\u984c\u76ee\u7684\u6ce2\u6b21" = "itemWave",
   # 原文：構面資訊（名稱、別名、信度）
   "\u69cb\u9762\u8cc7\u8a0a\uff08\u540d\u7a31\u3001\u5225\u540d\u3001\u4fe1\u5ea6\uff09" = "meta"
 )
@@ -26,12 +24,12 @@ page_edit_ui <- function(id) {
       # 原文：改題目內容、題目的構面、構面資訊，下載修改包。
       goal = "\u6539\u984c\u76ee\u5167\u5bb9\u3001\u984c\u76ee\u7684\u69cb\u9762\u3001\u69cb\u9762\u8cc7\u8a0a\uff0c\u4e0b\u8f09\u4fee\u6539\u5305\u3002",
       steps = c(
-        # 原文：選要改什麼：題目內容、題目的構面、題目的波次，或構面資訊。
-        "\u9078\u8981\u6539\u4ec0\u9ebc\uff1a\u984c\u76ee\u5167\u5bb9\u3001\u984c\u76ee\u7684\u69cb\u9762\u3001\u984c\u76ee\u7684\u6ce2\u6b21\uff0c\u6216\u69cb\u9762\u8cc7\u8a0a\u3002",
+        # 原文：選要改什麼：題目內容、題目的構面，或構面資訊。（題目出現在哪些施測以 .sav 和對照表為準，不在這裡改）
+        "\u9078\u8981\u6539\u4ec0\u9ebc\uff1a\u984c\u76ee\u5167\u5bb9\u3001\u984c\u76ee\u7684\u69cb\u9762\uff0c\u6216\u69cb\u9762\u8cc7\u8a0a\u3002\uff08\u984c\u76ee\u51fa\u73fe\u5728\u54ea\u4e9b\u65bd\u6e2c\u4ee5 .sav \u548c\u5c0d\u7167\u8868\u70ba\u6e96\uff0c\u4e0d\u5728\u9019\u88e1\u6539\uff09",
         # 原文：題目內容：在「要注意」表點一列，或直接選一題一版；改好按「套用這一題的改動」。
         "\u984c\u76ee\u5167\u5bb9\uff1a\u5728\u300c\u8981\u6ce8\u610f\u300d\u8868\u9ede\u4e00\u5217\uff0c\u6216\u76f4\u63a5\u9078\u4e00\u984c\u4e00\u7248\uff1b\u6539\u597d\u6309\u300c\u5957\u7528\u9019\u4e00\u984c\u7684\u6539\u52d5\u300d\u3002",
-        # 原文：選一個構面或波次，在右邊的表點題目：點一下勾選，再點一下取消。
-        "\u9078\u4e00\u500b\u69cb\u9762\u6216\u6ce2\u6b21\uff0c\u5728\u53f3\u908a\u7684\u8868\u9ede\u984c\u76ee\uff1a\u9ede\u4e00\u4e0b\u52fe\u9078\uff0c\u518d\u9ede\u4e00\u4e0b\u53d6\u6d88\u3002",
+        # 原文：選一個構面，在右邊的表點題目：點一下勾選，再點一下取消。
+        "\u9078\u4e00\u500b\u69cb\u9762\uff0c\u5728\u53f3\u908a\u7684\u8868\u9ede\u984c\u76ee\uff1a\u9ede\u4e00\u4e0b\u52fe\u9078\uff0c\u518d\u9ede\u4e00\u4e0b\u53d6\u6d88\u3002",
         # 原文：看下面的「本次改動」，沒問題就下載修改包。
         "\u770b\u4e0b\u9762\u7684\u300c\u672c\u6b21\u6539\u52d5\u300d\uff0c\u6c92\u554f\u984c\u5c31\u4e0b\u8f09\u4fee\u6539\u5305\u3002"
       ),
@@ -47,7 +45,6 @@ page_edit_ui <- function(id) {
       id = ns("panel"), type = "hidden", selected = "itemDim",
       shiny::tabPanelBody("item", edit_item_ui(ns("item"))),
       shiny::tabPanelBody("itemDim", edit_assign_ui(ns("dim"), "itemDim")),
-      shiny::tabPanelBody("itemWave", edit_assign_ui(ns("wave"), "itemWave")),
       shiny::tabPanelBody("meta", edit_meta_ui(ns("meta")))
     ),
     shiny::uiOutput(ns("summary")),
@@ -74,7 +71,6 @@ page_edit_server <- function(id, store, goto, request) {
   shiny::moduleServer(id, function(input, output, session) {
     ns <- session$ns
     dim_panel <- edit_assign_server("dim", store, "itemDim")
-    edit_assign_server("wave", store, "itemWave")
     edit_meta_server("meta", store)
     show_panel <- function(what) {
       shiny::updateRadioButtons(session, "what", selected = what)
