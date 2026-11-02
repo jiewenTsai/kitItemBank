@@ -38,7 +38,7 @@ The app never writes files.
 ## Install and run
 
 ```r
-pak::pkg_install("jiewenTsai/kitItmBank")
+pak::pkg_install("jiewenTsai/kitItemBank")
 kitItemBank::run_kititembank()
 ```
 
