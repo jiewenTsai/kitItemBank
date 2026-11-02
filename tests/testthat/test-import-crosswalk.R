@@ -6,10 +6,10 @@ cw_fixture_kit <- function() {
   kit$cohorts <- df(cohortID = "K1", code = "M03")
   kit$admins <- df(adminID = c("A1", "A2"), cohortID = "K1", ageMonth = c("1", "2"),
                    status = "released", surveyFrom = c("2019-03-01", "2020-03-01"))
-  kit$forms <- df(formID = c("P-00-24", "P-G1-G3"), instrument = "P", label = c("f1", "f2"))
+  kit$forms <- df(formID = c("P-03-24", "P-G1-G3"), instrument = "P", label = c("f1", "f2"))
   kit$datasets <- df(datasetID = c("A1-P", "A2-P"), adminID = c("A1", "A2"), file = "data1",
                      # 原文："家長"
-                     instrument = "P", formID = c("P-00-24", "P-G1-G3"), respondent = "\u5bb6\u9577")
+                     instrument = "P", formID = c("P-03-24", "P-G1-G3"), respondent = "\u5bb6\u9577")
   kit$aliases <- df(alias = c("X_1M", "X_2M"), target_type = "admin", target_id = c("A1", "A2"),
                     kind = "crosswalk_col")
   kit$items <- df(item_uid = c("P.v1", "P.v2", "P.v3"), instrument = "P",
@@ -23,8 +23,8 @@ cw_fixture_kit <- function() {
   # 原文："P.甲" "P.乙" "甲" "乙"
   kit$groups <- df(groupID = c("P.\u7532", "P.\u4e59"), label = c("\u7532", "\u4e59"))
   # 原文："P.甲"
-  kit$group_tree <- df(formID = "P-00-24", groupID = "P.\u7532", parentID = "")
-  kit$group_members <- df(formID = c("P-00-24", "P-00-24", "P-G1-G3"),
+  kit$group_tree <- df(formID = "P-03-24", groupID = "P.\u7532", parentID = "")
+  kit$group_members <- df(formID = c("P-03-24", "P-03-24", "P-G1-G3"),
                           # 原文："P.甲" "P.甲" "P.甲"
                           groupID = c("P.\u7532", "P.\u7532", "P.\u7532"),
                           item_uid = c("P.v1", "P.v2", "P.v2"), scheme = "official")
@@ -103,7 +103,7 @@ test_that("group map, tree and lineage candidates", {
   gp <- res$group_paths
   expect_true(all(c("formID", "groupID", "parentID", "source", "confidence", "basis") %in% names(gp)))
   # 原文："P.甲" "P.區塊"
-  expect_identical(gp$parentID[gp$formID == "P-00-24" & gp$groupID == "P.\u7532"], "P.\u5340\u584a")
+  expect_identical(gp$parentID[gp$formID == "P-03-24" & gp$groupID == "P.\u7532"], "P.\u5340\u584a")
   expect_length(group_tree_cycles(gp), 0L)
   gl <- res$group_lineage
   expect_identical(nrow(gl), 1L)
@@ -141,7 +141,7 @@ test_that("member hints: new varname inherits the renamed item's group", {
   expect_identical(mh$confidence[mh$item_uid == "P.v3"][1], "low")
   # 已在 group_members 的不列
   # 原文："P.甲"
-  expect_false(any(mh$item_uid == "P.v1" & mh$groupID == "P.\u7532" & mh$formID == "P-00-24"))
+  expect_false(any(mh$item_uid == "P.v1" & mh$groupID == "P.\u7532" & mh$formID == "P-03-24"))
 })
 
 test_that("positions come from .sav labels and usage docs", {

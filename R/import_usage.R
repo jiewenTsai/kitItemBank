@@ -132,7 +132,7 @@ form_for <- function(instrument, age, grade) {
   instrument <- rep_len(instrument, length(age))
   stage <- ifelse(is.na(grade), "", ifelse(grade <= 3L, "G1-G3",
                                     ifelse(grade <= 6L, "G4-G6", "G7-G9")))
-  pre <- ifelse(instrument == "P", ifelse(age <= 24L, "P-00-24", "P-36-72"),
+  pre <- ifelse(instrument == "P", ifelse(age <= 24L, "P-03-24", "P-36-72"),
                 ifelse(instrument == "T", "T-presch", NA_character_))
   ifelse(nzchar(stage), paste0(instrument, "-", stage), pre)
 }

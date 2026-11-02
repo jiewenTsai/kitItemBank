@@ -3569,7 +3569,7 @@
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "3728073ff73f4fecbbb4670efc68d3b8"
+      "checksum": "d72317dceaed5b92adc637a7e995b47d"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3617,7 +3617,7 @@
       "checksum": "d3520122d93970c9538fa1c0c8393649"
     },
     "inst/extdata/kit/BANK_VERSION": {
-      "checksum": "da6b42e61cad8112e7d945de3b8ed88b"
+      "checksum": "a7766bce3988e0eb22facdd5ed16822f"
     },
     "inst/extdata/kit/block_status.csv": {
       "checksum": "12edeb05c09909bb47ff0075fbe62a46"
@@ -3627,6 +3627,9 @@
     },
     "inst/extdata/kit/changes/2026-11-02-v3.csv": {
       "checksum": "09fbe51a002818f7edba08b6995d64cc"
+    },
+    "inst/extdata/kit/changes/2026-11-02-v4.csv": {
+      "checksum": "25ed24ceece53a5a1c0453383a215b8f"
     },
     "inst/extdata/kit/cohorts.csv": {
       "checksum": "bd2715a6a5a66eb48bd0692fae7f467a"
@@ -3641,28 +3644,28 @@
       "checksum": "253b65f7ffa97a46db53c8c505dea3c6"
     },
     "inst/extdata/kit/datasets.csv": {
-      "checksum": "8cc0bf4019dde98aae52f87131e340c2"
+      "checksum": "ed39d4cce3882116467ace4962d4a03d"
     },
     "inst/extdata/kit/form_notes.csv": {
-      "checksum": "aa5cdbffcc661000298f759f9b4fa437"
+      "checksum": "b75b10e94da94292998a79ce6f4aa0a7"
     },
     "inst/extdata/kit/forms.csv": {
-      "checksum": "d5ffc5f1327101951d29d74209c71cf4"
+      "checksum": "a5f49d296c9e962dd0df12fc550ca57f"
     },
     "inst/extdata/kit/group_docs.csv": {
-      "checksum": "1cb81b385e629a0bab30a9fe06c26508"
+      "checksum": "539415e68a0c2ec311e060431a7de0b0"
     },
     "inst/extdata/kit/group_lineage.csv": {
       "checksum": "c803e75010a065e2f3af08f9418d73b6"
     },
     "inst/extdata/kit/group_members.csv": {
-      "checksum": "72a61ae8ed246ec47882721843b7be3d"
+      "checksum": "3ef8fc5c65accaaade27cdd107666b21"
     },
     "inst/extdata/kit/group_refs.csv": {
       "checksum": "0db92a86f587504fffc2a73667200345"
     },
     "inst/extdata/kit/group_tree.csv": {
-      "checksum": "5cd9771d227f5db9edd89305bd244942"
+      "checksum": "c6b63ced50a4576bc564a09ece8f653b"
     },
     "inst/extdata/kit/groups.csv": {
       "checksum": "e70854a891a97ea7c69323f774491b3c"
@@ -3692,10 +3695,10 @@
       "checksum": "53ac3c517ea39896cb4601c5e3307e4c"
     },
     "inst/manual/manual_fragment.html": {
-      "checksum": "aee7e0003b2598d6b2242b1e90a153ba"
+      "checksum": "21b451fd93b1d558f27518ec50aa8cf6"
     },
     "inst/manual/manual.html": {
-      "checksum": "ffc88d7b9706995c8e809f0e150a829f"
+      "checksum": "fd68b3332a92ba68b40375e2d0cb65da"
     },
     "inst/reports/dim_summary_report.qmd": {
       "checksum": "511e5c1d026016298cc9e6b60181da0c"
@@ -4036,6 +4039,12 @@
     "man/v02_wave_map.Rd": {
       "checksum": "da63bac36cb46f57b60b1301d71d5d64"
     },
+    "man/version_grid_workbook.Rd": {
+      "checksum": "fa0854e93c5b0842ed0482ce29b055af"
+    },
+    "man/version_grid.Rd": {
+      "checksum": "1b516cfaa42391abf5a2ce8f239c68fd"
+    },
     "man/version_timeline.Rd": {
       "checksum": "0e9a464c40049b4067a9095171c0b3c5"
     },
@@ -4055,7 +4064,7 @@
       "checksum": "00c99d88bf2c00d345730f2f9ef81b91"
     },
     "NEWS.md": {
-      "checksum": "ced442b181ca25393ee09e8698f4e1a4"
+      "checksum": "1f327711ad17c08240e063a98dbe1ca9"
     },
     "R/admin_merge.R": {
       "checksum": "6abf8f695ded4099a5d9074dc339d73e"
@@ -4115,7 +4124,7 @@
       "checksum": "9c24f0f16f6309143d67ea4f5e71d9c6"
     },
     "R/import_usage.R": {
-      "checksum": "043ca1c27b54705952da31ac0633854e"
+      "checksum": "9825e0f14064973af0a71f4557ca06b4"
     },
     "R/import_v02.R": {
       "checksum": "75eb065bcd8ad483280d8146dfa02c4e"
@@ -4221,6 +4230,9 @@
     },
     "R/utils.R": {
       "checksum": "24d87d0295c593a6586e227c42b2efbd"
+    },
+    "R/version_grid.R": {
+      "checksum": "5a33bc351dc9597cc16cbdd8d22ede0d"
     },
     "R/zzz.R": {
       "checksum": "4df8907e971455fb79957f35e9dcb065"

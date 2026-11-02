@@ -1,6 +1,6 @@
 level,check,table,key,detail
-note,form_year_diff,datasets,M03M012-PK|M03M018-PK,同為 P-00-24、親友|2017，沒有區塊狀態可以解釋：M03M012-PK 沒有多的題；M03M018-PK 多 5 題（受訪者資料 5）
-note,form_year_diff,datasets,M03M012-P|M03M018-P,同為 P-00-24、家長|2017，沒有區塊狀態可以解釋：M03M012-P 沒有多的題；M03M018-P 多 5 題（受訪者資料 5）
+note,form_year_diff,datasets,M03M012-PK|M03M018-PK,同為 P-03-24、親友|2017，沒有區塊狀態可以解釋：M03M012-PK 沒有多的題；M03M018-PK 多 5 題（受訪者資料 5）
+note,form_year_diff,datasets,M03M012-P|M03M018-P,同為 P-03-24、家長|2017，沒有區塊狀態可以解釋：M03M012-P 沒有多的題；M03M018-P 多 5 題（受訪者資料 5）
 note,form_year_diff,datasets,M03M012-T|M03M018-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M012-T 沒有多的題；M03M018-T 多 5 題（受訪者資料 5）
 note,form_year_diff,datasets,M03M018-T|M36M048-T,同為 T-presch、教保人員|2017，沒有區塊狀態可以解釋：M03M018-T 多 5 題（受訪者資料 5）；M36M048-T 沒有多的題
 note,renamed_no_group,item_relations,P.fameviD1101|1|P.fameviD1101n|1,舊題 P.fameviD1101 在題組 P.3C產品環境；新題 P.fameviD1101n 沒有任何題組
@@ -608,31 +608,31 @@ note,group_single_item,group_members,C-G7-G9|C.縱容,只有 1 題：C.Cfamedu07
 note,group_single_item,group_members,C-G7-G9|C.語文參與程度_行為,只有 1 題：C.ClanB03
 note,group_single_item,group_members,C-G7-G9|C.負向心理適應_孤寂感,只有 1 題：C.CsocB07
 note,group_single_item,group_members,C-G7-G9|C.身體意象,只有 1 題：C.Chealth02
-note,group_single_item,group_members,P-00-24|P.一般教養,只有 1 題：P.famedu12
-note,group_single_item,group_members,P-00-24|P.偏心,只有 1 題：P.fammar04
-note,group_single_item,group_members,P-00-24|P.共親職,只有 1 題：P.fammar03
-note,group_single_item,group_members,P-00-24|P.其他主要照顧者保母專業課程,只有 1 題：P.pfC10
-note,group_single_item,group_members,P-00-24|P.其他主要照顧者出生年,只有 1 題：P.pfC01
-note,group_single_item,group_members,P-00-24|P.其他主要照顧者照顧幼兒時數,只有 1 題：P.pfC08
-note,group_single_item,group_members,P-00-24|P.其他主要照顧者非本國籍者在台居住時間,只有 1 題：P.pfC0303
-note,group_single_item,group_members,P-00-24|P.利社會行為,只有 1 題：P.socC21
-note,group_single_item,group_members,P-00-24|P.婚姻滿意,只有 1 題：P.fammar02
-note,group_single_item,group_members,P-00-24|P.婚姻滿意度,只有 1 題：P.fammar02
-note,group_single_item,group_members,P-00-24|P.害羞,只有 1 題：P.socC07
-note,group_single_item,group_members,P-00-24|P.家庭型態,只有 1 題：P.pfA14
-note,group_single_item,group_members,P-00-24|P.家庭支持人力,只有 1 題：P.fameviC14
-note,group_single_item,group_members,P-00-24|P.家庭收入,只有 1 題：P.pfB12
-note,group_single_item,group_members,P-00-24|P.家長共親職,只有 1 題：P.fammar03
-note,group_single_item,group_members,P-00-24|P.父母婚姻狀況,只有 1 題：P.pfA05
-note,group_single_item,group_members,P-00-24|P.物理環境,只有 1 題：P.famC20
-note,group_single_item,group_members,P-00-24|P.經濟條件,只有 1 題：P.fammar01
-note,group_single_item,group_members,P-00-24|P.縱容,只有 1 題：P.famedu12
-note,group_single_item,group_members,P-00-24|P.親職參與_身分跳題,只有 1 題：P.fammar07
-note,group_single_item,group_members,P-00-24|P.親職效能感,只有 1 題：P.famedu13
-note,group_single_item,group_members,P-00-24|P.親職自我效能,只有 1 題：P.famedu13
-note,group_single_item,group_members,P-00-24|P.讀,只有 1 題：P.lanC09
-note,group_single_item,group_members,P-00-24|P.過度反應,只有 1 題：P.famedu12
-note,group_single_item,group_members,P-00-24|P.遵守規範,只有 1 題：P.socC22
+note,group_single_item,group_members,P-03-24|P.一般教養,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-03-24|P.偏心,只有 1 題：P.fammar04
+note,group_single_item,group_members,P-03-24|P.共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-03-24|P.其他主要照顧者保母專業課程,只有 1 題：P.pfC10
+note,group_single_item,group_members,P-03-24|P.其他主要照顧者出生年,只有 1 題：P.pfC01
+note,group_single_item,group_members,P-03-24|P.其他主要照顧者照顧幼兒時數,只有 1 題：P.pfC08
+note,group_single_item,group_members,P-03-24|P.其他主要照顧者非本國籍者在台居住時間,只有 1 題：P.pfC0303
+note,group_single_item,group_members,P-03-24|P.利社會行為,只有 1 題：P.socC21
+note,group_single_item,group_members,P-03-24|P.婚姻滿意,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-03-24|P.婚姻滿意度,只有 1 題：P.fammar02
+note,group_single_item,group_members,P-03-24|P.害羞,只有 1 題：P.socC07
+note,group_single_item,group_members,P-03-24|P.家庭型態,只有 1 題：P.pfA14
+note,group_single_item,group_members,P-03-24|P.家庭支持人力,只有 1 題：P.fameviC14
+note,group_single_item,group_members,P-03-24|P.家庭收入,只有 1 題：P.pfB12
+note,group_single_item,group_members,P-03-24|P.家長共親職,只有 1 題：P.fammar03
+note,group_single_item,group_members,P-03-24|P.父母婚姻狀況,只有 1 題：P.pfA05
+note,group_single_item,group_members,P-03-24|P.物理環境,只有 1 題：P.famC20
+note,group_single_item,group_members,P-03-24|P.經濟條件,只有 1 題：P.fammar01
+note,group_single_item,group_members,P-03-24|P.縱容,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-03-24|P.親職參與_身分跳題,只有 1 題：P.fammar07
+note,group_single_item,group_members,P-03-24|P.親職效能感,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-03-24|P.親職自我效能,只有 1 題：P.famedu13
+note,group_single_item,group_members,P-03-24|P.讀,只有 1 題：P.lanC09
+note,group_single_item,group_members,P-03-24|P.過度反應,只有 1 題：P.famedu12
+note,group_single_item,group_members,P-03-24|P.遵守規範,只有 1 題：P.socC22
 note,group_single_item,group_members,P-36-72|P.一般教養,只有 1 題：P.famedu12
 note,group_single_item,group_members,P-36-72|P.偏心,只有 1 題：P.fammar04
 note,group_single_item,group_members,P-36-72|P.共親職,只有 1 題：P.fammar03
@@ -796,9 +796,9 @@ note,group_nonleaf_member,group_members,C-G4-G6|C.學校環境,中間層題組�
 note,group_nonleaf_member,group_members,C-G4-G6|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
 note,group_nonleaf_member,group_members,C-G7-G9|C.學校環境,中間層題組直接掛了 34 題：C.Crelation01、C.Crelation02、C.Crelation03、C.Crelation04、C.Crelation05…（共 34）
 note,group_nonleaf_member,group_members,C-G7-G9|C.學習情形,中間層題組直接掛了 12 題：C.ClearnA01、C.ClearnA02、C.ClearnA03、C.ClearnA04、C.ClearnA05…（共 12）
-note,group_nonleaf_member,group_members,P-00-24|P.Home,中間層題組直接掛了 20 題：P.famC01、P.famC02、P.famC03、P.famC04、P.famC05…（共 20）
-note,group_nonleaf_member,group_members,P-00-24|P.家庭生活狀況,中間層題組直接掛了 1 題：P.fammar01
-note,group_nonleaf_member,group_members,P-00-24|P.華人特質教養,中間層題組直接掛了 9 題：P.famedu01、P.famedu02、P.famedu03、P.famedu04、P.famedu05…（共 9）
+note,group_nonleaf_member,group_members,P-03-24|P.Home,中間層題組直接掛了 20 題：P.famC01、P.famC02、P.famC03、P.famC04、P.famC05…（共 20）
+note,group_nonleaf_member,group_members,P-03-24|P.家庭生活狀況,中間層題組直接掛了 1 題：P.fammar01
+note,group_nonleaf_member,group_members,P-03-24|P.華人特質教養,中間層題組直接掛了 9 題：P.famedu01、P.famedu02、P.famedu03、P.famedu04、P.famedu05…（共 9）
 note,group_nonleaf_member,group_members,P-36-72|P.Home,中間層題組直接掛了 39 題：P.famC01、P.famC01n、P.famC02、P.famC02n、P.famC03…（共 39）
 note,group_nonleaf_member,group_members,P-36-72|P.家庭生活狀況,中間層題組直接掛了 1 題：P.fammar01
 note,group_nonleaf_member,group_members,P-36-72|P.華人特質教養,中間層題組直接掛了 9 題：P.famedu01、P.famedu02、P.famedu03、P.famedu04、P.famedu05…（共 9）
