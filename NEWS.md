@@ -1,3 +1,11 @@
+# kitItemBank 0.3.10 (2026-11-03)
+
+* **操作手冊改用 Quarto 加 kitDesign 的主題**：原稿從 `docs/操作手冊.md` 改成 `docs/操作手冊.qmd`，
+  和 kitDesign「在 Quarto 文件裡用」一樣用 `kit.scss`、`fonts.html` 與 `use_kit()`：單獨的網頁（「在新分頁開」）
+  是 KIT 的顏色、圓體、黑框表格；原本的引言改成 kitDesign 的提示框（要小心的用橘色）。
+  `data-raw/build_manual.R` 改成呼叫 Quarto（RStudio、Positron 附的那份也找得到），app 分頁取 Quarto 輸出的內文。
+* **「說明 → 操作手冊」分頁改成虛線框**（`kit_navgroup(tools = TRUE)`），和 kitsUI 的使用手冊一樣，表示不是工作的一步。
+
 # kitItemBank 0.3.9 (2026-11-02)
 
 * **題本代碼 P-00-24 改成 P-03-24**（內建題庫 `2026-11-02-v5`，改動紀錄 `changes/2026-11-02-v5.csv`）：
@@ -54,7 +62,7 @@
 # kitItemBank 0.3.5 (2026-11-02)
 
 * **操作手冊放進 app**：新的分頁組「說明 → 操作手冊」，像 kitsUI 一樣左邊目錄、右邊內文；
-  上面的「在新分頁開」開單獨的網頁（方便列印）。兩個都由 `data-raw/build_manual.R` 從 `docs/操作手冊.md` 產生
+  上面的「在新分頁開」開單獨的網頁（方便列印）。兩個都由 `data-raw/build_manual.R` 從 `docs/操作手冊.md`（0.3.10 起是 `.qmd`）產生
   （`inst/manual/`）。手冊第 7.1 節新增術語表：中文、English、意涵、例子。
 * **題庫版本改用日期**：`<日期>-v<當天第幾版>`，例如 `2026-11-02-v1`，同一天再審一次是 `-v2`；
   套用後題庫的 zip 叫 `kit_2026-11-02-v1.zip`，改動紀錄 `changes/2026-11-02-v1.csv`。

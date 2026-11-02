@@ -60,7 +60,7 @@ app_ui <- function(request) {
 
 #' 「說明 → 操作手冊」分頁：左邊目錄、右邊內文
 #'
-#' 內容是 inst/manual/manual_fragment.html，由 data-raw/build_manual.R 從 docs/操作手冊.md 產生；
+#' 內容是 inst/manual/manual_fragment.html，由 data-raw/build_manual.R 從 docs/操作手冊.qmd 產生；
 #' 同一份手冊的單獨網頁（manual.html）掛在 kit-manual/ 底下，給「在新分頁開」用。
 #' @noRd
 page_manual_ui <- function() {
@@ -77,8 +77,8 @@ APP_TAB_GROUPS <- list(
   kitDesign::kit_navgroup("\u7dad\u8b77", c(home = "\u5f85\u8fa6\u4e8b\u9805", edit = "\u984c\u5eab\u7de8\u4fee",
                                      revision = "\u6539\u7248", merge = "\u4f75\u5165\u65b0\u65bd\u6e2c",
                                      review = "\u5be9\u6838", stats = "\u7d71\u8a08")),
-  # 原文：說明 | 操作手冊
-  kitDesign::kit_navgroup("\u8aaa\u660e", c(manual = "\u64cd\u4f5c\u624b\u518a"))
+  # 原文：說明 | 操作手冊（不是工作的一步：虛線框）
+  kitDesign::kit_navgroup("\u8aaa\u660e", c(manual = "\u64cd\u4f5c\u624b\u518a"), tools = TRUE)
 )
 
 # 所有分頁的 value（從網址打開時要認得）

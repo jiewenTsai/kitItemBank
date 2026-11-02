@@ -1,0 +1,18 @@
+// KIT 的顏色與字型（照 kitDesign「在 Quarto 文件裡用」，和 app 的 kit_theme() 一樣）
+/*-- scss:defaults --*/
+$primary: #006835;
+$success: #006835;
+$body-bg: #faf7f0;
+$body-color: #141414;
+$border-color: #141414;
+$border-width: 2px;
+$link-color: #006835;
+$headings-font-weight: 700;
+$navbar-bg: #c6d033;
+$font-family-sans-serif: "Chiron GoRound TC", sans-serif;
+$font-family-monospace: "JetBrains Mono", "Chiron GoRound TC", Menlo, Consolas, monospace;
+
+/*-- scss:rules --*/
+html { font-size: 17px; }
+body { line-height: 1.65; }
+pre.sourceCode, div.sourceCode { background: #fffdf5; border: 2px solid #141414; border-radius: 8px; }

@@ -3569,7 +3569,7 @@
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "d72317dceaed5b92adc637a7e995b47d"
+      "checksum": "1043a135c29fae0ab1f74101aed19eb9"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3630,6 +3630,9 @@
     },
     "inst/extdata/kit/changes/2026-11-02-v4.csv": {
       "checksum": "25ed24ceece53a5a1c0453383a215b8f"
+    },
+    "inst/extdata/kit/changes/2026-11-02-v5.csv": {
+      "checksum": "f98559cb1b7112b02267719c0c032b01"
     },
     "inst/extdata/kit/cohorts.csv": {
       "checksum": "bd2715a6a5a66eb48bd0692fae7f467a"
@@ -3695,10 +3698,10 @@
       "checksum": "53ac3c517ea39896cb4601c5e3307e4c"
     },
     "inst/manual/manual_fragment.html": {
-      "checksum": "21b451fd93b1d558f27518ec50aa8cf6"
+      "checksum": "3bc02453a20f02f0f7f42ed723ea9df5"
     },
     "inst/manual/manual.html": {
-      "checksum": "fd68b3332a92ba68b40375e2d0cb65da"
+      "checksum": "751f494e86858366a2812e1e478755e4"
     },
     "inst/reports/dim_summary_report.qmd": {
       "checksum": "511e5c1d026016298cc9e6b60181da0c"
@@ -4064,13 +4067,13 @@
       "checksum": "00c99d88bf2c00d345730f2f9ef81b91"
     },
     "NEWS.md": {
-      "checksum": "1f327711ad17c08240e063a98dbe1ca9"
+      "checksum": "dd6b705ebe6c706c87c25a75f0e8d115"
     },
     "R/admin_merge.R": {
       "checksum": "6abf8f695ded4099a5d9074dc339d73e"
     },
     "R/app.R": {
-      "checksum": "9e56c51a949944ac0bb14b557ca1b618"
+      "checksum": "b6dd0a2cea245cddf40127068a0b3494"
     },
     "R/apply_candidates.R": {
       "checksum": "be73fa167536d57dcc2baaeb76f63cff"

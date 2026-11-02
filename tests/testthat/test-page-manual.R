@@ -10,3 +10,12 @@ test_that("the manual tab shows the manual with a table of contents and the glos
   expect_true("manual" %in% APP_TABS)
   expect_match(as.character(app_ui(NULL)), "說明")
 })
+
+test_that("the manual tab is dashed (a kitDesign tools group) and the manual uses kitDesign callouts", {
+  nav <- as.character(kitDesign::kit_navgroups(APP_TAB_GROUPS, "nav"))
+  expect_match(nav, 'class="kit-navgroup tools"[^>]*>\\s*<div class="kit-navgroup-label">說明')
+  html <- as.character(page_manual_ui())
+  expect_match(html, 'class="kit-callout kit-callout-warn"')
+  expect_match(html, 'href="#1-開始之前兩個版本去哪裡打開"')
+  expect_match(html, 'id="1-開始之前兩個版本去哪裡打開"')
+})
