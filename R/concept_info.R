@@ -2,7 +2,7 @@
 #
 #   dims_group_id()       構面查詢的 dimID（不含問卷代碼）→ kit 的 groupID
 #   concept_info_ui()     概念、英文名稱、領域；家長評／教師評／兒童自評各有哪些題組；官方文件的寫法和信效度；文獻
-#   dim_item_wave_ui()    這個題組的題目 × 波次：每一格是那一波問的版本，M03、M36 分開；各波都問同一版的是錨題
+#   dim_item_wave_ui()    這個題組的題目 × 波次（version_grid()）：每一格是那一波問的版本，M03、M36 分開；整頁寬
 
 # 原文：家長評 | 教師評 | 兒童自評
 INFORMANT_LABEL <- c(P = "\u5bb6\u9577\u8a55", T = "\u6559\u5e2b\u8a55", C = "\u5152\u7ae5\u81ea\u8a55")
@@ -122,42 +122,20 @@ dim_item_wave_ui <- function(bank, dim_id) {
   if (!dim_id %in% names(idim)) return(NULL)
   keys <- unique(idim$itemID[idim[[dim_id]] == 1L])
   if (!length(keys)) return(NULL)
-  iw <- bank$itemWave[bank$itemWave$itemID %in% keys, , drop = FALSE]
-  waves <- get_wave_cols(iw)
-  asked <- as.matrix(iw[waves]) == 1L
-  waves <- waves[colSums(asked) > 0]
-  if (!length(waves)) return(NULL)
-  ids <- sort(unique(iw$itemID))
-  cell <- function(id, w) {
-    v <- iw$itemVer[iw$itemID == id & iw[[w]] == 1L]
-    if (length(v)) paste0("v", paste(sort(v), collapse = "/")) else ""
-  }
-  co <- wave_cohort(waves)
-  grps <- if (all(nzchar(co))) split(waves, factor(co, levels = unique(co))) else list(waves)
-  tables <- lapply(names(grps) %||% "", function(cn) {
-    w <- grps[[if (nzchar(cn)) cn else 1L]]
-    m <- vapply(w, function(x) vapply(ids, cell, character(1), w = x), character(length(ids)))
-    m <- matrix(m, nrow = length(ids), dimnames = list(NULL, w))
-    used <- rowSums(array(nzchar(m), dim(m))) > 0
-    if (!any(used)) return(NULL)
-    m <- m[used, , drop = FALSE]
-    # 錨題：這個世代每一波都問、而且都是同一版
-    anchor <- apply(m, 1, function(r) all(nzchar(r)) && length(unique(r)) == 1L)
-    # 原文：題號 | 錨題 | ★
-    tab <- data.frame("\u984c\u865f" = ids[used], "\u9328\u984c" = ifelse(anchor, "\u2605", ""), m,
-                      check.names = FALSE, stringsAsFactors = FALSE)
-    names(tab) <- col_display_labels(names(tab))
-    shiny::tagList(
-      # 原文： 世代（錨題  |  題）
-      if (nzchar(cn)) shiny::h5(paste0(cn, " \u4e16\u4ee3\uff08\u9328\u984c ", sum(anchor), " \u984c\uff09")),
-      kitDesign::kit_table_scroll(kitDesign::kit_static_table(tab)))
+  co <- bank_cohorts(bank)
+  tables <- lapply(if (length(co)) co else "", function(cn) {
+    g <- version_grid(bank, keys, cohort = cn)
+    if (!nrow(g)) return(NULL)
+    g$block <- NULL
+    g$label <- NULL
+    # 原文： 世代（錨題  |  題）
+    head <- if (nzchar(cn)) shiny::h5(paste0(cn, " \u4e16\u4ee3\uff08\u9328\u984c ", sum(g$anchor == "\u2605"), " \u984c\uff09"))
+    shiny::tagList(head, kitDesign::kit_table_scroll(kitDesign::kit_static_table(version_grid_display(g))))
   })
-  kitDesign::kit_detail(
+  shiny::tagList(
     # 原文：題目 × 波次（縱貫比較用）
-    "\u984c\u76ee \u00d7 \u6ce2\u6b21\uff08\u7e31\u8cab\u6bd4\u8f03\u7528\uff09",
-    shiny::tagList(
-      # 原文：每一格是那一波問的版本（v1、v2…），空白是那一波沒問。★ 錨題：這個世代每一波都問、而且版本相同，可以當縱貫比較的共同題。
-      shiny::p(class = "kit-hint", "\u6bcf\u4e00\u683c\u662f\u90a3\u4e00\u6ce2\u554f\u7684\u7248\u672c\uff08v1\u3001v2\u2026\uff09\uff0c\u7a7a\u767d\u662f\u90a3\u4e00\u6ce2\u6c92\u554f\u3002\u2605 \u9328\u984c\uff1a\u9019\u500b\u4e16\u4ee3\u6bcf\u4e00\u6ce2\u90fd\u554f\u3001\u800c\u4e14\u7248\u672c\u76f8\u540c\uff0c\u53ef\u4ee5\u7576\u7e31\u8cab\u6bd4\u8f03\u7684\u5171\u540c\u984c\u3002"),
-      tables),
-    open = FALSE)
+    shiny::h4("\u984c\u76ee \u00d7 \u6ce2\u6b21\uff08\u7e31\u8cab\u6bd4\u8f03\u7528\uff09"),
+    # 原文：每一格是那一波問的版本（v1、v2…），空白是那一波沒問；版本換了就不能直接比。★ 錨題：這個世代每一波都問、而且版本相同，可以當縱貫比較的共同題。
+    shiny::p(class = "kit-hint", "\u6bcf\u4e00\u683c\u662f\u90a3\u4e00\u6ce2\u554f\u7684\u7248\u672c\uff08v1\u3001v2\u2026\uff09\uff0c\u7a7a\u767d\u662f\u90a3\u4e00\u6ce2\u6c92\u554f\uff1b\u7248\u672c\u63db\u4e86\u5c31\u4e0d\u80fd\u76f4\u63a5\u6bd4\u3002\u2605 \u9328\u984c\uff1a\u9019\u500b\u4e16\u4ee3\u6bcf\u4e00\u6ce2\u90fd\u554f\u3001\u800c\u4e14\u7248\u672c\u76f8\u540c\uff0c\u53ef\u4ee5\u7576\u7e31\u8cab\u6bd4\u8f03\u7684\u5171\u540c\u984c\u3002"),
+    tables)
 }

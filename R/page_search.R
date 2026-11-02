@@ -425,19 +425,16 @@ page_search_server <- function(id, store, goto, request) {
       shiny::div(
         class = "kit-buttons",
         kitDesign::kit_download_button(
-          # 原文：下載跨波次對照總表（CSV） | 跨波次對照總表_
-          session, "dl_xw", "\u4e0b\u8f09\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868\uff08CSV\uff09",
-          filename = paste0("\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868_", store$domain(), "_", format(kit_today(), "%Y%m%d"), ".csv"),
+          # 原文：下載跨波次對照總表（Excel） | 跨波次對照總表_
+          session, "dl_xw", "\u4e0b\u8f09\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868\uff08Excel\uff09",
+          filename = paste0("\u8de8\u6ce2\u6b21\u5c0d\u7167\u7e3d\u8868_", store$domain(), "_", format(kit_today(), "%Y%m%d"), ".xlsx"),
           content = function(file) {
-            b <- bank()
-            xw <- crosswalk(b, b$itemBank[c("itemID", "itemVer")])
-            xw$label <- collapse_newlines(xw$label)
-            readr::write_excel_csv(xw, file, na = "")
+            writexl::write_xlsx(version_grid_workbook(bank(), store$domain()), file)
           },
           class = kitDesign::kit_btn_class("secondary")
         ),
-        # 原文：全部題目（含已停用）× 全部波次；✓ 表示那一波次有問。用 Excel 打開。
-        shiny::span(class = "kit-hint", "\u5168\u90e8\u984c\u76ee\uff08\u542b\u5df2\u505c\u7528\uff09\u00d7 \u5168\u90e8\u6ce2\u6b21\uff1b\u2713 \u8868\u793a\u90a3\u4e00\u6ce2\u6b21\u6709\u554f\u3002\u7528 Excel \u6253\u958b\u3002")
+        # 原文：全部題目（含已停用）× 全部波次；M03、M36 各一張工作表，格子寫那一波問的版本（v1、v2…）。
+        shiny::span(class = "kit-hint", "\u5168\u90e8\u984c\u76ee\uff08\u542b\u5df2\u505c\u7528\uff09\u00d7 \u5168\u90e8\u6ce2\u6b21\uff1bM03\u3001M36 \u5404\u4e00\u5f35\u5de5\u4f5c\u8868\uff0c\u683c\u5b50\u5beb\u90a3\u4e00\u6ce2\u554f\u7684\u7248\u672c\uff08v1\u3001v2\u2026\uff09\u3002")
       )
     })
 
@@ -684,22 +681,21 @@ timeline_full_ui <- function(d) {
   it <- d$item
   tl <- d$timeline
   if (is.null(tl) || !nrow(tl)) return(NULL)
-  # 原文：第  |  版
-  vlab <- paste0("\u7b2c ", tl$itemVer, " \u7248",
-                 # 原文：（已停用）
-                 ifelse(!is.na(tl$deprecated) & tl$deprecated == 1L, "\uff08\u5df2\u505c\u7528\uff09", ""),
-                 # 原文：（這一版）
-                 ifelse(tl$itemVer == as.integer(it$itemVer), "\uff08\u9019\u4e00\u7248\uff09", ""))
   waves <- setdiff(names(tl), c("itemVer", "deprecated"))
+  # 一格寫那一波問的版本（v1、v2…），跟構面查詢、總表同一套（version_grid()）
+  # version_timeline() 給 ✓；舊格式（0/1）也認得
+  asked <- function(x) as.character(x) %in% c("\u2713", "1")
+  cell <- vapply(waves, function(w) {
+    v <- tl$itemVer[asked(tl[[w]])]
+    if (length(v)) paste0("v", sort(v), collapse = "/") else ""
+  }, character(1))
   co <- wave_cohort(waves)
   groups <- if (all(nzchar(co))) split(waves, factor(co, levels = unique(co))) else list(waves)
   tables <- lapply(names(groups) %||% "", function(g) {
     w <- groups[[if (nzchar(g)) g else 1L]]
-    m <- tl[w]
-    ticks <- as.data.frame(lapply(m, function(x) ifelse(x == 1L, "\u2713", "")),
-                           stringsAsFactors = FALSE, optional = TRUE)
-    # 原文：版本
-    tab <- cbind(stats::setNames(data.frame(vlab, stringsAsFactors = FALSE), "\u7248\u672c"), ticks)
+    # 原文：題號
+    tab <- cbind(stats::setNames(data.frame(it$itemID, stringsAsFactors = FALSE), "\u984c\u865f"),
+                 as.data.frame(as.list(cell[w]), stringsAsFactors = FALSE, optional = TRUE))
     names(tab) <- col_display_labels(names(tab))
     shiny::tagList(
       # 原文： 世代
@@ -707,11 +703,18 @@ timeline_full_ui <- function(d) {
       kitDesign::kit_table_scroll(kitDesign::kit_static_table(tab))
     )
   })
+  dep <- tl$itemVer[!is.na(tl$deprecated) & tl$deprecated == 1L]
+  hint <- paste0(
+    # 原文：每一格是那一波問的版本（v1、v2…），空白是那一波沒問。這一題是第  |  版
+    "\u6bcf\u4e00\u683c\u662f\u90a3\u4e00\u6ce2\u554f\u7684\u7248\u672c\uff08v1\u3001v2\u2026\uff09\uff0c\u7a7a\u767d\u662f\u90a3\u4e00\u6ce2\u6c92\u554f\u3002\u9019\u4e00\u984c\u662f\u7b2c ",
+    it$itemVer, " \u7248",
+    # 原文：；已停用：
+    if (length(dep)) paste0("\uff1b\u5df2\u505c\u7528\uff1a", paste0("v", dep, collapse = "\u3001")),
+    "\u3002")
   shiny::tagList(
     # 原文：「 | 」各版本出現的波次
     shiny::h4(paste0("\u300c", it$itemID, "\u300d\u5404\u7248\u672c\u51fa\u73fe\u7684\u6ce2\u6b21")),
-    # 原文：✓ 表示這一版在那一波次有問。
-    shiny::p(class = "kit-hint", "\u2713 \u8868\u793a\u9019\u4e00\u7248\u5728\u90a3\u4e00\u6ce2\u6b21\u6709\u554f\u3002"),
+    shiny::p(class = "kit-hint", hint),
     tables
   )
 }

@@ -3569,7 +3569,7 @@
       "checksum": "9a7c05dbce768a44b28d5c09d5621ad8"
     },
     "DESCRIPTION": {
-      "checksum": "c3f469d50c84acba4b5f80c3dfea8b28"
+      "checksum": "3728073ff73f4fecbbb4670efc68d3b8"
     },
     "inst/extdata/bank/BANK_VERSION": {
       "checksum": "8596010c1059cd5ab1b79eb366a76c93"
@@ -3617,7 +3617,7 @@
       "checksum": "d3520122d93970c9538fa1c0c8393649"
     },
     "inst/extdata/kit/BANK_VERSION": {
-      "checksum": "08cfa0622eddd3a1151e5b70e3d72a73"
+      "checksum": "da6b42e61cad8112e7d945de3b8ed88b"
     },
     "inst/extdata/kit/block_status.csv": {
       "checksum": "12edeb05c09909bb47ff0075fbe62a46"
@@ -3674,7 +3674,7 @@
       "checksum": "8f41c3f285ba66185264a76912001934"
     },
     "inst/extdata/kit/item_versions.csv": {
-      "checksum": "44e7acf067d68bceecc5b075b757e118"
+      "checksum": "1aead85ebbc101c482a1152c2b67489c"
     },
     "inst/extdata/kit/items.csv": {
       "checksum": "bd3481cdb7a13de5ee0f529a3cdfb6f9"
@@ -3692,10 +3692,10 @@
       "checksum": "53ac3c517ea39896cb4601c5e3307e4c"
     },
     "inst/manual/manual_fragment.html": {
-      "checksum": "be7bc06c45e35e5e00760ea1901ece24"
+      "checksum": "aee7e0003b2598d6b2242b1e90a153ba"
     },
     "inst/manual/manual.html": {
-      "checksum": "87b3c5edde15b053f052d2ef85db611a"
+      "checksum": "ffc88d7b9706995c8e809f0e150a829f"
     },
     "inst/reports/dim_summary_report.qmd": {
       "checksum": "511e5c1d026016298cc9e6b60181da0c"
@@ -4052,10 +4052,10 @@
       "checksum": "9e6bc94fc7052bdd4758c686701befdd"
     },
     "NAMESPACE": {
-      "checksum": "11fd0bda850fa158de7ceb4b6923ebed"
+      "checksum": "00c99d88bf2c00d345730f2f9ef81b91"
     },
     "NEWS.md": {
-      "checksum": "3fc02da4dbfd8ce410a07ac6c64b684f"
+      "checksum": "ced442b181ca25393ee09e8698f4e1a4"
     },
     "R/admin_merge.R": {
       "checksum": "6abf8f695ded4099a5d9074dc339d73e"
@@ -4085,7 +4085,7 @@
       "checksum": "61c8420d7b3487912d71b52b1b244adc"
     },
     "R/concept_info.R": {
-      "checksum": "fd4291228f878c3f73cfa7150dd4d757"
+      "checksum": "20a4269954c3de6a06b1dda333dbbe8d"
     },
     "R/contacts.R": {
       "checksum": "a3ec98515060b8fc9a4cdc3c2a14fa3e"
@@ -4139,7 +4139,7 @@
       "checksum": "5df26a88df35346b06b5da3fcd75fdad"
     },
     "R/page_dims.R": {
-      "checksum": "e444d38acf26174aa7933ccf648e738b"
+      "checksum": "a40d59c0bea3c5534eea39165f3a1588"
     },
     "R/page_edit.R": {
       "checksum": "496331263b3fbb7549c790bc12e011ef"
@@ -4157,7 +4157,7 @@
       "checksum": "80be90b10c50abd290c422ac6f50e2e7"
     },
     "R/page_search.R": {
-      "checksum": "f4ceade4922ef5417967a915e8c5d69f"
+      "checksum": "b971f57991fbb54805afd0e86bff0d87"
     },
     "R/page_stats.R": {
       "checksum": "71b7b4d5a100513dd379e574998f4e9e"

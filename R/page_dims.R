@@ -54,6 +54,8 @@ page_dims_ui <- function(id) {
       ),
       shiny::column(8, shiny::uiOutput(ns("browse")))
     ),
+    # 題目 × 波次：整頁寬，才看得到全部波次（見 output$item_wave）
+    shiny::uiOutput(ns("item_wave")),
     downloads = TRUE, details = TRUE, code = TRUE
   )
 }
@@ -113,6 +115,12 @@ page_dims_server <- function(id, store, goto, request) {
       }
     })
 
+    output$item_wave <- shiny::renderUI({
+      d <- current_dim()
+      shiny::req(d, d %in% overview()$dimID)
+      dim_item_wave_ui(bank(), d)
+    })
+
     # ── 右邊：構面清單，或一個構面 ────────────────────────
     output$browse <- shiny::renderUI({
       d <- current_dim()
@@ -165,7 +173,6 @@ page_dims_server <- function(id, store, goto, request) {
         kitDesign::kit_details_row(shiny::uiOutput(ns("overlap_ui"))),
         # 題組沿革（kit 的 group_lineage；這一頁其他部分讀 0.2 形狀的題庫）
         group_lineage_ui(kit_builtin(), dims_group_id(store$domain(), d)),
-        dim_item_wave_ui(bank(), d),
         # 原文：各波次信度
         shiny::h4("\u5404\u6ce2\u6b21\u4fe1\u5ea6"),
         shiny::uiOutput(ns("rel_ui")),

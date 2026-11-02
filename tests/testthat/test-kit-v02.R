@@ -62,4 +62,6 @@ test_that("bank_cohort keeps one cohort's waves and items; the timeline splits M
   h <- htmltools::renderTags(timeline_full_ui(d))$html
   expect_match(h, "M03 世代")
   expect_match(h, "M36 世代")
+  # 有問的波次寫版本號（version_timeline 給的是 ✓，不是 1）
+  expect_match(h, "<td>v[0-9]</td>")
 })
